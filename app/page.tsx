@@ -2,11 +2,7 @@ import { Description, Photo, Title, Wrapper } from "@/components/ui";
 import { profileConfig } from "@/config";
 import React from "react";
 
-interface HomePageProps {
-  searchParams: { [key: string]: string | string[] | undefined };
-}
-
-export default async function HomePage({ searchParams }: HomePageProps) {
+export default async function HomePage() {
   return (
     <div>
       <Photo src={profileConfig.image.src} alt={profileConfig.image.alt} />
