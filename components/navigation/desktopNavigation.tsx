@@ -1,6 +1,7 @@
 "use client";
 
-import { Logo, ToggleTheme } from "@/components/ui/";
+import Logo from "@/components/ui/logo";
+import ToggleTheme from "@/components/ui/toggleTheme";
 import { menuConfig } from "@/config";
 import { cn } from "@/lib/utils";
 import Link from "next/link";

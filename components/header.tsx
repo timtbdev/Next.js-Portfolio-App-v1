@@ -1,5 +1,5 @@
-import DesktopNavigation from "./desktop-navigation";
-import MobileNavigation from "./mobile-navigation";
+import DesktopNavigation from "@/components/navigation/desktopNavigation";
+import MobileNavigation from "@/components/navigation/mobileNavigation";
 
 export default function Header() {
   return (

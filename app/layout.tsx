@@ -1,8 +1,8 @@
 import { seoConfig } from "@/config";
 import "@/styles/tailwind.css";
-import { Container, Grid } from "@/components/body";
-import Footer from "@/components/footer/footer";
-import Header from "@/components/header/header";
+import Container from "@/components/container";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
@@ -48,9 +48,7 @@ export default function RootLayout({
         >
           <div className="bg-gray-50 font-sans dark:bg-gray-900">
             <Header />
-            <Grid>
-              <Container>{children}</Container>
-            </Grid>
+            <Container>{children}</Container>
             <Footer />
             <VercelAnalytics />
           </div>

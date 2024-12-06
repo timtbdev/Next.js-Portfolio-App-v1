@@ -1,6 +1,7 @@
+import Button from "@/components/ui/button";
+import Photo from "@/components/ui/photo";
 import { cn } from "@/lib/utils";
 import { ContentType } from "@/types";
-import { Button, Photo } from "components/ui";
 import { Link } from "lucide-react";
 import { FC } from "react";
 

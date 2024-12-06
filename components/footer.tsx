@@ -1,4 +1,5 @@
-import { Banner, ToggleTheme } from "@/components/ui";
+import Banner from "@/components/ui/banner";
+import ToggleTheme from "@/components/ui/toggleTheme";
 import { menuConfig, socialConfig } from "@/config";
 import Link from "next/link";
 
@@ -31,10 +32,13 @@ const Footer = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+                className="rounded-full border-none bg-transparent p-2 shadow-md shadow-black/5 ring-1 ring-black/10 ring-gray-200 transition-transform duration-200 hover:bg-gray-100 dark:ring-white/15 dark:hover:bg-gray-900"
               >
                 <span className="sr-only">{item.name}</span>
-                <item.icon aria-hidden="true" className="h-6 w-6" />
+                <item.icon
+                  aria-hidden="true"
+                  className="h-6 w-6 text-gray-600 dark:text-gray-400"
+                />
               </a>
             ))}
           </div>

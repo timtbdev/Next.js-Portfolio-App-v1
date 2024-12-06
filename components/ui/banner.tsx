@@ -19,7 +19,12 @@ const Banner: FC<Props> = ({ classname }) => {
           className="size-4 text-gray-600 dark:text-gray-400"
         />
         Built with
-        <svg width="2" height="2" aria-hidden="true" className="fill-slate-900">
+        <svg
+          width="2"
+          height="2"
+          aria-hidden="true"
+          className="fill-gray-600 dark:fill-gray-400"
+        >
           <circle cx="1" cy="1" r="1"></circle>
         </svg>
         AllYouNeed.Dev

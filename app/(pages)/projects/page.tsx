@@ -1,4 +1,8 @@
-import { Description, Divider, Photo, Title, Wrapper } from "@/components/ui";
+import Description from "@/components/ui/description";
+import Divider from "@/components/ui/divider";
+import Photo from "@/components/ui/photo";
+import Title from "@/components/ui/title";
+import Wrapper from "@/components/ui/wrapper";
 import { projectConfig } from "@/config";
 
 export default async function ProjectPage() {

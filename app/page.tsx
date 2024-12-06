@@ -1,4 +1,7 @@
-import { Description, Photo, Title, Wrapper } from "@/components/ui";
+import Description from "@/components/ui/description";
+import Photo from "@/components/ui/photo";
+import Title from "@/components/ui/title";
+import Wrapper from "@/components/ui/wrapper";
 import { profileConfig } from "@/config";
 import React from "react";
 

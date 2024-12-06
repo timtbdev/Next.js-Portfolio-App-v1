@@ -1,6 +1,6 @@
 "use client";
 
-import { Logo } from "@/components/ui/";
+import Logo from "@/components/ui/logo";
 import { menuConfig } from "@/config";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Menu, X } from "lucide-react";
