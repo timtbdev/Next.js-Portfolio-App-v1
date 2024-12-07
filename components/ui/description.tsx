@@ -1,23 +1,14 @@
 import Button from "@/components/ui/button";
 import Photo from "@/components/ui/photo";
-import { cn } from "@/lib/utils";
 import { ContentType } from "@/types";
-import { Link } from "lucide-react";
-import { FC } from "react";
 
 interface Props {
   content: ContentType[];
-  className?: string;
 }
 
-const Description: FC<Props> = ({ content, className }) => {
+export default function Description({ content }: Props) {
   return (
-    <div
-      className={cn(
-        className,
-        "mt-4 text-wrap text-lg leading-8 text-gray-600 dark:text-gray-400",
-      )}
-    >
+    <div className="mt-4 text-wrap text-lg leading-8 text-gray-600 dark:text-gray-400">
       {content.map((content: ContentType, index: number) => (
         <div key={index} className="mt-4">
           <p>{content.text}</p>
@@ -33,6 +24,4 @@ const Description: FC<Props> = ({ content, className }) => {
       ))}
     </div>
   );
-};
-
-export default Description;
+}

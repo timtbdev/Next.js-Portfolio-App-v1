@@ -1,11 +1,6 @@
 import { SparklesIcon } from "lucide-react";
-import { FC } from "react";
 
-interface Props {
-  classname?: string;
-}
-
-const Banner: FC<Props> = ({ classname }) => {
+export default function Banner() {
   return (
     <span className="mt-6 flex justify-center">
       <a
@@ -31,6 +26,4 @@ const Banner: FC<Props> = ({ classname }) => {
       </a>
     </span>
   );
-};
-
-export default Banner;
+}
