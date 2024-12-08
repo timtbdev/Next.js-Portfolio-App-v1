@@ -16,7 +16,7 @@ export default function Logo() {
         />
       </div>
       {/* Logo Text */}
-      <div className="ml-2 text-lg text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-sky-500">
+      <div className="ml-2 text-lg font-semibold tracking-tight text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-sky-500">
         Tim
       </div>
     </Link>
