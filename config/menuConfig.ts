@@ -15,22 +15,22 @@ const menuConfig: MenuType[] = [
   {
     id: 2,
     title: "About",
-    slug: "about",
+    slug: "/about",
   },
   {
     id: 3,
     title: "Projects",
-    slug: "projects",
+    slug: "/projects",
   },
   {
     id: 3,
     title: "Blog",
-    slug: "blog",
+    slug: "/blog",
   },
   {
     id: 4,
     title: "Contact",
-    slug: "contact",
+    slug: "/contact",
   },
 ];
 
