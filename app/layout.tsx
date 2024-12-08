@@ -30,6 +30,7 @@ export const metadata: Metadata = {
       url: seoConfig.author.twitterUrl,
     },
   ],
+  // Add other metadata properties as needed
 };
 
 export default function RootLayout({

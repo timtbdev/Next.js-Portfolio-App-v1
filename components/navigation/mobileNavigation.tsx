@@ -12,7 +12,7 @@ const MobileNavigation = () => {
   return (
     <>
       <nav className="mx-auto flex max-w-5xl items-center justify-between bg-white px-6 py-4 dark:bg-gray-800 md:hidden">
-        {/* Login */}
+        {/* Logo */}
         <div className="flex flex-1 justify-start pl-2">
           <Logo />
         </div>
@@ -25,13 +25,13 @@ const MobileNavigation = () => {
             className="-m-2.5 inline-flex items-center justify-center rounded-lg border-none bg-white p-2.5 text-gray-600 shadow-md shadow-black/5 ring-1 ring-gray-200 transition-transform duration-200 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-400 dark:ring-gray-600 dark:hover:bg-gray-900"
           >
             <span className="sr-only">Open main menu</span>
-            <Menu aria-hidden="true" className="size-6" />
+            <Menu aria-hidden="true" className="h-6 w-6" />
           </button>
         </div>
       </nav>
 
-      {/* Mobile Navigation */}
-      <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+      {/* Mobile Navigation Dialog */}
+      <Dialog open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
         <div className="fixed inset-0 z-50 bg-white dark:bg-gray-800">
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-50 px-6 py-4 ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-600">
             <div className="flex items-center justify-between">
@@ -47,7 +47,7 @@ const MobileNavigation = () => {
                   className="-m-2.5 inline-flex items-center justify-center rounded-lg border-none bg-white p-2.5 text-gray-600 shadow-md shadow-black/5 ring-1 ring-gray-200 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-400 dark:ring-gray-600 dark:hover:bg-gray-900"
                 >
                   <span className="sr-only">Close menu</span>
-                  <X aria-hidden="true" className="size-6" />
+                  <X aria-hidden="true" className="h-6 w-6" />
                 </button>
               </div>
             </div>

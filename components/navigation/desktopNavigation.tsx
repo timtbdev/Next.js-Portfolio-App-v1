@@ -3,12 +3,11 @@
 import Logo from "@/components/ui/logo";
 import ToggleTheme from "@/components/ui/toggleTheme";
 import { menuConfig } from "@/config";
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-const DesktopNavigation = () => {
+export default function DesktopNavigation() {
   const currentPath = usePathname();
   return (
     <>
@@ -18,52 +17,26 @@ const DesktopNavigation = () => {
           <Logo />
         </div>
 
-        {/* Navigation */}
-        <div>
-          <div className="flex flex-1 gap-x-6">
-            <div className="hidden gap-x-6 md:flex">
-              {menuConfig.map((menuItem) => (
-                <Link
-                  href={
-                    menuItem.slug === "/" ? menuItem.slug : `/${menuItem.slug}`
-                  }
-                  key={crypto.randomUUID()}
-                  className="group relative inline-flex items-center rounded-full px-3 py-1 text-lg font-semibold tracking-tight antialiased"
-                >
-                  <span
-                    className={cn(
-                      "relative ml-1",
-                      {
-                        "text-gray-900 dark:text-gray-100":
-                          currentPath ===
-                          (menuItem.slug === "/"
-                            ? menuItem.slug
-                            : `/${menuItem.slug}`),
-                      },
-                      {
-                        "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100":
-                          currentPath !==
-                          (menuItem.slug === "/"
-                            ? menuItem.slug
-                            : `/${menuItem.slug}`),
-                      },
-                    )}
-                  >
-                    {menuItem.title}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </div>
+        {/* Navigation Links */}
+        <div className="flex flex-1 gap-x-10">
+          {menuConfig.map((menuItem) => (
+            <Link
+              key={menuItem.title}
+              href={menuItem.slug}
+              className={`text-lg font-semibold tracking-tight ${currentPath === menuItem.slug ? "text-blue-500 dark:text-sky-500" : "text-gray-600 dark:text-gray-400"} hover:text-blue-500 dark:hover:text-sky-500`}
+              aria-current={currentPath === menuItem.slug ? "page" : undefined}
+              prefetch={true}
+            >
+              {menuItem.title}
+            </Link>
+          ))}
         </div>
 
-        {/* Toggle theme */}
-        <div className="flex flex-1 justify-end">
+        {/* Toggle Theme */}
+        <div className="flex flex-1 justify-end pr-2">
           <ToggleTheme />
         </div>
       </nav>
     </>
   );
-};
-
-export default DesktopNavigation;
+}
