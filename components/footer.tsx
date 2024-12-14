@@ -32,7 +32,7 @@ export default function Footer() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="group rounded-full border-none bg-transparent p-2 shadow-sm ring-1 ring-gray-300 hover:bg-gray-50 hover:ring-blue-500 dark:ring-gray-600 dark:hover:bg-gray-900 dark:hover:ring-sky-500"
+                className="group rounded-full border-none bg-transparent p-2 shadow-sm ring-1 ring-gray-300 hover:bg-gray-50 hover:ring-blue-500 dark:ring-gray-500 dark:hover:bg-gray-900 dark:hover:ring-sky-500"
               >
                 <span className="sr-only">{item.name}</span>
                 <item.icon

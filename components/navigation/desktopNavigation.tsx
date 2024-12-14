@@ -11,7 +11,10 @@ export default function DesktopNavigation() {
   const currentPath = usePathname();
   return (
     <>
-      <nav className="mx-auto hidden max-w-5xl items-center justify-between px-2 py-5 md:flex">
+      <nav
+        aria-label="Desktop Navigation"
+        className="mx-auto hidden max-w-5xl items-center justify-between px-2 py-5 md:flex"
+      >
         {/* Logo */}
         <div className="flex flex-1 justify-start pl-2">
           <Logo />

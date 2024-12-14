@@ -30,7 +30,7 @@ const MobileNavigation = () => {
         {/* Menu button */}
         <button
           type="button"
-          className="inline-flex items-center justify-center p-2 text-gray-400 hover:text-gray-500 dark:text-gray-300 dark:hover:text-gray-400"
+          className="inline-flex items-center justify-center p-2 text-gray-600 dark:text-gray-400"
           aria-label="Open mobile menu"
           onClick={() => setMobileMenuOpen(true)}
         >
@@ -41,16 +41,16 @@ const MobileNavigation = () => {
       {/* Mobile menu dialog */}
       <Dialog
         as="div"
-        className="fixed inset-0 z-50 overflow-y-auto"
+        className="fixed inset-0 z-50 overflow-y-auto bg-gray-50 dark:bg-gray-900"
         open={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
       >
-        <DialogPanel className="min-h-screen bg-white dark:bg-gray-800">
-          <div className="flex items-center justify-between px-6 py-4">
+        <DialogPanel className="min-h-screen">
+          <div className="flex items-center justify-between border-b-[1.2px] border-gray-300 bg-white px-6 py-4 shadow-sm dark:border-gray-500 dark:bg-gray-800">
             <Logo />
             <button
               type="button"
-              className="inline-flex items-center justify-center p-2 text-gray-400 hover:text-gray-500 dark:text-gray-300 dark:hover:text-gray-400"
+              className="inline-flex items-center justify-center p-2 text-gray-600 dark:text-gray-400"
               aria-label="Close mobile menu"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -63,10 +63,11 @@ const MobileNavigation = () => {
                 <li key={menuItem.slug}>
                   <Link
                     href={menuItem.slug}
+                    onClick={() => setMobileMenuOpen(false)}
                     className={cn(
                       currentPath === menuItem.slug
-                        ? "bg-gray-100 text-blue-500 dark:text-sky-500"
-                        : "text-gray-600 hover:bg-gray-100 hover:text-blue-500 dark:text-gray-400 dark:hover:bg-gray-50 dark:hover:text-sky-500",
+                        ? "bg-gray-100 text-blue-500 dark:bg-gray-800 dark:text-sky-500"
+                        : "text-gray-600 hover:bg-gray-100 hover:text-blue-500 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-sky-500",
                       "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold",
                     )}
                   >
