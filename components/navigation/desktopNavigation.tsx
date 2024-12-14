@@ -23,7 +23,7 @@ export default function DesktopNavigation() {
             <Link
               key={menuItem.title}
               href={menuItem.slug}
-              className={`track text-lg font-semibold ${currentPath === menuItem.slug ? "text-blue-500 dark:text-sky-500" : "text-gray-600 dark:text-gray-400"} hover:text-blue-500 dark:hover:text-sky-500`}
+              className={`text-md font-semibold ${currentPath === menuItem.slug ? "text-blue-500 dark:text-sky-500" : "text-gray-600 dark:text-gray-400"} hover:text-blue-500 dark:hover:text-sky-500`}
               aria-current={currentPath === menuItem.slug ? "page" : undefined}
               prefetch={true}
             >

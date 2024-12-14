@@ -3,7 +3,7 @@
 import Logo from "@/components/ui/logo";
 import { menuConfig } from "@/config";
 import { Dialog, DialogPanel } from "@headlessui/react";
-import { Menu, X } from "lucide-react";
+import { X as CloseIcon, Menu as MenuIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
@@ -27,7 +27,7 @@ const MobileNavigation = () => {
             className="-m-2.5 inline-flex items-center justify-center p-2.5 text-gray-600 dark:text-gray-400"
           >
             <span className="sr-only">Open main menu</span>
-            <Menu aria-hidden="true" className="h-6 w-6" />
+            <MenuIcon className="h-6 w-6" />
           </button>
         </div>
       </nav>
@@ -49,7 +49,7 @@ const MobileNavigation = () => {
                   className="-m-2.5 inline-flex items-center justify-center p-2.5 text-gray-600 dark:text-gray-400"
                 >
                   <span className="sr-only">Close menu</span>
-                  <X aria-hidden="true" className="h-6 w-6" />
+                  <CloseIcon className="h-6 w-6" />
                 </button>
               </div>
             </div>

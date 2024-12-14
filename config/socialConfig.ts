@@ -1,4 +1,10 @@
-import { GithubIcon, LinkedInIcon, XIcon } from "@/icons/";
+import {
+  GithubIcon,
+  Play as GoogleIcon,
+  LinkedinIcon as LinkedInIcon,
+  MailIcon,
+  Twitter as XIcon,
+} from "lucide-react";
 
 type SocialType = {
   id: number;
@@ -10,8 +16,8 @@ type SocialType = {
 const socialConfig: SocialType[] = [
   {
     id: 1,
-    name: "Twitter",
-    href: "https://twitter.com/timtbdev",
+    name: "X.com",
+    href: "https://x.com/timtbdev",
     icon: XIcon,
   },
   {
@@ -25,6 +31,18 @@ const socialConfig: SocialType[] = [
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/timtbdev/",
     icon: LinkedInIcon,
+  },
+  {
+    id: 4,
+    name: "Google Play",
+    href: "https://www.linkedin.com/in/timtbdev/",
+    icon: GoogleIcon,
+  },
+  {
+    id: 5,
+    name: "Email",
+    href: "mailto:timtb.dev@gmail.com",
+    icon: MailIcon,
   },
 ];
 
