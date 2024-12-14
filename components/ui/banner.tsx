@@ -5,7 +5,7 @@ export default function Banner() {
         href="https://allyouneed.dev"
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative inline-flex items-center gap-x-1.5 rounded-full border-none bg-transparent p-2 ring-1 ring-gray-300 hover:bg-gray-50 hover:ring-blue-500 dark:ring-gray-600 dark:hover:bg-gray-900 dark:hover:ring-sky-500"
+        className="group relative inline-flex items-center gap-x-1.5 rounded-full border-none bg-transparent p-2 shadow-sm ring-1 ring-gray-300 hover:bg-gray-50 hover:ring-blue-500 dark:ring-gray-600 dark:hover:bg-gray-900 dark:hover:ring-sky-500"
         aria-label="Visit allyouneed.dev"
       >
         {/* Sparkles Icon */}
@@ -20,7 +20,7 @@ export default function Banner() {
             clipRule="evenodd"
           ></path>
         </svg>
-        <span className="text-sm text-gray-500 group-hover:text-blue-500 dark:text-gray-500 dark:group-hover:text-sky-500">
+        <span className="text-sm text-gray-500 group-hover:text-blue-500 dark:text-gray-400 dark:group-hover:text-sky-500">
           Built with • AllYouNeed.Dev
         </span>
       </a>

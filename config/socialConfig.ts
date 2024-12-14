@@ -38,12 +38,6 @@ const socialConfig: SocialType[] = [
     href: "https://www.linkedin.com/in/timtbdev/",
     icon: GoogleIcon,
   },
-  {
-    id: 5,
-    name: "Email",
-    href: "mailto:timtb.dev@gmail.com",
-    icon: MailIcon,
-  },
 ];
 
 export default socialConfig;
