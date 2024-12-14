@@ -37,7 +37,7 @@ export default function DesktopNavigation() {
 
         {/* Toggle Theme */}
         <div className="flex flex-1 justify-end pr-2">
-          <ToggleTheme />
+          <ToggleTheme mobile={false} />
         </div>
       </nav>
     </>

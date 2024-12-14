@@ -12,6 +12,8 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
+import Divider from "../ui/divider";
+import ToggleTheme from "../ui/toggleTheme";
 
 const MobileNavigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -68,7 +70,7 @@ const MobileNavigation = () => {
                       currentPath === menuItem.slug
                         ? "bg-gray-100 text-blue-500 dark:bg-gray-800 dark:text-sky-500"
                         : "text-gray-600 hover:bg-gray-100 hover:text-blue-500 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-sky-500",
-                      "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold",
+                      "text-md group flex gap-x-3 rounded-md p-2 font-semibold",
                     )}
                   >
                     <menuItem.icon
@@ -89,6 +91,9 @@ const MobileNavigation = () => {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className="mx-auto flex items-center justify-center border-t-[1.2px] border-gray-300 px-6 py-8 text-center dark:border-gray-500">
+            <ToggleTheme mobile={true} />
           </div>
         </DialogPanel>
       </Dialog>
