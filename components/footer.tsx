@@ -32,12 +32,12 @@ export default function Footer() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="group rounded-full border-none bg-transparent p-2 shadow-sm ring-1 ring-gray-300 hover:bg-gray-50 hover:ring-blue-500 dark:ring-gray-500 dark:hover:bg-gray-900 dark:hover:ring-sky-500"
+                className="inset-px rounded-full border-none bg-transparent p-2 shadow-md shadow-gray-800/5 ring-1 ring-gray-900/5 transition hover:ring-gray-900/20 dark:ring-white/10 dark:hover:ring-white/20"
               >
                 <span className="sr-only">{item.name}</span>
                 <item.icon
                   aria-hidden="true"
-                  className="h-5 w-5 text-gray-500 group-hover:text-blue-500 dark:text-gray-400 dark:group-hover:text-sky-500"
+                  className="h-5 w-5 text-gray-600 dark:text-gray-400"
                 />
               </Link>
             ))}
