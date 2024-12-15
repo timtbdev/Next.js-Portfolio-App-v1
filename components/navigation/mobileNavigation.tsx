@@ -1,6 +1,7 @@
 "use client";
 
 import Logo from "@/components/ui/logo";
+import ToggleTheme from "@/components/ui/toggleTheme";
 import { menuConfig } from "@/config";
 import { cn } from "@/lib/helpers";
 import { Dialog, DialogPanel } from "@headlessui/react";
@@ -9,11 +10,9 @@ import {
   X as CloseIcon,
   Menu as MenuIcon,
 } from "lucide-react";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
-import Divider from "../ui/divider";
-import ToggleTheme from "../ui/toggleTheme";
 
 const MobileNavigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

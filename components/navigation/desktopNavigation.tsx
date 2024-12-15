@@ -3,7 +3,7 @@
 import Logo from "@/components/ui/logo";
 import ToggleTheme from "@/components/ui/toggleTheme";
 import { menuConfig } from "@/config";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { usePathname } from "next/navigation";
 import React from "react";
 

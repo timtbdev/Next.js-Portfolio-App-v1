@@ -6,6 +6,7 @@ import Header from "@/components/header";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
+import { ViewTransitions } from "next-view-transitions";
 import { Inter as FontSans } from "next/font/google";
 
 const fontSans = FontSans({
@@ -39,22 +40,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={fontSans.variable}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="bg-gray-50 font-sans dark:bg-gray-900">
-            <Header />
-            <Container>{children}</Container>
-            <Footer />
-            <VercelAnalytics />
-          </div>
-        </ThemeProvider>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en" suppressHydrationWarning>
+        <body className={fontSans.variable}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="bg-gray-50 font-sans dark:bg-gray-900">
+              <Header />
+              <Container>{children}</Container>
+              <Footer />
+              <VercelAnalytics />
+            </div>
+          </ThemeProvider>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
