@@ -35,7 +35,7 @@ const socialConfig: SocialType[] = [
   {
     id: 4,
     name: "Google Play",
-    href: "https://www.linkedin.com/in/timtbdev/",
+    href: "https://play.google.com/store/apps/developer?id=timtbdev",
     icon: GoogleIcon,
   },
 ];

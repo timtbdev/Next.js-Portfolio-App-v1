@@ -11,13 +11,13 @@ export default function Footer() {
           {/* Navigation Links */}
           <nav
             aria-label="Footer"
-            className="mx-auto -mb-6 hidden columns-3 text-center sm:flex sm:justify-center sm:space-x-12"
+            className="mx-auto -mb-6 hidden columns-3 gap-x-10 text-center sm:flex sm:justify-center"
           >
             {menuConfig.map((item) => (
               <div key={item.title} className="pb-6">
                 <Link
                   href={item.slug}
-                  className="text-md text-gray-600 hover:text-blue-500 hover:underline hover:underline-offset-8 dark:text-gray-400 dark:hover:text-sky-500"
+                  className="text-md font-medium text-gray-600 hover:text-blue-500 hover:underline hover:underline-offset-8 dark:text-gray-400 dark:hover:text-sky-500"
                   prefetch={true}
                 >
                   {item.title}

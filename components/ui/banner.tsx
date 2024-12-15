@@ -20,7 +20,7 @@ export default function Banner() {
             clipRule="evenodd"
           ></path>
         </svg>
-        <span className="text-sm text-gray-600 group-hover:text-blue-500 dark:text-gray-400 dark:group-hover:text-sky-500">
+        <span className="text-sm font-medium text-gray-600 group-hover:text-blue-500 dark:text-gray-400 dark:group-hover:text-sky-500">
           Built with • AllYouNeed.Dev
         </span>
       </a>
