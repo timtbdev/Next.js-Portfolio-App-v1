@@ -23,6 +23,7 @@ import React, { use } from "react";
 
 export default function Header() {
   const currentPath = usePathname();
+  let closeMenu = useClose();
   return (
     <div className="sticky top-0 z-50 border-b-[1.2px] border-gray-300 bg-white shadow-sm dark:border-gray-500 dark:bg-gray-800">
       <nav
@@ -101,7 +102,7 @@ export default function Header() {
                             <li key={menuItem.slug}>
                               <Link
                                 href={menuItem.slug}
-                                onClick={() => useClose()}
+                                onClick={() => closeMenu()}
                                 className={cn(
                                   currentPath === menuItem.slug
                                     ? "bg-blue-500/10 text-blue-500 dark:bg-gray-800 dark:text-sky-500"
