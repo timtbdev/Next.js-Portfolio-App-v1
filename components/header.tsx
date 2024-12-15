@@ -5,11 +5,11 @@ import ToggleTheme from "@/components/ui/toggleTheme";
 import { menuConfig } from "@/config";
 import { cn } from "@/lib/helpers";
 import {
+  CloseButton,
   Popover,
   PopoverBackdrop,
   PopoverButton,
   PopoverPanel,
-  useClose,
 } from "@headlessui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
@@ -23,7 +23,6 @@ import React, { use } from "react";
 
 export default function Header() {
   const currentPath = usePathname();
-  let closeMenu = useClose();
   return (
     <div className="sticky top-0 z-50 border-b-[1.2px] border-gray-300 bg-white shadow-sm dark:border-gray-500 dark:bg-gray-800">
       <nav
@@ -100,9 +99,9 @@ export default function Header() {
                         <ul className="space-y-2">
                           {menuConfig.map((menuItem) => (
                             <li key={menuItem.slug}>
-                              <Link
+                              <CloseButton
+                                as={Link}
                                 href={menuItem.slug}
-                                onClick={() => closeMenu()}
                                 className={cn(
                                   currentPath === menuItem.slug
                                     ? "bg-blue-500/10 text-blue-500 dark:bg-gray-800 dark:text-sky-500"
@@ -124,7 +123,7 @@ export default function Header() {
                                   aria-hidden="true"
                                   className="ml-auto h-5 w-5 text-gray-600 dark:text-gray-400"
                                 />
-                              </Link>
+                              </CloseButton>
                             </li>
                           ))}
                         </ul>
