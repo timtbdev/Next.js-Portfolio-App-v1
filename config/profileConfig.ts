@@ -8,13 +8,7 @@ const profileConfig: ProfileConfigType = {
   },
   content: [
     {
-      text: "I’m an Android developer based in the San Francisco Bay Area. Back in 2013, I left my corporate job to learn Android app development and built my first two apps using Java and XML. They didn’t really take off, but it was a great learning experience.",
-    },
-    {
-      text: "In 2017, I decided to start fresh, picked up Kotlin and Jetpack Components, and built two more apps. One of them was even featured by a popular Android YouTuber on his channel, which really inspired me to keep going and improving. Now I’m focused on Jetpack Compose and building apps with modern architecture.",
-    },
-    {
-      text: "I have a degree in Computer Science, speak English, German, and Mongolian, and enjoy running when I’m not coding.",
+      text: "I’m an Android developer in the Bay Area. I got into app development back in 2013 using Java and XML. Those early apps weren’t big hits, but they taught me a lot. In 2017, I switched to Kotlin and Jetpack Components, and one of my apps got featured by a popular Android YouTuber. Now I focus on Jetpack Compose. I have a Computer Science degree, speak English, German, and Mongolian, and enjoy running when I’m not coding.",
     },
     {
       text: "Contact: timtb.dev@gmail.com",
