@@ -102,7 +102,7 @@ export default function Header() {
                                   currentPath === menuItem.slug
                                     ? "bg-blue-500/10 text-blue-500 dark:bg-sky-500/10 dark:text-sky-500"
                                     : "text-gray-600 hover:bg-gray-100 hover:text-blue-500 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-sky-500",
-                                  "text-md group flex gap-x-3 rounded-full p-2 font-semibold",
+                                  "text-md group flex gap-x-4 rounded-full p-4 font-semibold",
                                 )}
                               >
                                 <menuItem.icon
