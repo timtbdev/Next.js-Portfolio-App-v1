@@ -37,7 +37,7 @@ export default function Footer() {
                 <span className="sr-only">{item.name}</span>
                 <item.icon
                   aria-hidden="true"
-                  className="h-5 w-5 text-gray-600 dark:text-gray-400"
+                  className="h-6 w-6 text-gray-600 dark:text-gray-400"
                 />
               </Link>
             ))}
