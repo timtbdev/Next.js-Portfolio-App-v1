@@ -5,7 +5,7 @@ export default function Banner() {
         href="https://allyouneed.dev"
         target="_blank"
         rel="noopener noreferrer"
-        className="relative inset-px inline-flex items-center gap-x-1.5 rounded-full border-none bg-transparent p-2 shadow-md shadow-gray-800/5 ring-1 ring-gray-900/5 transition hover:ring-gray-900/20 dark:ring-white/10 dark:hover:ring-white/20"
+        className="relative inset-px inline-flex items-center gap-x-1.5 rounded-full border-none bg-transparent p-2 shadow-md shadow-gray-800/5 ring-1 ring-gray-900/5 transition hover:bg-gray-100 hover:ring-gray-900/20 dark:ring-white/10 dark:hover:bg-gray-900 dark:hover:ring-white/20"
         aria-label="Visit allyouneed.dev"
       >
         {/* Sparkles Icon */}

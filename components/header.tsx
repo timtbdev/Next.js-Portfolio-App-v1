@@ -12,11 +12,7 @@ import {
   PopoverPanel,
 } from "@headlessui/react";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  ArrowRight as ArrowRightIcon,
-  X as CloseIcon,
-  Menu as MenuIcon,
-} from "lucide-react";
+import { X as CloseIcon, Menu as MenuIcon } from "lucide-react";
 import { Link } from "next-view-transitions";
 import { usePathname } from "next/navigation";
 import React, { use } from "react";
@@ -104,8 +100,8 @@ export default function Header() {
                                 href={menuItem.slug}
                                 className={cn(
                                   currentPath === menuItem.slug
-                                    ? "bg-blue-500/10 text-blue-500 dark:bg-gray-800 dark:text-sky-500"
-                                    : "text-gray-600 hover:bg-gray-100 hover:text-blue-500 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-sky-500",
+                                    ? "bg-blue-500/10 text-blue-500 dark:bg-sky-500/10 dark:text-sky-500"
+                                    : "text-gray-600 hover:bg-gray-100 hover:text-blue-500 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-sky-500",
                                   "text-md group flex gap-x-3 rounded-full p-2 font-semibold",
                                 )}
                               >
@@ -115,14 +111,10 @@ export default function Header() {
                                     currentPath === menuItem.slug
                                       ? "text-blue-500 dark:text-sky-500"
                                       : "text-gray-600 group-hover:text-blue-500 dark:text-gray-400 dark:group-hover:text-sky-500",
-                                    "size-6 shrink-0",
+                                    "h-6 w-6 flex-shrink-0",
                                   )}
                                 />
                                 {menuItem.title}
-                                <ArrowRightIcon
-                                  aria-hidden="true"
-                                  className="ml-auto h-5 w-5 text-gray-600 dark:text-gray-400"
-                                />
                               </CloseButton>
                             </li>
                           ))}

@@ -18,7 +18,7 @@ export default function ToggleTheme({ mobile, className }: Props) {
       type="button"
       aria-label="Toggle theme"
       className={cn(
-        "transiton inset-px flex rounded-full border-none bg-transparent p-2 shadow-md shadow-gray-800/5 ring-1 ring-gray-900/5 hover:ring-gray-900/20 dark:ring-white/10 dark:hover:ring-white/20",
+        "transiton inset-px flex rounded-full border-none bg-transparent p-2 shadow-md shadow-gray-800/5 ring-1 ring-gray-900/5 hover:bg-gray-100 hover:ring-gray-900/20 dark:ring-white/10 dark:hover:bg-gray-900 dark:hover:ring-white/20",
         className,
       )}
       // Toggle between light and dark themes on button click
