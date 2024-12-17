@@ -20,10 +20,10 @@ import React, { use } from "react";
 export default function Header() {
   const currentPath = usePathname();
   return (
-    <div className="sticky top-0 z-50 border-b-[1.2px] border-gray-300 bg-white shadow-sm dark:border-gray-500 dark:bg-gray-800">
+    <div className="sticky top-0 z-10 border-b-[1.2px] border-gray-300 bg-white shadow-sm dark:border-gray-500 dark:bg-gray-800">
       <nav
         aria-label="Desktop Navigation"
-        className="mx-auto flex max-w-4xl items-center justify-between px-10 py-5 md:px-8 lg:px-6"
+        className="mx-auto flex max-w-4xl items-center justify-between px-8 py-5 lg:px-6"
       >
         {/* Logo */}
         <div className="z-10 flex flex-1 justify-start">
