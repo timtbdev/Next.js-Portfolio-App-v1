@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
@@ -6,16 +6,9 @@ interface Props {
 
 export default function Container({ children }: Props) {
   return (
-    <div className="min-h-full py-5">
-      {/* Outer container with max width */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Inner container with smaller max width */}
-        <div className="mx-auto max-w-5xl">
-          {/* Content container with border and background color */}
-          <div className="inset-px mx-auto max-w-4xl overflow-hidden rounded-lg border-[1px] border-gray-200 bg-white py-8 dark:border-gray-600 dark:bg-gray-800">
-            {children}
-          </div>
-        </div>
+    <div className="mx-auto my-6 max-w-4xl overflow-hidden">
+      <div className="mx-6 rounded-lg border-[1px] border-zinc-600/20 bg-white p-6 dark:border-zinc-700/40 dark:bg-zinc-900">
+        {children}
       </div>
     </div>
   );

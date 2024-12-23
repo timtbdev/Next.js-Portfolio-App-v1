@@ -6,7 +6,7 @@ export default function Logo() {
   return (
     <Link href="/" className="group mr-4 flex items-center">
       {/* Logo Image */}
-      <div className="group flex h-10 w-10 items-center justify-center rounded-full shadow-sm ring-1 ring-gray-200 dark:ring-gray-600">
+      <div className="group flex h-10 w-10 items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-600/20 dark:ring-zinc-700/40">
         <Image
           src={logo}
           alt="Logo"
@@ -16,7 +16,7 @@ export default function Logo() {
         />
       </div>
       {/* Logo Text */}
-      <div className="text-md ml-2 font-semibold text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-sky-500">
+      <div className="text-md ml-2 font-medium text-zinc-600 group-hover:text-zinc-950 dark:text-zinc-400 dark:group-hover:text-white">
         Tim
       </div>
     </Link>

@@ -1,21 +1,13 @@
+import { MenuType } from "@/types"; // Menu Configuration
 import {
   CodeIcon,
   FileTextIcon,
   HomeIcon,
-  Icon,
   MailIcon,
   UserIcon,
 } from "lucide-react";
-import React from "react";
 
-type MenuType = {
-  id: number;
-  title: string;
-  slug: string;
-  icon: React.FC<{ className?: string }>;
-};
-
-const menuConfig: MenuType[] = [
+const menu: MenuType[] = [
   {
     id: 1,
     title: "Home",
@@ -48,4 +40,4 @@ const menuConfig: MenuType[] = [
   },
 ];
 
-export default menuConfig;
+export default menu;

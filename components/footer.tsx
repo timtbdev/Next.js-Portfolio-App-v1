@@ -1,23 +1,22 @@
-import Banner from "@/components/ui/banner";
-import { menuConfig, socialConfig } from "@/config";
+import menu from "@/shared/config/menu";
+import social from "@/shared/config/social";
 import { Link } from "next-view-transitions";
-import React from "react";
 
 export default function Footer() {
   return (
     <>
-      <footer className="border-y border-gray-200 bg-white shadow-sm dark:border-gray-600 dark:bg-gray-800">
+      <footer className="border-y border-zinc-600/20 bg-white shadow-sm shadow-zinc-800/5 dark:border-zinc-700/40 dark:bg-zinc-900">
         <div className="mx-auto max-w-7xl overflow-hidden p-6 sm:py-10 lg:px-8">
           {/* Navigation Links */}
           <nav
             aria-label="Footer"
             className="mx-auto -mb-6 hidden columns-3 gap-x-10 text-center sm:flex sm:justify-center"
           >
-            {menuConfig.map((item) => (
+            {menu.map((item) => (
               <div key={item.title} className="pb-6">
                 <Link
                   href={item.slug}
-                  className="text-md font-medium text-gray-600 hover:text-blue-500 hover:underline hover:underline-offset-8 dark:text-gray-400 dark:hover:text-sky-500"
+                  className="text-md font-medium text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
                   prefetch={true}
                 >
                   {item.title}
@@ -28,26 +27,50 @@ export default function Footer() {
 
           {/* Social Media Links */}
           <div className="mt-8 flex justify-center space-x-6">
-            {socialConfig.map((item) => (
+            {social.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="inset-px rounded-full border-none bg-transparent p-2 shadow-md shadow-gray-800/5 ring-1 ring-gray-900/5 transition hover:bg-gray-100 hover:ring-gray-900/20 dark:ring-white/10 dark:hover:bg-gray-900 dark:hover:ring-white/20"
+                className="inset-px rounded-full bg-white p-2 shadow-md shadow-gray-800/5 ring-1 ring-zinc-600/20 hover:bg-zinc-200/40 dark:bg-zinc-900 dark:ring-zinc-700/40 dark:hover:bg-zinc-500/10"
               >
                 <span className="sr-only">{item.name}</span>
                 <item.icon
                   aria-hidden="true"
-                  className="h-6 w-6 text-gray-600 dark:text-gray-400"
+                  className="h-6 w-6 text-zinc-600 dark:text-zinc-400"
                 />
               </Link>
             ))}
           </div>
 
-          {/* Banner Component */}
-          <Banner />
+          {/* AllYouNeed Button */}
+          <div className="mt-6 flex justify-center">
+            <a
+              href="https://allyouneed.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative inset-px inline-flex items-center gap-x-1.5 rounded-full bg-white p-2 shadow-md shadow-gray-800/5 ring-1 ring-zinc-600/20 hover:bg-zinc-200/40 dark:bg-zinc-900 dark:ring-zinc-700/40 dark:hover:bg-zinc-500/10"
+              aria-label="Visit allyouneed.dev"
+            >
+              {/* Sparkles Icon */}
+              <svg
+                className="size-4 fill-blue-500 dark:fill-sky-500"
+                viewBox="0 0 24 24"
+                aria-hidden="true" // Mark SVG as hidden for screen readers if decorative
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M9 4.5a.75.75 0 01.721.544l.813 2.846a3.75 3.75 0 002.576 2.576l2.846.813a.75.75 0 010 1.442l-2.846.813a3.75 3.75 0 00-2.576 2.576l-.813 2.846a.75.75 0 01-1.442 0l-.813-2.846a3.75 3.75 0 00-2.576-2.576l-2.846-.813a.75.75 0 010-1.442l2.846-.813A3.75 3.75 0 007.466 7.89l.813-2.846A.75.75 0 019 4.5zM18 1.5a.75.75 0 01.728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 010 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 01-1.456 0l-.258-1.036a2.625 2.625 0 00-1.91-1.91l-1.036-.258a.75.75 0 010-1.456l1.036-.258a2.625 2.625 0 001.91-1.91l.258-1.036A.75.75 0 0118 1.5zM16.5 15a.75.75 0 01.712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 010 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 01-1.422 0l-.395-1.183a1.5 1.5 0 00-.948-.948l-1.183-.395a.75.75 0 010-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0116.5 15z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+              <span className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
+                Built with • AllYouNeed.Dev
+              </span>
+            </a>
+          </div>
 
           {/* Footer Text */}
-          <p className="text-md mt-6 text-center leading-5 text-gray-600 dark:text-gray-400">
+          <p className="text-md mt-6 text-center leading-5 text-zinc-600 dark:text-zinc-400">
             © 2024 All rights reserved.
           </p>
         </div>

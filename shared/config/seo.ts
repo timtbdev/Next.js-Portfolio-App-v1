@@ -1,5 +1,7 @@
+import { SeoType } from "@/types";
+
 // This file contains the core meta data for the application
-const seoConfig: SeoConfigType = {
+const seo: SeoType = {
   title: "Tim | Android Developer",
   subTitle: "Welcome to my portfolio",
   author: {
@@ -85,14 +87,4 @@ const seoConfig: SeoConfigType = {
   ],
 };
 
-// Type for seo data
-export type SeoConfigType = {
-  title: string;
-  subTitle: string;
-  author: { name: string; twitterUrl: string; twitterAddress: string };
-  description: string;
-  keywords: Array<string>;
-  tags: Array<string>;
-};
-
-export default seoConfig;
+export default seo;

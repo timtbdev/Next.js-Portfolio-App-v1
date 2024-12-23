@@ -1,4 +1,4 @@
-import { socialConfig } from "@/config";
+import social from "@/shared/config/social";
 import { ChevronRightIcon } from "lucide-react";
 
 export default async function ContactPage() {
@@ -18,7 +18,7 @@ export default async function ContactPage() {
           role="list"
           className="-mt-6 divide-y divide-gray-900/5 border-b border-gray-900/5 dark:divide-gray-400/10 dark:border-gray-400/10"
         >
-          {socialConfig.map((item, index) => (
+          {social.map((item, index) => (
             <li key={index} className="relative flex gap-x-6 py-6">
               <div className="flex size-10 flex-none items-center justify-center rounded-lg shadow-sm ring-1 ring-gray-900/10 dark:ring-gray-400/10">
                 <item.icon

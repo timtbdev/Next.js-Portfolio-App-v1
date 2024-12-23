@@ -1,19 +1,12 @@
+import { SocialType } from "@/types";
 import {
   GithubIcon,
   Play as GoogleIcon,
   LinkedinIcon as LinkedInIcon,
-  MailIcon,
   Twitter as XIcon,
 } from "lucide-react";
 
-type SocialType = {
-  id: number;
-  name: string;
-  href: string;
-  icon: React.FC<{ className?: string }>;
-};
-
-const socialConfig: SocialType[] = [
+const social: SocialType[] = [
   {
     id: 1,
     name: "X.com",
@@ -40,4 +33,4 @@ const socialConfig: SocialType[] = [
   },
 ];
 
-export default socialConfig;
+export default social;

@@ -1,12 +1,7 @@
-export type PostType = {
-  id: number;
-  title: string;
-  image: ImageType;
-  content: ContentType[];
-};
-
 export type ContentType = {
-  text: string;
+  id?: number;
+  title?: string;
+  text: string[];
   image?: ImageType;
   url?: UrlType;
 };
@@ -19,16 +14,27 @@ export type ImageType = {
 export type UrlType = {
   link: string;
   text: string;
-  external: boolean;
 };
 
-export type ProfileConfigType = {
+export type SeoType = {
   title: string;
-  image: ImageType;
-  content: ContentType[];
+  subTitle: string;
+  author: { name: string; twitterUrl: string; twitterAddress: string };
+  description: string;
+  keywords: Array<string>;
+  tags: Array<string>;
 };
 
-export type AboutMeConfigType = {
-  image: ImageType;
-  content: ContentType[];
+type SocialType = {
+  id: number;
+  name: string;
+  href: string;
+  icon: React.FC<{ className?: string }>;
+};
+
+type MenuType = {
+  id: number;
+  title: string;
+  slug: string;
+  icon: React.FC<{ className?: string }>;
 };
