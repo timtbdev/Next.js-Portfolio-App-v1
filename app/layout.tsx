@@ -2,6 +2,7 @@ import "@/styles/tailwind.css";
 import Container from "@/components/container";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import Main from "@/components/main";
 import seo from "@/config/seo";
 import { SeoType } from "@/types";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
@@ -51,12 +52,12 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <main className="bg-zinc-50 font-sans dark:bg-zinc-900/30">
+            <Main>
               <Header />
               <Container>{children}</Container>
               <Footer />
               <VercelAnalytics />
-            </main>
+            </Main>
           </ThemeProvider>
         </body>
       </html>

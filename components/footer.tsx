@@ -50,7 +50,7 @@ export default function Footer() {
               href="https://allyouneed.dev"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative inset-px inline-flex items-center gap-x-1.5 rounded-full bg-white p-2 shadow-md shadow-gray-800/5 ring-1 ring-zinc-600/20 hover:bg-zinc-200/40 dark:bg-zinc-900 dark:ring-zinc-700/40 dark:hover:bg-zinc-500/10"
+              className="transiton group relative inset-px inline-flex items-center gap-x-1.5 rounded-full bg-gradient-to-t from-gray-100 via-gray-50 to-white px-3 py-2 shadow-md shadow-black/5 ring-1 ring-black/10 transition duration-200 hover:bg-gradient-to-tr hover:from-gray-100 hover:via-gray-100 hover:to-gray-50 active:scale-[96%] active:ring-black/20 dark:bg-gradient-to-bl dark:from-zinc-800/20 dark:via-zinc-800/10 dark:to-zinc-800 dark:ring-zinc-700/40 dark:hover:bg-gradient-to-tr dark:hover:from-zinc-800/20 dark:hover:via-zinc-800/10 dark:hover:to-zinc-800"
               aria-label="Visit allyouneed.dev"
             >
               {/* Sparkles Icon */}

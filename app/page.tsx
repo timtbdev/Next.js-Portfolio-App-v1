@@ -1,3 +1,4 @@
+import Card from "@/components/card";
 import { ContentType } from "@/types";
 import Image from "next/image";
 
@@ -19,7 +20,7 @@ const content: ContentType = {
 
 export default async function HomePage() {
   return (
-    <div>
+    <Card>
       {/* Profile Image */}
       <div className="lg:aspect-square relative mx-auto flex aspect-[16/9] sm:aspect-[2/1] lg:max-w-3xl">
         <Image
@@ -45,6 +46,6 @@ export default async function HomePage() {
           ))}
         </div>
       </article>
-    </div>
+    </Card>
   );
 }

@@ -278,7 +278,7 @@ export default function Header() {
             {({ open }) => (
               <>
                 <PopoverButton
-                  className="group relative z-10 inline-flex items-center rounded-lg p-2 hover:bg-zinc-200/40 dark:hover:bg-zinc-500/10"
+                  className="transiton group relative inset-px z-10 inline-flex rounded-md bg-gradient-to-t from-gray-100 via-gray-50 to-white p-2 shadow-md shadow-black/5 ring-1 ring-black/10 transition duration-200 hover:bg-gradient-to-tr hover:from-gray-100 hover:via-gray-100 hover:to-gray-50 active:scale-[96%] active:ring-black/20 dark:from-zinc-800/20 dark:via-zinc-800/10 dark:to-zinc-800 dark:ring-zinc-700/40 dark:hover:from-zinc-800/20 dark:hover:via-zinc-800/10 dark:hover:to-zinc-800"
                   aria-label="Toggle site navigation"
                 >
                   {({ open }) =>
