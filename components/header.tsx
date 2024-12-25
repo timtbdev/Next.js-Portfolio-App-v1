@@ -32,7 +32,7 @@ function Logo() {
         />
       </div>
       {/* Logo Text */}
-      <div className="text-md ml-2 font-medium text-zinc-600 group-hover:text-zinc-950 dark:text-zinc-400 dark:group-hover:text-white">
+      <div className="text-md ml-2 font-medium text-zinc-600 group-hover:text-blue-500 dark:text-zinc-400 dark:group-hover:text-sky-500">
         Tim
       </div>
     </Link>
