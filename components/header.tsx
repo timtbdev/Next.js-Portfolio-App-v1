@@ -2,6 +2,7 @@
 
 import logo from "@/public/images/logo.png";
 import { MenuType } from "@/types";
+import { cn } from "@/utils/helpers";
 import {
   CloseButton,
   Popover,
@@ -205,7 +206,10 @@ function ToggleTheme({ className }: { className?: string }) {
     <button
       type="button"
       aria-label="Toggle theme"
-      className={`transiton group inset-px flex rounded-full border-none bg-transparent bg-white p-2 shadow-md shadow-zinc-800/5 ring-1 ring-zinc-600/20 hover:bg-zinc-200/40 dark:bg-zinc-900 dark:ring-zinc-700/40 dark:hover:bg-zinc-500/10 ${className}`}
+      className={cn(
+        "transiton group inset-px flex rounded-full bg-gradient-to-t from-gray-100 via-gray-50 to-white p-2 shadow-md shadow-black/5 ring-1 ring-black/10 transition duration-200 hover:bg-gradient-to-tr hover:from-gray-100 hover:via-gray-100 hover:to-gray-50 active:scale-[96%] active:ring-black/20 dark:from-zinc-800/20 dark:via-zinc-800/10 dark:to-zinc-800 dark:ring-zinc-700/40 dark:hover:from-zinc-800/20 dark:hover:via-zinc-800/10 dark:hover:to-zinc-800",
+        className,
+      )}
       // Toggle between light and dark themes on button click
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       suppressHydrationWarning
@@ -241,12 +245,20 @@ export default function Header() {
 
         {/* Desktop Navigation Links */}
         {/* This will be hidden on mobile devices */}
-        <div className="hidden gap-x-10 lg:flex lg:flex-1">
+        <div className="hidden gap-x-5 lg:flex lg:flex-1">
           {menuConfig.map((menuItem) => (
             <Link
               key={menuItem.title}
               href={menuItem.slug}
-              className={`text-md font-medium ${currentPath === menuItem.slug ? "text-zinc-950 dark:text-zinc-300" : "text-zinc-600 dark:text-zinc-400"} hover:text-zinc-950 dark:hover:text-white`}
+              className={cn(
+                "relative inline-flex items-center rounded-full px-4 py-1.5 text-base font-semibold text-zinc-600 ring-1 ring-transparent transition duration-200 active:scale-[96%] active:ring-black/20 dark:text-zinc-400",
+                {
+                  "bg-transparent ring-transparent hover:bg-gradient-to-tr hover:from-gray-200 hover:via-gray-100 hover:to-gray-50 hover:shadow-md hover:shadow-black/5 hover:ring-1 hover:ring-black/10 dark:hover:from-zinc-800/20 dark:hover:via-zinc-800/10 dark:hover:to-zinc-800 dark:hover:ring-zinc-700/40":
+                    currentPath !== menuItem.slug,
+                  "bg-gradient-to-r from-gray-200 via-gray-100 to-gray-50 px-4 shadow-md shadow-black/5 ring-1 ring-black/10 dark:from-zinc-800/20 dark:via-zinc-800/10 dark:to-zinc-800 dark:ring-zinc-700/40":
+                    currentPath === menuItem.slug,
+                },
+              )}
               aria-current={currentPath === menuItem.slug ? "page" : undefined}
               prefetch={true}
             >
