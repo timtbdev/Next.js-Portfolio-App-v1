@@ -1,7 +1,7 @@
 "use client";
 
+import menuConfig from "@/config/menu";
 import logo from "@/public/images/logo.png";
-import { MenuType } from "@/types";
 import { cn } from "@/utils/helpers";
 import {
   CloseButton,
@@ -11,53 +11,11 @@ import {
   PopoverPanel,
 } from "@headlessui/react";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  X as CloseIcon,
-  CodeIcon,
-  FileTextIcon,
-  HomeIcon,
-  MailIcon,
-  Menu as MenuIcon,
-  UserIcon,
-} from "lucide-react";
+import { X as CloseIcon, MenuIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-
-// Menu Configuration
-const menuConfig: MenuType[] = [
-  {
-    id: 1,
-    title: "Home",
-    slug: "/",
-    icon: HomeIcon,
-  },
-  {
-    id: 2,
-    title: "About",
-    slug: "/about",
-    icon: UserIcon,
-  },
-  {
-    id: 3,
-    title: "Projects",
-    slug: "/projects",
-    icon: CodeIcon,
-  },
-  {
-    id: 3,
-    title: "Blog",
-    slug: "/blog",
-    icon: FileTextIcon,
-  },
-  {
-    id: 4,
-    title: "Contact",
-    slug: "/contact",
-    icon: MailIcon,
-  },
-];
 
 // Logo Component
 function Logo() {
@@ -207,7 +165,7 @@ function ToggleTheme({ className }: { className?: string }) {
       type="button"
       aria-label="Toggle theme"
       className={cn(
-        "transiton group inset-px flex rounded-full bg-gradient-to-t from-gray-100 via-gray-50 to-white p-2 shadow-md shadow-black/5 ring-1 ring-black/10 transition duration-200 hover:bg-gradient-to-tr hover:from-gray-100 hover:via-gray-100 hover:to-gray-50 active:scale-[96%] active:ring-black/20 dark:from-zinc-800/20 dark:via-zinc-800/10 dark:to-zinc-800 dark:ring-zinc-700/40 dark:hover:from-zinc-800/20 dark:hover:via-zinc-800/10 dark:hover:to-zinc-800",
+        "transiton group inset-px flex rounded-full bg-gradient-to-t from-gray-100 via-gray-50 to-white p-2 shadow-md shadow-black/5 ring-1 ring-black/10 transition duration-200 hover:bg-gradient-to-tr hover:from-gray-100 hover:via-gray-100 hover:to-gray-50 dark:bg-gradient-to-bl dark:from-zinc-800/20 dark:via-zinc-800/10 dark:to-zinc-800 dark:ring-zinc-700/40 dark:hover:bg-gradient-to-tr dark:hover:from-zinc-800/20 dark:hover:via-zinc-800/10 dark:hover:to-zinc-800",
         className,
       )}
       // Toggle between light and dark themes on button click
@@ -244,7 +202,6 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation Links */}
-        {/* This will be hidden on mobile devices */}
         <div className="hidden gap-x-5 lg:flex lg:flex-1">
           {menuConfig.map((menuItem) => (
             <Link
@@ -269,25 +226,43 @@ export default function Header() {
 
         <div className="flex flex-1 justify-end">
           {/* Toggle Theme Button for Desktop Navigation*/}
-          {/* This will be hidden on mobile devices */}
           <ToggleTheme className="hidden lg:block" />
 
           {/* Mobile Navigation*/}
-          {/* This will be show up on mobile devices */}
           <Popover className="lg:hidden">
             {({ open }) => (
               <>
                 <PopoverButton
-                  className="transiton group relative inset-px z-10 inline-flex rounded-md bg-gradient-to-t from-gray-100 via-gray-50 to-white p-2 shadow-md shadow-black/5 ring-1 ring-black/10 transition duration-200 hover:bg-gradient-to-tr hover:from-gray-100 hover:via-gray-100 hover:to-gray-50 active:scale-[96%] active:ring-black/20 dark:from-zinc-800/20 dark:via-zinc-800/10 dark:to-zinc-800 dark:ring-zinc-700/40 dark:hover:from-zinc-800/20 dark:hover:via-zinc-800/10 dark:hover:to-zinc-800"
+                  className="transiton group relative inset-px z-10 inline-flex rounded-md bg-transparent p-2 focus:outline-none"
                   aria-label="Toggle site navigation"
                 >
-                  {({ open }) =>
-                    open ? (
-                      <CloseIcon className="h-6 w-6 text-zinc-600 group-hover:text-zinc-950 dark:text-zinc-400 dark:group-hover:text-white" />
-                    ) : (
-                      <MenuIcon className="h-6 w-6 text-zinc-600 group-hover:text-zinc-950 dark:text-zinc-400 dark:group-hover:text-white" />
-                    )
-                  }
+                  {({ open }) => (
+                    <div className="flex h-6 w-6 items-center justify-center text-zinc-600 dark:text-zinc-400">
+                      <span
+                        aria-hidden="true"
+                        className={cn(
+                          "absolute block h-0.5 w-5 bg-current transition-transform duration-500 ease-in-out",
+                          { "rotate-45": open },
+                          { "-translate-y-1.5": !open },
+                        )}
+                      ></span>
+                      <span
+                        aria-hidden="true"
+                        className={cn(
+                          "absolute block h-0.5 w-5 bg-current transition-transform duration-500 ease-in-out",
+                          { "opacity-0": open },
+                        )}
+                      ></span>
+                      <span
+                        aria-hidden="true"
+                        className={cn(
+                          "absolute block h-0.5 w-5 bg-current transition-transform duration-500 ease-in-out",
+                          { "-rotate-45": open },
+                          { "translate-y-1.5": !open },
+                        )}
+                      ></span>
+                    </div>
+                  )}
                 </PopoverButton>
                 <AnimatePresence initial={false}>
                   {open && (
@@ -321,7 +296,7 @@ export default function Header() {
                                 href={menuItem.slug}
                                 className={`${
                                   currentPath === menuItem.slug
-                                    ? "bg-zinc-200/40 text-zinc-950 dark:bg-zinc-500/10 dark:text-white"
+                                    ? "bg-gradient-to-r from-gray-200 via-gray-100 to-gray-50 px-4 text-zinc-950 shadow-md shadow-black/5 ring-1 ring-black/10 dark:from-zinc-800/20 dark:via-zinc-800/10 dark:to-zinc-800 dark:text-white dark:ring-zinc-700/40"
                                     : "text-zinc-600 hover:bg-zinc-200/40 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-zinc-500/10 dark:hover:text-white"
                                 } text-md group flex gap-x-4 rounded-full p-4 font-semibold`}
                               >

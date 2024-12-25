@@ -7,7 +7,7 @@ import {
   UserIcon,
 } from "lucide-react";
 
-const menu: MenuType[] = [
+const menuConfig: MenuType[] = [
   {
     id: 1,
     title: "Home",
@@ -40,4 +40,4 @@ const menu: MenuType[] = [
   },
 ];
 
-export default menu;
+export default menuConfig;

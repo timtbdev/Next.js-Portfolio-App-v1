@@ -6,7 +6,7 @@ import {
   Twitter as XIcon,
 } from "lucide-react";
 
-const social: SocialType[] = [
+const socialConfig: SocialType[] = [
   {
     id: 1,
     name: "X.com",
@@ -33,4 +33,4 @@ const social: SocialType[] = [
   },
 ];
 
-export default social;
+export default socialConfig;

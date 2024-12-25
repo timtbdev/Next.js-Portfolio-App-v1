@@ -1,7 +1,7 @@
 import { SeoType } from "@/types";
 
 // This file contains the core meta data for the application
-const seo: SeoType = {
+const seoConfig: SeoType = {
   title: "Tim | Android Developer",
   subTitle: "Welcome to my portfolio",
   author: {
@@ -87,4 +87,4 @@ const seo: SeoType = {
   ],
 };
 
-export default seo;
+export default seoConfig;

@@ -1,4 +1,4 @@
-import menu from "@/config/menu";
+import menuConfig from "@/config/menu";
 import social from "@/config/social";
 import { Link } from "next-view-transitions";
 
@@ -12,11 +12,11 @@ export default function Footer() {
             aria-label="Footer"
             className="mx-auto -mb-6 hidden columns-3 gap-x-10 text-center sm:flex sm:justify-center"
           >
-            {menu.map((item) => (
+            {menuConfig.map((item) => (
               <div key={item.title} className="pb-6">
                 <Link
                   href={item.slug}
-                  className="text-md font-medium text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
+                  className="text-md font-medium text-zinc-600 hover:text-blue-500 dark:text-zinc-400 dark:hover:text-sky-500"
                   prefetch={true}
                 >
                   {item.title}

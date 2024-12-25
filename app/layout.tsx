@@ -3,8 +3,7 @@ import Container from "@/components/container";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Main from "@/components/main";
-import seo from "@/config/seo";
-import { SeoType } from "@/types";
+import seoConfig from "@/config/seo";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
@@ -21,17 +20,17 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: {
     template: "%s | Portfolio",
-    default: seo.title,
+    default: seoConfig.title,
   },
-  generator: seo.author.name,
-  applicationName: seo.title,
-  description: seo.description,
+  generator: seoConfig.author.name,
+  applicationName: seoConfig.title,
+  description: seoConfig.description,
   referrer: "origin-when-cross-origin",
-  keywords: seo.keywords,
+  keywords: seoConfig.keywords,
   authors: [
     {
-      name: seo.author.name,
-      url: seo.author.twitterUrl,
+      name: seoConfig.author.name,
+      url: seoConfig.author.twitterUrl,
     },
   ],
   // Add other metadata properties as needed
