@@ -29,7 +29,9 @@ type SocialType = {
   id: number;
   name: string;
   href: string;
-  icon: React.FC<{ className?: string }>;
+  icon: ForwardRefExoticComponent<
+    Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
+  >;
 };
 
 type MenuType = {

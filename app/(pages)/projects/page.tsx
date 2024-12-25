@@ -48,7 +48,7 @@ export default async function ProjectPage() {
               alt={item.image?.alt || "Project Image"}
               fill={true}
               priority={true}
-              className="absolute inset-0 h-full w-full bg-gray-50 object-cover sm:rounded-2xl"
+              className="absolute inset-0 h-full w-full bg-gray-50 object-cover md:rounded-2xl"
             />
           </div>
           <div className="relative mx-auto max-w-3xl px-6 py-4">

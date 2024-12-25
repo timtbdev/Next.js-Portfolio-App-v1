@@ -1,5 +1,5 @@
-import menu from "@/shared/config/menu";
-import social from "@/shared/config/social";
+import menu from "@/config/menu";
+import social from "@/config/social";
 import { Link } from "next-view-transitions";
 
 export default function Footer() {
@@ -35,8 +35,10 @@ export default function Footer() {
               >
                 <span className="sr-only">{item.name}</span>
                 <item.icon
+                  strokeWidth={1.5}
+                  stroke="currentColor"
                   aria-hidden="true"
-                  className="h-6 w-6 text-zinc-600 dark:text-zinc-400"
+                  className="h-6 w-6 text-zinc-500 dark:text-zinc-400"
                 />
               </Link>
             ))}

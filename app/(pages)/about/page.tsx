@@ -33,7 +33,7 @@ export default async function AboutPage() {
           alt={content.image?.alt || "Profile picture"}
           fill={true}
           priority={true}
-          className="absolute inset-0 h-full w-full bg-gray-50 object-cover sm:rounded-2xl"
+          className="absolute inset-0 h-full w-full bg-gray-50 object-cover md:rounded-2xl"
           unoptimized
         />
       </div>
@@ -47,7 +47,6 @@ export default async function AboutPage() {
           ))}
         </div>
       </div>
-      ;
     </div>
   );
 }

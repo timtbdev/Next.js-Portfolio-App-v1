@@ -2,7 +2,7 @@ import "@/styles/tailwind.css";
 import Container from "@/components/container";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import seo from "@/shared/config/seo";
+import seo from "@/config/seo";
 import { SeoType } from "@/types";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
@@ -44,19 +44,19 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en" suppressHydrationWarning>
-        <body className={fontSans.variable}>
+        <body className={`antialiased ${fontSans.variable}`}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            <div className="bg-zinc-50 font-sans dark:bg-zinc-900/30">
+            <main className="bg-zinc-50 font-sans dark:bg-zinc-900/30">
               <Header />
               <Container>{children}</Container>
               <Footer />
               <VercelAnalytics />
-            </div>
+            </main>
           </ThemeProvider>
         </body>
       </html>

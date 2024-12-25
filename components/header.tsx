@@ -1,8 +1,6 @@
 "use client";
 
-import Logo from "@/components/logo";
-import ToggleTheme from "@/components/toggleTheme";
-import { cn } from "@/shared/lib/helpers";
+import logo from "@/public/images/logo.png";
 import { MenuType } from "@/types";
 import {
   CloseButton,
@@ -21,7 +19,9 @@ import {
   Menu as MenuIcon,
   UserIcon,
 } from "lucide-react";
+import { useTheme } from "next-themes";
 import { Link } from "next-view-transitions";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 // Menu Configuration
@@ -58,13 +58,181 @@ const menuConfig: MenuType[] = [
   },
 ];
 
+// Logo Component
+function Logo() {
+  return (
+    <Link href="/" className="group mr-4 flex items-center">
+      {/* Logo Image */}
+      <div className="group flex h-10 w-10 items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-600/20 dark:ring-zinc-700/40">
+        <Image
+          src={logo}
+          alt="Logo"
+          width={48}
+          height={48}
+          className="rounded-full object-cover"
+        />
+      </div>
+      {/* Logo Text */}
+      <div className="text-md ml-2 font-medium text-zinc-600 group-hover:text-zinc-950 dark:text-zinc-400 dark:group-hover:text-white">
+        Tim
+      </div>
+    </Link>
+  );
+}
+
+function SunIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      className={className}
+    >
+      <g fill="currentColor" strokeLinecap="round" strokeLinejoin="round">
+        <line
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          x1="1"
+          y1="12"
+          x2="2"
+          y2="12"
+        ></line>{" "}
+        <line
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          x1="4.2"
+          y1="4.2"
+          x2="4.9"
+          y2="4.9"
+        ></line>{" "}
+        <line
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          x1="12"
+          y1="1"
+          x2="12"
+          y2="2"
+        ></line>{" "}
+        <line
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          x1="19.8"
+          y1="4.2"
+          x2="19.1"
+          y2="4.9"
+        ></line>{" "}
+        <line
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          x1="23"
+          y1="12"
+          x2="22"
+          y2="12"
+        ></line>{" "}
+        <line
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          x1="19.8"
+          y1="19.8"
+          x2="19.1"
+          y2="19.1"
+        ></line>{" "}
+        <line
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          x1="12"
+          y1="23"
+          x2="12"
+          y2="22"
+        ></line>{" "}
+        <line
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          x1="4.2"
+          y1="19.8"
+          x2="4.9"
+          y2="19.1"
+        ></line>{" "}
+        <circle
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          cx="12"
+          cy="12"
+          r="6"
+        ></circle>
+      </g>
+    </svg>
+  );
+}
+
+function MoonIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      className={className}
+    >
+      <g strokeLinecap="round" strokeLinejoin="round">
+        <path
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          d="M19,15C13.5,15,9,10.5,9,5 c0-0.9,0.1-1.8,0.4-2.6C5.1,3.5,2,7.4,2,12c0,5.5,4.5,10,10,10c4.6,0,8.5-3.1,9.6-7.4C20.8,14.9,19.9,15,19,15z"
+        ></path>
+      </g>
+    </svg>
+  );
+}
+
+// Toggle Theme Component
+function ToggleTheme({ className }: { className?: string }) {
+  // Destructure resolvedTheme and setTheme from useTheme hook
+  let { resolvedTheme, setTheme } = useTheme();
+
+  return (
+    <button
+      type="button"
+      aria-label="Toggle theme"
+      className={`transiton group inset-px flex rounded-full border-none bg-transparent bg-white p-2 shadow-md shadow-zinc-800/5 ring-1 ring-zinc-600/20 hover:bg-zinc-200/40 dark:bg-zinc-900 dark:ring-zinc-700/40 dark:hover:bg-zinc-500/10 ${className}`}
+      // Toggle between light and dark themes on button click
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+      suppressHydrationWarning
+    >
+      {/* Sun icon for light theme, hidden in dark mode */}
+      <SunIcon className="hidden h-6 w-6 text-zinc-400 dark:block" />
+      {/* Moon icon for dark theme, hidden in light mode */}
+      <MoonIcon className="h-6 w-6 text-zinc-600 dark:hidden" />
+      {/* Visually hidden text for screen readers to describe the toggle theme button */}
+
+      <span className="text-md ml-2 flex text-zinc-600 dark:text-zinc-400 md:hidden">
+        Switch to&nbsp;<span className="hidden dark:inline">light</span>
+        <span className="inline dark:hidden">dark</span>
+        &nbsp;mode
+      </span>
+    </button>
+  );
+}
+
+// Header Component
 export default function Header() {
   const currentPath = usePathname();
   return (
     <div className="sticky top-0 z-10 border-b-[1.2px] border-zinc-600/20 bg-white shadow-sm shadow-zinc-800/5 dark:border-zinc-700/40 dark:bg-zinc-900">
       <nav
-        aria-label="Desktop Navigation"
-        className="mx-auto flex max-w-4xl items-center justify-between px-6 py-5"
+        aria-label="Navigation"
+        className="mx-auto flex max-w-4xl items-center justify-between px-6 py-2.5 md:py-5"
       >
         {/* Logo */}
         <div className="z-10 flex flex-1 justify-start">
@@ -90,7 +258,7 @@ export default function Header() {
         <div className="flex flex-1 justify-end">
           {/* Toggle Theme Button for Desktop Navigation*/}
           {/* This will be hidden on mobile devices */}
-          <ToggleTheme mobile={false} className="hidden lg:block" />
+          <ToggleTheme className="hidden lg:block" />
 
           {/* Mobile Navigation*/}
           {/* This will be show up on mobile devices */}
@@ -139,21 +307,19 @@ export default function Header() {
                               <CloseButton
                                 as={Link}
                                 href={menuItem.slug}
-                                className={cn(
+                                className={`${
                                   currentPath === menuItem.slug
                                     ? "bg-zinc-200/40 text-zinc-950 dark:bg-zinc-500/10 dark:text-white"
-                                    : "text-zinc-600 hover:bg-zinc-200/40 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-zinc-500/10 dark:hover:text-white",
-                                  "text-md group flex gap-x-4 rounded-full p-4 font-semibold",
-                                )}
+                                    : "text-zinc-600 hover:bg-zinc-200/40 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-zinc-500/10 dark:hover:text-white"
+                                } text-md group flex gap-x-4 rounded-full p-4 font-semibold`}
                               >
                                 <menuItem.icon
                                   aria-hidden="true"
-                                  className={cn(
+                                  className={`${
                                     currentPath === menuItem.slug
                                       ? "text-zinc-950 dark:text-white"
-                                      : "text-zinc-600 group-hover:text-zinc-950 dark:text-zinc-400 dark:group-hover:text-white",
-                                    "h-6 w-6 flex-shrink-0",
-                                  )}
+                                      : "text-zinc-600 group-hover:text-zinc-950 dark:text-zinc-400 dark:group-hover:text-white"
+                                  } h-6 w-6 flex-shrink-0`}
                                 />
                                 {menuItem.title}
                               </CloseButton>
@@ -162,7 +328,7 @@ export default function Header() {
                         </ul>
                         <div className="mx-auto mt-8 flex items-center justify-center border-t border-zinc-600/20 py-4 text-center dark:border-zinc-700/40">
                           {/* Toggle Theme Button for Mobile Navigation*/}
-                          <ToggleTheme mobile={true} />
+                          <ToggleTheme />
                         </div>
                       </PopoverPanel>
                     </>

@@ -12,8 +12,8 @@ const content: ContentType = {
     text: "Learn more",
   },
   text: [
-    "I’m an Android developer in the Bay Area. I got into app development back in 2013 using Java and XML. Those early apps weren’t big hits, but they taught me a lot. In 2017, I switched to Kotlin and Jetpack Components, and one of my apps got featured by a popular Android YouTuber. Now I focus on Jetpack Compose. I have a Computer Science degree, speak English, German, and Mongolian, and enjoy running when I’m not coding.",
-    "Contact: timtb.dev@gmail.com",
+    "I’m an Android developer in the Bay Area who loves building modern, user-friendly apps. I got started in 2013 with Java and XML, but now I’m all about Kotlin and Jetpack Compose. I’ve published two apps on the Play Store, and one even got a shoutout from a popular Android YouTuber!.",
+    "I have a Bachelor’s degree in Computer Science and speak English, German, and Mongolian. When I’m not coding, you’ll probably find me out running and enjoying the outdoors.",
   ],
 };
 
@@ -27,13 +27,13 @@ export default async function HomePage() {
           alt={content.image?.alt || "Profile picture"}
           fill={true}
           priority={true}
-          className="absolute inset-0 h-full w-full rounded-2xl object-cover shadow-md"
+          className="absolute inset-0 h-full w-full object-cover shadow-md md:rounded-2xl"
           unoptimized
         />
       </div>
-      <div className="relative mx-auto max-w-3xl px-6 py-4">
+      <article className="relative mx-auto max-w-3xl text-pretty px-6 py-4">
         {/* Profile Title */}
-        <h1 className="scroll-m-20 text-3xl font-semibold tracking-tight text-gray-900 first:mt-0 dark:text-gray-100">
+        <h1 className="text-balance text-3xl font-bold tracking-tight text-gray-900 first:mt-0 dark:text-gray-100">
           {content.title}
         </h1>
         {/* Profile Content */}
@@ -44,7 +44,7 @@ export default async function HomePage() {
             </p>
           ))}
         </div>
-      </div>
+      </article>
     </div>
   );
 }
