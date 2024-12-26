@@ -8,7 +8,6 @@ const aboutContentLong: ContentType = {
   url: {
     link: "/files/resume.pdf",
     text: "Download Resume",
-    external: true,
   },
   title: "About Me",
   text: [

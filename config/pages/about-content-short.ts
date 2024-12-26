@@ -9,7 +9,6 @@ const aboutContentShort: ContentType = {
   url: {
     link: "/about",
     text: "Learn more",
-    external: false,
   },
   text: [
     "I’m an Android developer in the Bay Area who loves building modern, user-friendly apps. I got started in 2013 with Java and XML, but now I’m all about Kotlin and Jetpack Compose. I’ve published two apps on the Play Store, and one even got a shoutout from a popular Android YouTuber!.",

@@ -40,60 +40,49 @@ export default function PagePostItem({ content }: Props) {
           ))}
         </div>
         <div className="mt-4 flex sm:mt-6">
-          {content.url?.external ? (
+          {content.url?.link?.startsWith("/") ? (
+            <Link
+              className="group flex w-full items-center justify-center whitespace-nowrap rounded-md border border-zinc-600/20 bg-transparent px-5 py-2.5 text-center text-base font-medium text-zinc-600 shadow-sm transition-all duration-100 ease-in-out hover:opacity-90 group-hover:bg-zinc-200/40 dark:border-zinc-700/40 dark:text-zinc-400 dark:group-hover:bg-gray-500/10 sm:w-fit"
+              href={content.url?.link || "/"}
+            >
+              {content.url?.text || "Learn more"}
+              <RightArrowIcon />
+            </Link>
+          ) : (
             <a
               target="_blank"
               className="group flex w-full items-center justify-center whitespace-nowrap rounded-md border border-zinc-600/20 bg-transparent px-5 py-2.5 text-center text-base font-medium text-zinc-600 shadow-sm transition-all duration-100 ease-in-out hover:opacity-90 group-hover:bg-zinc-200/40 dark:border-zinc-700/40 dark:text-zinc-400 dark:group-hover:bg-gray-500/10 sm:w-fit"
               href={content.url?.link || "/"}
             >
               {content.url?.text || "Learn more"}
-              <svg
-                className="-mr-1 ml-1.5 stroke-zinc-600 stroke-[1.5px] dark:stroke-zinc-400"
-                fill="none"
-                stroke="currentColor"
-                width="11"
-                height="11"
-                viewBox="0 0 10 10"
-                aria-hidden="true"
-              >
-                <path
-                  className="opacity-0 transition group-hover:opacity-100"
-                  d="M0 5h7"
-                ></path>
-                <path
-                  className="transition group-hover:translate-x-[3px]"
-                  d="M1 1l4 4-4 4"
-                ></path>
-              </svg>
+              <RightArrowIcon />
             </a>
-          ) : (
-            <Link
-              className="group flex w-full items-center justify-center whitespace-nowrap rounded-md border border-zinc-600/20 bg-transparent px-5 py-2.5 text-center text-base font-medium text-zinc-600 shadow-sm transition-all duration-100 ease-in-out hover:opacity-90 group-hover:bg-zinc-200/40 dark:border-zinc-700/40 dark:text-zinc-400 dark:group-hover:bg-gray-500/10 sm:w-fit"
-              href={content.url?.link || "/"}
-            >
-              {content.url?.text || "Learn more"}
-              <svg
-                className="-mr-1 ml-1.5 stroke-zinc-600 stroke-[1.5px] dark:stroke-zinc-400"
-                fill="none"
-                stroke="currentColor"
-                width="11"
-                height="11"
-                viewBox="0 0 10 10"
-                aria-hidden="true"
-              >
-                <path
-                  className="opacity-0 transition group-hover:opacity-100"
-                  d="M0 5h7"
-                ></path>
-                <path
-                  className="transition group-hover:translate-x-[3px]"
-                  d="M1 1l4 4-4 4"
-                ></path>
-              </svg>
-            </Link>
           )}
         </div>
       </div>
     </Card>
+  );
+}
+
+export function RightArrowIcon() {
+  return (
+    <svg
+      className="-mr-1 ml-1.5 stroke-zinc-600 stroke-[1.5px] dark:stroke-zinc-400"
+      fill="none"
+      stroke="currentColor"
+      width="11"
+      height="11"
+      viewBox="0 0 10 10"
+      aria-hidden="true"
+    >
+      <path
+        className="opacity-0 transition group-hover:opacity-100"
+        d="M0 5h7"
+      ></path>
+      <path
+        className="transition group-hover:translate-x-[3px]"
+        d="M1 1l4 4-4 4"
+      ></path>
+    </svg>
   );
 }

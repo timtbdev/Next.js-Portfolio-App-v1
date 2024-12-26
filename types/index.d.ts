@@ -14,7 +14,6 @@ export type ImageType = {
 export type UrlType = {
   link: string;
   text: string;
-  external: boolean;
 };
 
 export type SeoType = {
@@ -29,6 +28,7 @@ export type SeoType = {
 type SocialType = {
   id: number;
   name: string;
+  username?: string;
   href: string;
   icon: ForwardRefExoticComponent<
     Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>

@@ -11,7 +11,6 @@ const projects: ContentType[] = [
     url: {
       link: "https://github.com/timtbdev/Portfolio-App-2",
       text: "Learn more",
-      external: true,
     },
     text: [
       "This portfolio app showcases my Android development skills and passion. It’s built with Kotlin, using Android Jetpack, Material Design, and Firebase, along with libraries like Retrofit, OkHttp, Glide, LeakCanary, and Koin.",
@@ -28,7 +27,6 @@ const projects: ContentType[] = [
     url: {
       link: "https://github.com/timtbdev/Portfolio-App-1",
       text: "Learn more",
-      external: true,
     },
     text: [
       "Portfolio App 1.0 is a Java-based Android application that fetches content from a REST API, follows the MVC architecture for clean organization, and uses libraries like Retrofit for API calls, OkHttp for networking, and Glide for smooth image handling.",
