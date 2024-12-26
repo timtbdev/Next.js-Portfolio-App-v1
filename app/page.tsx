@@ -1,5 +1,6 @@
 import Card from "@/components/card";
 import { ContentType } from "@/types";
+import { shimmer, toBase64 } from "@/utils/helpers";
 import Image from "next/image";
 
 const content: ContentType = {
@@ -30,6 +31,9 @@ export default async function HomePage() {
           priority={true}
           className="absolute inset-0 h-full w-full rounded-xl object-cover shadow-md md:rounded-2xl"
           unoptimized
+          placeholder={`data:image/svg+xml;base64,${toBase64(
+            shimmer(256, 256),
+          )}`}
         />
       </div>
       <article className="relative mx-auto max-w-3xl text-pretty px-6 py-4">

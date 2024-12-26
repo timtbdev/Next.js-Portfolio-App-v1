@@ -194,7 +194,7 @@ export default function Header() {
                             </li>
                           ))}
                         </ul>
-                        <div className="mx-auto mt-0 flex items-center justify-center border-t border-zinc-600/20 py-6 text-center dark:border-zinc-700/40">
+                        <div className="mx-auto mt-2 flex items-center justify-center border-t border-zinc-600/20 py-6 text-center dark:border-zinc-700/40">
                           {/* Toggle Theme Button for Mobile Navigation*/}
                           <ToggleTheme />
                         </div>
