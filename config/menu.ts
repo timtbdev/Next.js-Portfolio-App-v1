@@ -1,11 +1,11 @@
-import { MenuType } from "@/types"; // Menu Configuration
 import {
-  CodeIcon,
-  FileTextIcon,
+  AboutIcon,
+  BlogIcon,
+  ContactIcon,
   HomeIcon,
-  MailIcon,
-  UserIcon,
-} from "lucide-react";
+  ProjectIcon,
+} from "@/icons/menu";
+import { MenuType } from "@/types"; // Menu Configuration
 
 const menuConfig: MenuType[] = [
   {
@@ -18,25 +18,25 @@ const menuConfig: MenuType[] = [
     id: 2,
     title: "About",
     slug: "/about",
-    icon: UserIcon,
+    icon: AboutIcon,
   },
   {
     id: 3,
     title: "Projects",
     slug: "/projects",
-    icon: CodeIcon,
+    icon: ProjectIcon,
   },
   {
     id: 3,
     title: "Blog",
     slug: "/blog",
-    icon: FileTextIcon,
+    icon: BlogIcon,
   },
   {
     id: 4,
     title: "Contact",
     slug: "/contact",
-    icon: MailIcon,
+    icon: ContactIcon,
   },
 ];
 

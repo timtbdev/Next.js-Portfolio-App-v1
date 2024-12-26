@@ -1,6 +1,7 @@
 "use client";
 
 import menuConfig from "@/config/menu";
+import { MoonIcon, SunIcon } from "@/icons/theme";
 import logo from "@/public/images/logo.png";
 import { cn } from "@/utils/helpers";
 import {
@@ -39,122 +40,6 @@ function Logo() {
   );
 }
 
-function SunIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      className={className}
-    >
-      <g fill="currentColor" strokeLinecap="round" strokeLinejoin="round">
-        <line
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          x1="1"
-          y1="12"
-          x2="2"
-          y2="12"
-        ></line>{" "}
-        <line
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          x1="4.2"
-          y1="4.2"
-          x2="4.9"
-          y2="4.9"
-        ></line>{" "}
-        <line
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          x1="12"
-          y1="1"
-          x2="12"
-          y2="2"
-        ></line>{" "}
-        <line
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          x1="19.8"
-          y1="4.2"
-          x2="19.1"
-          y2="4.9"
-        ></line>{" "}
-        <line
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          x1="23"
-          y1="12"
-          x2="22"
-          y2="12"
-        ></line>{" "}
-        <line
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          x1="19.8"
-          y1="19.8"
-          x2="19.1"
-          y2="19.1"
-        ></line>{" "}
-        <line
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          x1="12"
-          y1="23"
-          x2="12"
-          y2="22"
-        ></line>{" "}
-        <line
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          x1="4.2"
-          y1="19.8"
-          x2="4.9"
-          y2="19.1"
-        ></line>{" "}
-        <circle
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          cx="12"
-          cy="12"
-          r="6"
-        ></circle>
-      </g>
-    </svg>
-  );
-}
-
-function MoonIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      className={className}
-    >
-      <g strokeLinecap="round" strokeLinejoin="round">
-        <path
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          d="M19,15C13.5,15,9,10.5,9,5 c0-0.9,0.1-1.8,0.4-2.6C5.1,3.5,2,7.4,2,12c0,5.5,4.5,10,10,10c4.6,0,8.5-3.1,9.6-7.4C20.8,14.9,19.9,15,19,15z"
-        ></path>
-      </g>
-    </svg>
-  );
-}
-
 // Toggle Theme Component
 function ToggleTheme({ className }: { className?: string }) {
   // Destructure resolvedTheme and setTheme from useTheme hook
@@ -165,7 +50,7 @@ function ToggleTheme({ className }: { className?: string }) {
       type="button"
       aria-label="Toggle theme"
       className={cn(
-        "transiton group inset-px flex rounded-full bg-gradient-to-t from-gray-100 via-gray-50 to-white p-2 shadow-md shadow-black/5 ring-1 ring-black/10 transition duration-200 hover:bg-gradient-to-tr hover:from-gray-100 hover:via-gray-100 hover:to-gray-50 dark:bg-gradient-to-bl dark:from-zinc-800/20 dark:via-zinc-800/10 dark:to-zinc-800 dark:ring-zinc-700/40 dark:hover:bg-gradient-to-tr dark:hover:from-zinc-800/20 dark:hover:via-zinc-800/10 dark:hover:to-zinc-800",
+        "transiton group inset-px flex gap-1 rounded-full bg-gradient-to-t from-gray-100 via-gray-50 to-white p-3 shadow-md shadow-black/5 ring-1 ring-black/10 transition duration-200 hover:bg-gradient-to-tr hover:from-gray-100 hover:via-gray-100 hover:to-gray-50 dark:bg-gradient-to-bl dark:from-zinc-800/20 dark:via-zinc-800/10 dark:to-zinc-800 dark:ring-zinc-700/40 dark:hover:bg-gradient-to-tr dark:hover:from-zinc-800/20 dark:hover:via-zinc-800/10 dark:hover:to-zinc-800",
         className,
       )}
       // Toggle between light and dark themes on button click
@@ -178,7 +63,7 @@ function ToggleTheme({ className }: { className?: string }) {
       <MoonIcon className="h-6 w-6 text-zinc-600 dark:hidden" />
       {/* Visually hidden text for screen readers to describe the toggle theme button */}
 
-      <span className="text-md ml-2 flex text-zinc-600 dark:text-zinc-400 md:hidden">
+      <span className="text-md flex text-base font-semibold text-zinc-600 dark:text-zinc-400 md:hidden">
         Switch to&nbsp;<span className="hidden dark:inline">light</span>
         <span className="inline dark:hidden">dark</span>
         &nbsp;mode
@@ -285,7 +170,7 @@ export default function Header() {
                           y: -32,
                           transition: { duration: 0.2 },
                         }}
-                        className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-zinc-50 px-6 pb-6 pt-24 shadow-2xl shadow-zinc-800/5 dark:bg-zinc-900"
+                        className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-zinc-50 px-6 pt-24 shadow-2xl shadow-zinc-800/5 dark:bg-zinc-900"
                       >
                         {/* Mobile Navigation Links */}
                         <ul className="space-y-2">
@@ -296,24 +181,20 @@ export default function Header() {
                                 href={menuItem.slug}
                                 className={`${
                                   currentPath === menuItem.slug
-                                    ? "bg-gradient-to-r from-gray-200 via-gray-100 to-gray-50 px-4 text-zinc-950 shadow-md shadow-black/5 ring-1 ring-black/10 dark:from-zinc-800/20 dark:via-zinc-800/10 dark:to-zinc-800 dark:text-white dark:ring-zinc-700/40"
-                                    : "text-zinc-600 hover:bg-zinc-200/40 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-zinc-500/10 dark:hover:text-white"
+                                    ? "bg-gradient-to-r from-gray-200 via-gray-100 to-gray-50 px-4 text-zinc-600 shadow-md shadow-black/5 ring-1 ring-black/10 dark:from-zinc-800/20 dark:via-zinc-800/10 dark:to-zinc-800 dark:text-zinc-400 dark:ring-zinc-700/40"
+                                    : "text-zinc-600 hover:bg-zinc-200/40 dark:text-zinc-400 dark:hover:bg-zinc-500/10"
                                 } text-md group flex gap-x-4 rounded-full p-4 font-semibold`}
                               >
                                 <menuItem.icon
                                   aria-hidden="true"
-                                  className={`${
-                                    currentPath === menuItem.slug
-                                      ? "text-zinc-950 dark:text-white"
-                                      : "text-zinc-600 group-hover:text-zinc-950 dark:text-zinc-400 dark:group-hover:text-white"
-                                  } h-6 w-6 flex-shrink-0`}
+                                  className="text-zinc-600 dark:text-zinc-400"
                                 />
                                 {menuItem.title}
                               </CloseButton>
                             </li>
                           ))}
                         </ul>
-                        <div className="mx-auto mt-8 flex items-center justify-center border-t border-zinc-600/20 py-4 text-center dark:border-zinc-700/40">
+                        <div className="mx-auto mt-0 flex items-center justify-center border-t border-zinc-600/20 py-6 text-center dark:border-zinc-700/40">
                           {/* Toggle Theme Button for Mobile Navigation*/}
                           <ToggleTheme />
                         </div>

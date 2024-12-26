@@ -1,17 +1,18 @@
-import { SocialType } from "@/types";
 import {
+  FacebookIcon,
   GithubIcon,
-  Play as GoogleIcon,
-  LinkedinIcon as LinkedInIcon,
-  Twitter as XIcon,
-} from "lucide-react";
+  InstagramIcon,
+  TwitterIcon,
+  YoutubeIcon,
+} from "@/icons/social";
+import { SocialType } from "@/types";
 
 const socialConfig: SocialType[] = [
   {
     id: 1,
     name: "X.com",
     href: "https://x.com/timtbdev",
-    icon: XIcon,
+    icon: TwitterIcon,
   },
   {
     id: 2,
@@ -21,15 +22,21 @@ const socialConfig: SocialType[] = [
   },
   {
     id: 3,
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/timtbdev/",
-    icon: LinkedInIcon,
+    name: "Facebook",
+    href: "https://www.facebook.com/timtbaz/",
+    icon: FacebookIcon,
   },
   {
     id: 4,
-    name: "Google Play",
-    href: "https://play.google.com/store/apps/developer?id=timtbdev",
-    icon: GoogleIcon,
+    name: "Instagram",
+    href: "https://www.instagram.com/tim_tbz/",
+    icon: InstagramIcon,
+  },
+  {
+    id: 5,
+    name: "Youtube",
+    href: "https://www.youtube.com/@timtbdev",
+    icon: YoutubeIcon,
   },
 ];
 
