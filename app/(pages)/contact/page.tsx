@@ -1,4 +1,4 @@
-import social from "@/config/social";
+import social from "@/config/components/social";
 import { ChevronRightIcon } from "lucide-react";
 
 export default async function ContactPage() {

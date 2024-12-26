@@ -14,6 +14,7 @@ export type ImageType = {
 export type UrlType = {
   link: string;
   text: string;
+  external: boolean;
 };
 
 export type SeoType = {

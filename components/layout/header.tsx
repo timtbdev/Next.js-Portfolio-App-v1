@@ -1,6 +1,6 @@
 "use client";
 
-import menuConfig from "@/config/menu";
+import menuConfig from "@/config/components/menu";
 import { MoonIcon, SunIcon } from "@/icons/theme";
 import logo from "@/public/images/logo.png";
 import { cn } from "@/utils/helpers";

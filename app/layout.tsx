@@ -1,9 +1,9 @@
 import "@/styles/tailwind.css";
-import Container from "@/components/container";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
-import Main from "@/components/main";
-import seoConfig from "@/config/seo";
+import Container from "@/components/layout/container";
+import Footer from "@/components/layout/footer";
+import Header from "@/components/layout/header";
+import Main from "@/components/layout/main";
+import seoConfig from "@/config/components/seo";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
