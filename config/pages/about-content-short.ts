@@ -11,8 +11,8 @@ const aboutContentShort: ContentType = {
     text: "Learn more",
   },
   text: [
-    "I’m an Android developer in the Bay Area who loves building modern, user-friendly apps. I got started in 2013 with Java and XML, but now I’m all about Kotlin and Jetpack Compose. I’ve published two apps on the Play Store, and one even got a shoutout from a popular Android YouTuber!.",
-    "I have a Bachelor’s degree in Computer Science and speak English, German, and Mongolian. When I’m not coding, you’ll probably find me out running and enjoying the outdoors.",
+    "I’m an Android developer in the Bay Area who loves building modern, user-friendly apps. I started my journey in app development in 2013 using Java and XML and later transitioned to Kotlin and Jetpack Compose. I’ve published two apps on the Google Play Store, and one was featured by a popular Android YouTuber.",
+    "I have a Computer Science degree, speak English, German, and Mongolian, and enjoy running when I’m not coding.",
   ],
 };
 

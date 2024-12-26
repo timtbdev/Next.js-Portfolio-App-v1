@@ -12,7 +12,6 @@ import {
   PopoverPanel,
 } from "@headlessui/react";
 import { AnimatePresence, motion } from "framer-motion";
-import { X as CloseIcon, MenuIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
@@ -170,7 +169,7 @@ export default function Header() {
                           y: -32,
                           transition: { duration: 0.2 },
                         }}
-                        className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-zinc-50 px-6 pt-24 shadow-2xl shadow-zinc-800/5 dark:bg-zinc-900"
+                        className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-zinc-50 px-6 pt-20 shadow-2xl shadow-zinc-800/5 dark:bg-zinc-900"
                       >
                         {/* Mobile Navigation Links */}
                         <ul className="space-y-2">
@@ -194,7 +193,7 @@ export default function Header() {
                             </li>
                           ))}
                         </ul>
-                        <div className="mx-auto mt-2 flex items-center justify-center border-t border-zinc-600/20 py-6 text-center dark:border-zinc-700/40">
+                        <div className="mx-auto mt-2 flex items-center justify-center py-6 text-center">
                           {/* Toggle Theme Button for Mobile Navigation*/}
                           <ToggleTheme />
                         </div>
