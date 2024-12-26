@@ -2,6 +2,7 @@ import Card from "@/components/card";
 import { ContentType } from "@/types";
 import { shimmer, toBase64 } from "@/utils/helpers";
 import Image from "next/image";
+import Link from "next/link";
 
 const content: ContentType = {
   title: "Hello, I'm Tim.",
@@ -36,19 +37,44 @@ export default async function HomePage() {
           )}`}
         />
       </div>
-      <article className="relative mx-auto max-w-3xl text-pretty px-6 py-4">
+      <article className="relative mx-auto max-w-3xl text-pretty px-2 py-4 sm:px-6">
         {/* Profile Title */}
-        <h1 className="text-balance text-xl font-bold tracking-tight text-gray-900 first:mt-0 dark:text-gray-100 md:text-2xl">
+        <h1 className="text-balance text-3xl font-bold tracking-tight text-zinc-950 first:mt-0 dark:text-white/90 sm:text-4xl">
           {content.title}
         </h1>
         {/* Profile Content */}
-        <div className="text-base leading-7 text-gray-600 dark:text-gray-400 md:leading-8">
+        <div className="mb-2 leading-7 text-gray-600 dark:text-gray-400 sm:text-lg sm:leading-8">
           {content.text.map((item, index) => (
             <p key={index} className="mt-2 text-wrap">
               {item}
             </p>
           ))}
         </div>
+        {/* Learn More Button */}
+        <Link
+          className="mt-6 inline-flex w-full items-center justify-center whitespace-nowrap rounded-md border border-zinc-600/20 bg-transparent px-5 py-2.5 text-center text-base font-medium text-zinc-600 shadow-sm transition-all duration-100 ease-in-out hover:bg-zinc-200/40 hover:opacity-90 dark:border-zinc-700/40 dark:text-zinc-400 dark:hover:bg-gray-500/10 sm:mt-0 sm:w-fit"
+          href="/about"
+        >
+          Learn more
+          <svg
+            className="-mr-1 ml-1.5 stroke-zinc-600 stroke-[1.5px] dark:stroke-zinc-400"
+            fill="none"
+            stroke="currentColor"
+            width="11"
+            height="11"
+            viewBox="0 0 10 10"
+            aria-hidden="true"
+          >
+            <path
+              className="opacity-0 transition group-hover:opacity-100"
+              d="M0 5h7"
+            ></path>
+            <path
+              className="transition group-hover:translate-x-[3px]"
+              d="M1 1l4 4-4 4"
+            ></path>
+          </svg>
+        </Link>
       </article>
     </Card>
   );
