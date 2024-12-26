@@ -28,19 +28,19 @@ export default async function HomePage() {
           alt={content.image?.alt || "Profile picture"}
           fill={true}
           priority={true}
-          className="absolute inset-0 h-full w-full rounded-2xl object-cover shadow-md"
+          className="absolute inset-0 h-full w-full rounded-xl object-cover shadow-md md:rounded-2xl"
           unoptimized
         />
       </div>
       <article className="relative mx-auto max-w-3xl text-pretty px-6 py-4">
         {/* Profile Title */}
-        <h1 className="text-balance text-3xl font-bold tracking-tight text-gray-900 first:mt-0 dark:text-gray-100">
+        <h1 className="text-balance text-2xl font-bold tracking-tight text-gray-900 first:mt-0 dark:text-gray-100 md:text-3xl">
           {content.title}
         </h1>
         {/* Profile Content */}
-        <div className="text-wrap border-b border-gray-200 text-lg leading-8 text-gray-600 last:border-b-0 dark:border-gray-600 dark:text-gray-400">
+        <div className="text-base leading-7 text-gray-600 dark:text-gray-400 md:text-lg md:leading-8">
           {content.text.map((item, index) => (
-            <p key={index} className="mt-4">
+            <p key={index} className="mt-2 text-wrap md:mt-4">
               {item}
             </p>
           ))}
