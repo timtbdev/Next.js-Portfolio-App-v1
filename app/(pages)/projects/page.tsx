@@ -1,4 +1,6 @@
+import Card from "@/components/card";
 import { ContentType } from "@/types";
+import { shimmer, toBase64 } from "@/utils/helpers";
 import Image from "next/image";
 
 const content: ContentType[] = [
@@ -38,26 +40,28 @@ const content: ContentType[] = [
 
 export default async function ProjectPage() {
   return (
-    <div>
+    <div className="grid grid-cols-1 gap-6 md:gap-8">
       {content.map((item, index) => (
-        <div key={index}>
+        <Card key={index}>
           {/* Project Image */}
-          <div className="shadow-photo lg:aspect-square relative mx-auto flex aspect-[16/9] rounded-2xl text-center shadow-md sm:aspect-[2/1] lg:max-w-3xl">
+          <div className="lg:aspect-square relative mx-auto flex aspect-[16/9] sm:aspect-[2/1] lg:max-w-3xl">
             <Image
               src={item.image?.src || ""}
               alt={item.image?.alt || "Project Image"}
               fill={true}
-              priority={true}
-              className="absolute inset-0 h-full w-full bg-gray-50 object-cover md:rounded-2xl"
+              className="absolute inset-0 h-full w-full rounded-xl object-cover shadow-md md:rounded-2xl"
+              placeholder={`data:image/svg+xml;base64,${toBase64(
+                shimmer(256, 256),
+              )}`}
             />
           </div>
           <div className="relative mx-auto max-w-3xl px-6 py-4">
             {/* Project Title */}
-            <h1 className="scroll-m-20 text-3xl font-semibold tracking-tight text-gray-900 first:mt-0 dark:text-gray-100">
+            <h1 className="text-balance text-2xl font-bold tracking-tight text-gray-900 first:mt-0 dark:text-gray-100 md:text-3xl">
               {item.title}
             </h1>
             {/* Project Content */}
-            <div className="text-wrap border-b border-gray-200 text-lg leading-8 text-gray-600 last:border-b-0 dark:border-gray-600 dark:text-gray-400">
+            <div className="text-base leading-7 text-gray-600 dark:text-gray-400 md:leading-8">
               {item.text.map((item, index) => (
                 <p key={index} className="mt-4">
                   {item}
@@ -65,7 +69,7 @@ export default async function ProjectPage() {
               ))}
             </div>
           </div>
-        </div>
+        </Card>
       ))}
     </div>
   );

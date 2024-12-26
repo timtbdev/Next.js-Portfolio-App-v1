@@ -1,4 +1,6 @@
+import Card from "@/components/card";
 import { ContentType } from "@/types";
+import { shimmer, toBase64 } from "@/utils/helpers";
 import Image from "next/image";
 
 const content: ContentType = {
@@ -25,16 +27,19 @@ const content: ContentType = {
 
 export default async function AboutPage() {
   return (
-    <div>
+    <Card>
       {/* AboutMe Image */}
-      <div className="shadow-photo lg:aspect-square relative mx-auto flex aspect-[16/9] rounded-2xl text-center shadow-md sm:aspect-[2/1] lg:max-w-3xl">
+      <div className="lg:aspect-square relative mx-auto flex aspect-[16/9] sm:aspect-[2/1] lg:max-w-3xl">
         <Image
           src={content.image?.src || ""}
           alt={content.image?.alt || "Profile picture"}
           fill={true}
           priority={true}
-          className="absolute inset-0 h-full w-full bg-gray-50 object-cover md:rounded-2xl"
+          className="absolute inset-0 h-full w-full rounded-xl object-cover shadow-md md:rounded-2xl"
           unoptimized
+          placeholder={`data:image/svg+xml;base64,${toBase64(
+            shimmer(256, 256),
+          )}`}
         />
       </div>
       <div className="relative mx-auto max-w-3xl px-6 py-4">
@@ -47,6 +52,6 @@ export default async function AboutPage() {
           ))}
         </div>
       </div>
-    </div>
+    </Card>
   );
 }
