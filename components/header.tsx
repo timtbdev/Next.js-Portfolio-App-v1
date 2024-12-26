@@ -50,7 +50,7 @@ function ToggleTheme({ className }: { className?: string }) {
       type="button"
       aria-label="Toggle theme"
       className={cn(
-        "transiton group inset-px flex gap-1 rounded-full bg-gradient-to-t from-gray-100 via-gray-50 to-white p-3 shadow-md shadow-black/5 ring-1 ring-black/10 transition duration-200 hover:bg-gradient-to-tr hover:from-gray-100 hover:via-gray-100 hover:to-gray-50 dark:bg-gradient-to-bl dark:from-zinc-800/20 dark:via-zinc-800/10 dark:to-zinc-800 dark:ring-zinc-700/40 dark:hover:bg-gradient-to-tr dark:hover:from-zinc-800/20 dark:hover:via-zinc-800/10 dark:hover:to-zinc-800",
+        "transiton group inset-px flex gap-1 rounded-full bg-gradient-to-t from-gray-100 via-gray-50 to-white p-2.5 shadow-md shadow-black/5 ring-1 ring-black/10 transition duration-200 hover:bg-gradient-to-tr hover:from-gray-100 hover:via-gray-100 hover:to-gray-50 dark:bg-gradient-to-bl dark:from-zinc-800/20 dark:via-zinc-800/10 dark:to-zinc-800 dark:ring-zinc-700/40 dark:hover:bg-gradient-to-tr dark:hover:from-zinc-800/20 dark:hover:via-zinc-800/10 dark:hover:to-zinc-800",
         className,
       )}
       // Toggle between light and dark themes on button click
