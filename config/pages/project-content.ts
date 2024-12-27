@@ -1,6 +1,6 @@
 import { ContentType } from "types";
 
-const projects: ContentType[] = [
+const projectContent: ContentType[] = [
   {
     id: 1,
     title: "Portfolio App 2.0",
@@ -33,4 +33,4 @@ const projects: ContentType[] = [
   },
 ];
 
-export default projects;
+export default projectContent;
