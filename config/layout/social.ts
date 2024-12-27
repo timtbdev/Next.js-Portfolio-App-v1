@@ -4,7 +4,7 @@ import {
   InstagramIcon,
   TwitterIcon,
   YoutubeIcon,
-} from "@/icons/social";
+} from "@/icons/layout/social";
 import { SocialType } from "@/types";
 
 const socialConfig: SocialType[] = [

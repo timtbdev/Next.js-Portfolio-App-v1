@@ -1,5 +1,6 @@
 import crypto from "crypto";
 import Card from "@/components/layout/card";
+import AnimatedArrowIcon from "@/icons/layout/animated-arrow-icon";
 import { ContentType } from "@/types";
 import { shimmer, toBase64 } from "@/utils/helpers";
 import Image from "next/image";
@@ -46,7 +47,7 @@ export default function PagePostItem({ content }: Props) {
               href={content.url?.link || "/"}
             >
               {content.url?.text || "Learn more"}
-              <RightArrowIcon />
+              <AnimatedArrowIcon className="stroke-zinc-600 dark:stroke-zinc-400" />
             </Link>
           ) : (
             <a
@@ -55,34 +56,11 @@ export default function PagePostItem({ content }: Props) {
               href={content.url?.link || "/"}
             >
               {content.url?.text || "Learn more"}
-              <RightArrowIcon />
+              <AnimatedArrowIcon className="stroke-zinc-600 dark:stroke-zinc-400" />
             </a>
           )}
         </div>
       </div>
     </Card>
-  );
-}
-
-export function RightArrowIcon() {
-  return (
-    <svg
-      className="-mr-1 ml-1.5 stroke-zinc-600 stroke-[1.5px] dark:stroke-zinc-400"
-      fill="none"
-      stroke="currentColor"
-      width="11"
-      height="11"
-      viewBox="0 0 10 10"
-      aria-hidden="true"
-    >
-      <path
-        className="opacity-0 transition group-hover:opacity-100"
-        d="M0 5h7"
-      ></path>
-      <path
-        className="transition group-hover:translate-x-[3px]"
-        d="M1 1l4 4-4 4"
-      ></path>
-    </svg>
   );
 }

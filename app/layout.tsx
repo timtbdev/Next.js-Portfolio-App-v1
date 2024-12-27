@@ -3,7 +3,7 @@ import Container from "@/components/layout/container";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import Main from "@/components/layout/main";
-import seoConfig from "@/config/components/seo";
+import seoConfig from "@/config/layout/seo";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 import { ThemeProvider } from "next-themes";

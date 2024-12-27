@@ -4,7 +4,7 @@ import {
   ContactIcon,
   HomeIcon,
   ProjectIcon,
-} from "@/icons/menu";
+} from "@/icons/layout/menu";
 import { MenuType } from "@/types"; // Menu Configuration
 
 const menuConfig: MenuType[] = [

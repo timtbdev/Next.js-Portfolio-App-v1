@@ -1,5 +1,5 @@
-import menuConfig from "@/config/components/menu";
-import social from "@/config/components/social";
+import menuConfig from "@/config/layout/menu";
+import social from "@/config/layout/social";
 import { Link } from "next-view-transitions";
 
 export default function Footer() {
