@@ -13,8 +13,7 @@ const projects: ContentType[] = [
       text: "Learn more",
     },
     text: [
-      "This portfolio app showcases my Android development skills and passion. It’s built with Kotlin, using Android Jetpack, Material Design, and Firebase, along with libraries like Retrofit, OkHttp, Glide, LeakCanary, and Koin.",
-      "The app follows the MVVM architecture for clean and maintainable code. It works offline by loading data from a local Room database and syncing with the network when needed. I also added smart features like efficient API syncing and seamless data handling with Coroutines. The code is available on GitHub",
+      "This portfolio app, built with Kotlin and Jetpack, uses MVVM, Room, and Coroutines for efficient offline and network syncing. It features Material Design and libraries like Retrofit and Glide. Code is on GitHub.",
     ],
   },
   {
@@ -29,8 +28,7 @@ const projects: ContentType[] = [
       text: "Learn more",
     },
     text: [
-      "Portfolio App 1.0 is a Java-based Android application that fetches content from a REST API, follows the MVC architecture for clean organization, and uses libraries like Retrofit for API calls, OkHttp for networking, and Glide for smooth image handling.",
-      "It also integrates Firebase Analytics to track user activity and Crashlytics to monitor and fix any issues. The project is open source and available on GitHub.",
+      "Portfolio App 1.0 is a Java-based Android app that fetches content from a REST API using Retrofit, OkHttp, and Glide. It follows the MVC architecture for clean organization and includes Firebase Analytics and Crashlytics for tracking and issue monitoring. The project is open source on GitHub.",
     ],
   },
 ];
