@@ -1,6 +1,5 @@
 import crypto from "crypto";
 import Card from "@/components/layout/card";
-import AnimatedArrowIcon from "@/icons/layout/animated-arrow-icon";
 import { ContentType } from "@/types";
 import { shimmer, toBase64 } from "@/utils/helpers";
 import Image from "next/image";
@@ -43,20 +42,18 @@ export default function PagePostItem({ content }: Props) {
         <div className="mt-4 flex sm:mt-6">
           {content.url?.link?.startsWith("/") ? (
             <Link
-              className="group flex w-full items-center justify-center whitespace-nowrap rounded-md border border-zinc-600/20 bg-transparent px-5 py-2.5 text-center text-base font-medium text-zinc-600 shadow-sm transition-all duration-100 ease-in-out hover:opacity-90 group-hover:bg-zinc-200/40 dark:border-zinc-700/40 dark:text-zinc-400 dark:group-hover:bg-gray-500/10 sm:w-fit"
+              className="group flex w-full items-center justify-center whitespace-nowrap rounded-md border border-zinc-600/20 bg-transparent px-5 py-2.5 text-center text-base font-medium text-zinc-600 shadow-sm transition-all duration-100 ease-in-out hover:bg-zinc-200/40 hover:opacity-90 dark:border-zinc-700/40 dark:text-zinc-400 dark:hover:bg-gray-500/10 sm:w-fit"
               href={content.url?.link || "/"}
             >
               {content.url?.text || "Learn more"}
-              <AnimatedArrowIcon className="stroke-zinc-600 dark:stroke-zinc-400" />
             </Link>
           ) : (
             <a
               target="_blank"
-              className="group flex w-full items-center justify-center whitespace-nowrap rounded-md border border-zinc-600/20 bg-transparent px-5 py-2.5 text-center text-base font-medium text-zinc-600 shadow-sm transition-all duration-100 ease-in-out hover:opacity-90 group-hover:bg-zinc-200/40 dark:border-zinc-700/40 dark:text-zinc-400 dark:group-hover:bg-gray-500/10 sm:w-fit"
+              className="group flex w-full items-center justify-center whitespace-nowrap rounded-md border border-zinc-600/20 bg-transparent px-5 py-2.5 text-center text-base font-medium text-zinc-600 shadow-sm transition-all duration-100 ease-in-out hover:bg-zinc-200/40 hover:opacity-90 dark:border-zinc-700/40 dark:text-zinc-400 dark:hover:bg-gray-500/10 sm:w-fit"
               href={content.url?.link || "/"}
             >
               {content.url?.text || "Learn more"}
-              <AnimatedArrowIcon className="stroke-zinc-600 dark:stroke-zinc-400" />
             </a>
           )}
         </div>
