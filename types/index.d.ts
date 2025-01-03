@@ -1,3 +1,5 @@
+import { create } from "domain";
+
 export type ContentType = {
   id?: number;
   title?: string;
@@ -40,4 +42,18 @@ type MenuType = {
   title: string;
   slug: string;
   icon: React.FC<{ className?: string }>;
+};
+
+type BlogPostType = {
+  id: number;
+  category: string;
+  title: string;
+  image: string;
+  description: string;
+  content: string;
+  created_at: string;
+  updated_at: string;
+  slug: string;
+  author: { name: string; image: string };
+  published: boolean;
 };

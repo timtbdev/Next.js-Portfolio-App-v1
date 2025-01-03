@@ -27,3 +27,9 @@ export const toBase64 = (str: string) =>
 
 export const delay = (ms: number): Promise<void> =>
   new Promise((resolve) => setTimeout(resolve, ms));
+
+// Reading Time
+export function getMinutes(minutes: number) {
+  const roundedMinutes = Math.round(minutes);
+  return `${roundedMinutes} min`;
+}

@@ -1,5 +1,4 @@
 import crypto from "crypto";
-import Card from "@/components/layout/card";
 import { ContentType } from "@/types";
 import { shimmer, toBase64 } from "@/utils/helpers";
 import Image from "next/image";
@@ -11,7 +10,7 @@ interface Props {
 
 export default function PagePostItem({ content }: Props) {
   return (
-    <Card key={crypto.randomUUID()}>
+    <>
       {/* Profile Image */}
       <div className="lg:aspect-square relative mx-auto flex aspect-[16/9] sm:aspect-[2/1] lg:max-w-3xl">
         <Image
@@ -58,6 +57,6 @@ export default function PagePostItem({ content }: Props) {
           )}
         </div>
       </div>
-    </Card>
+    </>
   );
 }

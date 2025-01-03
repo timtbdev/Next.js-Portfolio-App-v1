@@ -1,4 +1,4 @@
-import Card from "@/components/layout/card";
+import Card from "@/components/main/card";
 import social from "@/config/layout/social";
 import logo from "@/public/images/logo.png";
 import { ChevronRightIcon } from "lucide-react";

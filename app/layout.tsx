@@ -1,10 +1,9 @@
 import "@/styles/tailwind.css";
-import Container from "@/components/layout/container";
-import Footer from "@/components/layout/footer";
-import Header from "@/components/layout/header";
-import Main from "@/components/layout/main";
+import Footer from "@/components/footer/main";
+import Header from "@/components/header/main";
+import Container from "@/components/main/container";
+import Main from "@/components/main/main";
 import seoConfig from "@/config/layout/seo";
-import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { ViewTransitions } from "next-view-transitions";
@@ -19,7 +18,7 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Portfolio",
+    template: "Tim | %s",
     default: seoConfig.title,
   },
   generator: seoConfig.author.name,
@@ -43,7 +42,7 @@ export default function RootLayout({
 }) {
   return (
     <ViewTransitions>
-      <html lang="en" suppressHydrationWarning>
+      <html lang="en" className="h-full scroll-smooth" suppressHydrationWarning>
         <body className={`antialiased ${fontSans.variable}`}>
           <ThemeProvider
             attribute="class"
@@ -55,7 +54,6 @@ export default function RootLayout({
               <Header />
               <Container>{children}</Container>
               <Footer />
-              <VercelAnalytics />
             </Main>
           </ThemeProvider>
         </body>

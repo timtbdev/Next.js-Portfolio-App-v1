@@ -6,10 +6,10 @@ interface Props {
 
 export default function Main({ children }: Props) {
   return (
-    <main className="bg-zinc-50 font-sans dark:bg-zinc-900/30">
+    <main className="bg-gray-50 font-sans dark:bg-zinc-900/60">
       <div className="relative isolate">
         <svg
-          className="absolute inset-0 -z-10 h-full w-full stroke-black/5 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] dark:stroke-zinc-900"
+          className="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] dark:stroke-zinc-900"
           aria-hidden="true"
         >
           <defs>
