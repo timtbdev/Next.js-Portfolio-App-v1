@@ -30,7 +30,7 @@ export default function SingleProjectItem() {
         </div>
         {/* Screenshots of Portfolio App 2.0 */}
         <div className="relative mt-8 grid w-full grid-cols-1 gap-x-4 gap-y-8 px-8 pb-8 sm:grid-cols-3 sm:px-10 sm:pb-10">
-          <div className="col-span-1 flex w-[256px] flex-col items-center justify-center">
+          <div className="col-span-1 flex flex-col items-center justify-center">
             <AspectRatio ratio={655 / 1387}>
               <Image
                 src="/images/projects/portfolio-02/screen-01.png"
@@ -40,7 +40,7 @@ export default function SingleProjectItem() {
               />
             </AspectRatio>
           </div>
-          <div className="col-span-1 flex w-[256px] flex-col items-center justify-center">
+          <div className="col-span-1 flex flex-col items-center justify-center">
             <AspectRatio ratio={655 / 1387}>
               <Image
                 src="/images/projects/portfolio-02/screen-01.png"
@@ -50,7 +50,7 @@ export default function SingleProjectItem() {
               />
             </AspectRatio>
           </div>
-          <div className="col-span-1 flex w-[256px] flex-col items-center justify-center">
+          <div className="col-span-1 flex flex-col items-center justify-center">
             <AspectRatio ratio={655 / 1387}>
               <Image
                 src="/images/projects/portfolio-02/screen-01.png"
