@@ -10,7 +10,7 @@ export default function Profile() {
           <AvatarFallback>TM</AvatarFallback>
         </Avatar>
         <h6 className="mb-2">Welcome to my portfolio</h6>
-        <h1 className="mb-2">Hello, I'm Tim.</h1>
+        <h1 className="mb-2">Hello, I&apos;m Tim.</h1>
         <h4 className="mt-8">
           I’m an Android developer based in the Bay Area who loves building
           user-friendly apps.
