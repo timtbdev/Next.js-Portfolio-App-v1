@@ -36,7 +36,7 @@ const Content = ({
   description: string[];
   link: string;
 }) => (
-  <div className="relative mx-auto flex max-w-3xl flex-col text-pretty px-2 py-4 sm:px-6">
+  <div className="relative mx-auto flex max-w-3xl flex-col text-pretty px-8 pb-8 pt-6 sm:px-12 sm:pb-10 sm:pt-8">
     <Title title={title} />
     <Description description={description} />
     <DownloadButton link={link} />
