@@ -11,7 +11,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import Image from "next/image";
-import React, { FC, useCallback, useEffect, useMemo, useState } from "react";
+import React, { FC, useCallback, useEffect, useState } from "react";
 
 interface Props {
   screenshots: string[];
@@ -19,27 +19,40 @@ interface Props {
 
 const Screenshots: FC<Props> = ({ screenshots = [] }) => {
   const [api, setApi] = useState<CarouselApi>();
-  const [state, setState] = useState({ current: 0, updateState: false });
-
-  const count = useMemo(() => screenshots.length, [screenshots]);
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+  const [updateState, setUpdateState] = useState(false);
 
   const toggleUpdateState = useCallback(
-    () =>
-      setState((prevState) => ({
-        ...prevState,
-        updateState: !prevState.updateState,
-      })),
+    () => setUpdateState((prevState) => !prevState),
     [],
   );
 
   useEffect(() => {
     if (!api) return;
 
-    setState((prevState) => ({
-      ...prevState,
-      current: api.selectedScrollSnap() + 1,
-    }));
-  }, [api, screenshots]);
+    setCount(screenshots.length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    const handleSelect = () => setCurrent(api.selectedScrollSnap() + 1);
+    api.on("select", handleSelect);
+
+    return () => {
+      api.off("select", handleSelect);
+    };
+  }, [api, screenshots.length]);
+
+  useEffect(() => {
+    if (!api) return;
+
+    api.on("select", toggleUpdateState);
+    api.on("reInit", toggleUpdateState);
+
+    return () => {
+      api.off("select", toggleUpdateState);
+      api.off("reInit", toggleUpdateState);
+    };
+  }, [api, toggleUpdateState]);
 
   const numberOfSlides = api?.scrollSnapList().length || 0;
   const currentSlide = api?.selectedScrollSnap() || 0;
@@ -57,7 +70,7 @@ const Screenshots: FC<Props> = ({ screenshots = [] }) => {
 
   return (
     <>
-      {/* Desktop view */}
+      {/* Desktop Screenshots */}
       <div className="relative mt-8 hidden w-full grid-cols-1 gap-x-4 gap-y-8 px-8 pb-8 sm:grid sm:grid-cols-3 sm:px-10 sm:pb-10">
         {screenshots.map((image, index) => (
           <div
@@ -68,7 +81,7 @@ const Screenshots: FC<Props> = ({ screenshots = [] }) => {
           </div>
         ))}
       </div>
-      {/* Mobile view */}
+      {/* Mobile Screenshots */}
       <div className="mx-auto mt-8 w-full max-w-xs px-8 pb-8 sm:px-10 sm:pb-10 md:hidden">
         <Carousel setApi={setApi} className="w-full max-w-xs">
           <CarouselContent>
@@ -91,7 +104,7 @@ const Screenshots: FC<Props> = ({ screenshots = [] }) => {
                     ? "scale-125 transform bg-gray-500 dark:bg-gray-400"
                     : "bg-gray-300 dark:bg-gray-600"
                 }`}
-                aria-label={`Go to slide ${i + 1}`}
+                aria-label={`Go to screenshot ${i + 1}`}
                 onClick={() => api?.scrollTo(i)}
               />
             ))}
