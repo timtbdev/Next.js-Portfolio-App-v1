@@ -1,4 +1,6 @@
-export default function Copyright() {
+import React from "react";
+
+const Copyright: React.FC = () => {
   return (
     <>
       <p className="text-md mt-6 text-center leading-5 text-zinc-600 dark:text-zinc-400">
@@ -6,4 +8,6 @@ export default function Copyright() {
       </p>
     </>
   );
-}
+};
+
+export default Copyright;

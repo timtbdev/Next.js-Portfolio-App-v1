@@ -1,21 +1,9 @@
-import { create } from "domain";
-
-export type ContentType = {
-  id?: number;
-  title?: string;
-  text: string[];
-  image?: ImageType;
-  url?: UrlType;
-};
-
-export type ImageType = {
-  src: string;
-  alt: string;
-};
-
-export type UrlType = {
-  link: string;
-  text: string;
+export type ProfileType = {
+  title: string;
+  greeting: string;
+  description: string;
+  image: string;
+  initials: string;
 };
 
 export type SeoType = {
@@ -27,7 +15,7 @@ export type SeoType = {
   tags: Array<string>;
 };
 
-type SocialType = {
+export type SocialType = {
   id: number;
   name: string;
   username?: string;
@@ -37,14 +25,14 @@ type SocialType = {
   >;
 };
 
-type MenuType = {
+export type MenuType = {
   id: number;
   title: string;
   slug: string;
   icon: React.FC<{ className?: string }>;
 };
 
-type BlogPostType = {
+export type BlogPostType = {
   id: number;
   category: string;
   title: string;
@@ -56,4 +44,21 @@ type BlogPostType = {
   slug: string;
   author: { name: string; image: string };
   published: boolean;
+};
+
+export type ProjectType = {
+  id: number;
+  title: string;
+  description: string;
+  screenshots: Array<string>;
+  created_at: string;
+  slug: string;
+  url: string;
+};
+
+export type ContentType = {
+  title?: string;
+  description: string[];
+  image?: string;
+  link?: string;
 };

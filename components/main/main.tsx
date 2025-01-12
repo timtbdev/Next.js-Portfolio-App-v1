@@ -4,7 +4,7 @@ interface Props {
   children: ReactNode;
 }
 
-export default function Main({ children }: Props) {
+const Main = ({ children }: Props) => {
   return (
     <main className="bg-gray-50 font-sans dark:bg-zinc-900/60">
       <div className="relative isolate">
@@ -35,4 +35,6 @@ export default function Main({ children }: Props) {
       </div>
     </main>
   );
-}
+};
+
+export default Main;

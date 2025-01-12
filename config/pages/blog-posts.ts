@@ -1,4 +1,4 @@
-import { BlogPostType } from "@/types";
+import { BlogPostType } from "types";
 
 const blogPosts: BlogPostType[] = [
   {

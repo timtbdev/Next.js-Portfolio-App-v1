@@ -1,8 +1,9 @@
+import React from "react";
 import Copyright from "./copyright";
 import NavigationLinks from "./navigation-links";
 import SocialMediaAccounts from "./social-media-accounts";
 
-export default function Footer() {
+const Footer: React.FC = () => {
   return (
     <>
       <footer className="border-y border-zinc-600/20 bg-white shadow-sm shadow-zinc-800/5 dark:border-zinc-700/40 dark:bg-zinc-900">
@@ -14,4 +15,6 @@ export default function Footer() {
       </footer>
     </>
   );
-}
+};
+
+export default Footer;

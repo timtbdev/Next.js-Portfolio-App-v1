@@ -1,7 +1,9 @@
-export default function VerticalLine() {
+const VerticalLine = () => {
   return (
     <div className="mx-auto flex max-w-xl flex-row justify-center">
-      <div className="h-10 w-px bg-black/5 dark:bg-white/10"></div>
+      <div className="h-14 w-px bg-black/5 dark:bg-white/10"></div>
     </div>
   );
-}
+};
+
+export default VerticalLine;

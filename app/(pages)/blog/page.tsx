@@ -1,6 +1,6 @@
-import BlogPostItem from "@/components/pages/blog/post/blog-post-item";
-import BlogPostItemLoading from "@/components/pages/blog/post/blog-post-item-loading";
-import blogPosts from "@/config/blog/blog-posts";
+import BlogPostItem from "@/components/pages/blog/single-blog-post-item/blog-post-item";
+import BlogPostItemLoading from "@/components/pages/blog/single-blog-post-item/blog-post-item-loading";
+import blogPosts from "@/config/pages/blog-posts";
 import { Suspense } from "react";
 
 export default async function BlogPage() {

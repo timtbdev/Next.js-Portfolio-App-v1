@@ -2,9 +2,9 @@ import { MoonIcon, SunIcon } from "@/icons/layout/theme";
 import { cn } from "@/utils/helpers";
 import { useTheme } from "next-themes";
 
-export default function ToggleTheme({ className }: { className?: string }) {
+const ToggleTheme = ({ className }: { className?: string }) => {
   // Get the current theme and function to set the theme
-  let { resolvedTheme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   return (
     <button
@@ -30,4 +30,6 @@ export default function ToggleTheme({ className }: { className?: string }) {
       </span>
     </button>
   );
-}
+};
+
+export default ToggleTheme;
