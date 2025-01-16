@@ -7,8 +7,7 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Tim | Home",
-  description: "Android Developer in the Bay Area",
+  title: "Home",
 };
 
 export default async function HomePage() {

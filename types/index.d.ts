@@ -9,6 +9,8 @@ export type ProfileType = {
 export type SeoType = {
   title: string;
   subTitle: string;
+  ogImage: string;
+  twitterImage: string;
   author: { name: string; twitterUrl: string; twitterAddress: string };
   description: string;
   keywords: Array<string>;
