@@ -1,4 +1,4 @@
-import SingleProjectItem from "@/components/pages/projects/single-project-item";
+import SingleProjectItem from "@/components/pages/projects/single-project-item/main";
 import projectConfig from "@/config/pages/projects";
 import { Metadata } from "next";
 

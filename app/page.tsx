@@ -1,6 +1,6 @@
 import Profile from "@/components/pages/home/profile";
 import VerticalLine from "@/components/pages/home/profile/vertical-line";
-import SingleProjectItem from "@/components/pages/projects/single-project-item";
+import SingleProjectItem from "@/components/pages/projects/single-project-item/main";
 import profileConfig from "@/config/pages/profile";
 import projectConfig from "@/config/pages/projects";
 import { Metadata } from "next";
