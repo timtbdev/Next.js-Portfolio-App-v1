@@ -1,9 +1,8 @@
-import React from "react";
-import Copyright from "./copyright";
+import Copyright from "./copyright/main";
 import NavigationLinks from "./navigation-links";
 import SocialMediaAccounts from "./social-media-accounts";
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <>
       <footer className="border-y border-zinc-600/20 bg-white shadow-sm shadow-zinc-800/5 dark:border-zinc-700/40 dark:bg-zinc-900">

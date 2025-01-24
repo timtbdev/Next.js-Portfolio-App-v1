@@ -1,8 +1,8 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import DesktopNavigationLinks from "./desktop-navigation-links";
 import Logo from "./logo";
+import DesktopNavigationLinks from "./navigation-links/desktop-navigation-links";
 import MobileNavigationLinks from "./navigation-links/mobile-navigation-links";
 import ToggleTheme from "./toggle-theme";
 
