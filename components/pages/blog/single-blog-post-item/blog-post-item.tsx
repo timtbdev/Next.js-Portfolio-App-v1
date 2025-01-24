@@ -1,5 +1,4 @@
 import { getMinutes, shimmer, toBase64 } from "@/utils/helpers";
-import { format, parseISO } from "date-fns";
 import { CalendarIcon, Clock10Icon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -102,7 +101,7 @@ const DesktopInfo: React.FC<{ post: BlogPostType; readTime: any }> = ({
 const DateInfo: React.FC<{ date: string }> = ({ date }) => (
   <div className="inline-flex items-center text-gray-500">
     <CalendarIcon className="h-4 w-4" />
-    <span className="ml-1">{format(parseISO(date), "dd/MM/yyyy")}</span>
+    <span className="ml-1">{date}</span>
   </div>
 );
 

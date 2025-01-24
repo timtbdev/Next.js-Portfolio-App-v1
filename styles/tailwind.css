@@ -70,16 +70,16 @@
     @apply bg-background text-foreground;
   }
   h1 {
-    @apply text-5xl font-semibold tracking-tight text-black dark:text-zinc-300 sm:text-7xl;
+    @apply text-5xl font-semibold tracking-tight text-black sm:text-7xl dark:text-zinc-300;
   }
   h2 {
-    @apply text-4xl font-semibold tracking-tight text-black dark:text-zinc-300 sm:text-5xl;
+    @apply text-4xl font-semibold tracking-tight text-black sm:text-5xl dark:text-zinc-300;
   }
   h4 {
-    @apply text-pretty text-lg font-medium text-gray-600 dark:text-zinc-400 sm:text-xl/8;
+    @apply text-lg font-medium text-pretty text-gray-600 sm:text-xl/8 dark:text-zinc-400;
   }
   h6 {
-    @apply text-base/7 font-semibold text-gray-600 dark:text-zinc-400 sm:text-lg;
+    @apply text-base/7 font-semibold text-gray-600 sm:text-lg dark:text-zinc-400;
   }
   p {
     @apply text-base/7 text-gray-600 dark:text-zinc-400;
