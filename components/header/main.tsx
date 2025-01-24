@@ -1,12 +1,12 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import DesktopNavigationLinks from "./desktop-navigation-links";
 import Logo from "./logo";
-import DesktopNavigationLinks from "./navigation-links/desktop-navigation-links";
 import MobileNavigationLinks from "./navigation-links/mobile-navigation-links";
 import ToggleTheme from "./toggle-theme";
 
-const Header: React.FC = () => {
+const Header = () => {
   const currentPath = usePathname();
   return (
     <header className="sticky top-0 z-10 border-b-[1.2px] border-zinc-600/20 bg-white shadow-sm shadow-zinc-800/5 dark:border-zinc-700/40 dark:bg-zinc-900">

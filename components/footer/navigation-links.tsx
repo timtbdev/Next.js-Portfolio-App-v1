@@ -12,7 +12,7 @@ const NavigationLinks = () => {
         <div key={item.title} className="pb-6">
           <Link
             href={item.slug}
-            className="text-md font-medium text-zinc-600 hover:text-blue-500 dark:text-zinc-400 dark:hover:text-sky-500"
+            className="text-md font-medium text-zinc-600 hover:text-primaryColor dark:text-zinc-400 dark:hover:text-primaryColor"
             prefetch={true}
           >
             {item.title}
