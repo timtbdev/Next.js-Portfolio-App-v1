@@ -1,5 +1,10 @@
 import Card from "@/components/ui/card";
 import aboutConfig from "@/config/pages/about";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+};
 
 export default async function AboutPage() {
   const {

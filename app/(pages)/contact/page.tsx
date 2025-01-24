@@ -2,7 +2,12 @@ import Card from "@/components/ui/card";
 import social from "@/config/layout/social";
 import logo from "@/public/images/logo.png";
 import { ChevronRightIcon } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Contact",
+};
 
 export default async function ContactPage() {
   return (

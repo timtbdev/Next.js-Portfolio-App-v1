@@ -1,5 +1,10 @@
 import SingleProjectItem from "@/components/pages/projects/single-project-item";
 import projectConfig from "@/config/pages/projects";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects",
+};
 
 export default async function ProjectPage() {
   return (

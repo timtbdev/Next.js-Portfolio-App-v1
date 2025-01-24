@@ -1,7 +1,12 @@
 import BlogPostItem from "@/components/pages/blog/single-blog-post-item/blog-post-item";
 import BlogPostItemLoading from "@/components/pages/blog/single-blog-post-item/blog-post-item-loading";
 import blogPosts from "@/config/pages/blog-posts";
+import { Metadata } from "next";
 import { Suspense } from "react";
+
+export const metadata: Metadata = {
+  title: "Blog",
+};
 
 export default async function BlogPage() {
   return (

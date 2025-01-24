@@ -2,6 +2,7 @@ import { getMinutes, shimmer, toBase64 } from "@/utils/helpers";
 import { CalendarIcon, Clock10Icon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { FC } from "react";
 import readingTime from "reading-time";
 import { BlogPostType } from "types";
 
@@ -9,7 +10,7 @@ interface Props {
   post: BlogPostType;
 }
 
-const BlogPostItem: React.FC<Props> = ({ post }) => {
+const BlogPostItem: FC<Props> = ({ post }) => {
   const readTime = readingTime(post.content);
 
   return (
@@ -27,7 +28,7 @@ const BlogPostItem: React.FC<Props> = ({ post }) => {
   );
 };
 
-const ImageSection: React.FC<{ post: BlogPostType }> = ({ post }) => (
+const ImageSection: FC<{ post: BlogPostType }> = ({ post }) => (
   <div className="lg:aspect-square relative aspect-[16/9] sm:aspect-[2/1] lg:w-64 lg:shrink-0">
     <Image
       src={post.image ?? "/images/cover-photo.jpg"}
@@ -42,7 +43,7 @@ const ImageSection: React.FC<{ post: BlogPostType }> = ({ post }) => (
   </div>
 );
 
-const ContentSection: React.FC<{ post: BlogPostType; readTime: any }> = ({
+const ContentSection: FC<{ post: BlogPostType; readTime: any }> = ({
   post,
   readTime,
 }) => (
@@ -58,7 +59,7 @@ const ContentSection: React.FC<{ post: BlogPostType; readTime: any }> = ({
   </div>
 );
 
-const CategoryBadge: React.FC<{ category: string }> = ({ category }) => (
+const CategoryBadge: FC<{ category: string }> = ({ category }) => (
   <div className="hidden items-center gap-x-3 text-sm sm:flex">
     <span className="relative z-10 rounded-full bg-gray-100 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-200">
       {category}
@@ -66,14 +67,14 @@ const CategoryBadge: React.FC<{ category: string }> = ({ category }) => (
   </div>
 );
 
-const Title: React.FC<{ title: string }> = ({ title }) => (
+const Title: FC<{ title: string }> = ({ title }) => (
   <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
     <span className="absolute inset-0" />
     {title}
   </h3>
 );
 
-const MobileInfo: React.FC<{ post: BlogPostType; readTime: any }> = ({
+const MobileInfo: FC<{ post: BlogPostType; readTime: any }> = ({
   post,
   readTime,
 }) => (
@@ -84,11 +85,11 @@ const MobileInfo: React.FC<{ post: BlogPostType; readTime: any }> = ({
   </div>
 );
 
-const Description: React.FC<{ description: string }> = ({ description }) => (
+const Description: FC<{ description: string }> = ({ description }) => (
   <p className="mt-3 text-sm leading-6 text-gray-600">{description}</p>
 );
 
-const DesktopInfo: React.FC<{ post: BlogPostType; readTime: any }> = ({
+const DesktopInfo: FC<{ post: BlogPostType; readTime: any }> = ({
   post,
   readTime,
 }) => (
@@ -98,21 +99,21 @@ const DesktopInfo: React.FC<{ post: BlogPostType; readTime: any }> = ({
   </div>
 );
 
-const DateInfo: React.FC<{ date: string }> = ({ date }) => (
+const DateInfo: FC<{ date: string }> = ({ date }) => (
   <div className="inline-flex items-center text-gray-500">
     <CalendarIcon className="h-4 w-4" />
     <span className="ml-1">{date}</span>
   </div>
 );
 
-const ReadTimeInfo: React.FC<{ minutes: number }> = ({ minutes }) => (
+const ReadTimeInfo: FC<{ minutes: number }> = ({ minutes }) => (
   <div className="inline-flex items-center text-gray-500">
     <Clock10Icon className="h-4 w-4" />
     <span className="ml-1">{getMinutes(minutes)}</span>
   </div>
 );
 
-const AuthorInfo: React.FC<{ author: { name: string; image: string } }> = ({
+const AuthorInfo: FC<{ author: { name: string; image: string } }> = ({
   author,
 }) => (
   <div className="mt-3 flex border-t border-gray-900/5 pt-2">
