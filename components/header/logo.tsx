@@ -1,9 +1,11 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { cn } from "@/utils/helpers";
 import { Link } from "next-view-transitions";
+import { FC } from "react";
 
 const Logo = () => {
   return (
-    <Link href="/" className="group mr-4 flex items-center">
+    <Link href="/" className="group mr-4 hidden items-center lg:flex">
       <Avatar className="h-10 w-10 shadow-md ring-1 ring-gray-300 dark:ring-zinc-700">
         <AvatarImage src="/images/logo.png" alt="Logo" />
         <AvatarFallback>TM</AvatarFallback>
