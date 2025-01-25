@@ -18,7 +18,7 @@ const Author: FC<Props> = ({ name, imageUrl }) => {
         height={16}
         placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(16, 16))}`}
       />
-      <span>{name}</span>
+      <span className="text-sm">{name}</span>
     </div>
   );
 };

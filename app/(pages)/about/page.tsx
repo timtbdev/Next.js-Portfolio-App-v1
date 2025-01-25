@@ -27,7 +27,7 @@ const CoverImage = ({ src }: { src: string }) => (
     <img
       alt="Cover Image"
       src={src}
-      className="h-128 w-full object-cover lg:rounded-t-[calc(2rem+1px)]"
+      className="h-128 w-full object-cover lg:rounded-t-[0.62rem]"
     />
   </div>
 );
@@ -41,7 +41,7 @@ const Content = ({
   description: string[];
   link: string;
 }) => (
-  <div className="relative mx-auto flex max-w-3xl flex-col text-pretty px-8 pb-8 pt-6 sm:px-12 sm:pb-10 sm:pt-8">
+  <div className="relative mx-auto flex max-w-3xl flex-col text-pretty px-8 pb-6 pt-4 sm:px-14">
     <Title title={title} />
     <Description description={description} />
     <DownloadButton link={link} />

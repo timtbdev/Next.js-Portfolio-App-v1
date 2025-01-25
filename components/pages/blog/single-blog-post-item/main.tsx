@@ -1,9 +1,15 @@
+import Card from "@/components/ui/card";
+import { BlogPostType } from "@/types";
 import Link from "next/link";
 import { FC } from "react";
 import readingTime from "reading-time";
-import { BlogPostType } from "types";
-import ContentSection from "./content-section";
+import Description from "./description";
 import ImageSection from "./image-section";
+import Author from "./info/author";
+import Category from "./info/category";
+import Date from "./info/date";
+import ReadTime from "./info/read-time";
+import Title from "./title";
 
 interface Props {
   post: BlogPostType;
@@ -13,14 +19,25 @@ const BlogPostItem: FC<Props> = ({ post }) => {
   const readTime = readingTime(post.content);
 
   return (
-    <div className="relative max-w-full rounded-[0.62rem] shadow-sm ring-[0.8px] ring-gray-300 dark:ring-zinc-700">
+    <Card>
       <Link href={`/posts/${post.slug}`}>
-        <article className="relative isolate flex max-w-3xl flex-col gap-2 rounded-lg bg-white px-5 py-5 shadow-md ring-1 ring-gray-300 dark:bg-zinc-900 dark:ring-zinc-700 sm:gap-8 sm:px-10 sm:py-6 lg:flex-row">
+        <article className="relative isolate flex flex-col gap-2 px-5 py-5 sm:gap-8 sm:px-10 sm:py-6 lg:flex-row">
           <ImageSection post={post} />
-          <ContentSection post={post} readTime={readTime} />
+          <div className="group relative max-w-xl">
+            <Title title={post.title} />
+            <div className="mt-1 flex items-center gap-x-3">
+              <Category category={post.category} />
+              <Author name={post.author.name} imageUrl={post.author.image} />
+            </div>
+            <Description description={post.description} />
+            <div className="mt-3 flex items-center gap-x-3">
+              <Date date={post.updated_at} />
+              <ReadTime minutes={readTime.minutes} />
+            </div>
+          </div>
         </article>
       </Link>
-    </div>
+    </Card>
   );
 };
 

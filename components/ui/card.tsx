@@ -11,7 +11,7 @@ const Card: FC<Props> = ({ children, className }) => {
     <div
       className={cn(
         className,
-        "relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] bg-white shadow-sm ring-1 ring-black/5 dark:bg-zinc-900 lg:rounded-[calc(2rem+1px)]",
+        "relative flex h-full max-w-full flex-col overflow-hidden bg-white shadow-sm ring-[0.8px] ring-gray-300 dark:bg-zinc-900 dark:ring-zinc-700 lg:rounded-[0.62rem]",
       )}
     >
       {children}
