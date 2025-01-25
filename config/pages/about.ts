@@ -5,14 +5,11 @@ const aboutConfig: ContentType = {
   link: "/files/resume.pdf",
   title: "About Me",
   description: [
-    "Tim (Tumur Bazarragchaa), born in 1982 in Ulaanbaatar, Mongolia. In 2000, his family left Mongolia in search of a better life—his parents and brother settled in California, while Tim moved to Germany to pursue his studies.",
-    "He graduated in 2008 with a degree in Computer Science and secured a position as a Test Engineer at a leading online and mobile banking company in Germany. However, his work visa was denied, forcing him to return to Mongolia.",
-    "In 2009, Tim joined Mongolia’s leading telecom company and took charge of launching BlackBerry services. He helped sell over 6,000 devices and got them all set up and running smoothly.",
-    "In 2012, he founded his own Android app company, publishing two apps before closing the startup in 2013. He later led a team on Mongolia’s largest hydropower project, securing funding through a successful feasibility study.",
-    "In 2016, Tim reunited with his family in the United States. While working in ride-sharing, he resumed his passion for Android development, launching two additional apps.",
-    "In 2020, Tim started working at Tesla in Fremont as a Production Associate, building cars on the assembly line. He was recognized for his hard work with two Employee Appreciation Awards.",
-    "In 2023, Tim married his soulmate, Dogi, and they welcomed their daughter, Undra.",
-    "These days, he’s focused on improving his skills and building great Android apps.",
+    "Hey, I’m Tim, an Android developer in the San Francisco Bay Area. I grew up herding livestock in a small part of Mongolia.",
+    "I love working with Kotlin and Jetpack Compose for Android apps and Next.js with Tailwind CSS for web projects. Lately, I’ve been experimenting with turning Next.js apps into Android apps using Kotlin—it’s been a fun challenge!",
+    "I studied Computer Science at the University of Applied Sciences of Mittweida and did an internship at Daimler.",
+    "I’ve been developing Android apps since 2017 and have published three apps on the Google Play Store.",
+    "When I’m not coding, I love going for runs. I’m always open to collaborating, so feel free to reach out—let’s build something cool!",
   ],
 };
 
