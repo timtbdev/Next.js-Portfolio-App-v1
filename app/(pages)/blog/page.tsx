@@ -1,4 +1,4 @@
-import BlogPostItem from "@/components/pages/blog/single-blog-post-item/blog-post-item";
+import BlogPostItem from "@/components/pages/blog/single-blog-post-item/main";
 import blogPosts from "@/config/pages/blog-posts";
 import { Metadata } from "next";
 import { Suspense } from "react";
@@ -9,8 +9,10 @@ export const metadata: Metadata = {
 
 export default async function BlogPage() {
   return (
-    <div className="mx-auto max-w-3xl space-y-6">
-      {blogPosts?.map((post, index) => <BlogPostItem post={post} />)}
+    <div className="mx-auto max-w-3xl space-y-8">
+      {blogPosts?.map((post, index) => (
+        <BlogPostItem key={index} post={post} />
+      ))}
     </div>
   );
 }

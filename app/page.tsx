@@ -1,4 +1,4 @@
-import Profile from "@/components/pages/home/profile";
+import Profile from "@/components/pages/home/profile/main";
 import VerticalLine from "@/components/pages/home/profile/vertical-line";
 import SingleProjectItem from "@/components/pages/projects/single-project-item/main";
 import profileConfig from "@/config/pages/profile";

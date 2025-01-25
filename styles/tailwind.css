@@ -70,18 +70,24 @@
     @apply bg-background text-foreground;
   }
   h1 {
-    @apply text-5xl font-semibold tracking-tight text-black sm:text-7xl dark:text-zinc-300;
+    @apply text-pretty text-5xl font-semibold tracking-tight text-black dark:text-zinc-300 sm:text-7xl;
   }
   h2 {
-    @apply text-4xl font-semibold tracking-tight text-black sm:text-5xl dark:text-zinc-300;
+    @apply text-pretty text-4xl font-semibold tracking-tight text-black dark:text-zinc-300 sm:text-5xl;
+  }
+  h3 {
+    @apply text-pretty text-lg font-semibold leading-6 tracking-tight text-black dark:text-zinc-300 sm:text-xl/8;
   }
   h4 {
-    @apply text-lg font-medium text-pretty text-gray-600 sm:text-xl/8 dark:text-zinc-400;
+    @apply text-pretty text-lg font-medium text-gray-600 dark:text-zinc-400 sm:text-xl/8;
   }
   h6 {
-    @apply text-base/7 font-semibold text-gray-600 sm:text-lg dark:text-zinc-400;
+    @apply text-base/7 font-semibold text-gray-600 dark:text-zinc-400 sm:text-lg;
   }
   p {
+    @apply text-base/7 text-gray-600 dark:text-zinc-400;
+  }
+  span {
     @apply text-base/7 text-gray-600 dark:text-zinc-400;
   }
 }
