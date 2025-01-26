@@ -1,8 +1,12 @@
 # Mobile App Developer Portfolio Template
 
-![Light mode](https://github.com/user-attachments/assets/692674e7-6f6a-44e4-81a1-575911e009bf)
+## Desktop Preview
 
-![Dark mode](https://github.com/user-attachments/assets/f2ad2e33-430a-4e02-a5f6-ef445aab4b06)
+https://github.com/user-attachments/assets/8f7c57f8-9041-4db8-9022-2543fe9d7dac
+
+## Mobile Preview
+
+https://github.com/user-attachments/assets/209bae39-6729-4b85-b079-0fef0eb2eade
 
 ## Overview
 
