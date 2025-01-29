@@ -2,6 +2,7 @@
   "name": "portfolio-updated",
   "version": "0.2.1",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,13 +11,10 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
-    "@mdx-js/loader": "^3.1.0",
-    "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.1.4",
     "@radix-ui/react-aspect-ratio": "^1.1.1",
     "@radix-ui/react-avatar": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.1",
-    "@types/mdx": "^2.0.13",
     "@vercel/analytics": "^1.4.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -30,7 +28,6 @@
     "react": "^19",
     "react-dom": "^19",
     "reading-time": "^1.5.0",
-    "sugar-high": "^0.8.1",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7"
   },
