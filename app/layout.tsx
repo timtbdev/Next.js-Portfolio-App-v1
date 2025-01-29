@@ -5,6 +5,8 @@ import Container from "@/components/main/container";
 import Main from "@/components/main/main";
 import seoConfig from "@/config/layout/seo";
 import { getUrl } from "@/utils/helpers";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 import { Metadata, Viewport } from "next";
 import { ThemeProvider } from "next-themes";
 import { ViewTransitions } from "next-view-transitions";
@@ -197,6 +199,8 @@ export default function RootLayout({
             </Main>
           </ThemeProvider>
         </body>
+        <GoogleAnalytics gaId="G-G6MN68562X" />
+        <Analytics />
       </html>
     </ViewTransitions>
   );

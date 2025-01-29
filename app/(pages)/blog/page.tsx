@@ -1,7 +1,9 @@
+import { promises as fs } from "fs";
+import path from "path";
 import BlogPostItem from "@/components/pages/blog/single-blog-post-item/main";
 import blogPosts from "@/config/pages/blog-posts";
 import { Metadata } from "next";
-import { Suspense } from "react";
+import { compileMDX } from "next-mdx-remote/rsc";
 
 export const metadata: Metadata = {
   title: "Blog",
