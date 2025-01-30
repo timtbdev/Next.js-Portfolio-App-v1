@@ -1,3 +1,5 @@
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
+
 export type ProfileType = {
   title: string;
   greeting: string;
@@ -34,7 +36,7 @@ export type MenuType = {
   icon: React.FC<{ className?: string }>;
 };
 
-export type BlogPostType = {
+export type BlogPostType_ = {
   id: number;
   category: string;
   title: string;
@@ -63,4 +65,17 @@ export type ContentType = {
   description: string[];
   image?: string;
   link?: string;
+};
+
+export type BlogPostType = {
+  slug: string;
+  title: string;
+  description: string;
+  image: string;
+  author: string;
+  authorAvatar: string;
+  tags: string[];
+  category: string;
+  date: string;
+  content: MDXRemoteSerializeResult;
 };

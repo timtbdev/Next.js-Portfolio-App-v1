@@ -184,7 +184,11 @@ export default function RootLayout({
 }) {
   return (
     <ViewTransitions>
-      <html lang="en" className="h-full scroll-smooth" suppressHydrationWarning>
+      <html
+        lang="en"
+        className="h-full scroll-smooth"
+        suppressHydrationWarning={true}
+      >
         <body className={`antialiased ${fontSans.variable}`}>
           <ThemeProvider
             attribute="class"
@@ -194,13 +198,15 @@ export default function RootLayout({
           >
             <Main>
               <Header />
-              <Container>{children}</Container>
+              <Container>
+                {children}
+                <Analytics />
+              </Container>
               <Footer />
             </Main>
           </ThemeProvider>
         </body>
         <GoogleAnalytics gaId="G-G6MN68562X" />
-        <Analytics />
       </html>
     </ViewTransitions>
   );
