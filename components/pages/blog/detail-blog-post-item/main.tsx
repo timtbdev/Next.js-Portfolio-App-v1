@@ -2,6 +2,7 @@ import { BlogPostType } from "@/types";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { FC } from "react";
 import readingTime from "reading-time";
+import ScrollToTopButton from "../../../ui/scroll-to-top-button";
 import Header from "./header";
 
 interface Props {

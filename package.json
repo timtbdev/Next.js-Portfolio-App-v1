@@ -21,6 +21,7 @@
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.5.2",
+    "feed": "^4.2.2",
     "framer-motion": "^11.17.0",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.471.0",
@@ -51,6 +52,7 @@
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "tailwindcss": "^3.4.17",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

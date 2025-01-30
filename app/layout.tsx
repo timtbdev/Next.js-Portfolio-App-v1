@@ -3,6 +3,7 @@ import Footer from "@/components/footer/main";
 import Header from "@/components/header/main";
 import Container from "@/components/main/container";
 import Main from "@/components/main/main";
+import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import seoConfig from "@/config/layout/seo";
 import { getUrl } from "@/utils/helpers";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -208,6 +209,7 @@ export default function RootLayout({
                 <Toaster position="top-center" />
               </Container>
               <Footer />
+              <ScrollToTopButton />
             </Main>
           </ThemeProvider>
         </body>

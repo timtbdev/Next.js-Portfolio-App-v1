@@ -10,6 +10,7 @@ const seoConfig: SeoType = {
     name: "Tim Baz",
     twitterUrl: "https://x.com/timtbdev",
     twitterAddress: "@timtbdev",
+    email: "timtb.dev@gmail.com",
   },
   description: "Android developer in the Bay Area.",
   keywords: [

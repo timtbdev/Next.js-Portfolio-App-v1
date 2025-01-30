@@ -13,7 +13,12 @@ export type SeoType = {
   subTitle: string;
   ogImage: string;
   twitterImage: string;
-  author: { name: string; twitterUrl: string; twitterAddress: string };
+  author: {
+    name: string;
+    twitterUrl: string;
+    twitterAddress: string;
+    email: string;
+  };
   description: string;
   keywords: Array<string>;
   tags: Array<string>;
