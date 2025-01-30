@@ -184,12 +184,11 @@ export default function RootLayout({
 }) {
   return (
     <ViewTransitions>
-      <html
-        lang="en"
-        className="h-full scroll-smooth"
-        suppressHydrationWarning={true}
-      >
-        <body className={`antialiased ${fontSans.variable}`}>
+      <html lang="en" className="h-full scroll-smooth">
+        <body
+          className={`antialiased ${fontSans.variable}`}
+          suppressHydrationWarning={true}
+        >
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
