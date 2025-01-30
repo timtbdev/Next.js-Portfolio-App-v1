@@ -1,5 +1,6 @@
-import { getPostBySlug } from "@/lib/mdx";
+import { generateMetaData, getPostBySlug } from "@/lib/mdx";
 import { format } from "date-fns";
+import { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { serialize } from "next-mdx-remote/serialize";
 
@@ -7,6 +8,15 @@ interface Props {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  return generateMetaData(slug);
 }
 
 export default async function BlogPost({ params }: Props) {

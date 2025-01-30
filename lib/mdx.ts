@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { Metadata } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import { BlogPostType } from "types";
 
@@ -52,12 +53,59 @@ export async function getPostBySlug(
 }
 
 export async function getAllPosts(): Promise<BlogPostType[]> {
-  const slugs = await getPostSlugs();
-  const posts = (await Promise.all(slugs.map(getPostBySlug))).filter(
-    Boolean,
-  ) as BlogPostType[];
+  try {
+    const slugs = await getPostSlugs();
+    const posts = (await Promise.all(slugs.map(getPostBySlug))).filter(
+      Boolean,
+    ) as BlogPostType[];
 
-  return posts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-  );
+    return posts.sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+    );
+  } catch (error) {
+    console.error("Error fetching all posts:", error);
+    return [];
+  }
+}
+
+export async function generateMetaData(slug: string): Promise<Metadata> {
+  const post = await getPostBySlug(slug);
+
+  if (!post) {
+    return {
+      title: "Blog Post",
+      description: "Read this insightful blog post.",
+      keywords: "blog, mdx, next.js",
+      openGraph: {
+        title: "Blog Post",
+        description: "Read this insightful blog post.",
+        images: undefined,
+        type: "article",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: "Blog Post",
+        description: "Read this insightful blog post.",
+        images: undefined,
+      },
+    };
+  }
+
+  return {
+    title: post.title || "Blog Post",
+    description: post.description || "Read this insightful blog post.",
+    keywords: post.tags.join(", ") || "blog, mdx, next.js",
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      images: post.image ? [{ url: post.image }] : undefined,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: post.image ? [post.image] : undefined,
+    },
+  };
 }
