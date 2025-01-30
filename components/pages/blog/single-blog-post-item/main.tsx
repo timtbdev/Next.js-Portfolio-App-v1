@@ -16,22 +16,24 @@ interface Props {
 }
 
 const BlogPostItem: FC<Props> = ({ post }) => {
-  const readTime = readingTime(post.content.compiledSource).minutes;
-
+  const readTime = readingTime(post.content).minutes;
   return (
     <Card>
-      <Link href={`blog/posts/${post.slug}`}>
+      <Link href={`blog/post/${post.slug}`}>
         <article className="relative isolate flex flex-col gap-2 px-5 py-5 sm:gap-8 sm:px-10 sm:py-6 lg:flex-row">
           <ImageSection post={post} />
           <div className="group relative max-w-xl">
-            <Title title={post.title} />
+            <Title title={post.data.title} />
             <div className="mt-1 flex items-center gap-x-3">
-              <Category category={post.category} />
-              <Author name={post.author} imageUrl={post.authorAvatar} />
+              <Category category={post.data.category} />
+              <Author
+                name={post.data.author}
+                imageUrl={post.data.authorAvatar}
+              />
             </div>
-            <Description description={post.description} />
+            <Description description={post.data.description} />
             <div className="mt-3 flex items-center gap-x-3">
-              <Date date={post.date} />
+              <Date date={post.data.date} />
               <ReadTime minutes={readTime} />
             </div>
           </div>

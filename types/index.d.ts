@@ -69,13 +69,9 @@ export type ContentType = {
 
 export type BlogPostType = {
   slug: string;
-  title: string;
-  description: string;
-  image: string;
-  author: string;
-  authorAvatar: string;
-  tags: string[];
-  category: string;
-  date: string;
-  content: MDXRemoteSerializeResult;
+  content: string;
+  data: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [key: string]: any;
+  };
 };

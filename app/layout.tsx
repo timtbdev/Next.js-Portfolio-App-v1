@@ -11,6 +11,7 @@ import { Metadata, Viewport } from "next";
 import { ThemeProvider } from "next-themes";
 import { ViewTransitions } from "next-view-transitions";
 import { Inter as FontSans } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 
 // Font Configuration
 const fontSans = FontSans({
@@ -184,7 +185,11 @@ export default function RootLayout({
 }) {
   return (
     <ViewTransitions>
-      <html lang="en" className="h-full scroll-smooth">
+      <html
+        lang="en"
+        className="h-full scroll-smooth"
+        suppressHydrationWarning={true}
+      >
         <body
           className={`antialiased ${fontSans.variable}`}
           suppressHydrationWarning={true}
@@ -200,6 +205,7 @@ export default function RootLayout({
               <Container>
                 {children}
                 <Analytics />
+                <Toaster position="top-center" />
               </Container>
               <Footer />
             </Main>

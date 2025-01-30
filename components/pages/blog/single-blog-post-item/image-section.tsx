@@ -8,8 +8,8 @@ const ImageSection: FC<{ post: BlogPostType }> = ({ post }) => {
   return (
     <div className="lg:aspect-square relative aspect-[16/9] sm:aspect-[2/1] lg:w-64 lg:shrink-0">
       <Image
-        src={post.image ?? "/images/cover-photo.jpg"}
-        alt={post.title ?? "Cover"}
+        src={post.data.image ?? "/images/cover-photo.jpg"}
+        alt={post.data.title ?? "Cover"}
         height={256}
         width={256}
         priority

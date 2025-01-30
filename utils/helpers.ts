@@ -34,10 +34,11 @@ export function getMinutes(minutes: number) {
   return `${roundedMinutes} min`;
 }
 
-export function getUrl() {
-  if (process.env.NODE_ENV === "development") {
-    return process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
-  } else {
-    return process.env.NEXT_PUBLIC_WEB_URL || "https://timtb.dev";
-  }
+export function getUrl(path: string = "") {
+  const baseUrl =
+    process.env.NODE_ENV === "development"
+      ? process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
+      : process.env.NEXT_PUBLIC_WEB_URL || "https://timtb.dev";
+
+  return `${baseUrl}${path}`;
 }
