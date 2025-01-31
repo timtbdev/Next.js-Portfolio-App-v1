@@ -6,7 +6,7 @@ interface Props {
 }
 
 const Title: FC<Props> = ({ title }) => {
-  return <h3>{title}</h3>;
+  return <h3 className="line-clamp-2 text-pretty">{title}</h3>;
 };
 
 export default Title;
