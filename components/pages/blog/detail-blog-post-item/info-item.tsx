@@ -8,7 +8,7 @@ interface Props {
 const InfoItem: FC<Props> = ({ icon, text }) => (
   <div className="inline-flex items-center gap-x-1">
     {icon}
-    <span className="text-sm">{text}</span>
+    <span className="text-sm font-medium">{text}</span>
   </div>
 );
 

@@ -10,7 +10,7 @@ const ReadTime: FC<Props> = ({ minutes }) => {
   return (
     <div className="inline-flex items-center">
       <Clock10Icon className="h-4 w-4 text-gray-600 dark:text-zinc-400" />
-      <span className="ml-1 text-sm">{getMinutes(minutes)}</span>
+      <span className="ml-1 text-sm font-medium">{getMinutes(minutes)}</span>
     </div>
   );
 };

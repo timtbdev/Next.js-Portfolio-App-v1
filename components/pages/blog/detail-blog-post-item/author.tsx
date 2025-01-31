@@ -10,19 +10,19 @@ interface Props {
 
 const AuthorInfo: FC<Props> = ({ authorImage, authorName, className }) => {
   return (
-    <div className={cn("flex flex-row items-center gap-2", className)}>
-      <Avatar>
+    <div className={cn("flex flex-row items-center gap-1", className)}>
+      <Avatar className="h-6 w-6">
         <AvatarImage
           src={authorImage}
           alt={authorImage}
-          width={20}
-          height={20}
+          width={24}
+          height={24}
           className="rounded-full"
           loading="lazy"
         />
         <AvatarFallback>TM</AvatarFallback>
       </Avatar>
-      <span className="text-md flex text-gray-600 dark:text-zinc-400">
+      <span className="flex text-sm font-medium text-gray-600 dark:text-zinc-400">
         {authorName}
       </span>
     </div>

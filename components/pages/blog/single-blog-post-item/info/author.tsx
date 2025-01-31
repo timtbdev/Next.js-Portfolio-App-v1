@@ -10,7 +10,7 @@ interface Props {
 
 const Author: FC<Props> = ({ name, imageUrl }) => {
   return (
-    <div className="flex items-center gap-x-1.5">
+    <div className="hidden items-center gap-x-1.5 sm:flex">
       <Avatar>
         <AvatarImage
           src={imageUrl}
@@ -24,7 +24,7 @@ const Author: FC<Props> = ({ name, imageUrl }) => {
           {name[0]}
         </AvatarFallback>
       </Avatar>
-      <span className="text-sm">{name}</span>
+      <span className="text-sm font-medium">{name}</span>
     </div>
   );
 };

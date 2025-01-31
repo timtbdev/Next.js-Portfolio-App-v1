@@ -8,6 +8,7 @@ import ImageSection from "./image-section";
 import Author from "./info/author";
 import Date from "./info/date";
 import ReadTime from "./info/read-time";
+import Tags from "./info/tags";
 import Title from "./title";
 
 interface Props {
@@ -22,13 +23,13 @@ const BlogPostItem: FC<Props> = ({ post }) => {
         <ImageSection post={post} />
         <div className="group relative max-w-xl px-5 pb-6 pt-3 sm:px-0 sm:py-0">
           <Title title={post.data.title} />
+          <Tags tags={post.data.tags} />
           <div className="mt-3 flex items-center gap-x-3">
             <Date date={post.data.date} />
             <ReadTime minutes={readTime} />
             <Author name={post.data.author} imageUrl={post.data.authorAvatar} />
           </div>
           <Description description={post.data.description} />
-
           <div className="relative mt-3 max-w-xl justify-start">
             <ReadMoreButton url={`/blog/post/${post.slug}`} />
           </div>

@@ -10,7 +10,7 @@ const Date: FC<Props> = ({ date }) => {
   return (
     <div className="inline-flex items-center">
       <CalendarIcon className="h-4 w-4 text-gray-600 dark:text-zinc-400" />
-      <span className="ml-1 text-sm">
+      <span className="ml-1 text-sm font-medium">
         {format(parseISO(date), "MMMM dd, yyyy")}
       </span>
     </div>
