@@ -1,15 +1,11 @@
-import { Button } from "@/components/ui/button";
 import Card from "@/components/ui/card";
 import ReadMoreButton from "@/components/ui/read-more-button";
 import { BlogPostType } from "@/types";
-import { ChevronRightIcon } from "lucide-react";
-import { Link } from "next-view-transitions";
 import { FC } from "react";
 import readingTime from "reading-time";
 import Description from "./description";
 import ImageSection from "./image-section";
 import Author from "./info/author";
-import Category from "./info/category";
 import Date from "./info/date";
 import ReadTime from "./info/read-time";
 import Title from "./title";

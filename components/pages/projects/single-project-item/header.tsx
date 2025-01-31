@@ -1,6 +1,4 @@
-import { Button } from "@/components/ui/button";
 import ReadMoreButton from "@/components/ui/read-more-button";
-import { ChevronRightIcon } from "lucide-react";
 import { FC } from "react";
 
 interface Props {
