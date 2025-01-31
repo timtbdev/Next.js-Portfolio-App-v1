@@ -16,7 +16,7 @@ interface Props {
 }
 
 const BlogPostItem: FC<Props> = ({ post }) => {
-  const readTime = readingTime(post.content).minutes;
+  const readTime = readingTime(post.content, { wordsPerMinute: 100 }).minutes;
   return (
     <Card>
       <article className="relative isolate flex flex-col gap-2 px-0 py-0 sm:gap-8 sm:px-10 sm:py-6 lg:flex-row">

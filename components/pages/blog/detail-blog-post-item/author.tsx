@@ -22,7 +22,7 @@ const AuthorInfo: FC<Props> = ({ authorImage, authorName, className }) => {
         />
         <AvatarFallback>TM</AvatarFallback>
       </Avatar>
-      <span className="flex text-sm font-medium text-gray-600 dark:text-zinc-400">
+      <span className="text-md flex font-medium text-gray-600 dark:text-zinc-400">
         {authorName}
       </span>
     </div>

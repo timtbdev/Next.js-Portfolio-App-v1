@@ -1,3 +1,4 @@
+import { getMinutes } from "@/utils/helpers";
 import { ArchiveIcon, CalendarIcon, ClockIcon } from "lucide-react";
 import { FC } from "react";
 import AuthorInfo from "./author";
@@ -52,7 +53,7 @@ const InforBar: FC<Props> = ({
             aria-hidden="true"
           />
         }
-        text={String(readTime)}
+        text={getMinutes(readTime)}
       />
     </div>
   );

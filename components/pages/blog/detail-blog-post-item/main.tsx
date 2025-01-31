@@ -18,7 +18,7 @@ const BlogPostDetail: FC<Props> = ({ post }) => {
         authorImage={post.data.authorAvatar}
         date={post.data.date}
         category={post.data.category}
-        readTime={readingTime(post.content).minutes}
+        readTime={readingTime(post.content, { wordsPerMinute: 100 }).minutes}
       />
       <div className="dark:prose-dark prose max-w-none px-6 pb-8 sm:px-8 sm:pb-12">
         <MDXRemote source={post.content} />

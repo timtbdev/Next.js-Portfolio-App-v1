@@ -28,10 +28,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: {
-    template: "Tim | %s",
-    default: seoConfig.title,
-  },
+  title: seoConfig.title,
   generator: seoConfig.author.name,
   applicationName: seoConfig.title,
   description: seoConfig.description,
