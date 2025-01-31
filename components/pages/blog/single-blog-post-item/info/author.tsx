@@ -20,7 +20,9 @@ const Author: FC<Props> = ({ name, imageUrl }) => {
           className="rounded-full"
           loading="lazy"
         />
-        <AvatarFallback>{name[0]}</AvatarFallback>
+        <AvatarFallback className="text-sm text-gray-600 dark:text-zinc-400">
+          {name[0]}
+        </AvatarFallback>
       </Avatar>
       <span className="text-sm">{name}</span>
     </div>

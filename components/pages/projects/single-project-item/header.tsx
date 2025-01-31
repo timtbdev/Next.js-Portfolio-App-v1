@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import ReadMoreButton from "@/components/ui/read-more-button";
 import { ChevronRightIcon } from "lucide-react";
 import { FC } from "react";
 
@@ -14,16 +15,9 @@ const Header: FC<Props> = ({ createdAt, title, description, url }) => (
     <p className="my-2 text-base tracking-tight">{createdAt}</p>
     <h2 className="my-4 text-4xl font-bold">{title}</h2>
     <p className="mx-auto mb-4 max-w-lg text-gray-600">{description}</p>
-    <Button
-      asChild
-      variant="outline"
-      className="group mx-auto flex h-10 w-fit items-center justify-center rounded-md bg-transparent px-3 py-2 text-gray-600 transition-all duration-100 ease-in-out dark:text-zinc-400"
-    >
-      <a href={url} target="_blank" className="flex items-center">
-        Read more
-        <ChevronRightIcon />
-      </a>
-    </Button>
+    <div className="mx-auto flex justify-center">
+      <ReadMoreButton url={url} />
+    </div>
   </div>
 );
 
