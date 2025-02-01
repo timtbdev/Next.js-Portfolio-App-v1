@@ -22,7 +22,7 @@ const PostItemMobile: FC<Props> = ({ post, url, readingTime }) => {
       <Link href={url} suppressHydrationWarning>
         <ImageSection post={post} />
         <div className="relative mb-6 mt-4 max-w-xl px-8">
-          <Title title={post.data.title} url={url} />
+          <Title title={post.data.title} />
           <div className="mt-2 flex items-center gap-x-3">
             <Date date={post.data.date} />
             <ReadTime minutes={readingTime} />
