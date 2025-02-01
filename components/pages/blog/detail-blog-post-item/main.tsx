@@ -12,6 +12,7 @@ const BlogPostDetail: FC<Props> = ({ post }) => {
   return (
     <>
       <Header
+        slug={post.slug}
         title={post.data.title}
         image={post.data.image}
         authorName={post.data.author}

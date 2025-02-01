@@ -4,6 +4,7 @@ import InforBar from "./info-bar";
 import Title from "./title";
 
 interface Props {
+  slug: string;
   title: string;
   image: string;
   authorImage: string;
@@ -14,6 +15,7 @@ interface Props {
 }
 
 const Header: FC<Props> = async ({
+  slug,
   title,
   image,
   authorName,
@@ -24,7 +26,7 @@ const Header: FC<Props> = async ({
 }) => {
   return (
     <section className="flex flex-col items-start justify-between">
-      <CoverImage imageUrl={image} />
+      <CoverImage imageUrl={image} slug={slug} />
       <div className="w-full px-6 py-1 sm:px-8">
         <Title title={title} />
 
