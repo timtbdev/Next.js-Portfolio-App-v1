@@ -3,15 +3,10 @@ import { FC } from "react";
 
 interface Props {
   title: string;
-  url: string;
 }
 
-const Title: FC<Props> = ({ title, url }) => {
-  return (
-    <Link href={url}>
-      <h3 className="line-clamp-2 text-pretty hover:underline">{title}</h3>
-    </Link>
-  );
+const Title: FC<Props> = ({ title }) => {
+  return <h3 className="line-clamp-2 text-pretty hover:underline">{title}</h3>;
 };
 
 export default Title;

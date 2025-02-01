@@ -16,7 +16,6 @@ const ImageSection: FC<{ post: BlogPostType }> = ({ post }) => {
         placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(256, 256))}`}
         className="absolute inset-0 h-full w-full bg-gray-50 object-cover sm:rounded-2xl"
       />
-      <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
     </div>
   );
 };
