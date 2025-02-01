@@ -28,21 +28,18 @@ const ShareButton: FC<Props> = ({ slug }) => {
 
   const shareOnFacebook = () => {
     window.open(
-      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+      `https://www.facebook.com/sharer/sharer.php?u=${url}`,
       "_blank",
     );
   };
 
   const shareOnTwitter = () => {
-    window.open(
-      `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}`,
-      "_blank",
-    );
+    window.open(`https://twitter.com/intent/tweet?url=${url}`, "_blank");
   };
 
   const shareOnLinkedIn = () => {
     window.open(
-      `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}`,
+      `https://www.linkedin.com/shareArticle?mini=true&url=${url}`,
       "_blank",
     );
   };
