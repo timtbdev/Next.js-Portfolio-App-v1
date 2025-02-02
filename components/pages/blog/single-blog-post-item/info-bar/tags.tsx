@@ -1,13 +1,20 @@
+import { cn } from "@/utils/helpers";
 import { TagIcon } from "lucide-react";
 import { FC } from "react";
 
 interface Props {
   tags: string[];
+  className?: string;
 }
 
-const Tags: FC<Props> = ({ tags }) => {
+const Tags: FC<Props> = ({ tags, className }) => {
   return (
-    <div className="mt-1 flex flex-wrap items-center gap-x-1 gap-y-2">
+    <div
+      className={cn(
+        "mt-1 flex flex-wrap items-center gap-x-1 gap-y-2",
+        className,
+      )}
+    >
       {tags.map((tag, index) => (
         <div
           key={index}

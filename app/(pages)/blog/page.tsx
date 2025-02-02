@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default async function BlogPage() {
   const posts: BlogPostType[] = getAllPosts();
   return (
-    <div className="mx-auto max-w-3xl space-y-8">
+    <div className="mx-auto max-w-3xl space-y-8 px-2 py-4 sm:p-0">
       {posts?.map((post, index) => <BlogPostItem key={index} post={post} />)}
     </div>
   );

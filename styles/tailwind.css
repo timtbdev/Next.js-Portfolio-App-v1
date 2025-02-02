@@ -76,7 +76,7 @@
     @apply text-pretty text-4xl font-semibold tracking-tight text-black dark:text-zinc-300 sm:text-5xl;
   }
   h3 {
-    @apply text-pretty text-lg font-semibold leading-6 tracking-tight text-black dark:text-zinc-300 sm:text-xl/8;
+    @apply text-pretty text-xl font-semibold leading-6 tracking-tight text-black dark:text-zinc-300 sm:text-xl/8;
   }
   h4 {
     @apply text-pretty text-lg font-medium text-gray-600 dark:text-zinc-400 sm:text-xl/8;

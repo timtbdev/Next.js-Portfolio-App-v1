@@ -1,4 +1,4 @@
-import ReadMoreButton from "@/components/ui/read-more-button";
+import LinkButton from "@/components/ui/link-button";
 import { FC } from "react";
 
 interface Props {
@@ -14,7 +14,7 @@ const Header: FC<Props> = ({ createdAt, title, description, url }) => (
     <h2 className="my-4 text-4xl font-bold">{title}</h2>
     <p className="mx-auto mb-4 max-w-lg text-gray-600">{description}</p>
     <div className="mx-auto flex justify-center">
-      <ReadMoreButton url={url} />
+      <LinkButton title="Read More" url={url} />
     </div>
   </div>
 );

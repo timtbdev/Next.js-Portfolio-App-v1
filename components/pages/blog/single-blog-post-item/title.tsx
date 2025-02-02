@@ -6,7 +6,11 @@ interface Props {
 }
 
 const Title: FC<Props> = ({ title }) => {
-  return <h3 className="line-clamp-2 text-pretty hover:underline">{title}</h3>;
+  return (
+    <h3 className="line-clamp-2 text-pretty text-2xl font-bold hover:underline sm:text-xl sm:font-semibold">
+      {title}
+    </h3>
+  );
 };
 
 export default Title;
