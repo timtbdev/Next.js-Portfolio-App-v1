@@ -1,4 +1,3 @@
-import DisqusComments from "@/components/pages/blog/detail-blog-post-item/comment";
 import BlogPostDetail from "@/components/pages/blog/detail-blog-post-item/main";
 import Card from "@/components/ui/card";
 import { generateMetaData, getPostBySlug } from "@/lib/mdx";
@@ -35,7 +34,6 @@ export default async function BlogPost({ params }: Props) {
       <Card>
         <BlogPostDetail post={{ slug, data, content }} />
       </Card>
-      <DisqusComments disqusShortname={disqusShortname} {...disqusConfig} />
     </>
   );
 }
