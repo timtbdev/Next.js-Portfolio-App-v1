@@ -11,7 +11,7 @@ const Tags: FC<Props> = ({ tags }) => {
       {tags.map((tag, index) => (
         <div
           key={index}
-          className="rounded-full bg-gray-50 px-2 py-1 text-xs text-gray-500 dark:bg-zinc-800/60 dark:text-zinc-500"
+          className="rounded-full bg-gray-50 px-2 py-1 text-xs text-gray-500 dark:bg-zinc-900/40 dark:text-zinc-400"
         >
           <TagIcon className="-mt-0.5 mr-1 inline-block h-3 w-3" />
           {tag}

@@ -18,7 +18,7 @@ interface Props {
 
 const PostItemMobile: FC<Props> = ({ post, url, readingTime }) => {
   return (
-    <article className="flex flex-col hover:bg-gray-100 dark:hover:bg-zinc-800 sm:hidden">
+    <article className="flex flex-col hover:bg-gray-100 dark:hover:bg-zinc-900 sm:hidden">
       <Link href={url} suppressHydrationWarning>
         <ImageSection post={post} />
         <div className="relative mb-6 mt-4 max-w-xl px-8">

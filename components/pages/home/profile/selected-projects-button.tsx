@@ -14,7 +14,7 @@ const SelectedProjectsButton: React.FC = () => (
         <ScrollIntoView selector="#selected-projects">
           <Button
             variant="outline"
-            className="border border-gray-300 bg-gray-50 text-gray-600 hover:bg-gray-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800"
+            className="border border-gray-300 bg-gray-50 text-gray-600 hover:bg-gray-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-900"
           >
             <CircleArrowDownIcon className="mr-1.5 h-4 w-4" />
             Selected Projects

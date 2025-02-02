@@ -6,10 +6,10 @@ interface Props {
 }
 
 const buttonClasses =
-  "group relative flex h-10 items-center justify-center whitespace-nowrap rounded-md border border-gray-300/40 hover:border-gray-400 dark:hover:border-zinc-600 hover:text-black dark:hover:text-white bg-gray-50 px-4 py-2 text-center text-sm font-medium text-gray-600 transition-all duration-100 ease-in-out hover:bg-gray-100 disabled:shadow-none dark:border-zinc-700/40 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800/40 sm:max-w-fit";
+  "group relative flex h-10 items-center justify-center whitespace-nowrap rounded-md border border-gray-300/40 hover:border-gray-400 dark:hover:border-zinc-700 hover:text-black dark:hover:text-white bg-gray-50 px-4 py-2 text-center text-sm font-medium text-gray-600 transition-all duration-100 ease-in-out hover:bg-gray-100 disabled:shadow-none dark:border-zinc-600 dark:bg-zinc-900/40 dark:text-white dark:hover:bg-zinc-800 sm:max-w-fit";
 
 const svgClasses =
-  "-mr-1 ml-2 stroke-gray-600 group-hover:stroke-black dark:group-hover:stroke-white stroke-[1.5px] dark:stroke-zinc-400";
+  "-mr-1 ml-2 stroke-gray-600 group-hover:stroke-black dark:group-hover:stroke-zinc-400 stroke-[1.5px] dark:stroke-white";
 
 const ReadMoreButton: FC<Props> = ({ url }) => {
   const isInternalLink = url.startsWith("/");
