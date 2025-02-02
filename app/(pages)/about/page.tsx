@@ -1,5 +1,8 @@
 import Card from "@/components/ui/card";
+import LinkButton from "@/components/ui/link-button";
 import aboutConfig from "@/config/pages/about";
+import { getUrl } from "@/utils/helpers";
+import { Link } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -44,7 +47,7 @@ const Content = ({
   <div className="relative mx-auto flex max-w-3xl flex-col text-pretty px-8 pb-6 pt-4 sm:px-14">
     <Title title={title} />
     <Description description={description} />
-    <DownloadButton link={link} />
+    <LinkButton url={getUrl(link)} title="Download Resume" className="mt-4" />
   </div>
 );
 

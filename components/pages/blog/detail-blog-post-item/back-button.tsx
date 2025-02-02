@@ -7,7 +7,7 @@ const BackButton = () => {
   const router = useRouter();
   return (
     <button
-      className="absolute left-[20px] top-[20px] rounded-full border-[1px] border-gray-300 bg-gray-50 p-3 hover:bg-gray-200 dark:border-zinc-600 dark:bg-zinc-800 dark:hover:bg-zinc-900"
+      className="absolute left-[20px] top-[20px] rounded-full border-[1px] border-gray-300 bg-gray-50 p-3 hover:bg-gray-200 active:bg-gray-200 dark:border-zinc-600 dark:bg-zinc-800 dark:hover:bg-zinc-900 dark:active:bg-zinc-500"
       onClick={() => {
         router.back();
       }}

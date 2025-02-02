@@ -15,7 +15,7 @@ const LinkButton: FC<Props> = ({ title, url, className }) => {
     <>
       {title}
       <svg
-        className="-mr-1 ml-2 hidden stroke-gray-600 stroke-[1.5px] group-hover:stroke-black dark:stroke-white dark:group-hover:stroke-zinc-400 sm:inline-flex"
+        className="-mr-1 ml-2 stroke-gray-600 stroke-[1.5px] group-hover:stroke-black dark:stroke-white dark:group-hover:stroke-zinc-400"
         fill="none"
         stroke="currentColor"
         width="11"
