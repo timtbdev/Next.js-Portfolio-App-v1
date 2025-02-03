@@ -2,7 +2,8 @@ import { cn, shimmer, toBase64 } from "@/utils/helpers";
 import Image from "next/image";
 import React, { FC } from "react";
 import BackButton from "./buttons/back-button";
-import ShareButton from "./buttons/share-button";
+import ShareButtonDesktop from "./buttons/share-button-desktop";
+import ShareButtonMobile from "./buttons/share-button-mobile";
 
 interface Props {
   slug: string;
@@ -35,7 +36,12 @@ const PostImage: FC<Props> = ({
         placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(512, 288))}`}
       />
       <BackButton />
-      <ShareButton slug={slug} title={title} />
+      <ShareButtonDesktop
+        slug={slug}
+        title={title}
+        className="hidden sm:flex"
+      />
+      <ShareButtonMobile slug={slug} title={title} className="sm:hidden" />
     </div>
   ) : (
     <div className="sm:aspect-square relative aspect-[16/9] sm:aspect-[2/1] sm:w-64 sm:shrink-0">

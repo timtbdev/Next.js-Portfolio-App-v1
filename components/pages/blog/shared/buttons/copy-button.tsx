@@ -1,6 +1,7 @@
 "use client";
 
 import { FC, useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { FaCheck, FaCopy } from "react-icons/fa";
 
 interface Props {
@@ -12,6 +13,7 @@ const CopyButton: FC<Props> = ({ url }) => {
 
   useEffect(() => {
     if (copied) {
+      toast.success("Copied to clipboard");
       const id = setTimeout(() => setCopied(false), 2000);
       return () => clearTimeout(id);
     }
