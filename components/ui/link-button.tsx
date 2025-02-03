@@ -40,7 +40,7 @@ const LinkButton: FC<Props> = ({ title, url, className }) => {
       href={url}
       className={cn(
         className,
-        "group relative flex h-10 items-center justify-center whitespace-nowrap rounded-md border border-gray-300/40 bg-gray-50 px-4 py-6 text-center text-sm font-medium text-gray-600 transition-all duration-100 ease-in-out hover:border-gray-400 hover:bg-gray-100 hover:text-black active:bg-gray-200 disabled:shadow-none dark:border-zinc-600 dark:bg-zinc-900/40 dark:text-white dark:hover:border-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-white dark:active:bg-zinc-500 sm:max-w-fit sm:py-2",
+        "group relative flex h-10 items-center justify-center whitespace-nowrap rounded-md border border-gray-300/40 bg-gray-50 px-4 py-6 text-center text-sm font-semibold text-gray-600 transition-all duration-100 ease-in-out hover:border-gray-400 hover:bg-gray-100 hover:text-black active:bg-gray-200 disabled:shadow-none dark:border-zinc-600 dark:bg-zinc-900/40 dark:text-white dark:hover:border-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-white dark:active:bg-zinc-500 sm:max-w-fit sm:py-2",
       )}
     >
       <ButtonContent />
@@ -49,7 +49,7 @@ const LinkButton: FC<Props> = ({ title, url, className }) => {
     <a
       className={cn(
         className,
-        "group relative flex h-10 items-center justify-center whitespace-nowrap rounded-md border border-gray-300/40 bg-gray-50 px-4 py-6 text-center text-sm font-medium text-gray-600 transition-all duration-100 ease-in-out hover:border-gray-400 hover:bg-gray-100 hover:text-black active:bg-gray-200 disabled:shadow-none dark:border-zinc-600 dark:bg-zinc-900/40 dark:text-white dark:hover:border-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-white dark:active:bg-zinc-500 sm:max-w-fit sm:py-2",
+        "group relative flex h-10 items-center justify-center whitespace-nowrap rounded-md border border-gray-300/40 bg-gray-50 px-4 py-6 text-center text-sm font-semibold text-gray-600 transition-all duration-100 ease-in-out hover:border-gray-400 hover:bg-gray-100 hover:text-black active:bg-gray-200 disabled:shadow-none dark:border-zinc-600 dark:bg-zinc-900/40 dark:text-white dark:hover:border-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-white dark:active:bg-zinc-500 sm:max-w-fit sm:py-2",
       )}
       href={url}
       target="_blank"

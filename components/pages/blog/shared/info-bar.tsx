@@ -40,8 +40,8 @@ const InfoBar: FC<Props> = ({
 
       {detail && (
         <>
-          <Separator orientation="vertical" />
-          <InfoItem emoji="📁" text={category} />
+          <Separator orientation="vertical" className="hidden sm:flex" />
+          <InfoItem emoji="🗄️" text={category} className="hidden sm:flex" />
         </>
       )}
       <Separator orientation="vertical" className="hidden sm:flex" />
