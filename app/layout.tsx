@@ -3,6 +3,7 @@ import Footer from "@/components/footer/main";
 import Header from "@/components/header/main";
 import Container from "@/components/main/container";
 import Main from "@/components/main/main";
+import TailwindIndicator from "@/components/tailwind-indicator/tailwind-indicator";
 import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import seoConfig from "@/config/layout/seo";
 import { getUrl } from "@/utils/helpers";
@@ -209,6 +210,7 @@ export default function RootLayout({
               <ScrollToTopButton />
             </Main>
           </ThemeProvider>
+          <TailwindIndicator />
         </body>
         <GoogleAnalytics gaId="G-G6MN68562X" />
       </html>

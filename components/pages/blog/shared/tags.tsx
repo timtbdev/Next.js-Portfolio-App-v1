@@ -9,18 +9,13 @@ interface Props {
 
 const Tags: FC<Props> = ({ tags, className }) => {
   return (
-    <div
-      className={cn(
-        "mt-1 flex flex-wrap items-center gap-x-1 gap-y-2",
-        className,
-      )}
-    >
+    <div className={cn("flex flex-wrap items-center gap-2", className)}>
       {tags.map((tag, index) => (
         <div
           key={index}
-          className="rounded-full bg-gray-50 px-2 py-1 text-xs text-gray-500 dark:bg-zinc-900/40 dark:text-zinc-400"
+          className="flex items-center text-sm text-gray-500 dark:text-zinc-400"
         >
-          <TagIcon className="-mt-0.5 mr-1 inline-block h-3 w-3" />
+          <TagIcon className="-mt-0.5 mr-1.5 inline-block h-3 w-3" />
           {tag}
         </div>
       ))}

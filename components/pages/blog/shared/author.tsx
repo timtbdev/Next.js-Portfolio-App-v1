@@ -6,21 +6,22 @@ interface Props {
   authorImage: string;
   authorName: string;
   className?: string;
+  size?: number;
 }
 
-const AuthorInfo: FC<Props> = ({ authorImage, authorName, className }) => {
+const Author: FC<Props> = ({ authorImage, authorName, className, size }) => {
   return (
     <div className={cn("flex flex-row items-center gap-1", className)}>
       <Avatar className="h-6 w-6">
         <AvatarImage
           src={authorImage}
           alt={authorImage}
-          width={24}
-          height={24}
+          width={size}
+          height={size}
           className="rounded-full"
           loading="lazy"
         />
-        <AvatarFallback>TM</AvatarFallback>
+        <AvatarFallback>{authorName?.charAt(0) || "?"}</AvatarFallback>
       </Avatar>
       <span className="text-md flex font-medium text-gray-600 dark:text-zinc-400">
         {authorName}
@@ -29,4 +30,4 @@ const AuthorInfo: FC<Props> = ({ authorImage, authorName, className }) => {
   );
 };
 
-export default AuthorInfo;
+export default Author;
