@@ -24,6 +24,7 @@ const BlogPostDetail: FC<Props> = ({ post }) => {
       >
         <PostImage
           slug={slug}
+          title={title}
           imageUrl={image}
           imageAlt={title}
           detail={true}

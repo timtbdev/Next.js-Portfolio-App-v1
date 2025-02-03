@@ -11,42 +11,22 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { getUrl } from "@/utils/helpers";
-import { CheckIcon, CopyIcon, Share2Icon } from "lucide-react"; // Import CheckIcon
+import { Share2Icon } from "lucide-react";
+// Import CheckIcon
 import { FC, useState } from "react"; // Import useState
-import { FaFacebook, FaLinkedin, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { IoMail } from "react-icons/io5";
+import CopyButton from "./copy-button"; // Import CopyButton
 
 interface Props {
   slug: string;
+  title: string;
 }
 
-const ShareButton: FC<Props> = ({ slug }) => {
-  const url = `${getUrl()}/blog/${slug}`;
+const ShareButton: FC<Props> = ({ slug, title }) => {
+  const url = `${getUrl()}${encodeURIComponent(`blog/post/${slug}`)}`;
   const [copied, setCopied] = useState(false); // State to manage copy action
-
-  const shareOnFacebook = () => {
-    window.open(
-      `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-      "_blank",
-    );
-  };
-
-  const shareOnTwitter = () => {
-    window.open(`https://twitter.com/intent/tweet?url=${url}`, "_blank");
-  };
-
-  const shareOnLinkedIn = () => {
-    window.open(
-      `https://www.linkedin.com/shareArticle?mini=true&url=${url}`,
-      "_blank",
-    );
-  };
-
-  const shareOnWhatsapp = () => {
-    window.open(`https://api.whatsapp.com/send?text=${url}`, "_blank");
-  };
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(url).then(() => {
@@ -65,42 +45,64 @@ const ShareButton: FC<Props> = ({ slug }) => {
           />
         </button>
       </DialogTrigger>
-      <DialogContent className="font-sans sm:max-w-md">
+      <DialogContent className="bg-gray-50 font-sans dark:bg-zinc-900 sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="">Share this page</DialogTitle>
           <DialogDescription>Select a platform to share:</DialogDescription>
         </DialogHeader>
-        <div className="flex items-center space-x-2">
-          <div className="grid flex-1 gap-2">
-            <Label htmlFor="link" className="sr-only">
-              Link
-            </Label>
-            <Input id="link" defaultValue={url} readOnly />
+        <div className="my-6 grid grid-cols-3 gap-8">
+          <div className="mx-auto flex">
+            <a
+              title={title}
+              target="_blank"
+              href={`https://twitter.com/intent/tweet?url=${url}&text=${encodeURIComponent(
+                title,
+              )}`}
+              rel="noopener noreferrer"
+              className="rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200 dark:border-zinc-700 dark:bg-zinc-800 dark:active:bg-zinc-500"
+            >
+              <FaTwitter className="h-8 w-8 text-gray-600 dark:text-zinc-400" />
+            </a>
           </div>
-          <Button
-            type="button"
-            size="sm"
-            className="px-3"
-            onClick={copyToClipboard}
-          >
-            <span className="sr-only">Copy</span>
-            {copied ? <CheckIcon /> : <CopyIcon />}{" "}
-            {/* Change icon based on state */}
-          </Button>
-        </div>
-        <div className="mx-auto flex w-full space-x-8 py-4">
-          <button onClick={shareOnFacebook} className="text-blue-600">
-            <FaFacebook size={48} />
-          </button>
-          <button onClick={shareOnTwitter} className="text-blue-400">
-            <FaTwitter size={48} />
-          </button>
-          <button onClick={shareOnLinkedIn} className="text-blue-700">
-            <FaLinkedin size={48} />
-          </button>
-          <button onClick={shareOnWhatsapp} className="text-green-500">
-            <FaWhatsapp size={48} />
-          </button>
+          <div className="mx-auto flex">
+            <a
+              title={title}
+              target="_blank"
+              href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
+              rel="noopener noreferrer"
+              className="rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200 dark:border-zinc-700 dark:bg-zinc-800 dark:active:bg-zinc-500"
+            >
+              <FaFacebook className="h-8 w-8 text-gray-600 dark:text-zinc-400" />
+            </a>
+          </div>
+          <div className="mx-auto flex">
+            <a
+              title={title}
+              target="_blank"
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`}
+              rel="noopener noreferrer"
+              className="rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200 dark:border-zinc-700 dark:bg-zinc-800 dark:active:bg-zinc-500"
+            >
+              <FaLinkedin className="h-8 w-8 text-gray-600 dark:text-zinc-400" />
+            </a>
+          </div>
+          <div className="mx-auto flex">
+            <a
+              title={title}
+              target="_blank"
+              href={`mailto:?subject=${encodeURIComponent(
+                title,
+              )}&body=${encodeURIComponent("Check this out:" + "\n\n")}${url}`}
+              rel="noopener noreferrer"
+              className="rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200 dark:border-zinc-700 dark:bg-zinc-800 dark:active:bg-zinc-500"
+            >
+              <IoMail className="h-8 w-8 text-gray-600 dark:text-zinc-400" />
+            </a>
+          </div>
+
+          <div className="mx-auto flex">
+            <CopyButton url={url} />
+          </div>
         </div>
         <DialogFooter className="sm:justify-start">
           <DialogClose asChild>

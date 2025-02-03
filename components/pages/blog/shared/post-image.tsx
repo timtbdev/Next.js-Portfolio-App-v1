@@ -6,6 +6,7 @@ import ShareButton from "./buttons/share-button";
 
 interface Props {
   slug: string;
+  title?: string;
   imageUrl: string;
   imageAlt: string;
   detail?: boolean;
@@ -14,6 +15,7 @@ interface Props {
 
 const PostImage: FC<Props> = ({
   slug,
+  title = "",
   imageUrl,
   imageAlt,
   detail = false,
@@ -33,7 +35,7 @@ const PostImage: FC<Props> = ({
         placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(512, 288))}`}
       />
       <BackButton />
-      <ShareButton slug={slug} />
+      <ShareButton slug={slug} title={title} />
     </div>
   ) : (
     <div className="sm:aspect-square relative aspect-[16/9] sm:aspect-[2/1] sm:w-64 sm:shrink-0">
