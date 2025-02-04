@@ -6,7 +6,7 @@ interface Props {
 
 const Description: FC<Props> = ({ description }) => {
   return (
-    <p className="mt-3 line-clamp-6 text-balance text-sm leading-6">
+    <p className="text-md mt-3 line-clamp-6 text-balance leading-7">
       {description}
     </p>
   );

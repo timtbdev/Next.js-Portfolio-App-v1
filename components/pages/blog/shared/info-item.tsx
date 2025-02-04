@@ -1,16 +1,16 @@
 import { cn } from "@/utils/helpers";
-import { FC } from "react";
+import { FC, JSX } from "react";
 
 interface Props {
-  emoji: string;
+  icon: JSX.Element;
   text: string;
   className?: string;
 }
 
-const InfoItem: FC<Props> = ({ emoji, text, className }) => (
-  <div className={cn("inline-flex items-center gap-x-1 text-sm", className)}>
-    {emoji}
-    <span className="text-sm font-medium">{text}</span>
+const InfoItem: FC<Props> = ({ icon, text, className }) => (
+  <div className={cn("inline-flex items-center gap-x-1", className)}>
+    {icon}
+    <span className="text-md">{text}</span>
   </div>
 );
 

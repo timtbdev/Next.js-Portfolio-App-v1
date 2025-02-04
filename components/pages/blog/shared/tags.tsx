@@ -1,5 +1,5 @@
 import { cn } from "@/utils/helpers";
-import { TagIcon } from "lucide-react";
+import { HashIcon } from "lucide-react";
 import { FC } from "react";
 
 interface Props {
@@ -14,17 +14,9 @@ const Tags: FC<Props> = ({ tags, className, detail = false }) => {
       {tags.map((tag, index) => (
         <div
           key={index}
-          className={cn(
-            detail ? "text-md" : "text-sm",
-            "flex items-center text-gray-500 dark:text-zinc-400",
-          )}
+          className="text-md flex items-center text-gray-500 dark:text-zinc-400"
         >
-          <TagIcon
-            className={cn(
-              detail ? "h-4 w-4" : "h-3 w-3",
-              "-mt-0.5 mr-1.5 inline-block h-3 w-3",
-            )}
-          />
+          <HashIcon size={16} className="-mt-0.5 mr-0.5 inline-block h-4 w-4" />
           {tag}
         </div>
       ))}

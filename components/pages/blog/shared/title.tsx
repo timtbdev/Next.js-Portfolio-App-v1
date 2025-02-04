@@ -13,7 +13,7 @@ const Title: FC<Props> = ({ title, detail = false, className }) => {
   ) : (
     <h3
       className={cn(
-        "line-clamp-2 text-pretty text-2xl font-bold hover:underline sm:text-xl sm:font-semibold",
+        "line-clamp-2 text-pretty text-2xl font-bold sm:text-xl sm:font-semibold",
         className,
       )}
     >
