@@ -40,7 +40,7 @@ const ContactHeader = () => (
       </a>
     </div>
 
-    <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+    <p className="mt-2 text-sm text-gray-600 dark:text-zinc-400">
       Please feel free to reach out to me via email or social media.
     </p>
   </div>
@@ -59,13 +59,13 @@ const SocialMediaAccounts = () => (
           >
             <span className="flex min-w-0 flex-1 items-center space-x-4">
               <span className="block shrink-0">
-                <item.icon className="size-8 text-zinc-600 dark:text-zinc-400" />
+                <item.icon className="size-8 text-gray-600 dark:text-zinc-400" />
               </span>
               <span className="block min-w-0 flex-1">
-                <span className="block truncate text-sm font-semibold text-zinc-600 dark:text-zinc-400">
+                <span className="block truncate text-sm font-semibold text-gray-600 dark:text-zinc-400">
                   {item.name}
                 </span>
-                <span className="block truncate text-sm font-medium text-zinc-600 dark:text-zinc-400">
+                <span className="block truncate text-sm font-medium text-gray-600 dark:text-zinc-400">
                   {item.username}
                 </span>
               </span>

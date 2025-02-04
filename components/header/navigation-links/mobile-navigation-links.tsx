@@ -23,7 +23,7 @@ const MobileNavigationLinks: FC<Props> = ({ currentPath }) => (
           className="transiton group relative inset-px z-10 inline-flex rounded-md bg-transparent p-2 focus:outline-none"
           aria-label="Toggle site navigation"
         >
-          <div className="flex h-6 w-6 items-center justify-center text-zinc-600 dark:text-zinc-400">
+          <div className="flex h-6 w-6 items-center justify-center text-gray-600 dark:text-zinc-400">
             <span
               aria-hidden="true"
               className={cn(
@@ -80,13 +80,13 @@ const MobileNavigationLinks: FC<Props> = ({ currentPath }) => (
                         href={menuItem.slug}
                         className={`${
                           currentPath === menuItem.slug
-                            ? "bg-gradient-to-r from-gray-200 via-gray-100 to-gray-50 px-4 text-zinc-600 shadow-md shadow-black/5 ring-1 ring-black/10 dark:from-zinc-800/20 dark:via-zinc-800/10 dark:to-zinc-800 dark:text-zinc-400 dark:ring-zinc-700/40"
-                            : "text-zinc-600 hover:bg-zinc-200/40 dark:text-zinc-400 dark:hover:bg-zinc-500/10"
+                            ? "bg-gradient-to-r from-gray-200 via-gray-100 to-gray-50 px-4 text-gray-600 shadow-md shadow-black/5 ring-1 ring-black/10 dark:from-zinc-800/20 dark:via-zinc-800/10 dark:to-zinc-800 dark:text-zinc-400 dark:ring-zinc-700/40"
+                            : "text-gray-600 hover:bg-zinc-200/40 dark:text-zinc-400 dark:hover:bg-zinc-500/10"
                         } text-md group flex gap-x-4 rounded-full p-4 font-semibold`}
                       >
                         <menuItem.icon
                           aria-hidden="true"
-                          className="text-zinc-600 dark:text-zinc-400"
+                          className="text-gray-600 dark:text-zinc-400"
                         />
                         {menuItem.title}
                       </CloseButton>

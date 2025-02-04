@@ -1,5 +1,5 @@
 import { getUrl } from "@/utils/helpers";
-import { CodeIcon, RssIcon } from "lucide-react";
+import { FaGithub, FaSquareRss } from "react-icons/fa6";
 
 const MobileCopyright = () => {
   return (
@@ -9,21 +9,21 @@ const MobileCopyright = () => {
           href="https://github.com/timtbdev/Next.js-Portfolio-App-v2"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-md inline-flex items-center gap-1.5 text-zinc-600 hover:text-blue-600 dark:text-zinc-400 dark:hover:text-orange-600"
+          className="text-md inline-flex items-center gap-1.5 text-gray-600 hover:text-black dark:text-zinc-400 dark:hover:text-white"
         >
-          <CodeIcon size={18} />
+          <FaGithub size={18} />
           Source code
         </a>
         <span> | </span>
         <a
           href={getUrl("/rss.xml")}
-          className="text-md inline-flex items-center gap-1.5 text-zinc-600 hover:text-blue-600 dark:text-zinc-400 dark:hover:text-orange-600"
+          className="text-md inline-flex items-center gap-1.5 text-gray-600 hover:text-orange-600 dark:text-zinc-400 dark:hover:text-orange-600"
         >
-          <RssIcon size={18} />
+          <FaSquareRss size={18} />
           RSS Feed
         </a>
       </div>
-      <div className="text-md mx-auto mt-6 flex max-w-4xl justify-center text-center leading-5 text-zinc-600 dark:text-zinc-400">
+      <div className="text-md mx-auto mt-6 flex max-w-4xl justify-center text-center leading-5 text-gray-600 dark:text-zinc-400">
         © {new Date().getFullYear()} All rights reserved.
       </div>
     </div>

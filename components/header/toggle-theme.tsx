@@ -21,7 +21,7 @@ const ToggleTheme = ({ className }: { className?: string }) => {
       suppressHydrationWarning
     >
       <SunIcon className="hidden h-6 w-6 text-zinc-400 dark:block" />
-      <MoonIcon className="h-6 w-6 text-zinc-600 dark:hidden" />
+      <MoonIcon className="h-6 w-6 text-gray-600 dark:hidden" />
     </button>
   );
 };

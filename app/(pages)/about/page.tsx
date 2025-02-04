@@ -2,7 +2,6 @@ import Card from "@/components/ui/card";
 import LinkButton from "@/components/ui/link-button";
 import aboutConfig from "@/config/pages/about";
 import { getUrl } from "@/utils/helpers";
-import { Link } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -64,17 +63,5 @@ const Description = ({ description }: { description: string[] }) => (
         {item}
       </p>
     ))}
-  </div>
-);
-
-const DownloadButton = ({ link }: { link: string }) => (
-  <div className="mt-4 flex sm:mt-6">
-    <a
-      target="_blank"
-      className="group flex w-full items-center justify-center whitespace-nowrap rounded-md border border-zinc-600/20 bg-transparent px-5 py-2.5 text-center text-base font-medium text-zinc-600 shadow-sm transition-all duration-100 ease-in-out hover:bg-zinc-200/40 hover:opacity-90 dark:border-zinc-700/40 dark:text-zinc-400 dark:hover:bg-gray-500/10 sm:w-fit"
-      href={link}
-    >
-      Download Resume
-    </a>
   </div>
 );
