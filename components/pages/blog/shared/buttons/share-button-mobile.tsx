@@ -49,7 +49,7 @@ const ShareButtonMobile: FC<Props> = ({ slug, title = "", className }) => {
                       rel="noopener noreferrer"
                       className="rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200 dark:border-zinc-700 dark:bg-zinc-800 dark:active:bg-zinc-500"
                     >
-                      <FaTwitter className="h-8 w-8 text-gray-500 dark:text-zinc-400" />
+                      <FaTwitter className="h-8 w-8 text-sky-500" />
                     </a>
                   </div>
                   <div className="mx-auto flex">
@@ -60,7 +60,7 @@ const ShareButtonMobile: FC<Props> = ({ slug, title = "", className }) => {
                       rel="noopener noreferrer"
                       className="rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200 dark:border-zinc-700 dark:bg-zinc-800 dark:active:bg-zinc-500"
                     >
-                      <FaFacebook className="h-8 w-8 text-gray-500 dark:text-zinc-400" />
+                      <FaFacebook className="h-8 w-8 text-blue-600" />
                     </a>
                   </div>
                   <div className="mx-auto flex">
@@ -71,7 +71,7 @@ const ShareButtonMobile: FC<Props> = ({ slug, title = "", className }) => {
                       rel="noopener noreferrer"
                       className="rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200 dark:border-zinc-700 dark:bg-zinc-800 dark:active:bg-zinc-500"
                     >
-                      <FaLinkedin className="h-8 w-8 text-gray-500 dark:text-zinc-400" />
+                      <FaLinkedin className="h-8 w-8 text-blue-500" />
                     </a>
                   </div>
                   <div className="mx-auto flex">
@@ -84,7 +84,7 @@ const ShareButtonMobile: FC<Props> = ({ slug, title = "", className }) => {
                       rel="noopener noreferrer"
                       className="rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200 dark:border-zinc-700 dark:bg-zinc-800 dark:active:bg-zinc-500"
                     >
-                      <IoMail className="h-8 w-8 text-gray-500 dark:text-zinc-400" />
+                      <IoMail className="h-8 w-8 text-slate-500" />
                     </a>
                   </div>
 

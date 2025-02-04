@@ -32,9 +32,9 @@ const CopyButton: FC<Props> = ({ url }) => {
       className="rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200 dark:border-zinc-700 dark:bg-zinc-800 dark:active:bg-zinc-500"
     >
       {copied ? (
-        <FaCheck className="h-8 w-8 text-gray-500 dark:text-zinc-400" />
+        <FaCheck className="h-8 w-8 text-green-500 dark:text-zinc-400" />
       ) : (
-        <FaCopy className="h-8 w-8 text-gray-500 dark:text-zinc-400" />
+        <FaCopy className="h-8 w-8 text-stone-500 dark:text-zinc-400" />
       )}
     </button>
   );

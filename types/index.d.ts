@@ -1,4 +1,6 @@
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
+import { JSX } from "react";
+import { IconType } from "react-icons/lib";
 
 export type ProfileType = {
   title: string;
@@ -29,9 +31,7 @@ export type SocialType = {
   name: string;
   username?: string;
   href: string;
-  icon: ForwardRefExoticComponent<
-    Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
-  >;
+  icon: IconType;
 };
 
 export type MenuType = {

@@ -90,4 +90,10 @@
   span {
     @apply text-base/7 text-gray-600 dark:text-zinc-400;
   }
+  .custom-text-red {
+    @apply bg-red-500;
+  }
+  .custom-text-sky {
+    @apply text-sky-500;
+  }
 }

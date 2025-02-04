@@ -1,18 +1,35 @@
-import socialConfig from "@/config/layout/social";
-import { SocialType } from "@/types";
+import { socialConfigs } from "@/config/layout/social";
+import { FC } from "react";
 
-const SocialMediaAccounts: React.FC = () => {
+const getIconClass = (name: string): string => {
+  switch (name) {
+    case "Twitter":
+      return "h-5 w-5 text-zinc-500 transition-colors duration-100 ease-in-out hover:text-sky-500 dark:text-zinc-400 dark:hover:text-sky-500";
+    case "GitHub":
+      return "h-5 w-5 text-zinc-500 transition-colors duration-100 ease-in-out hover:text-black dark:text-zinc-400 dark:hover:text-white";
+    case "Facebook":
+      return "h-5 w-5 text-zinc-500 transition-colors duration-100 ease-in-out hover:text-blue-600 dark:text-zinc-400 dark:hover:text-blue-600";
+    case "LinkedIn":
+      return "h-5 w-5 text-zinc-500 transition-colors duration-100 ease-in-out hover:text-blue-500 dark:text-zinc-400 dark:hover:text-blue-500";
+    case "Youtube":
+      return "h-5 w-5 text-zinc-500 transition-colors duration-100 ease-in-out hover:text-red-500 dark:text-zinc-400 dark:hover:text-red-500";
+    default:
+      return "h-5 w-5";
+  }
+};
+
+const SocialMediaAccounts: FC = () => {
   return (
     <div className="mt-8 flex justify-center space-x-6">
-      {socialConfig.map((item: SocialType) => (
+      {socialConfigs.map((account) => (
         <a
-          key={item.name}
-          href={item.href}
+          key={account.name}
+          href={account.href}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={item.name}
+          aria-label={account.name}
         >
-          <item.icon className="h-6 w-6 text-zinc-500 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white" />
+          <account.icon className={getIconClass(account.name)} />
         </a>
       ))}
     </div>

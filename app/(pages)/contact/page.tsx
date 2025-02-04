@@ -1,5 +1,5 @@
 import Card from "@/components/ui/card";
-import social from "@/config/layout/social";
+import { socialConfigs } from "@/config/layout/social";
 import logo from "@/public/images/logo.png";
 import { ChevronRightIcon } from "lucide-react";
 import { Metadata } from "next";
@@ -49,7 +49,7 @@ const ContactHeader = () => (
 const SocialMediaAccounts = () => (
   <div className="mt-6">
     <ul role="list" className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-      {social.map((item, index) => (
+      {socialConfigs.map((item, index) => (
         <li key={index}>
           <a
             href={item.href}

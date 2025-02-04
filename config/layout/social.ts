@@ -1,56 +1,46 @@
-import {
-  FacebookIcon,
-  GithubIcon,
-  InstagramIcon,
-  LinkedinIcon,
-  TwitterIcon,
-  YoutubeIcon,
-} from "@/icons/layout/social";
 import { SocialType } from "@/types";
+import {
+  FaFacebook,
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa6";
 
-const socialConfig: SocialType[] = [
+export const socialConfigs: SocialType[] = [
   {
     id: 1,
-    name: "X.com",
+    name: "Twitter",
     username: "@timtbdev",
     href: "https://x.com/timtbdev",
-    icon: TwitterIcon,
+    icon: FaTwitter,
   },
   {
     id: 2,
     name: "GitHub",
     username: "timtbdev",
     href: "https://github.com/timtbdev",
-    icon: GithubIcon,
+    icon: FaGithub,
   },
   {
     id: 3,
-    name: "LinkedIn",
-    username: "timtbdev",
-    href: "https://www.linkedin.com/in/timtbdev/",
-    icon: LinkedinIcon,
-  },
-  {
-    id: 4,
     name: "Facebook",
     username: "timtbaz",
     href: "https://www.facebook.com/timtbaz/",
-    icon: FacebookIcon,
+    icon: FaFacebook,
+  },
+  {
+    id: 4,
+    name: "LinkedIn",
+    username: "timtbdev",
+    href: "https://www.linkedin.com/in/timtbdev/",
+    icon: FaLinkedin,
   },
   {
     id: 5,
-    name: "Instagram",
-    username: "tim_tbz",
-    href: "https://www.instagram.com/tim_tbz/",
-    icon: InstagramIcon,
-  },
-  {
-    id: 6,
     name: "Youtube",
     username: "@timtbdev",
     href: "https://www.youtube.com/@timtbdev",
-    icon: YoutubeIcon,
+    icon: FaYoutube,
   },
 ];
-
-export default socialConfig;
