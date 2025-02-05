@@ -1,3 +1,5 @@
+import HandDrawnUnderlineTwo from "@/components/ui/hand-drawn-underline-02";
+import CalendarIcon from "@/icons/pages/blog/calendar-icon";
 import { cn } from "@/utils/helpers";
 import React, { FC } from "react";
 
@@ -7,7 +9,18 @@ interface Props {
 }
 
 const Date: FC<Props> = ({ date, className }) => {
-  return <p className={cn("my-2 tracking-tight", className)}>{date}</p>;
+  return (
+    <div
+      className={cn(
+        "relative mx-auto inline-flex items-center justify-center gap-x-1 tracking-tight",
+        className,
+      )}
+    >
+      <CalendarIcon className="h-5 w-5" />
+      {date}
+      <HandDrawnUnderlineTwo className="absolute mx-auto h-[60px] w-auto items-center text-gray-300 dark:text-zinc-500" />
+    </div>
+  );
 };
 
 export default Date;

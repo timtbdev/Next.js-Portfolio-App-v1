@@ -19,7 +19,7 @@ const HandDrawnArrowDownTwo: FC<Props> = ({
       viewBox={`0 0 ${width} ${height}`}
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn("order-1", className)}
+      className={cn("", className)}
     >
       <path
         fillRule="evenodd"

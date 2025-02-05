@@ -1,9 +1,9 @@
 import { ProfileType } from "types";
+import HandDrawnArrowDownOne from "../../../ui/hand-drawn-arrow-down-01";
+import HandDrawnArrowDownTwo from "../../../ui/hand-drawn-arrow-down-02";
 import Avatar from "./avatar";
 import Bio from "./bio";
 import Greeting from "./greeting";
-import HandDrawnArrowDownOne from "./hand-drawn-arrow-down-01";
-import HandDrawnArrowDownTwo from "./hand-drawn-arrow-down-02";
 import SelectedProjectsButton from "./selected-projects-button";
 import Title from "./title";
 

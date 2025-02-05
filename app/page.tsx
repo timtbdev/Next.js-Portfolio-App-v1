@@ -1,6 +1,6 @@
-import HandDrawnArrowDownTwo from "@/components/pages/home/profile/hand-drawn-arrow-down-02";
 import Profile from "@/components/pages/home/profile/main";
 import SingleProjectItem from "@/components/pages/projects/single-project-item/main";
+import HandDrawnArrowDownTwo from "@/components/ui/hand-drawn-arrow-down-02";
 import profileConfig from "@/config/pages/profile";
 import projectConfig from "@/config/pages/projects";
 import { Metadata } from "next";

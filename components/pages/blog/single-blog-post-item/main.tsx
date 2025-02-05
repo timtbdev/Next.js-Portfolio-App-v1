@@ -30,7 +30,7 @@ const BlogPostItem: FC<Props> = ({ post }) => {
   const readTime = readingTime(post.content, { wordsPerMinute: 100 }).minutes;
   const url = `/blog/post/${post.slug}`;
   return (
-    <Card className="hover:bg-gray-50 dark:hover:bg-zinc-900">
+    <Card className="hover:bg-gray-100 dark:hover:bg-zinc-900">
       <Link href={url}>
         <article className="flex flex-col gap-4 p-0 sm:flex-row sm:gap-8 sm:px-10 sm:py-6">
           <PostImage slug={slug} imageUrl={image} imageAlt={title} />
