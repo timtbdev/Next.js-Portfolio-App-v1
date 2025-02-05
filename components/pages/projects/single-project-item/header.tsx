@@ -21,7 +21,7 @@ const Header: FC<Props> = ({ createdAt, title, description, url, slug }) => (
       title={title}
       className="mb-2 mt-4 text-4xl text-black dark:text-zinc-300 sm:text-5xl"
     />
-    <HandDrawnLine className="mx-auto mb-4 h-10 w-96 text-center text-gray-300 dark:text-zinc-500" />
+    <HandDrawnLine className="mx-auto mb-4 h-10 w-64 text-center text-gray-300 dark:text-zinc-500 sm:w-96" />
     <Description
       description={description}
       className="mb-4 text-gray-600 dark:text-zinc-400"
