@@ -1,28 +1,14 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { CircleArrowDownIcon } from "lucide-react";
 import ScrollIntoView from "react-scroll-into-view";
-import HorizontalLine from "./horizontal-line";
-import VerticalLine from "./vertical-line";
 
 const SelectedProjectsButton: React.FC = () => (
-  <div className="mt-16 flex flex-col justify-center">
-    <div className="relative mx-auto w-full">
-      <HorizontalLine />
-      <div className="relative flex justify-center">
-        <ScrollIntoView selector="#selected-projects">
-          <Button
-            variant="outline"
-            className="border border-gray-300 bg-gray-50 text-gray-600 hover:bg-gray-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-900"
-          >
-            <CircleArrowDownIcon className="mr-1.5 h-4 w-4" />
-            Selected Projects
-          </Button>
-        </ScrollIntoView>
-      </div>
-    </div>
-    <VerticalLine />
+  <div className="flex flex-col justify-center">
+    <ScrollIntoView selector="#selected-projects">
+      <button className="hover:shine mt-4 inline-flex h-14 w-full max-w-xs items-center justify-center rounded-md bg-gradient-to-br from-blue-500 to-blue-600 font-semibold text-white shadow-xl transition hover:scale-[0.98] active:scale-[0.95] dark:from-orange-400 dark:to-orange-500 dark:text-white dark:ring-zinc-700">
+        Selected Projects ↓
+      </button>
+    </ScrollIntoView>
   </div>
 );
 

@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   applicationName: seoConfig.title,
   description: seoConfig.description,
   referrer: "origin-when-cross-origin",
-  keywords: seoConfig.keywords,
+  keywords: seoConfig.tags.join(", "),
   authors: [
     {
       name: seoConfig.author.name,

@@ -9,7 +9,7 @@ interface Props {
 }
 
 const SingleProjectItem: FC<Props> = ({
-  project: { title, description, screenshots, created_at, url },
+  project: { title, description, screenshots, created_at, url, slug },
 }) => (
   <Card>
     <Header
@@ -17,6 +17,7 @@ const SingleProjectItem: FC<Props> = ({
       title={title}
       description={description}
       url={url}
+      slug={slug}
     />
     <Screenshots screenshots={screenshots} />
   </Card>

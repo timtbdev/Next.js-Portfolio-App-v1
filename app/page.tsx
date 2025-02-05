@@ -1,5 +1,5 @@
+import HandDrawnArrowDownTwo from "@/components/pages/home/profile/hand-drawn-arrow-down-02";
 import Profile from "@/components/pages/home/profile/main";
-import VerticalLine from "@/components/pages/home/profile/vertical-line";
 import SingleProjectItem from "@/components/pages/projects/single-project-item/main";
 import profileConfig from "@/config/pages/profile";
 import projectConfig from "@/config/pages/projects";
@@ -19,7 +19,9 @@ export default async function HomePage() {
         {projectConfig.map((project, index) => (
           <React.Fragment key={index}>
             <SingleProjectItem project={project} />
-            {length !== index + 1 && <VerticalLine />}
+            {length !== index + 1 && (
+              <HandDrawnArrowDownTwo className="mx-auto my-6 size-20 text-center text-gray-600 dark:text-zinc-400" />
+            )}
           </React.Fragment>
         ))}
       </section>

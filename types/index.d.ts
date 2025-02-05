@@ -22,7 +22,6 @@ export type SeoType = {
     email: string;
   };
   description: string;
-  keywords: Array<string>;
   tags: Array<string>;
 };
 

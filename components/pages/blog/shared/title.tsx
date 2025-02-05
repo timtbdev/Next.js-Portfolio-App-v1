@@ -9,11 +9,18 @@ interface Props {
 
 const Title: FC<Props> = ({ title, detail = false, className }) => {
   return detail ? (
-    <h3 className={cn("mt-5 overflow-hidden text-2xl", className)}>{title}</h3>
+    <h3
+      className={cn(
+        "mt-5 overflow-hidden text-pretty text-2xl font-semibold leading-6 tracking-tight text-black dark:text-zinc-300 sm:text-xl/8",
+        className,
+      )}
+    >
+      {title}
+    </h3>
   ) : (
     <h3
       className={cn(
-        "line-clamp-2 text-pretty text-2xl font-bold sm:text-xl sm:font-semibold",
+        "line-clamp-2 text-pretty text-2xl font-bold leading-6 tracking-tight text-black dark:text-zinc-300 sm:text-xl sm:font-semibold",
         className,
       )}
     >

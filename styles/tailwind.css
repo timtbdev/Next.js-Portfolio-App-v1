@@ -69,15 +69,6 @@
   body {
     @apply bg-background text-foreground;
   }
-  h1 {
-    @apply text-pretty text-5xl font-semibold tracking-tight text-black dark:text-zinc-300 sm:text-7xl;
-  }
-  h2 {
-    @apply text-pretty text-4xl font-semibold tracking-tight text-black dark:text-zinc-300 sm:text-5xl;
-  }
-  h3 {
-    @apply text-pretty text-xl font-semibold leading-6 tracking-tight text-black dark:text-zinc-300 sm:text-xl/8;
-  }
   h4 {
     @apply text-pretty text-lg font-medium text-gray-600 dark:text-zinc-400 sm:text-xl/8;
   }
@@ -90,10 +81,26 @@
   span {
     @apply text-base/7 text-gray-600 dark:text-zinc-400;
   }
-  .custom-text-red {
-    @apply bg-red-500;
+}
+
+@layer utilities {
+  .shine {
+    -webkit-mask-image: linear-gradient(
+      -75deg,
+      rgba(0, 0, 0, 1) 30%,
+      rgba(0, 0, 0, 0.93) 50%,
+      rgba(0, 0, 0, 1) 70%
+    );
+    -webkit-mask-size: 200%;
+    animation: shine 1s linear infinite;
   }
-  .custom-text-sky {
-    @apply text-sky-500;
+
+  @keyframes shine {
+    from {
+      -webkit-mask-position: 150%;
+    }
+    to {
+      -webkit-mask-position: -50%;
+    }
   }
 }
