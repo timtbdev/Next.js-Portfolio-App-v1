@@ -6,7 +6,7 @@ import { getUrl } from "@/utils/helpers";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "Tim | About",
 };
 
 export default async function AboutPage() {

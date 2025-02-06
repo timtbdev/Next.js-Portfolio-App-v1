@@ -5,7 +5,7 @@ import { Metadata } from "next";
 import React, { Fragment } from "react";
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: "Tim | Projects",
 };
 
 export default async function ProjectPage() {

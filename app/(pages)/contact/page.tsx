@@ -6,7 +6,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Tim | Contact",
 };
 
 export default async function ContactPage() {

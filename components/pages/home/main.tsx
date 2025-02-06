@@ -1,4 +1,5 @@
 import HandDrawnArrow from "@/components/ui/hand-drawn-arrow";
+import { FC } from "react";
 import { ProfileType } from "types";
 import Avatar from "./avatar";
 import Bio from "./bio";
@@ -10,8 +11,8 @@ interface Props {
   profile: ProfileType;
 }
 
-const Profile: React.FC<Props> = ({ profile }) => {
-  const { image, initials, title, greeting, description } = profile;
+const Home: FC<Props> = ({ profile }) => {
+  const { image, initials, title, greeting } = profile;
 
   return (
     <div id="heading" className="px-6 pt-4 lg:px-8">
@@ -27,4 +28,4 @@ const Profile: React.FC<Props> = ({ profile }) => {
   );
 };
 
-export default Profile;
+export default Home;

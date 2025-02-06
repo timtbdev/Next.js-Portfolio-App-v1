@@ -4,7 +4,7 @@ import { BlogPostType } from "@/types";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Tim | Blog",
 };
 
 export default async function BlogPage() {
