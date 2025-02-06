@@ -1,4 +1,4 @@
-import HandDrawnUnderlineTwo from "@/components/ui/hand-drawn-underline-02";
+import HandDrawnCircle from "@/components/ui/hand-drawn-circle";
 import CalendarIcon from "@/icons/pages/blog/calendar-icon";
 import { cn } from "@/utils/helpers";
 import React, { FC } from "react";
@@ -18,7 +18,7 @@ const Date: FC<Props> = ({ date, className }) => {
     >
       <CalendarIcon className="h-5 w-5" />
       {date}
-      <HandDrawnUnderlineTwo className="absolute mx-auto h-[60px] w-auto items-center text-gray-300 dark:text-zinc-500" />
+      <HandDrawnCircle className="absolute mx-auto h-[60px] w-auto items-center text-gray-300 dark:text-zinc-500" />
     </div>
   );
 };

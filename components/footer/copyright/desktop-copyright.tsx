@@ -9,7 +9,7 @@ const DesktopCopyright = () => {
           href="https://github.com/timtbdev/Next.js-Portfolio-App-v2"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-md group inline-flex items-center gap-1.5 text-gray-900 hover:text-gray-600 dark:text-zinc-400 dark:hover:text-white"
+          className="text-md dark:hover:text-brand-400 group inline-flex items-center gap-1.5 text-gray-900 hover:text-blue-600 dark:text-white/80"
         >
           <FaGithub size={18} />
           Source code
@@ -21,7 +21,7 @@ const DesktopCopyright = () => {
       <div className="flex flex-1 justify-end">
         <a
           href={getUrl("/rss.xml")}
-          className="text-md inline-flex items-center gap-1.5 text-orange-600 hover:text-gray-600 dark:text-zinc-400 dark:hover:text-orange-600"
+          className="text-md dark:text-brand-400 inline-flex items-center gap-1.5 text-orange-600 hover:text-blue-600 dark:hover:text-white"
         >
           <FaSquareRss size={18} />
           RSS Feed

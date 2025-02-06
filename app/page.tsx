@@ -1,6 +1,6 @@
 import Profile from "@/components/pages/home/profile/main";
 import SingleProjectItem from "@/components/pages/projects/single-project-item/main";
-import HandDrawnArrowDownTwo from "@/components/ui/hand-drawn-arrow-down-02";
+import HandDrawnArrow from "@/components/ui/hand-drawn-arrow";
 import profileConfig from "@/config/pages/profile";
 import projectConfig from "@/config/pages/projects";
 import { Metadata } from "next";
@@ -20,7 +20,7 @@ export default async function HomePage() {
           <React.Fragment key={index}>
             <SingleProjectItem project={project} />
             {length !== index + 1 && (
-              <HandDrawnArrowDownTwo className="mx-auto my-6 size-20 text-center text-gray-600 dark:text-zinc-400" />
+              <HandDrawnArrow className="mx-auto my-6 size-20 text-center text-gray-400 dark:text-zinc-400" />
             )}
           </React.Fragment>
         ))}

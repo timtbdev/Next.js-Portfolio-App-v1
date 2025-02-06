@@ -7,7 +7,7 @@ interface Props {
   className?: string;
 }
 
-const HandDrawnArrowDownTwo: FC<Props> = ({
+const HandDrawnArrow: FC<Props> = ({
   width = 75,
   height = 317,
   className = "",
@@ -31,4 +31,4 @@ const HandDrawnArrowDownTwo: FC<Props> = ({
   );
 };
 
-export default HandDrawnArrowDownTwo;
+export default HandDrawnArrow;

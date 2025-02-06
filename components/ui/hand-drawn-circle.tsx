@@ -7,7 +7,7 @@ interface Props {
   className?: string;
 }
 
-const HandDrawnUnderlineTwo: FC<Props> = ({
+const HandDrawnCircle: FC<Props> = ({
   width = 454,
   height = 126,
   className = "",
@@ -29,4 +29,4 @@ const HandDrawnUnderlineTwo: FC<Props> = ({
   );
 };
 
-export default HandDrawnUnderlineTwo;
+export default HandDrawnCircle;

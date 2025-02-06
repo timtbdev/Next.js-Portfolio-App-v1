@@ -1,5 +1,5 @@
 import SingleProjectItem from "@/components/pages/projects/single-project-item/main";
-import HandDrawnArrowDownTwo from "@/components/ui/hand-drawn-arrow-down-02";
+import HandDrawnArrow from "@/components/ui/hand-drawn-arrow";
 import projectConfig from "@/config/pages/projects";
 import { Metadata } from "next";
 import React, { Fragment } from "react";
@@ -15,7 +15,7 @@ export default async function ProjectPage() {
         <Fragment key={index}>
           <SingleProjectItem project={project} />
           {index !== projectConfig.length - 1 && (
-            <HandDrawnArrowDownTwo className="mx-auto size-20 text-center text-gray-400 dark:text-zinc-400" />
+            <HandDrawnArrow className="mx-auto size-20 text-center text-gray-300 dark:text-zinc-400" />
           )}
         </Fragment>
       ))}

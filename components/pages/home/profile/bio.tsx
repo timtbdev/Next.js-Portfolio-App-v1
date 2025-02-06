@@ -17,8 +17,8 @@ const Bio: FC<Props> = ({ className }) => {
       <div className="infline-flex items-center justify-center">
         <span className={cn(baseClass, "mr-3")}>I’m an</span>
         <span className="relative whitespace-nowrap">
-          <span className="bg-green-00 absolute -bottom-2 -left-1 -right-1 -top-3 -rotate-1 text-pretty bg-green-500 dark:bg-green-600"></span>
-          <span className="relative text-xl text-white dark:text-white sm:text-2xl">
+          <span className="bg-green-00 dark:bg-brand-200/10 text-pretty0 absolute -bottom-2 -left-1 -right-1 -top-3 -rotate-1 bg-gray-800"></span>
+          <span className="dark:text-brand-400 relative text-xl text-white sm:text-2xl">
             Android
             <Android className="relative bottom-0.5 inline-block text-xl sm:text-xl" />
           </span>
@@ -27,8 +27,8 @@ const Bio: FC<Props> = ({ className }) => {
           and
         </span>
         <span className="relative whitespace-nowrap">
-          <span className="absolute -bottom-2 -left-1 -right-1 -top-3 -rotate-1 text-pretty bg-gray-800 dark:bg-zinc-200"></span>
-          <span className="relative text-xl text-white dark:text-zinc-900 sm:text-2xl">
+          <span className="dark:bg-brand-200/10 absolute -bottom-2 -left-1 -right-1 -top-3 -rotate-1 text-pretty bg-gray-800"></span>
+          <span className="dark:text-brand-400 relative text-xl text-white sm:text-2xl">
             Next.js
             <NextJs className="relative bottom-0.5 inline-block text-xl sm:text-xl" />
           </span>
