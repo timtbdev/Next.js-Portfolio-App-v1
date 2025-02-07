@@ -35,7 +35,7 @@ const Bio: FC<Props> = ({ className }) => {
       </div>
       <div className="mx-auto flex flex-col items-center gap-2 text-center sm:flex-row">
         <span className={cn(baseClass)}>developer based in the</span>
-        <span className={cn(baseClass)}>🌉San-Francisco Bay Area.</span>
+        <span className={cn(baseClass)}>🌉 San-Francisco Bay Area.</span>
       </div>
     </div>
   );
