@@ -1,4 +1,4 @@
-import menuConfig from "@/config/layout/menu";
+import menuConfig from "@/config/menu";
 import { cn } from "@/utils/helpers";
 import {
   CloseButton,

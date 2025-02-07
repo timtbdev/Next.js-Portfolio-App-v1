@@ -1,5 +1,5 @@
 import Card from "@/components/ui/card";
-import { socialConfigs } from "@/config/layout/social";
+import { socialConfigs } from "@/config/social";
 import logo from "@/public/images/logo.png";
 import { ChevronRightIcon } from "lucide-react";
 import { Metadata } from "next";

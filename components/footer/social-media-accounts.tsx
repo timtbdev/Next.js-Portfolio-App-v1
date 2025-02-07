@@ -4,7 +4,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { socialConfigs } from "@/config/layout/social";
+import { socialConfigs } from "@/config/social";
 import { FC } from "react";
 
 const getIconClass = (name: string): string => {

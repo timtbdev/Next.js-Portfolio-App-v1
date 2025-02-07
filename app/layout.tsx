@@ -5,7 +5,7 @@ import Container from "@/components/main/container";
 import Main from "@/components/main/main";
 import TailwindIndicator from "@/components/tailwind-indicator/tailwind-indicator";
 import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
-import seoConfig from "@/config/layout/seo";
+import seoConfig from "@/config/seo";
 import { getUrl } from "@/utils/helpers";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";

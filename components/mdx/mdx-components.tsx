@@ -7,7 +7,7 @@ export const mdxComponents = {
   ),
   p: (props: React.HTMLProps<HTMLParagraphElement>) => (
     <p
-      className="my-3 text-pretty text-base/8 leading-relaxed text-gray-600 dark:text-zinc-400"
+      className="my-2 text-pretty text-base/8 leading-relaxed text-gray-600 dark:text-zinc-400"
       {...props}
     />
   ),
