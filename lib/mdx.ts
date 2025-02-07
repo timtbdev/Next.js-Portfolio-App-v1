@@ -5,6 +5,15 @@ import matter from "gray-matter";
 import { Metadata } from "next";
 
 const POSTS_PATH = path.join(process.cwd(), "posts");
+const PAGE_PATH = path.join(process.cwd(), "content");
+
+export function getPageBySlug(slug: string) {
+  const filePath = path.join(PAGE_PATH, `${slug}.mdx`);
+  const markdown = readFileSync(filePath, "utf8");
+  const { content, data } = matter(markdown);
+
+  return { content, data };
+}
 
 export function getPostBySlug(slug: string) {
   const filePath = path.join(POSTS_PATH, `${slug}.mdx`);
