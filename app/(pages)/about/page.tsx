@@ -1,7 +1,6 @@
 import { mdxComponents } from "@/components/mdx/mdx-components";
 import BigButton from "@/components/ui/big-button";
 import Card from "@/components/ui/card";
-import HandDrawnArrow from "@/components/ui/hand-drawn-arrow";
 import HandDrawnArrowUp from "@/components/ui/hand-drawn-arrow-up";
 import HandDrawnCircle from "@/components/ui/hand-drawn-circle";
 import { getPageBySlug } from "@/lib/mdx";

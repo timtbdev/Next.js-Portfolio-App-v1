@@ -2,14 +2,6 @@ import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { JSX } from "react";
 import { IconType } from "react-icons/lib";
 
-export type ProfileType = {
-  status: string;
-  greeting: string;
-  description?: string;
-  image: string;
-  initials: string;
-};
-
 export type SeoType = {
   title: string;
   subTitle: string;
@@ -64,13 +56,6 @@ export type ProjectType = {
   created_at: string;
   slug: string;
   url: string;
-};
-
-export type ContentType = {
-  title?: string;
-  description?: string[];
-  image?: string;
-  link?: string;
 };
 
 export type BlogPostType = {

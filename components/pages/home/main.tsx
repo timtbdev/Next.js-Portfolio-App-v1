@@ -1,26 +1,23 @@
+import { mdxComponents } from "@/components/mdx/mdx-components";
 import HandDrawnArrow from "@/components/ui/hand-drawn-arrow";
+import { getPageBySlug } from "@/lib/mdx";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import { FC } from "react";
-import { ProfileType } from "types";
 import Avatar from "./avatar";
 import Badge from "./badge";
-import Bio from "./bio";
-import Greeting from "./greeting";
 import SelectedProjectsButton from "./selected-projects-button";
+import Title from "./title";
 
-interface Props {
-  profile: ProfileType;
-}
-
-const Home: FC<Props> = ({ profile }) => {
-  const { image, initials, status, greeting } = profile;
+const Profile = () => {
+  const { content, data } = getPageBySlug("home");
 
   return (
     <div id="heading" className="px-6 pt-4 lg:px-8">
       <div className="mx-auto max-w-2xl text-center">
-        <Avatar image={image} initials={initials} />
-        <Badge status={status} />
-        <Greeting greeting={greeting} />
-        <Bio className="mt-6" />
+        <Avatar image={data.imageUrl} initials={data.initials} />
+        <Badge status={data.status} />
+        <Title title={data.title} />
+        <MDXRemote source={content} components={mdxComponents} />
         <SelectedProjectsButton
           title="Selected Projects"
           scrollTo="#selected-projects"
@@ -32,4 +29,4 @@ const Home: FC<Props> = ({ profile }) => {
   );
 };
 
-export default Home;
+export default Profile;
