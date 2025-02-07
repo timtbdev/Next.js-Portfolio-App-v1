@@ -1,4 +1,4 @@
-import BlogPostItem from "@/components/pages/blog/single-blog-post-item/main";
+import BlogPostItem from "@/components/blog/single-blog-post-item/main";
 import { getAllPosts } from "@/lib/mdx";
 import { BlogPostType } from "@/types";
 import { Metadata } from "next";

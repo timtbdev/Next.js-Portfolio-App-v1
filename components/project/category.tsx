@@ -1,10 +1,8 @@
 import HandDrawnCircle from "@/components/ui/hand-drawn-circle";
+import AndroidIcon from "@/icons/pages/projects/android-icon";
+import NextJsIcon from "@/icons/pages/projects/nextjs-icon";
 import { cn } from "@/utils/helpers";
 import React, { FC } from "react";
-import {
-  TbBrandAndroid as Android,
-  TbBrandNextjs as NextJs,
-} from "react-icons/tb";
 
 interface Props {
   category: string;
@@ -15,9 +13,9 @@ const Category: FC<Props> = ({ category, className }) => {
   const renderIcon = () => {
     switch (category) {
       case "Android":
-        return <Android className="h-6 w-6" />;
+        return <AndroidIcon className="size-5" />;
       case "Next.js":
-        return <NextJs className="h-6 w-6" />;
+        return <NextJsIcon className="size-5" />;
       default:
         return null;
     }

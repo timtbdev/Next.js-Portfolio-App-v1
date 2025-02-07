@@ -1,4 +1,4 @@
-import SingleProjectItem from "@/components/pages/projects/single-project-item/main";
+import SingleProjectItem from "@/components/project/main";
 import HandDrawnArrow from "@/components/ui/hand-drawn-arrow";
 import projectConfig from "@/config/projects";
 import { Metadata } from "next";
