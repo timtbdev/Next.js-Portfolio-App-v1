@@ -57,6 +57,7 @@ export type BlogPostType_ = {
 export type ProjectType = {
   id: number;
   title: string;
+  category: "Android" | "Next.js";
   description: string;
   screenshots: Array<string>;
   created_at: string;
@@ -66,7 +67,7 @@ export type ProjectType = {
 
 export type ContentType = {
   title?: string;
-  description: string[];
+  description?: string[];
   image?: string;
   link?: string;
 };

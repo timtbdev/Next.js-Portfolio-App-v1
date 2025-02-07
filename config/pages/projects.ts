@@ -4,6 +4,7 @@ const projectConfig: ProjectType[] = [
   {
     id: 1,
     title: "Portfolio App 2.0",
+    category: "Android",
     description:
       "This portfolio app, built with Kotlin and Jetpack, uses MVVM, Room, and Coroutines for efficient offline and network syncing.",
     slug: "portfolio-app-2",
@@ -18,6 +19,7 @@ const projectConfig: ProjectType[] = [
   {
     id: 2,
     title: "Portfolio App 1.0",
+    category: "Android",
     description:
       "Portfolio App 1.0 is a simple Java-based Android app I created to show my skills and love for Android development. It’s built with standard SDK APIs and uses the MVC architecture.",
     slug: "portfolio-app-1",
@@ -28,6 +30,17 @@ const projectConfig: ProjectType[] = [
       "/images/projects/portfolio-01/screen-02.png",
       "/images/projects/portfolio-01/screen-03.png",
     ],
+  },
+  {
+    id: 3,
+    title: "Fullstack Blog App",
+    category: "Next.js",
+    description:
+      "Portfolio App 1.0 is a simple Java-based Android app I created to show my skills and love for Android development. It’s built with standard SDK APIs and uses the MVC architecture.",
+    slug: "portfolio-app-1",
+    created_at: "June 2019",
+    url: "https://github.com/timtbdev/Portfolio-App-1",
+    screenshots: ["/images/projects/blog-app/screen-01.png"],
   },
 ];
 
