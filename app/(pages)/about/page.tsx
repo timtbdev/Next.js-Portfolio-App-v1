@@ -46,7 +46,7 @@ export default async function AboutPage() {
           ))}
         </div>
         <HandDrawnArrow className="dark:text-brand-400 mx-auto mt-4 size-20 text-center text-blue-400" />
-        <div className="mx-auto mt-4 w-full items-center text-center">
+        <div className="relative mx-auto mt-4 w-full items-center text-center">
           <a
             href={link}
             target="_blank"

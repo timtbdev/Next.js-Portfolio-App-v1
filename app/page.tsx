@@ -20,7 +20,7 @@ export default async function HomePage() {
           <Fragment key={index}>
             <SingleProjectItem project={project} />
             {length !== index + 1 && (
-              <HandDrawnArrow className="mx-auto my-6 size-20 text-center text-gray-400 dark:text-zinc-400" />
+              <HandDrawnArrow className="dark:text-brand-400 mx-auto my-6 size-20 text-center text-blue-500" />
             )}
           </Fragment>
         ))}

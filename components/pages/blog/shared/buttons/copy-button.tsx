@@ -34,7 +34,7 @@ const CopyButton: FC<Props> = ({ url }) => {
       {copied ? (
         <FaCheck className="h-8 w-8 text-green-500 dark:text-green-400" />
       ) : (
-        <FaCopy className="h-8 w-8 text-stone-500 dark:text-stone-500" />
+        <FaCopy className="h-8 w-8 text-slate-600 dark:text-slate-400" />
       )}
     </button>
   );
