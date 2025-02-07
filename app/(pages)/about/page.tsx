@@ -130,11 +130,6 @@ export default async function AboutPage() {
               When I’m not <span className={baseClass}>🧑‍💻 coding</span>, I love
               going for <span className={baseClass}>🏃 runs</span>.
             </li>
-            <li className="items-center gap-2 text-lg">
-              I love 🔍 tackling fun{" "}
-              <span className={baseClass}>technical challenges</span> and{" "}
-              <span className={baseClass}>collaborating</span> with others.
-            </li>
             <li className="mx-auto items-center gap-2 text-center text-lg">
               Please feel free to{" "}
               <span className={baseClass}>reach out 🎉</span>
