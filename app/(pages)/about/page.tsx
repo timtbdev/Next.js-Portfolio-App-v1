@@ -36,7 +36,7 @@ export default async function AboutPage() {
           </h1>
           <HandDrawnCircle className="absolute -left-10 -top-2 mx-auto h-[60px] w-auto items-center text-gray-200 dark:text-zinc-600" />
         </div>
-        <div className="mt-8">
+        <div className="mt-4">
           <MDXRemote source={content} components={mdxComponents} />
         </div>
         <HandDrawnArrowUp className="mx-auto mt-2 size-20 text-center text-gray-200 dark:text-zinc-600" />

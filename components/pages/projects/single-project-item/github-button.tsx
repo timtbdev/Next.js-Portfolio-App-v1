@@ -1,7 +1,6 @@
 "use client";
 
-import { cn } from "@/utils/helpers";
-import React, { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { FaGithub, FaStar } from "react-icons/fa6";
 
 interface Props {
