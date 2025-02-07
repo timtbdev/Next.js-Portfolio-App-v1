@@ -25,7 +25,7 @@ const Header: FC<Props> = ({
   <div className="mx-auto px-8 pb-3 pt-8 text-center sm:px-10 sm:pb-0 sm:pt-10">
     <Category
       category={category}
-      className="text-md my-2 font-semibold text-gray-400 dark:text-zinc-400"
+      className="text-md my-2 font-semibold text-gray-600 dark:text-zinc-400"
     />
     <Title
       title={title}

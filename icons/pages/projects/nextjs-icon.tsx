@@ -55,7 +55,7 @@ const NextJsIcon: FC<Props> = ({ className = "" }) => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>
