@@ -3,9 +3,9 @@ import { JSX } from "react";
 import { IconType } from "react-icons/lib";
 
 export type ProfileType = {
-  title: string;
+  status: string;
   greeting: string;
-  description: string;
+  description?: string;
   image: string;
   initials: string;
 };
@@ -31,6 +31,7 @@ export type SocialType = {
   username?: string;
   href: string;
   icon: IconType;
+  tooltip: string;
 };
 
 export type MenuType = {

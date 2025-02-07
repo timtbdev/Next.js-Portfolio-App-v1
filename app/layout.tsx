@@ -12,13 +12,20 @@ import { Analytics } from "@vercel/analytics/next";
 import { Metadata, Viewport } from "next";
 import { ThemeProvider } from "next-themes";
 import { ViewTransitions } from "next-view-transitions";
-import { Inter as FontSans } from "next/font/google";
+import { Alkatra as FontCali, Inter as FontSans } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 
 // Font Configuration
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
+});
+
+// Font Configuration : Handwritten Caligraphy
+const fontKneWave = FontCali({
+  subsets: ["latin"],
+  variable: "--font-cali",
   display: "swap",
 });
 
@@ -190,7 +197,7 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <body
-          className={`antialiased ${fontSans.variable}`}
+          className={`antialiased ${fontSans.variable} ${fontKneWave.variable}`}
           suppressHydrationWarning={true}
         >
           <ThemeProvider
