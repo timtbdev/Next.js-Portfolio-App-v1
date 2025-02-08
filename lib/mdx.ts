@@ -67,7 +67,7 @@ export async function generateMetaData(slug: string): Promise<Metadata> {
     description:
       data.description.slice(0, 100) + ("..." as string) ||
       "Read this insightful blog post.",
-    keywords: data.tags?.join(", ") || "blog, mdx, next.js",
+    keywords: data.seo?.join(", ") || "blog, mdx, next.js",
     openGraph: {
       title: data.title,
       description: data.description.slice(0, 100) + ("..." as string),
