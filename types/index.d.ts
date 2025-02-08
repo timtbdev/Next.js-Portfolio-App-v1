@@ -51,6 +51,7 @@ export type ProjectType = {
   id: number;
   title: string;
   category: "Android" | "Next.js";
+  youtubeUrl?: string;
   description: string;
   screenshots: Array<string>;
   created_at: string;
