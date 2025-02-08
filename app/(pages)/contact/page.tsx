@@ -1,84 +1,48 @@
+import SocialAccountButton from "@/components/ contact/social-account-button";
+import {
+  AvatarFallback,
+  AvatarImage,
+  Avatar as AvatarWrapper,
+} from "@/components/ui/avatar";
 import Card from "@/components/ui/card";
 import { socialConfigs } from "@/config/social";
-import logo from "@/public/images/logo.png";
-import { ChevronRightIcon } from "lucide-react";
 import { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Tim | Contact",
 };
 
 export default async function ContactPage() {
+  const title = "Contact";
+  const description = "Please feel free to reach out to me.";
+  const imageUrl = "/images/logo.png";
+  const imageAlt = "Avatar";
+  const initials = "TB";
   return (
-    <Card className="px-8 sm:px-0">
-      <div className="mx-auto max-w-md py-6 sm:max-w-xl sm:py-8">
+    <Card>
+      <div className="mx-auto py-6 sm:py-8">
         <div>
-          <ContactHeader />
+          <div className="text-center">
+            <AvatarWrapper className="mx-auto size-24 rounded-full shadow-md ring-1 ring-gray-300 dark:ring-zinc-700">
+              <AvatarImage src={imageUrl} alt={imageAlt} />
+              <AvatarFallback>{initials}</AvatarFallback>
+            </AvatarWrapper>
+            <h1 className="mt-4 text-2xl font-bold text-gray-800 dark:text-zinc-400">
+              {title}
+            </h1>
+            <p className="mt-2 text-base text-gray-600 dark:text-zinc-400">
+              {description}
+            </p>
+          </div>
         </div>
-        <SocialMediaAccounts />
+        <ul role="list" className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {socialConfigs.map((item, index) => (
+            <li key={index}>
+              <SocialAccountButton social={item} />
+            </li>
+          ))}
+        </ul>
       </div>
     </Card>
   );
 }
-
-const ContactHeader = () => (
-  <div className="text-center">
-    <Image
-      src={logo}
-      alt="Logo"
-      width={96}
-      height={96}
-      className="mx-auto rounded-full object-cover"
-    />
-    <div className="mt-2">
-      <a
-        href="mailto:timtb.dev@gmail.com"
-        className="text-2xl font-semibold text-zinc-950 hover:text-blue-500 dark:text-white dark:hover:text-sky-500"
-      >
-        timtb.dev@gmail.com
-      </a>
-    </div>
-
-    <p className="mt-2 text-sm text-gray-600 dark:text-zinc-400">
-      Please feel free to reach out to me via email or social media.
-    </p>
-  </div>
-);
-
-const SocialMediaAccounts = () => (
-  <div className="mt-6">
-    <ul role="list" className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-      {socialConfigs.map((item, index) => (
-        <li key={index}>
-          <a
-            href={item.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shadow-xs group flex w-full items-center justify-between space-x-3 rounded-full border border-zinc-600/20 px-4 py-2 text-left hover:bg-zinc-200/40 dark:border-zinc-700/40 dark:hover:bg-zinc-500/10"
-          >
-            <span className="flex min-w-0 flex-1 items-center space-x-4">
-              <span className="block shrink-0">
-                <item.icon className="size-8 text-gray-600 dark:text-zinc-400" />
-              </span>
-              <span className="block min-w-0 flex-1">
-                <span className="block truncate text-sm font-semibold text-gray-600 dark:text-zinc-400">
-                  {item.name}
-                </span>
-                <span className="block truncate text-sm font-medium text-gray-600 dark:text-zinc-400">
-                  {item.username}
-                </span>
-              </span>
-            </span>
-            <span className="inline-flex size-10 shrink-0 items-center justify-center">
-              <ChevronRightIcon
-                aria-hidden="true"
-                className="size-5 text-gray-400 dark:text-gray-400/10"
-              />
-            </span>
-          </a>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
