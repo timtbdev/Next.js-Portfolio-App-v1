@@ -1,3 +1,4 @@
+import { mdxComponents } from "@/components/mdx/mdx-components";
 import { ContentType } from "@/types";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { FC } from "react";
@@ -54,7 +55,7 @@ const BlogPostDetail: FC<Props> = ({ post }) => {
         </div>
       </div>
       <div className="dark:prose-dark prose max-w-none px-6 pb-8 pt-4 sm:px-8 sm:pb-12 sm:pt-6">
-        <MDXRemote source={post.content} />
+        <MDXRemote source={post.content} components={mdxComponents} />
       </div>
     </>
   );

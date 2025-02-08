@@ -40,7 +40,7 @@ const InfoBarDetailMobile: FC<Props> = ({
       <InfoItem
         icon={<FolderIcon size={20} className="h-5 w-5" aria-hidden="true" />}
         text={category}
-        className="border-b border-gray-300 px-2 pb-2 dark:border-zinc-700"
+        className="border-b border-gray-300 px-4 pb-2 dark:border-zinc-700"
       />
       <InfoItem
         icon={<CalendarIcon size={20} className="h-5 w-5" aria-hidden="true" />}
@@ -50,7 +50,7 @@ const InfoBarDetailMobile: FC<Props> = ({
       <InfoItem
         icon={<ClockIcon size={20} className="h-5 w-5" aria-hidden="true" />}
         text={getMinutes(readTime)}
-        className="px-2 py-2"
+        className="px-4 py-2"
       />
     </div>
   );
