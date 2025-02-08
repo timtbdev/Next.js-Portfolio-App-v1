@@ -15,8 +15,12 @@ interface Props {
 }
 
 const ShareButtonMobile: FC<Props> = ({ slug, title = "", className }) => {
-  const url = `${getUrl()}${encodeURIComponent(`blog/post/${slug}`)}`;
-  const text = "Check out this article!";
+  const url = `${getUrl(`blog/post/${slug}`)}`;
+  const subject = "Check out this article!";
+  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${url}`;
+  const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+  const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+  const mailtoLink = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(title + "\n\n" + url)}`;
 
   return (
     <div className={className}>
@@ -43,9 +47,7 @@ const ShareButtonMobile: FC<Props> = ({ slug, title = "", className }) => {
                     <a
                       title={title}
                       target="_blank"
-                      href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
-                        url,
-                      )}&text=${encodeURIComponent(title)}`}
+                      href={twitterUrl}
                       rel="noopener noreferrer"
                       className="rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200 dark:border-zinc-700 dark:bg-zinc-800 dark:active:bg-zinc-500"
                     >
@@ -56,9 +58,7 @@ const ShareButtonMobile: FC<Props> = ({ slug, title = "", className }) => {
                     <a
                       title={title}
                       target="_blank"
-                      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-                        url,
-                      )}`}
+                      href={facebookUrl}
                       rel="noopener noreferrer"
                       className="rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200 dark:border-zinc-700 dark:bg-zinc-800 dark:active:bg-zinc-500"
                     >
@@ -69,9 +69,7 @@ const ShareButtonMobile: FC<Props> = ({ slug, title = "", className }) => {
                     <a
                       title={title}
                       target="_blank"
-                      href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-                        url,
-                      )}`}
+                      href={linkedinUrl}
                       rel="noopener noreferrer"
                       className="rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200 dark:border-zinc-700 dark:bg-zinc-800 dark:active:bg-zinc-500"
                     >
@@ -82,9 +80,7 @@ const ShareButtonMobile: FC<Props> = ({ slug, title = "", className }) => {
                     <a
                       title={title}
                       target="_blank"
-                      href={`mailto:?subject=${encodeURIComponent(
-                        title,
-                      )}&body=${encodeURIComponent(text + "\n\n" + url)}`}
+                      href={mailtoLink}
                       rel="noopener noreferrer"
                       className="rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200 dark:border-zinc-700 dark:bg-zinc-800 dark:active:bg-zinc-500"
                     >
