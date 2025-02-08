@@ -6,26 +6,19 @@ import Main from "@/components/main/main";
 import TailwindIndicator from "@/components/tailwind-indicator/tailwind-indicator";
 import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import seoConfig from "@/config/seo";
-import { getUrl } from "@/utils/helpers";
+import { cn, getUrl } from "@/utils/helpers";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
 import { Metadata, Viewport } from "next";
 import { ThemeProvider } from "next-themes";
 import { ViewTransitions } from "next-view-transitions";
-import { Alkatra as FontCali, Inter as FontSans } from "next/font/google";
+import { Inter as FontSans } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 
 // Font Configuration
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
-  display: "swap",
-});
-
-// Font Configuration : Handwritten Caligraphy
-const fontKneWave = FontCali({
-  subsets: ["latin"],
-  variable: "--font-cali",
   display: "swap",
 });
 
@@ -197,7 +190,7 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <body
-          className={`antialiased ${fontSans.variable} ${fontKneWave.variable}`}
+          className={cn("antialiased", fontSans.variable)}
           suppressHydrationWarning={true}
         >
           <ThemeProvider

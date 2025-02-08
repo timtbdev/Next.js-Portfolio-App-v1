@@ -1,8 +1,8 @@
-import HandDrawnCircle from "@/components/ui/hand-drawn-circle";
 import AndroidIcon from "@/icons/pages/projects/android-icon";
 import NextJsIcon from "@/icons/pages/projects/nextjs-icon";
 import { cn } from "@/utils/helpers";
-import React, { FC } from "react";
+import { FC } from "react";
+import HandDrawnFullCirlce from "../ui/hand-drawn-full-circle";
 
 interface Props {
   category: string;
@@ -30,7 +30,7 @@ const Category: FC<Props> = ({ category, className }) => {
     >
       {renderIcon()}
       {category}
-      <HandDrawnCircle className="absolute mx-auto h-[60px] w-auto items-center text-gray-200 dark:text-zinc-600" />
+      <HandDrawnFullCirlce className="absolute -top-3 mx-auto h-[70px] w-auto items-center text-gray-200 dark:text-zinc-600" />
     </div>
   );
 };

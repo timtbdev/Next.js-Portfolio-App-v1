@@ -32,7 +32,7 @@ const GithubButton: FC<Props> = ({
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="hover:shine dark:from-brand-300 dark:to-brand-400 group relative mt-4 inline-flex h-14 w-full max-w-xs items-center justify-center gap-x-1 rounded-md bg-gradient-to-r from-blue-500 to-blue-600 font-semibold shadow-md transition hover:scale-[0.98] active:scale-[0.95]"
+      className="dark:from-brand-300 dark:to-brand-400 group relative mt-4 inline-flex h-14 w-full max-w-xs items-center justify-center gap-x-1 rounded-md bg-gradient-to-r from-blue-500 to-blue-600 font-semibold shadow-md transition hover:scale-[0.98] active:scale-[0.95]"
     >
       <FaGithub className="h-4 w-4 text-white dark:text-zinc-900" />
       <span className="text-white dark:text-zinc-900">{title}</span>

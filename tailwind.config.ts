@@ -92,7 +92,6 @@ const config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)"],
-        cali: ["var(--font-cali)"],
       },
     },
   },

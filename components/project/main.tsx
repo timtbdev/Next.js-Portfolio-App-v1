@@ -3,7 +3,6 @@ import Card from "@/components/ui/card";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { FC } from "react";
 import { ContentType } from "types";
-import HandDrawnUnderline from "../ui/hand-drawn-underline";
 import Category from "./category";
 import Description from "./description";
 import GithubButton from "./github-button";
@@ -26,10 +25,9 @@ const ProjectItem: FC<Props> = ({ project }) => (
         title={project.data.title}
         className="mt-6 text-3xl text-black dark:text-zinc-300 sm:text-4xl"
       />
-      <HandDrawnUnderline className="mx-auto h-10 w-64 text-center text-gray-200 dark:text-zinc-600 sm:w-80" />
       {project.data.youtubeUrl && (
         <YoutubeButton
-          className="mb-2"
+          className="mb-4 mt-2"
           title="Watch on Youtube"
           url={project.data.youtubeUrl || ""}
         />

@@ -147,25 +147,3 @@
     border-color: rgb(245 160 20 / var(--tw-border-opacity, 1));
   }
 }
-
-@layer utilities {
-  .shine {
-    -webkit-mask-image: linear-gradient(
-      -75deg,
-      rgba(0, 0, 0, 1) 30%,
-      rgba(0, 0, 0, 0.93) 50%,
-      rgba(0, 0, 0, 1) 70%
-    );
-    -webkit-mask-size: 200%;
-    animation: shine 1s linear infinite;
-  }
-
-  @keyframes shine {
-    from {
-      -webkit-mask-position: 150%;
-    }
-    to {
-      -webkit-mask-position: -50%;
-    }
-  }
-}
