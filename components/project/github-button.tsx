@@ -11,7 +11,7 @@ interface Props {
 }
 
 const GithubButton: FC<Props> = ({
-  title = "Star on Github",
+  title = "Stars on Github",
   url,
   repo,
   className,

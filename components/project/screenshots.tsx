@@ -80,8 +80,8 @@ const Screenshots: FC<Props> = ({ screenshots = [], className }) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="absolute left-4 top-1/2 hidden size-10 ring-1 ring-gray-400 sm:flex" />
-        <CarouselNext className="absolute right-4 top-1/2 hidden size-10 ring-1 ring-gray-400 sm:flex" />
+        <CarouselPrevious className="absolute left-4 top-1/2 hidden size-10 sm:flex" />
+        <CarouselNext className="absolute right-4 top-1/2 hidden size-10 sm:flex" />
       </Carousel>
       {numberOfSlides > 1 && (
         <div className="absolute bottom-1 mx-auto w-full items-center text-center sm:bottom-5">
@@ -90,7 +90,7 @@ const Screenshots: FC<Props> = ({ screenshots = [], className }) => {
               key={i}
               className={`mx-1 mt-5 h-1.5 w-1.5 rounded-full p-0 ${
                 i === currentSlide
-                  ? "scale-125 transform bg-black dark:bg-white"
+                  ? "scale-125 transform bg-gray-500 dark:bg-white"
                   : "bg-white dark:bg-zinc-900"
               }`}
               aria-label={`Go to screenshot ${i + 1}`}

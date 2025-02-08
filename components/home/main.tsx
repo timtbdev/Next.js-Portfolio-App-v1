@@ -23,7 +23,7 @@ const Profile = () => {
           scrollTo="#selected-projects"
           className="mt-4"
         />
-        <HandDrawnArrow className="mx-auto my-6 size-20 text-center text-gray-400 dark:text-zinc-400" />
+        <HandDrawnArrow className="mx-auto my-6 size-20 text-center text-gray-200 dark:text-zinc-600" />
       </div>
     </div>
   );

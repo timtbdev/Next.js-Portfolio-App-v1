@@ -1,5 +1,5 @@
 import Card from "@/components/ui/card";
-import { BlogPostType } from "@/types";
+import { ContentType } from "@/types";
 import { Link } from "next-view-transitions";
 import { FC } from "react";
 import readingTime from "reading-time";
@@ -12,7 +12,7 @@ import Title from "../shared/title";
 import Description from "./description";
 
 interface Props {
-  post: BlogPostType;
+  post: ContentType;
 }
 
 const BlogPostItem: FC<Props> = ({ post }) => {

@@ -1,4 +1,4 @@
-import { BlogPostType } from "@/types";
+import { ContentType } from "@/types";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { FC } from "react";
 import readingTime from "reading-time";
@@ -10,7 +10,7 @@ import Tags from "../shared/tags";
 import Title from "../shared/title";
 
 interface Props {
-  post: BlogPostType;
+  post: ContentType;
 }
 
 const BlogPostDetail: FC<Props> = ({ post }) => {

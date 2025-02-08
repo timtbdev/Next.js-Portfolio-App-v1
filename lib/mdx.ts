@@ -4,8 +4,9 @@ import { getUrl } from "@/utils/helpers";
 import matter from "gray-matter";
 import { Metadata } from "next";
 
-const POSTS_PATH = path.join(process.cwd(), "posts");
-const PAGE_PATH = path.join(process.cwd(), "content");
+const POSTS_PATH = path.join(process.cwd(), "content/posts");
+const PAGE_PATH = path.join(process.cwd(), "content/pages");
+const PROJECT_PATH = path.join(process.cwd(), "content/projects");
 
 export function getPageBySlug(slug: string) {
   const filePath = path.join(PAGE_PATH, `${slug}.mdx`);
@@ -81,4 +82,40 @@ export async function generateMetaData(slug: string): Promise<Metadata> {
       images: data.image ? [data.image] : undefined,
     },
   };
+}
+
+export function getProjectsBySlug(slug: string) {
+  const filePath = path.join(PROJECT_PATH, `${slug}.mdx`);
+  const markdown = readFileSync(filePath, "utf8");
+  const { content, data } = matter(markdown);
+
+  return { content, data };
+}
+
+export function getAllProjectsFilteredByOrder() {
+  const projectFilePaths = readdirSync(PROJECT_PATH).filter((file) =>
+    /\.mdx?$/.test(file),
+  );
+
+  const projects = projectFilePaths.map((file) => {
+    const { content, data } = getProjectsBySlug(file.replace(/\.mdx?$/, ""));
+    return { slug: file.replace(/\.mdx?$/, ""), content, data };
+  });
+
+  return projects
+    .filter((project) => project.data.featured)
+    .sort((a, b) => a.data.order - b.data.order);
+}
+
+export function getAllProjectsByCategory(category: string) {
+  const projectFilePaths = readdirSync(PROJECT_PATH).filter((file) =>
+    /\.mdx?$/.test(file),
+  );
+
+  const projects = projectFilePaths.map((file) => {
+    const { content, data } = getProjectsBySlug(file.replace(/\.mdx?$/, ""));
+    return { slug: file.replace(/\.mdx?$/, ""), content, data };
+  });
+
+  return projects.filter((project) => project.data.category === category);
 }
