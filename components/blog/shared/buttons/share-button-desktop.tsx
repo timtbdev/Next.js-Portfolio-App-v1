@@ -25,7 +25,7 @@ interface Props {
 }
 
 const ShareButtonDesktop: FC<Props> = ({ slug, title = "", className }) => {
-  const url = `${getUrl(`blog/post/${slug}`)}`;
+  const url = `${getUrl(`/blog/post/${slug}`)}`;
   const subject = "Check out this article!";
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${url}`;
   const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
