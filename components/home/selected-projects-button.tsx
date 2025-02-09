@@ -22,7 +22,7 @@ const SelectedProjectsButton: FC<Props> = ({
         <h1 className="text-xl font-semibold tracking-tight text-gray-600 dark:text-white/90">
           {title}
         </h1>
-        <HandDrawnCircle className="dark:group-hover:text-brand-500 absolute -left-12 -top-[16px] mx-auto h-[70px] w-auto rotate-1 items-center text-gray-200 group-hover:text-blue-500 dark:text-zinc-600" />
+        <HandDrawnCircle className="dark:group-hover:text-brand-500 absolute -left-12 -top-[16px] mx-auto h-[70px] w-auto rotate-1 items-center text-gray-300 group-hover:text-blue-500 dark:text-zinc-600" />
       </button>
     </ScrollIntoView>
   </div>

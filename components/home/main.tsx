@@ -1,6 +1,6 @@
-import HandDrawnArrow from "@/components/ui/hand-drawn-arrow";
 import { getPageBySlug } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import HandDrawnArrowToBottom from "../ui/hand-drawn-arrow-to-bottom";
 import Avatar from "./avatar";
 import Badge from "./badge";
 import SelectedProjectsButton from "./selected-projects-button";
@@ -37,7 +37,7 @@ const Profile = () => {
           scrollTo="#selected-projects"
           className="mt-4"
         />
-        <HandDrawnArrow className="mx-auto my-6 size-20 text-center text-gray-200 dark:text-zinc-600" />
+        <HandDrawnArrowToBottom className="mx-auto mb-4 mt-8 size-20 -rotate-12 text-center text-gray-300 dark:text-zinc-600" />
       </div>
     </div>
   );

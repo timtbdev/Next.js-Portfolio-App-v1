@@ -1,5 +1,17 @@
 import menuConfig from "@/config/menu";
 import { cn } from "@/utils/helpers";
+import {
+  Dialog,
+  DialogPanel,
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  Popover,
+  PopoverButton,
+  PopoverGroup,
+  PopoverPanel,
+} from "@headlessui/react";
+import { ChevronDownIcon } from "lucide-react";
 import { Link } from "next-view-transitions";
 import { FC } from "react";
 
@@ -8,7 +20,7 @@ interface Props {
 }
 
 const DesktopNavigationLinks: FC<Props> = ({ currentPath }) => (
-  <div className="hidden gap-x-5 lg:flex lg:flex-1">
+  <PopoverGroup className="hidden gap-x-5 lg:flex lg:flex-1">
     {menuConfig.map((menuItem) => (
       <Link
         key={menuItem.title}
@@ -28,7 +40,7 @@ const DesktopNavigationLinks: FC<Props> = ({ currentPath }) => (
         {menuItem.title}
       </Link>
     ))}
-  </div>
+  </PopoverGroup>
 );
 
 export default DesktopNavigationLinks;

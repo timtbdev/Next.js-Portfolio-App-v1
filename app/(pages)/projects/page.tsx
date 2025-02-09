@@ -17,7 +17,7 @@ export default async function ProjectPage() {
         <Fragment key={index}>
           <ProjectItem project={project} />
           {index !== projects.length - 1 && (
-            <HandDrawnArrow className="mx-auto size-20 text-center text-gray-200 dark:text-zinc-600" />
+            <HandDrawnArrow className="mx-auto size-20 text-center text-gray-300 dark:text-zinc-600" />
           )}
         </Fragment>
       ))}
