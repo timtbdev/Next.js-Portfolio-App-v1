@@ -37,8 +37,6 @@ const BlogPostItem: FC<Props> = ({ post }) => {
           <div className="relative max-w-xl px-8 pb-6 sm:p-0">
             <Title title={title} />
             <Separator orientation="horizontal" className="my-2" />
-            <Tags tags={tags} />
-            <Separator orientation="horizontal" className="my-2" />
             <div className="flex items-center gap-x-3">
               <InfoBarTop date={date} readTime={readTime} />
             </div>
