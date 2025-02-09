@@ -32,12 +32,13 @@ const GithubButton: FC<Props> = ({
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="dark:from-brand-300 dark:to-brand-400 group relative mt-4 inline-flex h-14 w-full max-w-xs items-center justify-center gap-x-1 rounded-md bg-gradient-to-r from-blue-500 to-blue-600 font-semibold shadow-md transition hover:scale-[0.98] active:scale-[0.95]"
+      className="dark:from-brand-300 dark:to-brand-400 group relative mt-4 inline-flex h-14 w-full max-w-xs items-center justify-center gap-x-1 rounded-md bg-gradient-to-br from-blue-500 to-blue-600 font-semibold shadow-md transition hover:scale-[0.98] active:scale-[0.95]"
     >
       <FaGithub className="h-4 w-4 text-white dark:text-zinc-900" />
       <span className="text-white dark:text-zinc-900">{title}</span>
       <FaStar className="ml-2 h-4 w-4 text-white group-hover:text-yellow-400 dark:text-zinc-900 dark:group-hover:text-white" />
       <span className="text-white dark:text-zinc-900">{stars}</span>
+      <div className="ease-[cubic-bezier(0.19,1,0.22,1)] absolute -left-[75px] -top-[50px] -z-10 h-[155px] w-8 rotate-[35deg] bg-white opacity-20 transition-all duration-500 group-hover:left-[120%] dark:bg-zinc-800/50" />
     </a>
   );
 };
