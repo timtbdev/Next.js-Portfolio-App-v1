@@ -2,7 +2,7 @@ import { mdxComponents } from "@/components/mdx/mdx-components";
 import Card from "@/components/ui/card";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { FC } from "react";
-import { ContentType } from "types";
+import { ProjectType } from "types";
 import Category from "./category";
 import Description from "./description";
 import GithubButton from "./github-button";
@@ -11,7 +11,7 @@ import Title from "./title";
 import YoutubeButton from "./youtube-button";
 
 interface Props {
-  project: ContentType;
+  project: ProjectType;
 }
 
 const ProjectItem: FC<Props> = ({ project }) => (

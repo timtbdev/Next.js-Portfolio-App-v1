@@ -1,5 +1,5 @@
 import { mdxComponents } from "@/components/mdx/mdx-components";
-import { ContentType } from "@/types";
+import { PostType } from "@/types";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { FC } from "react";
 import readingTime from "reading-time";
@@ -11,11 +11,11 @@ import Tags from "../shared/tags";
 import Title from "../shared/title";
 
 interface Props {
-  post: ContentType;
+  post: PostType;
 }
 
 const BlogPostDetail: FC<Props> = ({ post }) => {
-  const { slug } = post;
+  const { fileName } = post;
   const { title, image, tags, author, authorAvatar, category } = post.data;
   const readTime = readingTime(post.content, { wordsPerMinute: 100 }).minutes;
   return (
@@ -25,7 +25,7 @@ const BlogPostDetail: FC<Props> = ({ post }) => {
         className="flex flex-col items-start justify-between"
       >
         <PostImage
-          slug={slug}
+          slug={fileName}
           title={title}
           imageUrl={image}
           imageAlt={title}

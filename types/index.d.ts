@@ -31,6 +31,16 @@ export type MenuType = {
   title: string;
   slug: string;
   icon: React.FC<{ className?: string }>;
+  subMenu?: Array<SubMenuType>;
+};
+
+export type SubMenuType = {
+  id: number;
+  title: string;
+  slug: string;
+  icon: React.FC<{ className?: string }>;
+  description?: string;
+  keywords?: Array<string>;
 };
 
 export type BlogPostType_ = {
@@ -47,8 +57,16 @@ export type BlogPostType_ = {
   published: boolean;
 };
 
-export type ContentType = {
-  slug: string;
+export type PostType = {
+  fileName: string;
+  content: string;
+  data: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [key: string]: any;
+  };
+};
+
+export type ProjectType = {
   content: string;
   data: {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

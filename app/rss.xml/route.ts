@@ -1,10 +1,10 @@
 import { get } from "http";
-import { getAllPosts } from "@/lib/mdx";
+import { getAllPostsOrderedByDate } from "@/lib/mdx";
 import { getUrl } from "@/utils/helpers";
 import { Feed } from "feed";
 
 export async function GET() {
-  const posts = getAllPosts();
+  const posts = getAllPostsOrderedByDate();
 
   const feed = new Feed({
     title: "Tim's Blog's RSS Feed",
@@ -21,8 +21,8 @@ export async function GET() {
   posts.forEach((post) => {
     feed.addItem({
       title: post.data.title,
-      id: getUrl(`/blog/post/${post.slug}`),
-      link: getUrl(`/blog/post/${post.slug}`),
+      id: getUrl(`/blog/post/${post.fileName}`),
+      link: getUrl(`/blog/post/${post.fileName}`),
       description: post.data.description,
       content: post.data.description,
       date: new Date(post.data.date),

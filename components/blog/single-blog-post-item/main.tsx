@@ -1,5 +1,5 @@
 import Card from "@/components/ui/card";
-import { ContentType } from "@/types";
+import { PostType } from "@/types";
 import { Link } from "next-view-transitions";
 import { FC } from "react";
 import readingTime from "reading-time";
@@ -12,11 +12,11 @@ import Title from "../shared/title";
 import Description from "./description";
 
 interface Props {
-  post: ContentType;
+  post: PostType;
 }
 
 const BlogPostItem: FC<Props> = ({ post }) => {
-  const slug = post.slug;
+  const slug = post.fileName.replace(/\.mdx?$/, "");
   const {
     title,
     description,
@@ -28,7 +28,7 @@ const BlogPostItem: FC<Props> = ({ post }) => {
     tags,
   } = post.data;
   const readTime = readingTime(post.content, { wordsPerMinute: 100 }).minutes;
-  const url = `/blog/post/${post.slug}`;
+  const url = `/blog/post/${slug}`;
   return (
     <Card className="hover:bg-gray-100 dark:hover:bg-zinc-900">
       <Link href={url}>

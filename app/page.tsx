@@ -2,7 +2,7 @@ import Profile from "@/components/home/main";
 import ProjectItem from "@/components/project/main";
 import HandDrawnArrow from "@/components/ui/hand-drawn-arrow";
 import { getAllProjectsFilteredByOrder } from "@/lib/mdx";
-import { ContentType } from "@/types";
+import { ProjectType } from "@/types";
 import { Metadata } from "next";
 import React, { Fragment } from "react";
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  const projects: ContentType[] = await getAllProjectsFilteredByOrder();
+  const projects: ProjectType[] = await getAllProjectsFilteredByOrder();
   return (
     <Fragment>
       <Profile />

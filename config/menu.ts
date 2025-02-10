@@ -6,6 +6,7 @@ import {
   ProjectIcon,
 } from "@/icons/layout/menu";
 import { MenuType } from "@/types"; // Menu Configuration
+import categories from "./categories";
 
 const menuConfig: MenuType[] = [
   {
@@ -31,6 +32,7 @@ const menuConfig: MenuType[] = [
     title: "Blog",
     slug: "/blog",
     icon: BlogIcon,
+    subMenu: categories,
   },
   {
     id: 4,

@@ -1,4 +1,4 @@
-import SocialAccountButton from "@/components/ contact/social-account-button";
+import SocialAccountButton from "@/components/contact/social-account-button";
 import {
   AvatarFallback,
   AvatarImage,
