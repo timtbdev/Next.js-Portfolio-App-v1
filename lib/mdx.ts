@@ -4,6 +4,7 @@ import categories from "@/config/categories";
 import { getUrl } from "@/utils/helpers";
 import matter from "gray-matter";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 // ---------- Paths ----------
 const POST_PATH = path.join(process.cwd(), "content/posts");
@@ -12,23 +13,48 @@ const PROJECT_PATH = path.join(process.cwd(), "content/projects");
 
 // ---------- Utility Functions ----------
 function getFilePath(basePath: string, slug: string): string {
-  return path.join(basePath, `${slug}.mdx`);
+  try {
+    return path.join(basePath, `${slug}.mdx`);
+  } catch (error) {
+    console.error(
+      `Error generating file path for basePath: ${basePath} and slug: ${slug}`,
+      error,
+    );
+    return "";
+  }
 }
 
 function getMarkdownData(filePath: string) {
-  const markdown = readFileSync(filePath, "utf8");
-  return matter(markdown);
+  try {
+    const markdown = readFileSync(filePath, "utf8");
+    return matter(markdown);
+  } catch (error) {
+    console.error(
+      `Error reading or parsing markdown file at ${filePath}:`,
+      error,
+    );
+    return null;
+  }
 }
 
 function getAllFileNames(basePath: string): string[] {
-  return readdirSync(basePath).filter((file) => /\.mdx?$/.test(file));
+  try {
+    return readdirSync(basePath).filter((file) => /\.mdx?$/.test(file));
+  } catch (error) {
+    console.error(`Error reading directory at ${basePath}:`, error);
+    return [];
+  }
 }
 
 // ---------- Page ----------
 // Page: Get a page by slug
 export function getPageBySlug(slug: string) {
   const filePath = getFilePath(PAGE_PATH, slug);
-  const { content, data } = getMarkdownData(filePath);
+  const markdownData = getMarkdownData(filePath);
+  if (!markdownData) {
+    return notFound();
+  }
+  const { content, data } = markdownData;
 
   return { content, data };
 }
@@ -37,7 +63,11 @@ export function getPageBySlug(slug: string) {
 // Project: Get a single project by a file name
 export function getSingleProjectByFileName(fileName: string) {
   const filePath = getFilePath(PROJECT_PATH, fileName);
-  const { content, data } = getMarkdownData(filePath);
+  const markdownData = getMarkdownData(filePath);
+  if (!markdownData) {
+    return notFound();
+  }
+  const { content, data } = markdownData;
 
   return { content, data };
 }
@@ -82,7 +112,11 @@ export function getAllPostsOrderedByDate() {
 export function getSinglePostByFileName(slug: string) {
   const fileName = slug;
   const filePath = getFilePath(POST_PATH, slug);
-  const { content, data } = getMarkdownData(filePath);
+  const markdownData = getMarkdownData(filePath);
+  if (!markdownData) {
+    return notFound();
+  }
+  const { content, data } = markdownData;
 
   return { fileName, content, data };
 }
