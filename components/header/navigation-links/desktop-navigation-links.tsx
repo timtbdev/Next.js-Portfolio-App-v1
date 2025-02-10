@@ -1,6 +1,7 @@
 import menuConfig from "@/config/menu";
 import { cn } from "@/utils/helpers";
 import {
+  CloseButton,
   Popover,
   PopoverButton,
   PopoverGroup,
@@ -45,14 +46,15 @@ const DesktopNavigationLinks: FC<Props> = ({ currentPath }) => {
                   className="data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in absolute -left-8 top-full z-10 mt-3 w-56 rounded-xl bg-gray-50 p-2 shadow-lg ring-1 ring-gray-300 transition dark:bg-zinc-900 dark:ring-zinc-700"
                 >
                   {menuItem.subMenu?.map((subMenuItem) => (
-                    <Link
+                    <CloseButton
+                      as={Link}
                       key={subMenuItem.title}
                       href={subMenuItem.slug}
                       prefetch={true}
                       className="block rounded-lg px-3 py-2 text-sm/6 font-semibold text-gray-900 hover:bg-gray-100 hover:text-black dark:text-zinc-400 hover:dark:bg-zinc-800 dark:hover:text-white"
                     >
                       {subMenuItem.title}
-                    </Link>
+                    </CloseButton>
                   ))}
                 </PopoverPanel>
               </>

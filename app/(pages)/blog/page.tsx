@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Tim | Blog",
 };
 
+export async function generateStaticParams() {
+  const posts: PostType[] = getAllPostsOrderedByDate();
+  return posts.map((post) => ({
+    params: { slug: post.fileName },
+  }));
+}
+
 export default async function BlogPage() {
   const posts: PostType[] = getAllPostsOrderedByDate();
   return (
