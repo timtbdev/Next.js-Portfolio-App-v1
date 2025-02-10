@@ -3,6 +3,7 @@ import {
   generateMetaDataFoBlogCategory,
   getAllPostsByCategory,
 } from "@/lib/mdx";
+import { PostType } from "@/types";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -23,19 +24,13 @@ export async function generateMetadata({
 
 export default async function BlogPage({ params }: Props) {
   const { slug } = await params;
-  let posts;
-  try {
-    posts = getAllPostsByCategory(slug);
-  } catch (error) {
-    console.error("Error fetching posts:", error);
+  const posts = getAllPostsByCategory(slug);
+  if (!posts || posts.length === 0) {
     return notFound();
   }
-  if (!posts || posts.length === 0) return notFound();
   return (
     <div className="mx-auto max-w-3xl space-y-8 px-2 py-4 sm:p-0">
-      {posts.map((post, index) => (
-        <BlogPostItem key={index} post={post} />
-      ))}
+      {posts?.map((post, index) => <BlogPostItem key={index} post={post} />)}
     </div>
   );
 }

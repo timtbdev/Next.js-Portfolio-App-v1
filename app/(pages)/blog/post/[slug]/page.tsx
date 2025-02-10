@@ -4,9 +4,7 @@ import {
   generateMetaDataForBlogPost,
   getSinglePostByFileName,
 } from "@/lib/mdx";
-import { PostType } from "@/types";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
 
 interface Props {
   params: Promise<{
@@ -26,11 +24,12 @@ export async function generateMetadata({
 export default async function BlogPost({ params }: Props) {
   const { slug } = await params;
   // slug is the file name of the blog post
-  const post: PostType = getSinglePostByFileName(slug);
-  if (!post) return notFound;
+  const { fileName, data, content } = getSinglePostByFileName(slug);
   return (
-    <Card>
-      <BlogPostDetail post={post} />
-    </Card>
+    <>
+      <Card>
+        <BlogPostDetail post={{ fileName, data, content }} />
+      </Card>
+    </>
   );
 }
