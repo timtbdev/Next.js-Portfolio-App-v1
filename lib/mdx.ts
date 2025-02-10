@@ -12,107 +12,162 @@ const PROJECT_PATH = path.join(process.cwd(), "content/projects");
 
 // ---------- Utility Functions ----------
 function getFilePath(basePath: string, slug: string): string {
-  return path.join(basePath, `${slug}.mdx`);
+  try {
+    return path.join(basePath, `${slug}.mdx`);
+  } catch (error) {
+    console.error(
+      `Error generating file path for basePath: ${basePath}, slug: ${slug}`,
+      error,
+    );
+    throw new Error("Failed to generate file path");
+  }
 }
 
 function getMarkdownData(filePath: string) {
-  const markdown = readFileSync(filePath, "utf8");
-  return matter(markdown);
+  try {
+    const markdown = readFileSync(filePath, "utf8");
+    return matter(markdown);
+  } catch (error) {
+    console.error(`Error reading markdown data from file: ${filePath}`, error);
+    throw new Error("Failed to read markdown data");
+  }
 }
 
 function getAllFileNames(basePath: string): string[] {
-  return readdirSync(basePath).filter((file) => /\.mdx?$/.test(file));
+  try {
+    return readdirSync(basePath).filter((file) => /\.mdx?$/.test(file));
+  } catch (error) {
+    console.error(
+      `Error reading file names from directory: ${basePath}`,
+      error,
+    );
+    throw new Error("Failed to read file names");
+  }
 }
 
 // ---------- Page ----------
 // Page: Get a page by slug
 export function getPageBySlug(slug: string) {
-  const filePath = getFilePath(PAGE_PATH, slug);
-  const { content, data } = getMarkdownData(filePath);
-
-  return { content, data };
+  try {
+    const filePath = getFilePath(PAGE_PATH, slug);
+    const { content, data } = getMarkdownData(filePath);
+    return { content, data };
+  } catch (error) {
+    console.error(`Error getting page by slug: ${slug}`, error);
+    throw new Error("Failed to get page by slug");
+  }
 }
 
 // ---------- Project ----------
 // Project: Get a single project by a file name
 export function getSingleProjectByFileName(fileName: string) {
-  const filePath = getFilePath(PROJECT_PATH, fileName);
-  const { content, data } = getMarkdownData(filePath);
-
-  return { content, data };
+  try {
+    const filePath = getFilePath(PROJECT_PATH, fileName);
+    const { content, data } = getMarkdownData(filePath);
+    return { content, data };
+  } catch (error) {
+    console.error(`Error getting project by file name: ${fileName}`, error);
+    throw new Error("Failed to get project by file name");
+  }
 }
 
 // Project: Get all projects filtered by order
 export function getAllProjectsFilteredByOrder() {
-  const projectFileNames = getAllFileNames(PROJECT_PATH);
+  try {
+    const projectFileNames = getAllFileNames(PROJECT_PATH);
+    const projects = projectFileNames.map((file) => {
+      const { content, data } = getSingleProjectByFileName(
+        file.replace(/\.mdx?$/, ""),
+      );
+      return { content, data };
+    });
 
-  const projects = projectFileNames.map((file) => {
-    const { content, data } = getSingleProjectByFileName(
-      file.replace(/\.mdx?$/, ""),
-    );
-    return { content, data };
-  });
-
-  return projects
-    .filter((project) => project.data.featured)
-    .sort((a, b) => a.data.order - b.data.order);
+    return projects
+      .filter((project) => project.data.featured)
+      .sort((a, b) => a.data.order - b.data.order);
+  } catch (error) {
+    console.error("Error getting all projects filtered by order", error);
+    throw new Error("Failed to get all projects filtered by order");
+  }
 }
 
 // ---------- Blog Post ----------
 
 // Blog Post: Get all post file names
 export function getAllPostFileNames() {
-  return getAllFileNames(POST_PATH).map((file) => file.replace(/\.mdx?$/, ""));
+  try {
+    return getAllFileNames(POST_PATH).map((file) =>
+      file.replace(/\.mdx?$/, ""),
+    );
+  } catch (error) {
+    console.error("Error getting all post file names", error);
+    throw new Error("Failed to get all post file names");
+  }
 }
 
 // Blog Post: Get all posts ordered by date
 export function getAllPostsOrderedByDate() {
-  const fileNames = getAllPostFileNames();
-  const posts = fileNames.map((fileName) => {
-    const { content, data } = getSinglePostByFileName(fileName);
-    return { fileName, content, data };
-  });
+  try {
+    const fileNames = getAllPostFileNames();
+    const posts = fileNames.map((fileName) => {
+      const { content, data } = getSinglePostByFileName(fileName);
+      return { fileName, content, data };
+    });
 
-  return posts.sort(
-    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
-  );
+    return posts.sort(
+      (a, b) =>
+        new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+    );
+  } catch (error) {
+    console.error("Error getting all posts ordered by date", error);
+    throw new Error("Failed to get all posts ordered by date");
+  }
 }
 
 // Blog Post: Get a single post by slug
 export function getSinglePostByFileName(slug: string) {
-  const fileName = slug;
-  const filePath = getFilePath(POST_PATH, slug);
-  const { content, data } = getMarkdownData(filePath);
-
-  return { fileName, content, data };
+  try {
+    const fileName = slug;
+    const filePath = getFilePath(POST_PATH, slug);
+    const { content, data } = getMarkdownData(filePath);
+    return { fileName, content, data };
+  } catch (error) {
+    console.error(`Error getting single post by file name: ${slug}`, error);
+    throw new Error("Failed to get single post by file name");
+  }
 }
 
 // Blog Post: Generate Metadata for a blog post
 export async function generateMetaDataForBlogPost(
   slug: string,
 ): Promise<Metadata> {
-  const { data } = getSinglePostByFileName(slug);
+  try {
+    const { data } = getSinglePostByFileName(slug);
 
-  return {
-    title: data.title || "Blog Post",
-    description:
-      data.description.slice(0, 100) + ("..." as string) ||
-      "Read this insightful blog post.",
-    keywords: data.seo?.join(", ") || "blog, mdx, next.js",
-    openGraph: {
-      title: data.title,
-      description: data.description.slice(0, 100) + ("..." as string),
-      images: data.image ? [{ url: data.image }] : undefined,
-      type: "article",
-      url: getUrl(`/blog/post/${slug}`),
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: data.title,
-      description: data.description.slice(0, 100) + ("..." as string),
-      images: data.image ? [data.image] : undefined,
-    },
-  };
+    return {
+      title: data.title || "Blog Post",
+      description:
+        data.description.slice(0, 100) + ("..." as string) ||
+        "Read this insightful blog post.",
+      keywords: data.seo?.join(", ") || "blog, mdx, next.js",
+      openGraph: {
+        title: data.title,
+        description: data.description.slice(0, 100) + ("..." as string),
+        images: data.image ? [{ url: data.image }] : undefined,
+        type: "article",
+        url: getUrl(`/blog/post/${slug}`),
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: data.title,
+        description: data.description.slice(0, 100) + ("..." as string),
+        images: data.image ? [data.image] : undefined,
+      },
+    };
+  } catch (error) {
+    console.error(`Error generating metadata for blog post: ${slug}`, error);
+    throw new Error("Failed to generate metadata for blog post");
+  }
 }
 
 // ---------- Blog Category ----------
@@ -123,54 +178,66 @@ export async function generateMetaDataForBlogPost(
 export async function generateMetaDataFoBlogCategory(
   slug: string,
 ): Promise<Metadata> {
-  const fullSlug = `/blog/category/${slug}`;
-  const category = categories.find(
-    (category) => category.slug === fullSlug,
-  )?.title;
+  try {
+    const fullSlug = `/blog/category/${slug}`;
+    const category = categories.find(
+      (category) => category.slug === fullSlug,
+    )?.title;
 
-  if (!category) {
+    if (!category) {
+      return {
+        title: "Blog Category",
+        description: "Read all blog posts in this category.",
+        keywords: "blog, mdx, next.js",
+      };
+    }
+
     return {
-      title: "Blog Category",
-      description: "Read all blog posts in this category.",
-      keywords: "blog, mdx, next.js",
+      title: category,
+      description: `Read all blog posts in the ${category} category.`,
+      keywords:
+        categories
+          .find((category) => category.slug === fullSlug)
+          ?.keywords?.join(", ") ?? "blog, mdx, next.js",
     };
+  } catch (error) {
+    console.error(
+      `Error generating metadata for blog category: ${slug}`,
+      error,
+    );
+    throw new Error("Failed to generate metadata for blog category");
   }
-
-  return {
-    title: category,
-    description: `Read all blog posts in the ${category} category.`,
-    keywords:
-      categories
-        .find((category) => category.slug === fullSlug)
-        ?.keywords?.join(", ") ?? "blog, mdx, next.js",
-  };
 }
 
 // - Blog-Post: Get All Posts By Category
 
 export function getAllPostsByCategory(slug: string) {
-  const fullSlug = `/blog/category/${slug}`;
-  const category = categories.find(
-    (category) => category.slug === fullSlug,
-  )?.title;
+  try {
+    const fullSlug = `/blog/category/${slug}`;
+    const category = categories.find(
+      (category) => category.slug === fullSlug,
+    )?.title;
 
-  if (!category) {
-    return [];
+    if (!category) {
+      return null;
+    }
+
+    const allPostFileNames = getAllFileNames(POST_PATH);
+    const posts = allPostFileNames.map((fileName) => {
+      const { content, data } = getSinglePostByFileName(
+        fileName.replace(/\.mdx?$/, ""),
+      );
+      return { fileName, content, data };
+    });
+
+    return posts
+      .filter((post) => post.data.category === category)
+      .sort(
+        (a, b) =>
+          new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+      );
+  } catch (error) {
+    console.error(`Error getting all posts by category: ${slug}`, error);
+    throw new Error("Failed to get all posts by category");
   }
-
-  const allPostFileNames = getAllFileNames(POST_PATH);
-
-  const posts = allPostFileNames.map((fileName) => {
-    const { content, data } = getSinglePostByFileName(
-      fileName.replace(/\.mdx?$/, ""),
-    );
-    return { fileName, content, data };
-  });
-
-  return posts
-    .filter((post) => post.data.category === category)
-    .sort(
-      (a, b) =>
-        new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
-    );
 }
