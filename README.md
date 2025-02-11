@@ -1,4 +1,4 @@
-# Portfolio Template | Next.js & Tailwind CSS
+# 🧑‍💻 Portfolio Template
 
 ## 🌞 Light Mode
 
