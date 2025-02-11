@@ -34,6 +34,7 @@ const ProjectItem: FC<Props> = ({ project }) => (
             url={project.data.webUrl || ""}
           />
         )}
+        <span className="hidden sm:flex">|</span>
         {project.data.youtubeUrl && (
           <LinkButton
             title="Watch on Youtube"
@@ -41,7 +42,6 @@ const ProjectItem: FC<Props> = ({ project }) => (
             url={project.data.youtubeUrl || ""}
           />
         )}
-        <span className="hidden sm:flex">|</span>
       </div>
 
       <MDXRemote source={project.content} components={mdxComponents} />
