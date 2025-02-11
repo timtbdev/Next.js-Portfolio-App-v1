@@ -1,5 +1,7 @@
 # 🧑‍💻 Portfolio Template
 
+This **Next.js** and **Tailwind CSS** portfolio template features a clean, **fully responsive** design with **light** and **dark** modes. It supports **MDX** for blog posts and content, is **SEO-optimized**, and delivers great performance scores.
+
 ## 🌞 Light Mode
 
 <img width="1433" alt="Screenshot 2025-02-11 at 5 11 33 AM" src="https://github.com/user-attachments/assets/e7b691fd-8c88-4696-9174-7dda96409f2a" />
@@ -15,10 +17,6 @@
 ## 📊 📱 Mobile Performance
 
 <img width="983" alt="Screenshot 2025-02-11 at 5 26 15 AM" src="https://github.com/user-attachments/assets/fb927413-73fd-4125-a4e7-6612382c92b1" />
-
-## Overview
-
-This **Next.js** and **Tailwind CSS** portfolio template features a clean, **fully responsive** design with **light** and **dark** modes. It supports **MDX** for blog posts and content, is **SEO-optimized**, and delivers great performance scores.
 
 ## 🛠️ Tech Stack
 
