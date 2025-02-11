@@ -43,20 +43,6 @@ export type SubMenuType = {
   keywords?: Array<string>;
 };
 
-export type BlogPostType_ = {
-  id: number;
-  category: string;
-  title: string;
-  image: string;
-  description: string;
-  content: string;
-  created_at: string;
-  updated_at: string;
-  slug: string;
-  author: { name: string; image: string };
-  published: boolean;
-};
-
 export type PostType = {
   fileName: string;
   content: string;

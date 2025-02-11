@@ -73,7 +73,11 @@ export function getSingleProjectByFileName(fileName: string) {
 }
 
 // Project: Get all projects filtered by order
-export function getAllProjectsFilteredByOrder() {
+export function getAllProjectsFilteredByOrder({
+  featured,
+}: {
+  featured: boolean;
+}) {
   const projectFileNames = getAllFileNames(PROJECT_PATH);
 
   const projects = projectFileNames.map((file) => {
@@ -83,6 +87,9 @@ export function getAllProjectsFilteredByOrder() {
     return { content, data };
   });
 
+  if (!featured) {
+    return projects.sort((a, b) => a.data.order - b.data.order);
+  }
   return projects
     .filter((project) => project.data.featured)
     .sort((a, b) => a.data.order - b.data.order);

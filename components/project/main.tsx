@@ -34,7 +34,9 @@ const ProjectItem: FC<Props> = ({ project }) => (
             url={project.data.webUrl || ""}
           />
         )}
-        <span className="hidden sm:flex">|</span>
+        {project.data.webUrl && project.data.youtubeUrl && (
+          <span className="hidden sm:flex">|</span>
+        )}
         {project.data.youtubeUrl && (
           <LinkButton
             title="Watch on Youtube"
@@ -49,13 +51,15 @@ const ProjectItem: FC<Props> = ({ project }) => (
         description={project.data.description}
         className="mb-4 text-gray-600 dark:text-zinc-400"
       />
-      <div className="mx-auto flex justify-center">
-        <GithubButton
-          title="Stars on Github"
-          url={project.data.githubUrl}
-          repo={project.data.slug}
-        />
-      </div>
+      {project.data.githubUrl && project.data.slug && (
+        <div className="mx-auto flex justify-center">
+          <GithubButton
+            title="Stars on Github"
+            url={project.data.githubUrl}
+            repo={project.data.slug}
+          />
+        </div>
+      )}
     </div>
     <Screenshots className="mt-6" screenshots={project.data.screenshots} />
   </Card>

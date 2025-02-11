@@ -1,4 +1,5 @@
 import AndroidIcon from "@/icons/pages/projects/android-icon";
+import HtmlIcon from "@/icons/pages/projects/html-icon";
 import NextJsIcon from "@/icons/pages/projects/nextjs-icon";
 import { cn } from "@/utils/helpers";
 import { FC } from "react";
@@ -17,7 +18,7 @@ const Category: FC<Props> = ({ category, className }) => {
       case "Next.js":
         return <NextJsIcon className="size-5" />;
       default:
-        return null;
+        return <HtmlIcon className="size-5" />;
     }
   };
 

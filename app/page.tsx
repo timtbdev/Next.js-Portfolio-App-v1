@@ -11,7 +11,9 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  const projects: ProjectType[] = await getAllProjectsFilteredByOrder();
+  const projects: ProjectType[] = await getAllProjectsFilteredByOrder({
+    featured: true,
+  });
   return (
     <Fragment>
       <Profile />

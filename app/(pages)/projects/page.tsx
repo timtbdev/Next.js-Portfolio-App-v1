@@ -10,7 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default async function ProjectPage() {
-  const projects: ProjectType[] = await getAllProjectsFilteredByOrder();
+  const projects: ProjectType[] = await getAllProjectsFilteredByOrder({
+    featured: false,
+  });
   return (
     <div className="flex flex-col gap-4 md:gap-6">
       {projects.map((project, index) => (
