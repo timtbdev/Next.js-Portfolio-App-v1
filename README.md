@@ -1,18 +1,18 @@
 # Portfolio Template | Next.js & Tailwind CSS
 
-## Light Mode
+## 🌞 Light Mode
 
 <img width="1433" alt="Screenshot 2025-02-11 at 5 11 33 AM" src="https://github.com/user-attachments/assets/e7b691fd-8c88-4696-9174-7dda96409f2a" />
 
-##Dark Mode
+## 🌙 Dark Mode
 
 <img width="1432" alt="Screenshot 2025-02-11 at 5 14 07 AM" src="https://github.com/user-attachments/assets/c148770d-cfb8-43b7-b4bd-addf2d9a2a69" />
 
-## Desktop Performance
+## 📊 💻 Desktop Performance
 
 <img width="995" alt="Screenshot 2025-02-11 at 5 26 25 AM" src="https://github.com/user-attachments/assets/ab2ecb87-677f-4463-ba3b-905bafb0ab38" />
 
-## Mobile Performance
+## 📊 📱 Mobile Performance
 
 <img width="983" alt="Screenshot 2025-02-11 at 5 26 15 AM" src="https://github.com/user-attachments/assets/fb927413-73fd-4125-a4e7-6612382c92b1" />
 
