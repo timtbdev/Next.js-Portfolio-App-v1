@@ -1,29 +1,35 @@
-# Mobile App Developer Portfolio Template
+# Portfolio Template v1
 
-## Desktop Preview
+## Desktop Screenshot | Light Mode
 
-https://github.com/user-attachments/assets/8f7c57f8-9041-4db8-9022-2543fe9d7dac
+<img width="1433" alt="Screenshot 2025-02-11 at 5 11 33 AM" src="https://github.com/user-attachments/assets/e7b691fd-8c88-4696-9174-7dda96409f2a" />
 
-## Mobile Preview
+## Desktop Screenshot | Dark Mode
 
-https://github.com/user-attachments/assets/209bae39-6729-4b85-b079-0fef0eb2eade
+<img width="1432" alt="Screenshot 2025-02-11 at 5 14 07 AM" src="https://github.com/user-attachments/assets/c148770d-cfb8-43b7-b4bd-addf2d9a2a69" />
+
+## Desktop Performance
+
+<img width="995" alt="Screenshot 2025-02-11 at 5 26 25 AM" src="https://github.com/user-attachments/assets/ab2ecb87-677f-4463-ba3b-905bafb0ab38" />
+
+## Mobile Performance
+
+<img width="983" alt="Screenshot 2025-02-11 at 5 26 15 AM" src="https://github.com/user-attachments/assets/fb927413-73fd-4125-a4e7-6612382c92b1" />
 
 ## Overview
 
-This project is a portfolio website template for Mobile App developers.
+This **Next.js** and **Tailwind CSS** portfolio template features a clean, **fully responsive** design with **light** and **dark** modes. It supports **MDX** for blog posts and content, is **SEO-optimized**, and delivers great performance scores.
 
 ## 🛠️ Tech Stack
 
 - **Frontend Framework**: Next.js 15
 - **UI Library**: Shadcn UI & Headless UI
+- **Content**: Next-MDX-Remote
+- **Icons**: Lucide React & React Icons
 - **Type Safety**: TypeScript
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **Code Quality**: ESLint & Prettier
-
-## 📁 Project Structure
-
-<img width="674" alt="Screenshot 2025-01-25 at 6 56 06 AM" src="https://github.com/user-attachments/assets/82b811bc-dccd-414c-8977-930fb6a20dc9" />
 
 ## Project Details
 
@@ -32,7 +38,8 @@ This project is a portfolio website template for Mobile App developers.
 - **`app`**: Contains the main application components.
 - **`components`**: Contains reusable UI components.
 - **`utils`**: Contains utility functions.
-- **`config`**: Contains dummy data for the portfolio.
+- **`config`**: Contains data for SEO and Menu.
+- **`content`**: Contains data for Pages & Blog Posts.
 
 ### Configuration Files
 
