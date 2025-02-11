@@ -1,10 +1,10 @@
-# Portfolio Template v1
+# Portfolio Template
 
-## Desktop Screenshot | Light Mode
+## Light Mode
 
 <img width="1433" alt="Screenshot 2025-02-11 at 5 11 33 AM" src="https://github.com/user-attachments/assets/e7b691fd-8c88-4696-9174-7dda96409f2a" />
 
-## Desktop Screenshot | Dark Mode
+##Dark Mode
 
 <img width="1432" alt="Screenshot 2025-02-11 at 5 14 07 AM" src="https://github.com/user-attachments/assets/c148770d-cfb8-43b7-b4bd-addf2d9a2a69" />
 
