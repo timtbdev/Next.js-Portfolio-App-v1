@@ -1,14 +1,15 @@
 import { mdxComponents } from "@/components/mdx/mdx-components";
 import Card from "@/components/ui/card";
+import { EarthIcon, YoutubeIcon } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { FC } from "react";
 import { ProjectType } from "types";
 import Category from "./category";
 import Description from "./description";
 import GithubButton from "./github-button";
+import LinkButton from "./link-button";
 import Screenshots from "./screenshots";
 import Title from "./title";
-import YoutubeButton from "./youtube-button";
 
 interface Props {
   project: ProjectType;
@@ -25,13 +26,23 @@ const ProjectItem: FC<Props> = ({ project }) => (
         title={project.data.title}
         className="mt-6 text-3xl text-black dark:text-zinc-300 sm:text-4xl"
       />
-      {project.data.youtubeUrl && (
-        <YoutubeButton
-          className="mb-4 mt-2"
-          title="Watch on Youtube"
-          url={project.data.youtubeUrl || ""}
-        />
-      )}
+      <div className="mx-auto mb-2 mt-4 flex max-w-xs flex-col items-center justify-center gap-x-2 gap-y-2 text-center sm:flex sm:flex-row">
+        {project.data.webUrl && (
+          <LinkButton
+            title="Live Preview"
+            Icon={EarthIcon}
+            url={project.data.webUrl || ""}
+          />
+        )}
+        {project.data.youtubeUrl && (
+          <LinkButton
+            title="Watch on Youtube"
+            Icon={YoutubeIcon}
+            url={project.data.youtubeUrl || ""}
+          />
+        )}
+        <span className="hidden sm:flex">|</span>
+      </div>
 
       <MDXRemote source={project.content} components={mdxComponents} />
       <Description
@@ -41,7 +52,7 @@ const ProjectItem: FC<Props> = ({ project }) => (
       <div className="mx-auto flex justify-center">
         <GithubButton
           title="Stars on Github"
-          url={project.data.url}
+          url={project.data.githubUrl}
           repo={project.data.slug}
         />
       </div>
