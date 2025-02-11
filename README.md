@@ -1,12 +1,17 @@
-# 🧑‍💻 Portfolio Template
+## 🚀 Next.js & Tailwind CSS Portfolio Template
 
-- 🚀 High Performance Scores
-- ✨ Responsive & Clean Design
-- 🌙 Light & Dark Mode
-- 🔍 SEO Optimized (Automated)
-- 📃 Powered by Next-MDX-Remote
-- 🛠️ Built with Next.js 15 & Tailwind CSS
-- 😎 100% Open Source
+A modern, fully responsive portfolio template built with **Next.js 15** and **Tailwind CSS**. It includes **light/dark mode**, **MDX support**, and **SEO optimization** for high performance.
+
+### 🔹 Features
+
+- 🚀 **Blazing fast & responsive**
+- ✨ **Minimalist, clean design**
+- 🔍 **SEO optimized (Automated)**
+- 📃 **MDX support for blog & content**
+- 🛠️ **Next.js 15 & Tailwind CSS**
+- 😎 **100% Open Source**
+
+🌎 **Live Demo:** [timtb.dev](https://timtb.dev)
 
 ## 🌞 Light Mode
 
