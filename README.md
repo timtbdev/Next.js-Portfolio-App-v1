@@ -1,4 +1,4 @@
-# Portfolio Template | Next.js & Tailwind CSS, Next-MDX-Remote
+# Portfolio Template | Next.js & Tailwind CSS
 
 ## Light Mode
 
