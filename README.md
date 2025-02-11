@@ -1,12 +1,12 @@
 # 🧑‍💻 Portfolio Template
 
-🚀 High Performance Scores
-✨ Responsive & Clean Design
-🌙 Light & Dark Mode
-🔍 SEO Optimized (Automated)
-📃 Powered by Next-MDX-Remote
-🛠️ Built with Next.js 15 & Tailwind CSS
-😎 100% Open Source
+- 🚀 High Performance Scores
+- ✨ Responsive & Clean Design
+- 🌙 Light & Dark Mode
+- 🔍 SEO Optimized (Automated)
+- 📃 Powered by Next-MDX-Remote
+- 🛠️ Built with Next.js 15 & Tailwind CSS
+- 😎 100% Open Source
 
 ## 🌞 Light Mode
 
