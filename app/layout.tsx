@@ -212,7 +212,7 @@ export default function RootLayout({
           </ThemeProvider>
           <TailwindIndicator />
         </body>
-        <GoogleAnalytics gaId="G-G6MN68562X" />
+        <GoogleAnalytics gaId="G-E141GNRBCW" />
       </html>
     </ViewTransitions>
   );
