@@ -4,16 +4,29 @@ import { PostType } from "@/types";
 import { getUrl } from "@/utils/helpers";
 import { Metadata } from "next";
 
+const TITLE = "Blog | Next.js, Tailwind CSS, and Supabase | Tim";
+const DESCRIPTION =
+  "Explore my latest blog posts on Next.js, Tailwind CSS, and Supabase!";
+const URL = getUrl("blog");
+
 export const metadata: Metadata = {
-  title: "Blog | Next.js, Tailwind CSS, and Supabase | Tim",
-  description:
-    "Discover my latest blog posts on Next.js, Tailwind CSS, and Supabase.",
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: {
-    canonical: getUrl("blog"),
+    canonical: URL,
   },
   robots: {
     index: true,
     follow: true,
+  },
+  openGraph: {
+    url: URL,
+    title: TITLE,
+    description: DESCRIPTION,
+  },
+  twitter: {
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 

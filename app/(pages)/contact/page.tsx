@@ -9,15 +9,28 @@ import { socialConfigs } from "@/config/social";
 import { getUrl } from "@/utils/helpers";
 import { Metadata } from "next";
 
+const TITLE = "Contact | Best Frontend Developer for Hire | Tim";
+const DESCRIPTION = "Please feel free to reach out to me.";
+const URL = getUrl("contact");
+
 export const metadata: Metadata = {
-  title: "Contact | Best Frontend Developer for Hire | Tim",
-  description: "Please feel free to reach out to me.",
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: {
-    canonical: getUrl("contact"),
+    canonical: URL,
   },
   robots: {
     index: true,
     follow: true,
+  },
+  openGraph: {
+    url: URL,
+    title: TITLE,
+    description: DESCRIPTION,
+  },
+  twitter: {
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 

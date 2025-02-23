@@ -6,15 +6,29 @@ import { getUrl } from "@/utils/helpers";
 import { Metadata } from "next";
 import React, { Fragment } from "react";
 
+const TITLE = "Projects | Best Frontend Developer for Hire | Tim";
+const DESCRIPTION =
+  "Discover my projects showcasing my skills and experience as a frontend developer!";
+const URL = getUrl("projects");
+
 export const metadata: Metadata = {
-  title: "Projects | Best Frontend Developer for Hire | Tim",
-  description: "Discover my latest projects.",
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: {
-    canonical: getUrl("projects"),
+    canonical: URL,
   },
   robots: {
     index: true,
     follow: true,
+  },
+  openGraph: {
+    url: URL,
+    title: TITLE,
+    description: DESCRIPTION,
+  },
+  twitter: {
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 

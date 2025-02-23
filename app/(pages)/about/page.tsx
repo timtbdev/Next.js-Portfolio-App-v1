@@ -7,15 +7,29 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import { Fragment } from "react";
 
+const TITLE = "About | Best Frontend Developer for Hire | Tim";
+const DESCRIPTION =
+  "Discover my skills and experience as a frontend developer.";
+const URL = getUrl("about");
+
 export const metadata: Metadata = {
-  title: "About | Best Frontend Developer for Hire | Tim",
-  description: "Discover my skills and experience as a frontend developer.",
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: {
-    canonical: getUrl("about"),
+    canonical: URL,
   },
   robots: {
     index: true,
     follow: true,
+  },
+  openGraph: {
+    url: URL,
+    title: TITLE,
+    description: DESCRIPTION,
+  },
+  twitter: {
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 
