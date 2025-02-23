@@ -3,11 +3,21 @@ import ProjectItem from "@/components/project/main";
 import HandDrawnArrow from "@/components/ui/hand-drawn-arrow";
 import { getAllProjectsFilteredByOrder } from "@/lib/mdx";
 import { ProjectType } from "@/types";
+import { getUrl } from "@/utils/helpers";
 import { Metadata } from "next";
 import React, { Fragment } from "react";
 
 export const metadata: Metadata = {
   title: "Best Frontend Developer for Hire | 3+ Years Experience | Tim",
+  description:
+    "Looking for a top Frontend Developer in San Francisco? Hire Tim, a skilled Frontend Developer, to build fast, reliable, and high-performing web applications.",
+  alternates: {
+    canonical: getUrl(),
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default async function HomePage() {
