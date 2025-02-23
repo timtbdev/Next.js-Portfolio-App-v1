@@ -38,7 +38,7 @@ export function getUrl(path: string = "") {
   const baseUrl =
     process.env.NODE_ENV === "development"
       ? process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
-      : process.env.NEXT_PUBLIC_WEB_URL || "https://timtb.dev";
+      : process.env.NEXT_PUBLIC_WEB_URL || "https://www.timtb.dev";
 
   const trimmedPath = path.replace(/\/+$/, "");
 
