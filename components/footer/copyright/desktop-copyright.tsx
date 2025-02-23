@@ -16,11 +16,11 @@ const DesktopCopyright = () => {
         </a>
       </div>
       <span className="text-md text-center leading-5 text-gray-600 dark:text-zinc-400">
-        © {new Date().getFullYear()} All rights reserved.
+        © {new Date().getFullYear()} All rights reserved. | Built with Next.js
       </span>
       <div className="flex flex-1 justify-end">
         <a
-          href={getUrl("/rss.xml")}
+          href={getUrl("rss.xml")}
           className="text-md dark:text-brand-400 inline-flex items-center gap-1.5 text-orange-600 hover:text-blue-600 dark:hover:text-white"
         >
           <FaSquareRss size={18} />

@@ -16,7 +16,7 @@ const MobileCopyright = () => {
         </a>
         <span> | </span>
         <a
-          href={getUrl("/rss.xml")}
+          href={getUrl("rss.xml")}
           className="text-md dark:text-brand-400 inline-flex items-center gap-1.5 text-orange-600 hover:text-gray-600 dark:hover:text-white"
         >
           <FaSquareRss size={18} />
@@ -24,7 +24,7 @@ const MobileCopyright = () => {
         </a>
       </div>
       <div className="text-md mx-auto mt-6 flex max-w-4xl justify-center text-center leading-5 text-gray-600 dark:text-zinc-400">
-        © {new Date().getFullYear()} All rights reserved.
+        © {new Date().getFullYear()} All rights reserved. | Built with Next.js
       </div>
     </div>
   );
