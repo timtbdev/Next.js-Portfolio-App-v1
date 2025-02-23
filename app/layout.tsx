@@ -167,6 +167,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: seoConfig.title,
     description: seoConfig.description,
+    site: seoConfig.author.twitterAddress,
     images: [
       {
         url: seoConfig.twitterImage,
