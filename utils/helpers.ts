@@ -40,5 +40,7 @@ export function getUrl(path: string = "") {
       ? process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
       : process.env.NEXT_PUBLIC_WEB_URL || "https://timtb.dev";
 
-  return `${baseUrl}${path}`;
+  const trimmedPath = path.replace(/\/+$/, "");
+
+  return `${baseUrl}/${trimmedPath}`;
 }

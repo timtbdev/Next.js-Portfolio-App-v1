@@ -4,7 +4,6 @@ import { IconType } from "react-icons/lib";
 
 export type SeoType = {
   title: string;
-  subTitle: string;
   ogImage: string;
   twitterImage: string;
   author: {
@@ -14,7 +13,7 @@ export type SeoType = {
     email: string;
   };
   description: string;
-  tags: Array<string>;
+  keywords: Array<string>;
 };
 
 export type SocialType = {

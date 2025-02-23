@@ -7,7 +7,7 @@ import { Metadata } from "next";
 import React, { Fragment } from "react";
 
 export const metadata: Metadata = {
-  title: "Tim | Home",
+  title: "Best Frontend Developer for Hire | 3+ Years Experience | Tim",
 };
 
 export default async function HomePage() {

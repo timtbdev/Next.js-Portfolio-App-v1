@@ -2,11 +2,20 @@ import ProjectItem from "@/components/project/main";
 import HandDrawnArrow from "@/components/ui/hand-drawn-arrow";
 import { getAllProjectsFilteredByOrder } from "@/lib/mdx";
 import { ProjectType } from "@/types";
+import { getUrl } from "@/utils/helpers";
 import { Metadata } from "next";
 import React, { Fragment } from "react";
 
 export const metadata: Metadata = {
-  title: "Tim | Projects",
+  title: "Projects | Best Frontend Developer for Hire | Tim",
+  description: "Discover my latest projects.",
+  alternates: {
+    canonical: getUrl("projects"),
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default async function ProjectPage() {

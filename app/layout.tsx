@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   applicationName: seoConfig.title,
   description: seoConfig.description,
   referrer: "origin-when-cross-origin",
-  keywords: seoConfig.tags.join(", "),
+  keywords: seoConfig.keywords.join(", "),
   authors: [
     {
       name: seoConfig.author.name,
@@ -45,6 +45,7 @@ export const metadata: Metadata = {
   publisher: seoConfig.author.name,
   metadataBase: new URL(getUrl()),
   alternates: {
+    canonical: getUrl(),
     types: {
       "application/rss+xml": `${getUrl()}/rss.xml`,
     },
@@ -147,7 +148,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en",
     url: getUrl(),
     title: seoConfig.title,
     description: seoConfig.description,
@@ -158,6 +159,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: seoConfig.title,
+        type: "image/png",
       },
     ],
   },
@@ -171,6 +173,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 675,
         alt: seoConfig.title,
+        type: "image/png",
       },
     ],
     creator: seoConfig.author.twitterAddress,

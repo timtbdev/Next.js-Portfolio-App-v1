@@ -1,13 +1,22 @@
 import { mdxComponents } from "@/components/mdx/mdx-components";
 import Card from "@/components/ui/card";
 import { getPageBySlug } from "@/lib/mdx";
+import { getUrl } from "@/utils/helpers";
 import { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import { Fragment } from "react";
 
 export const metadata: Metadata = {
-  title: "Tim | About",
+  title: "About | Best Frontend Developer for Hire | Tim",
+  description: "Discover my skills and experience as a frontend developer.",
+  alternates: {
+    canonical: getUrl("about"),
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default async function AboutPage() {

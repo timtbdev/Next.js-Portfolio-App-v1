@@ -1,10 +1,20 @@
 import BlogPostItem from "@/components/blog/single-blog-post-item/main";
 import { getAllPostsOrderedByDate } from "@/lib/mdx";
 import { PostType } from "@/types";
+import { getUrl } from "@/utils/helpers";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tim | Blog",
+  title: "Blog | Next.js, Tailwind CSS, and Supabase | Tim",
+  description:
+    "Discover my latest blog posts on Next.js, Tailwind CSS, and Supabase.",
+  alternates: {
+    canonical: getUrl("blog"),
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export async function generateStaticParams() {

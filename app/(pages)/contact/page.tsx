@@ -6,10 +6,19 @@ import {
 } from "@/components/ui/avatar";
 import Card from "@/components/ui/card";
 import { socialConfigs } from "@/config/social";
+import { getUrl } from "@/utils/helpers";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tim | Contact",
+  title: "Contact | Best Frontend Developer for Hire | Tim",
+  description: "Please feel free to reach out to me.",
+  alternates: {
+    canonical: getUrl("contact"),
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default async function ContactPage() {

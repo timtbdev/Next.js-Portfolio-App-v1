@@ -140,12 +140,27 @@ export async function generateMetaDataForBlogPost(
       data.description.slice(0, 100) + ("..." as string) ||
       "Read this insightful blog post.",
     keywords: data.seo?.join(", ") || "blog, mdx, next.js",
+    alternates: {
+      canonical: getUrl(`blog/post/${slug}`),
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
     openGraph: {
       title: data.title,
       description: data.description.slice(0, 100) + ("..." as string),
-      images: data.image ? [{ url: data.image }] : undefined,
+      images: [
+        {
+          url: data.image,
+          width: 1200,
+          height: 630,
+          alt: data.title,
+          type: "image/png",
+        },
+      ],
       type: "article",
-      url: getUrl(`/blog/post/${slug}`),
+      url: getUrl(`blog/post/${slug}`),
     },
     twitter: {
       card: "summary_large_image",
@@ -180,6 +195,13 @@ export async function generateMetaDataFoBlogCategory(
   return {
     title: category,
     description: `Read all blog posts in the ${category} category.`,
+    alternates: {
+      canonical: getUrl(`blog/category/${slug}`),
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
     keywords:
       categories
         .find((category) => category.slug === fullSlug)

@@ -5,7 +5,6 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: ["/"],
-      disallow: ["/search?q=", "/admin/"],
     },
     sitemap: ["https://timtb.dev/sitemap.xml"],
   };
