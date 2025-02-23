@@ -15,6 +15,7 @@ const URL = getUrl("about");
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
+
   alternates: {
     canonical: URL,
   },
