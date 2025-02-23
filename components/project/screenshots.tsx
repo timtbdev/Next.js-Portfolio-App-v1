@@ -64,6 +64,7 @@ const Screenshots: FC<Props> = ({ screenshots = [], className }) => {
       <Image
         src={image}
         alt={`Screenshot ${index + 1}`}
+        title={`Screenshot ${index + 1}`}
         className="object-cover"
         fill={true}
       />
