@@ -27,6 +27,7 @@ export default async function AboutPage() {
       <Card className="pb-2">
         <div className="shrink-0">
           <Image
+            title="Cover Image"
             alt="Cover Image"
             src={data.image}
             layout="responsive"
