@@ -73,7 +73,7 @@ const PAGES: PageType[] = [
     author: AUTHOR,
   },
   {
-    name: "Contact",
+    name: "contact",
     title: truncateTitle("Contact | Get in Touch with Tim"),
     description: truncateDescription(
       "Get in touch with Tim to discuss potential projects and collaboration opportunities!",
