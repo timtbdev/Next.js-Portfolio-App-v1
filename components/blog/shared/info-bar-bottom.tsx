@@ -1,5 +1,5 @@
 import FolderIcon from "@/icons/pages/blog/folder-icon";
-import { cn } from "@/utils/helpers";
+import { cn } from "@/lib/utils";
 import { FC } from "react";
 import Author from "./author";
 import InfoItem from "./info-item";

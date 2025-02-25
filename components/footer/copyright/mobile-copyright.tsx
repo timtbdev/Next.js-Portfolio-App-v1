@@ -1,4 +1,4 @@
-import { getUrl } from "@/utils/helpers";
+import { getBaseUrlWithSlug } from "@/lib/utils";
 import { FaGithub, FaSquareRss } from "react-icons/fa6";
 
 const MobileCopyright = () => {
@@ -16,7 +16,7 @@ const MobileCopyright = () => {
         </a>
         <span> | </span>
         <a
-          href={getUrl("rss.xml")}
+          href={getBaseUrlWithSlug("rss.xml")}
           className="text-md dark:text-brand-400 inline-flex items-center gap-1.5 text-orange-600 hover:text-gray-600 dark:hover:text-white"
         >
           <FaSquareRss size={18} />

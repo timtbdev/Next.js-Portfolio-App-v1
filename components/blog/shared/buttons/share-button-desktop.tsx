@@ -11,7 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { getUrl } from "@/utils/helpers";
+import { getBaseUrlWithSlug } from "@/lib/utils";
 import { Share2Icon } from "lucide-react";
 import { FC } from "react";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
@@ -25,7 +25,7 @@ interface Props {
 }
 
 const ShareButtonDesktop: FC<Props> = ({ slug, title = "", className }) => {
-  const url = `${getUrl(`/blog/post/${slug}`)}`;
+  const url = getBaseUrlWithSlug(`blog/post/${slug}`);
   const subject = "Check out this article!";
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${url}`;
   const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;

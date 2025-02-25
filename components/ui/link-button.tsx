@@ -1,4 +1,4 @@
-import { cn } from "@/utils/helpers";
+import { cn } from "@/lib/utils";
 import { Link } from "next-view-transitions";
 import React, { FC } from "react";
 

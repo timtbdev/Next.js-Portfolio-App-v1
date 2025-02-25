@@ -1,4 +1,4 @@
-import { cn } from "@/utils/helpers";
+import { cn } from "@/lib/utils";
 import { Separator as RadixSeparator } from "@radix-ui/react-separator";
 import React, { FC } from "react";
 

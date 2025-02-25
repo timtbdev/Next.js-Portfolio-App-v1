@@ -1,5 +1,5 @@
 import menuConfig from "@/config/menu";
-import { cn } from "@/utils/helpers";
+import { cn } from "@/lib/utils";
 import {
   CloseButton,
   Popover,

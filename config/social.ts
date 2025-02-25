@@ -1,5 +1,5 @@
+import { getBaseUrlWithSlug } from "@/lib/utils";
 import { SocialType } from "@/types";
-import { getUrl } from "@/utils/helpers";
 import { BiSolidUserRectangle as ResumeIcon } from "react-icons/bi";
 import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa6";
 import { RiMailSendFill as EmailIcon } from "react-icons/ri";
@@ -18,7 +18,7 @@ export const socialConfigs: SocialType[] = [
     name: "Resume",
     username: "View resume",
     tooltip: "Download my resume",
-    href: getUrl("/files/resume.pdf"),
+    href: getBaseUrlWithSlug("files/resume.pdf"),
     icon: ResumeIcon,
   },
   {

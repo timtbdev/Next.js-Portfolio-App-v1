@@ -1,5 +1,5 @@
 import { MoonIcon, SunIcon } from "@/icons/layout/theme";
-import { cn } from "@/utils/helpers";
+import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
 
 const ToggleTheme = ({ className }: { className?: string }) => {

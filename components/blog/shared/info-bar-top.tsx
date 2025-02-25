@@ -1,6 +1,6 @@
 import CalendarIcon from "@/icons/pages/blog/calendar-icon";
 import ClockIcon from "@/icons/pages/blog/clock-icon";
-import { cn, getMinutes } from "@/utils/helpers";
+import { cn, getMinutes } from "@/lib/utils";
 import { format, parseISO } from "date-fns";
 import { FC } from "react";
 import InfoItem from "./info-item";

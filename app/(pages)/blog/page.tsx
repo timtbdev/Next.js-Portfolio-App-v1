@@ -1,32 +1,59 @@
 import BlogPostItem from "@/components/blog/single-blog-post-item/main";
+import PAGES from "@/config/seo";
 import { getAllPostsOrderedByDate } from "@/lib/mdx";
+import { getBaseUrlWithSlug } from "@/lib/utils";
 import { PostType } from "@/types";
-import { getUrl } from "@/utils/helpers";
 import { Metadata } from "next";
 
-const TITLE = "Blog | Next.js, Tailwind CSS, and Supabase | Tim";
-const DESCRIPTION =
-  "Explore my latest blog posts on Next.js, Tailwind CSS, and Supabase!";
-const URL = getUrl("blog");
+const PAGE = "blog";
 
+// SEO Configuration
+const seo = PAGES.find((page) => page.name === PAGE);
+
+if (!seo) {
+  throw new Error(`SEO configuration for '${PAGE}' page not found`);
+}
+
+// Metadata Configuration
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: seo?.title,
+  description: seo?.description,
   alternates: {
-    canonical: URL,
+    canonical: getBaseUrlWithSlug(PAGE),
   },
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    url: URL,
-    title: TITLE,
-    description: DESCRIPTION,
+    url: getBaseUrlWithSlug(PAGE),
+    title: seo?.title,
+    description: seo?.description,
+    images: [
+      {
+        url: seo?.openGraphImageUrl || "Default Open Graph Image URL",
+        width: 1200,
+        height: 630,
+        alt: seo?.title,
+        type: "image/jpeg",
+      },
+    ],
   },
   twitter: {
-    title: TITLE,
-    description: DESCRIPTION,
+    card: "summary_large_image",
+    title: seo?.title,
+    description: seo?.description,
+    site: seo?.author?.twitterAddress,
+    images: [
+      {
+        url: seo?.twitterImageUrl || "Default Twitter Image URL",
+        width: 1200,
+        height: 675,
+        alt: seo?.title,
+        type: "image/png",
+      },
+    ],
+    creator: seo?.author?.twitterAddress,
   },
 };
 

@@ -1,7 +1,7 @@
 "use client";
 
 import HandDrawnCircle from "@/components/ui/hand-drawn-circle";
-import { cn } from "@/utils/helpers";
+import { cn } from "@/lib/utils";
 import { FC } from "react";
 import ScrollIntoView from "react-scroll-into-view";
 

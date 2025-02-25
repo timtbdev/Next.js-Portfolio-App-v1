@@ -1,41 +1,67 @@
 import { mdxComponents } from "@/components/mdx/mdx-components";
 import Card from "@/components/ui/card";
+import PAGES from "@/config/seo";
 import { getPageBySlug } from "@/lib/mdx";
-import { getUrl } from "@/utils/helpers";
+import { getBaseUrlWithSlug } from "@/lib/utils";
 import { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import { Fragment } from "react";
 
-const TITLE = "About | Best Frontend Developer for Hire | Tim";
-const DESCRIPTION =
-  "Discover my skills and experience as a frontend developer.";
-const URL = getUrl("about");
+const PAGE = "about";
 
+// SEO Configuration
+const seo = PAGES.find((page) => page.name === PAGE);
+
+if (!seo) {
+  throw new Error(`SEO configuration for '${PAGE}' page not found`);
+}
+
+// Metadata Configuration
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
-
+  title: seo?.title,
+  description: seo?.description,
   alternates: {
-    canonical: URL,
+    canonical: getBaseUrlWithSlug(PAGE),
   },
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    url: URL,
-    title: TITLE,
-    description: DESCRIPTION,
+    url: getBaseUrlWithSlug(PAGE),
+    title: seo?.title,
+    description: seo?.description,
+    images: [
+      {
+        url: seo?.openGraphImageUrl || "Default Open Graph Image URL",
+        width: 1200,
+        height: 630,
+        alt: seo?.title,
+        type: "image/jpeg",
+      },
+    ],
   },
   twitter: {
-    title: TITLE,
-    description: DESCRIPTION,
+    card: "summary_large_image",
+    title: seo?.title,
+    description: seo?.description,
+    site: seo?.author?.twitterAddress,
+    images: [
+      {
+        url: seo?.twitterImageUrl || "Default Twitter Image URL",
+        width: 1200,
+        height: 675,
+        alt: seo?.title,
+        type: "image/png",
+      },
+    ],
+    creator: seo?.author?.twitterAddress,
   },
 };
 
 export default async function AboutPage() {
-  const { content, data } = getPageBySlug("about");
+  const { content, data } = getPageBySlug(PAGE);
 
   return (
     <Fragment>

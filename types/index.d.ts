@@ -2,18 +2,23 @@ import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { JSX } from "react";
 import { IconType } from "react-icons/lib";
 
-export type SeoType = {
+export type PageType = {
+  name: string;
   title: string;
-  ogImage: string;
-  twitterImage: string;
-  author: {
-    name: string;
-    twitterUrl: string;
-    twitterAddress: string;
-    email: string;
-  };
   description: string;
-  keywords: Array<string>;
+  author: AuthorType;
+  openGraphImageUrl: string;
+  twitterImageUrl: string;
+  publishedDate?: string;
+  modifiedDate?: string;
+  keywords?: Array<string>;
+};
+
+export type AuthorType = {
+  name: string;
+  twitterUrl: string;
+  twitterAddress: string;
+  email: string;
 };
 
 export type SocialType = {

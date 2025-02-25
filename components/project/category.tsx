@@ -1,7 +1,7 @@
 import AndroidIcon from "@/icons/pages/projects/android-icon";
 import HtmlIcon from "@/icons/pages/projects/html-icon";
 import NextJsIcon from "@/icons/pages/projects/nextjs-icon";
-import { cn } from "@/utils/helpers";
+import { cn } from "@/lib/utils";
 import { FC } from "react";
 import HandDrawnFullCirlce from "../ui/hand-drawn-full-circle";
 

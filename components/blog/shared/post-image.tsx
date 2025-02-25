@@ -1,4 +1,4 @@
-import { cn, shimmer, toBase64 } from "@/utils/helpers";
+import { cn, shimmer, toBase64 } from "@/lib/utils";
 import Image from "next/image";
 import React, { FC } from "react";
 import BackButton from "./buttons/back-button";

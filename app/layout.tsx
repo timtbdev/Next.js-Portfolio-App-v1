@@ -5,8 +5,9 @@ import Container from "@/components/main/container";
 import Main from "@/components/main/main";
 import TailwindIndicator from "@/components/tailwind-indicator/tailwind-indicator";
 import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
-import seoConfig from "@/config/seo";
-import { cn, getUrl } from "@/utils/helpers";
+import PAGES from "@/config/seo";
+import { cn, getBaseUrl, getBaseUrlWithSlug } from "@/lib/utils";
+import { PageType } from "@/types";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
 import { Metadata, Viewport } from "next";
@@ -15,6 +16,15 @@ import { ViewTransitions } from "next-view-transitions";
 import { Inter as FontSans } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 
+const PAGE = "home";
+
+// SEO Configuration
+const seo = PAGES.find((page) => page.name === PAGE) as PageType;
+
+if (!seo) {
+  throw new Error(`SEO configuration for '${PAGE}' page not found`);
+}
+
 // Font Configuration
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -22,51 +32,44 @@ const fontSans = FontSans({
   display: "swap",
 });
 
+// Viewport Configuration
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: "#ffffff",
 };
 
+// Metadata Configuration
 export const metadata: Metadata = {
-  title: seoConfig.title,
-  generator: seoConfig.author.name,
-  applicationName: seoConfig.title,
-  description: seoConfig.description,
+  title: seo.title,
+  generator: seo.author.name,
+  applicationName: seo.title,
+  description: seo.description,
   referrer: "origin-when-cross-origin",
-  keywords: seoConfig.keywords.join(", "),
+  keywords: (seo.keywords ?? []).join(", "),
   authors: [
     {
-      name: seoConfig.author.name,
-      url: seoConfig.author.twitterUrl,
+      name: seo.author.name,
+      url: seo.author.twitterUrl,
     },
   ],
-  creator: seoConfig.author.name,
-  publisher: seoConfig.author.name,
-  metadataBase: new URL(getUrl()),
+  creator: seo.author.name,
+  publisher: seo.author.name,
+  metadataBase: new URL(getBaseUrl()),
   alternates: {
-    canonical: getUrl(),
+    canonical: getBaseUrl(),
     types: {
-      "application/rss+xml": `${getUrl()}/rss.xml`,
+      "application/rss+xml": `${getBaseUrlWithSlug("rss.xml")}`,
     },
   },
   appleWebApp: {
-    title: seoConfig.title,
+    title: seo.title,
     statusBarStyle: "default",
     capable: true,
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 
   icons: {
@@ -149,35 +152,35 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en",
-    url: getUrl(),
-    title: seoConfig.title,
-    description: seoConfig.description,
-    siteName: seoConfig.title,
+    url: getBaseUrl(),
+    title: seo.title,
+    description: seo.description,
+    siteName: seo.title,
     images: [
       {
-        url: seoConfig.ogImage,
+        url: seo.openGraphImageUrl,
         width: 1200,
         height: 630,
-        alt: seoConfig.title,
+        alt: seo.title,
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: seoConfig.title,
-    description: seoConfig.description,
-    site: seoConfig.author.twitterAddress,
+    title: seo.title,
+    description: seo.description,
+    site: seo.author.twitterAddress,
     images: [
       {
-        url: seoConfig.twitterImage,
+        url: seo.twitterImageUrl,
         width: 1200,
         height: 675,
-        alt: seoConfig.title,
+        alt: seo.title,
         type: "image/png",
       },
     ],
-    creator: seoConfig.author.twitterAddress,
+    creator: seo.author.twitterAddress,
   },
 };
 

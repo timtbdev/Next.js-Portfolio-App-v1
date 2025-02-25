@@ -1,4 +1,4 @@
-import { cn } from "@/utils/helpers";
+import { cn } from "@/lib/utils";
 import { FC, JSX } from "react";
 
 interface Props {

@@ -1,5 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { cn } from "@/utils/helpers";
+import { cn } from "@/lib/utils";
 import { FC } from "react";
 
 interface Props {

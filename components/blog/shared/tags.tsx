@@ -1,4 +1,4 @@
-import { cn } from "@/utils/helpers";
+import { cn } from "@/lib/utils";
 import { HashIcon } from "lucide-react";
 import { FC } from "react";
 

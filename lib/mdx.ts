@@ -1,10 +1,10 @@
 import { readdirSync, readFileSync } from "fs";
 import path from "path";
 import categories from "@/config/categories";
-import { getUrl } from "@/utils/helpers";
 import matter from "gray-matter";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { getBaseUrlWithSlug } from "./utils";
 
 // ---------- Paths ----------
 const POST_PATH = path.join(process.cwd(), "content/posts");
@@ -141,7 +141,7 @@ export async function generateMetaDataForBlogPost(
       "Read this insightful blog post.",
     keywords: data.seo?.join(", ") || "blog, mdx, next.js",
     alternates: {
-      canonical: getUrl(`blog/post/${slug}`),
+      canonical: getBaseUrlWithSlug(`blog/post/${slug}`),
     },
     robots: {
       index: true,
@@ -160,7 +160,7 @@ export async function generateMetaDataForBlogPost(
         },
       ],
       type: "article",
-      url: getUrl(`blog/post/${slug}`),
+      url: getBaseUrlWithSlug(`blog/post/${slug}`),
     },
     twitter: {
       card: "summary_large_image",
@@ -196,7 +196,7 @@ export async function generateMetaDataFoBlogCategory(
     title: category,
     description: `Read all blog posts in the ${category} category.`,
     alternates: {
-      canonical: getUrl(`blog/category/${slug}`),
+      canonical: getBaseUrlWithSlug(`blog/category/${slug}`),
     },
     robots: {
       index: true,

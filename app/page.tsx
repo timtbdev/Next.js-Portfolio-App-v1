@@ -1,18 +1,30 @@
 import Profile from "@/components/home/main";
 import ProjectItem from "@/components/project/main";
 import HandDrawnArrow from "@/components/ui/hand-drawn-arrow";
+import PAGES from "@/config/seo";
 import { getAllProjectsFilteredByOrder } from "@/lib/mdx";
+import { getBaseUrl, getBaseUrlWithSlug } from "@/lib/utils";
 import { ProjectType } from "@/types";
-import { getUrl } from "@/utils/helpers";
 import { Metadata } from "next";
 import React, { Fragment } from "react";
 
+const PAGE = "home";
+
+// SEO Configuration
+const seo = PAGES.find((page) => page.name === PAGE);
+
+if (!seo) {
+  throw new Error(`SEO configuration for '${PAGE}' page not found`);
+}
+
+// Metadata Configuration
 export const metadata: Metadata = {
-  title: "Best Frontend Developer for Hire | 3+ Years Experience | Tim",
+  title: seo?.title || "Looking for the Best Frontend Developer? | Hire Tim",
   description:
-    "Looking for a top Frontend Developer in San Francisco? Hire Tim, a skilled Frontend Developer, to build fast, reliable, and high-performing web applications.",
+    seo?.description ||
+    "Hire Tim – A Skilled Frontend Developer for Fast, Reliable, and High-Performing Web Applications!",
   alternates: {
-    canonical: getUrl(),
+    canonical: getBaseUrl(),
   },
   robots: {
     index: true,

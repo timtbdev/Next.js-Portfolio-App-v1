@@ -5,6 +5,18 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+export function getBaseUrl() {
+  const baseUrl =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : "https://www.timtb.dev";
+  return baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
+}
+
+export function getBaseUrlWithSlug(slug: string) {
+  return `${getBaseUrl()}${slug}`;
+}
+
 // BlurData for loading images with blur effect
 export const shimmer = (w: number, h: number) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -25,22 +37,8 @@ export const toBase64 = (str: string) =>
     ? Buffer.from(str).toString("base64")
     : window.btoa(str);
 
-export const delay = (ms: number): Promise<void> =>
-  new Promise((resolve) => setTimeout(resolve, ms));
-
 // Reading Time
 export function getMinutes(minutes: number) {
   const roundedMinutes = Math.round(minutes);
   return `${roundedMinutes} min`;
-}
-
-export function getUrl(path: string = "") {
-  const baseUrl =
-    process.env.NODE_ENV === "development"
-      ? process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
-      : process.env.NEXT_PUBLIC_WEB_URL || "https://www.timtb.dev";
-
-  const trimmedPath = path.replace(/\/+$/, "");
-
-  return `${baseUrl}/${trimmedPath}`;
 }

@@ -1,4 +1,4 @@
-import { cn } from "@/utils/helpers";
+import { cn } from "@/lib/utils";
 import { YoutubeIcon } from "lucide-react";
 import React, { FC } from "react";
 

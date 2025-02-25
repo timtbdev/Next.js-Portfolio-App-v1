@@ -10,7 +10,7 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { cn } from "@/utils/helpers";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React, { FC, useCallback, useEffect, useState } from "react";
 
