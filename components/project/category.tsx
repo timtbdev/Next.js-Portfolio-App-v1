@@ -3,7 +3,6 @@ import HtmlIcon from "@/icons/pages/projects/html-icon";
 import NextJsIcon from "@/icons/pages/projects/nextjs-icon";
 import { cn } from "@/lib/utils";
 import { FC } from "react";
-import HandDrawnFullCirlce from "../ui/hand-drawn-full-circle";
 
 interface Props {
   category: string;
@@ -25,13 +24,12 @@ const Category: FC<Props> = ({ category, className }) => {
   return (
     <div
       className={cn(
-        "relative mx-auto inline-flex items-center justify-center gap-x-1 tracking-tight",
+        "relative mx-auto inline-flex items-center justify-center gap-x-1 rounded-full border border-black/20 px-4 py-2 tracking-tight dark:border-zinc-700",
         className,
       )}
     >
       {renderIcon()}
       {category}
-      <HandDrawnFullCirlce className="absolute -top-3 mx-auto h-[70px] w-auto items-center text-gray-200 dark:text-zinc-600" />
     </div>
   );
 };

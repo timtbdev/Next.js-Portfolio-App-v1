@@ -1,4 +1,5 @@
 import BlogPostItem from "@/components/blog/single-blog-post-item/main";
+import MainTitle from "@/components/ui/main-title";
 import PAGES from "@/config/seo";
 import { getAllPostsOrderedByDate } from "@/lib/mdx";
 import { getBaseUrlWithSlug } from "@/lib/utils";
@@ -68,6 +69,10 @@ export default async function BlogPage() {
   const posts: PostType[] = getAllPostsOrderedByDate();
   return (
     <div className="mx-auto max-w-3xl space-y-8 px-2 py-4 sm:p-0">
+      <MainTitle
+        title={seo?.name || "Default Title"}
+        description={seo?.description}
+      />
       {posts?.map((post, index) => <BlogPostItem key={index} post={post} />)}
     </div>
   );

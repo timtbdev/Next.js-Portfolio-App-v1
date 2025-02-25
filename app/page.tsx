@@ -39,7 +39,7 @@ export default async function HomePage() {
   return (
     <Fragment>
       <Profile />
-      <section id="selected-projects" className="relative mb-8 sm:mb-10">
+      <section id="selected-projects" className="relative mb-8 mt-8 sm:mb-10">
         {projects.map((project, index) => (
           <Fragment key={index}>
             <ProjectItem project={project} />

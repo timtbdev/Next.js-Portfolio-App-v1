@@ -1,5 +1,6 @@
 import ProjectItem from "@/components/project/main";
 import HandDrawnArrow from "@/components/ui/hand-drawn-arrow";
+import MainTitle from "@/components/ui/main-title";
 import PAGES from "@/config/seo";
 import { getAllProjectsFilteredByOrder } from "@/lib/mdx";
 import { getBaseUrlWithSlug } from "@/lib/utils";
@@ -65,6 +66,10 @@ export default async function ProjectPage() {
   });
   return (
     <div className="flex flex-col gap-4 md:gap-6">
+      <MainTitle
+        title={seo?.name || "Default Title"}
+        description={seo?.description}
+      />
       {projects.map((project, index) => (
         <Fragment key={index}>
           <ProjectItem project={project} />

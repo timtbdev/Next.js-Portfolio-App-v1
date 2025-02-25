@@ -1,5 +1,6 @@
 import { mdxComponents } from "@/components/mdx/mdx-components";
 import Card from "@/components/ui/card";
+import MainTitle from "@/components/ui/main-title";
 import PAGES from "@/config/seo";
 import { getPageBySlug } from "@/lib/mdx";
 import { getBaseUrlWithSlug } from "@/lib/utils";
@@ -65,6 +66,10 @@ export default async function AboutPage() {
 
   return (
     <Fragment>
+      <MainTitle
+        title={seo?.name || "Default Title"}
+        description={seo?.description}
+      />
       <Card className="pb-2">
         <div className="shrink-0">
           <Image
@@ -80,9 +85,9 @@ export default async function AboutPage() {
         </div>
         <div className="relative mx-auto flex max-w-3xl flex-col text-pretty px-8 pb-6 pt-4 sm:px-14">
           <div className="flex items-center justify-start">
-            <h1 className="text-3xl font-semibold tracking-tight text-gray-800 dark:text-white/90">
+            <h2 className="text-3xl font-semibold tracking-tight text-gray-800 dark:text-white/90">
               {data.title}
-            </h1>
+            </h2>
           </div>
           <article id="about-me" className="mt-2">
             <MDXRemote source={content} components={mdxComponents} />
