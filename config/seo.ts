@@ -76,7 +76,7 @@ const PAGES: PageType[] = [
     name: "contact",
     title: truncateTitle("Contact | Get in Touch with Tim"),
     description: truncateDescription(
-      "Get in touch with Tim to discuss potential projects and collaboration opportunities!",
+      "Thinking about hiring Tim? Drop him a message, and he’ll follow up with his resume.",
     ),
     openGraphImageUrl: OPENGRAPH_IMAGE,
     twitterImageUrl: TWITTER_IMAGE,

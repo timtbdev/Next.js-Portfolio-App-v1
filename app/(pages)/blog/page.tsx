@@ -1,5 +1,6 @@
 import BlogPostItem from "@/components/pages/blog/single-blog-post-item/main";
 import MainTitle from "@/components/ui/main-title";
+import Section from "@/components/ui/section";
 import PAGES from "@/config/seo";
 import { getAllPostsOrderedByDate } from "@/lib/mdx";
 import { getBaseUrlWithSlug } from "@/lib/utils";
@@ -68,12 +69,13 @@ export async function generateStaticParams() {
 export default async function BlogPage() {
   const posts: PostType[] = getAllPostsOrderedByDate();
   return (
-    <div className="mx-auto max-w-3xl space-y-8 px-2 py-4 sm:p-0">
+    <Section id="blog" className="mx-auto max-w-4xl space-y-8">
       <MainTitle
         title={seo?.name || "Default Title"}
         description={seo?.description}
+        className="mx-auto mb-4 max-w-3xl"
       />
       {posts?.map((post, index) => <BlogPostItem key={index} post={post} />)}
-    </div>
+    </Section>
   );
 }

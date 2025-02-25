@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/avatar";
 import Card from "@/components/ui/card";
 import MainTitle from "@/components/ui/main-title";
+import Section from "@/components/ui/section";
 import PAGES from "@/config/seo";
 import { socialConfigs } from "@/config/social";
 import { getBaseUrlWithSlug } from "@/lib/utils";
@@ -71,10 +72,11 @@ export default async function ContactPage() {
   const imageAlt = "Avatar";
   const initials = "TB";
   return (
-    <Fragment>
+    <Section id="contact" className="mx-auto max-w-5xl">
       <MainTitle
         title={seo?.name || "Default Title"}
         description={seo?.description}
+        className="mx-auto mb-4 max-w-3xl"
       />
       <Card>
         <div className="mx-auto py-6 sm:py-8">
@@ -84,12 +86,6 @@ export default async function ContactPage() {
                 <AvatarImage src={imageUrl} alt={imageAlt} />
                 <AvatarFallback>{initials}</AvatarFallback>
               </AvatarWrapper>
-              <h2 className="mt-4 text-2xl font-bold text-gray-800 dark:text-zinc-400">
-                {title}
-              </h2>
-              <p className="mt-2 text-base text-gray-600 dark:text-zinc-400">
-                {description}
-              </p>
             </div>
           </div>
           <ul
@@ -104,6 +100,6 @@ export default async function ContactPage() {
           </ul>
         </div>
       </Card>
-    </Fragment>
+    </Section>
   );
 }

@@ -1,5 +1,6 @@
 import BlogPostDetail from "@/components/pages/blog/detail-blog-post-item/main";
 import Card from "@/components/ui/card";
+import Section from "@/components/ui/section";
 import {
   generateMetaDataForBlogPost,
   getSinglePostByFileName,
@@ -26,10 +27,10 @@ export default async function BlogPost({ params }: Props) {
   // slug is the file name of the blog post
   const { fileName, data, content } = getSinglePostByFileName(slug);
   return (
-    <>
+    <Section id="blog-post" className="mx-auto max-w-5xl">
       <Card>
         <BlogPostDetail post={{ fileName, data, content }} />
       </Card>
-    </>
+    </Section>
   );
 }
