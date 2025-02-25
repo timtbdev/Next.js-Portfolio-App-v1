@@ -45,19 +45,6 @@ function getAllFileNames(basePath: string): string[] {
   }
 }
 
-// ---------- Page ----------
-// Page: Get a page by slug
-export function getPageBySlug(slug: string) {
-  const filePath = getFilePath(PAGE_PATH, slug);
-  const markdownData = getMarkdownData(filePath);
-  if (!markdownData) {
-    return notFound();
-  }
-  const { content, data } = markdownData;
-
-  return { content, data };
-}
-
 // ---------- Project ----------
 // Project: Get a single project by a file name
 export function getSingleProjectByFileName(fileName: string) {
