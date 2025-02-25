@@ -1,6 +1,5 @@
 import { readdirSync, readFileSync } from "fs";
 import path from "path";
-import categories from "@/config/categories";
 import matter from "gray-matter";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -169,71 +168,4 @@ export async function generateMetaDataForBlogPost(
       images: data.image ? [data.image] : undefined,
     },
   };
-}
-
-// ---------- Blog Category ----------
-
-// Blog Category: Generate Metadata for a blog category
-
-// Blog Post: Generate Metadata for a blog category
-export async function generateMetaDataFoBlogCategory(
-  slug: string,
-): Promise<Metadata> {
-  const fullSlug = `/blog/category/${slug}`;
-  const category = categories.find(
-    (category) => category.slug === fullSlug,
-  )?.title;
-
-  if (!category) {
-    return {
-      title: "Blog Category",
-      description: "Read all blog posts in this category.",
-      keywords: "blog, mdx, next.js",
-    };
-  }
-
-  return {
-    title: category,
-    description: `Read all blog posts in the ${category} category.`,
-    alternates: {
-      canonical: getBaseUrlWithSlug(`blog/category/${slug}`),
-    },
-    robots: {
-      index: true,
-      follow: true,
-    },
-    keywords:
-      categories
-        .find((category) => category.slug === fullSlug)
-        ?.keywords?.join(", ") ?? "blog, mdx, next.js",
-  };
-}
-
-// - Blog-Post: Get All Posts By Category
-
-export function getAllPostsByCategory(slug: string) {
-  const fullSlug = `/blog/category/${slug}`;
-  const category = categories.find(
-    (category) => category.slug === fullSlug,
-  )?.title;
-
-  if (!category) {
-    return [];
-  }
-
-  const allPostFileNames = getAllFileNames(POST_PATH);
-
-  const posts = allPostFileNames.map((fileName) => {
-    const { content, data } = getSinglePostByFileName(
-      fileName.replace(/\.mdx?$/, ""),
-    );
-    return { fileName, content, data };
-  });
-
-  return posts
-    .filter((post) => post.data.category === category)
-    .sort(
-      (a, b) =>
-        new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
-    );
 }

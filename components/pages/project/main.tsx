@@ -1,4 +1,4 @@
-import { mdxComponents } from "@/components/mdx/mdx-components";
+import { mdxComponents } from "@/components/pages/mdx/mdx-components";
 import Card from "@/components/ui/card";
 import { EarthIcon, YoutubeIcon } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -20,16 +20,16 @@ const ProjectItem: FC<Props> = ({ project }) => (
     <div className="mx-auto px-8 pb-3 pt-8 text-center sm:px-10 sm:pb-0 sm:pt-10">
       <Category
         category={project.data.category}
-        className="text-md my-2 font-semibold text-gray-600 dark:text-zinc-400"
+        className="text-md mb-4 font-semibold text-gray-600 dark:text-zinc-400"
       />
       <Title
         title={project.data.title}
-        className="mt-6 text-3xl text-black dark:text-zinc-300 sm:text-4xl"
+        className="text-3xl text-black dark:text-zinc-300 sm:text-4xl"
       />
       <div className="mx-auto mb-2 mt-4 flex max-w-xs flex-col items-center justify-center gap-x-2 gap-y-2 text-center sm:flex sm:flex-row">
         {project.data.webUrl && (
           <LinkButton
-            title="Live Preview"
+            title="Live Demo"
             Icon={EarthIcon}
             url={project.data.webUrl || ""}
           />
@@ -49,7 +49,7 @@ const ProjectItem: FC<Props> = ({ project }) => (
       <MDXRemote source={project.content} components={mdxComponents} />
       <Description
         description={project.data.description}
-        className="mb-4 text-gray-600 dark:text-zinc-400"
+        className="mb-4 max-w-2xl text-gray-600 dark:text-zinc-400"
       />
       {project.data.githubUrl && project.data.slug && (
         <div className="mx-auto flex justify-center">
@@ -61,7 +61,10 @@ const ProjectItem: FC<Props> = ({ project }) => (
         </div>
       )}
     </div>
-    <Screenshots className="mt-6" screenshots={project.data.screenshots} />
+    <Screenshots
+      className="mx-auto my-6 max-w-2xl items-center justify-center"
+      screenshots={project.data.screenshots}
+    />
   </Card>
 );
 

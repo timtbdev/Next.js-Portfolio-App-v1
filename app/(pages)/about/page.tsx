@@ -1,4 +1,4 @@
-import { mdxComponents } from "@/components/mdx/mdx-components";
+import { mdxComponents } from "@/components/pages/mdx/mdx-components";
 import Card from "@/components/ui/card";
 import MainTitle from "@/components/ui/main-title";
 import PAGES from "@/config/seo";

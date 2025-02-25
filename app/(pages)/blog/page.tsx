@@ -1,4 +1,4 @@
-import BlogPostItem from "@/components/blog/single-blog-post-item/main";
+import BlogPostItem from "@/components/pages/blog/single-blog-post-item/main";
 import MainTitle from "@/components/ui/main-title";
 import PAGES from "@/config/seo";
 import { getAllPostsOrderedByDate } from "@/lib/mdx";

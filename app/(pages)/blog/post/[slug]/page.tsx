@@ -1,4 +1,4 @@
-import BlogPostDetail from "@/components/blog/detail-blog-post-item/main";
+import BlogPostDetail from "@/components/pages/blog/detail-blog-post-item/main";
 import Card from "@/components/ui/card";
 import {
   generateMetaDataForBlogPost,

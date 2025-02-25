@@ -1,4 +1,4 @@
-import ProjectItem from "@/components/project/main";
+import ProjectItem from "@/components/pages/project/main";
 import HandDrawnArrow from "@/components/ui/hand-drawn-arrow";
 import MainTitle from "@/components/ui/main-title";
 import PAGES from "@/config/seo";

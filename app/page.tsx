@@ -1,12 +1,12 @@
-import Profile from "@/components/home/main";
-import ProjectItem from "@/components/project/main";
+import Profile from "@/components/pages/home/profile";
+import ProjectItem from "@/components/pages/project/main";
 import HandDrawnArrow from "@/components/ui/hand-drawn-arrow";
+import Section from "@/components/ui/section";
 import PAGES from "@/config/seo";
 import { getAllProjectsFilteredByOrder } from "@/lib/mdx";
-import { getBaseUrl, getBaseUrlWithSlug } from "@/lib/utils";
+import { getBaseUrl } from "@/lib/utils";
 import { ProjectType } from "@/types";
 import { Metadata } from "next";
-import React, { Fragment } from "react";
 
 const PAGE = "home";
 
@@ -37,18 +37,18 @@ export default async function HomePage() {
     featured: true,
   });
   return (
-    <Fragment>
-      <Profile />
-      <section id="selected-projects" className="relative mb-8 mt-8 sm:mb-10">
+    <Section id="home">
+      <Profile className="mb-8" />
+      <section id="selected-projects" className="relative">
         {projects.map((project, index) => (
-          <Fragment key={index}>
+          <div key={index} className="relative mx-auto max-w-5xl">
             <ProjectItem project={project} />
             {projects.length !== index + 1 && (
               <HandDrawnArrow className="mx-auto my-6 size-20 text-center text-gray-300 dark:text-zinc-600" />
             )}
-          </Fragment>
+          </div>
         ))}
       </section>
-    </Fragment>
+    </Section>
   );
 }

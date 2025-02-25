@@ -1,29 +1,46 @@
 "use client";
 
+import { useReadingProgress } from "@/hooks/userReadingProgress";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import Logo from "./logo";
+import LogoButton from "./logo-button";
 import DesktopNavigationLinks from "./navigation-links/desktop-navigation-links";
 import MobileNavigationLinks from "./navigation-links/mobile-navigation-links";
-import ToggleTheme from "./toggle-theme";
+import SearchButton from "./search-button";
 
 const Header = () => {
   const path = usePathname();
   const currentPath = `/${path.split("/")[1]}`;
+  const completion = useReadingProgress();
   return (
-    <header className="sticky top-0 z-10 border-b-[1.2px] border-zinc-600/20 bg-white/30 shadow-sm shadow-zinc-800/5 backdrop-blur-lg dark:border-zinc-700/40 dark:bg-zinc-900/80">
+    <header className="sticky top-0 z-10 border-b-[1.2px] border-gray-300 bg-white shadow-sm">
       <nav
         aria-label="Navigation"
-        className="mx-auto flex max-w-4xl items-center justify-between px-6 py-2.5 md:py-5"
+        className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2.5 md:px-6 md:py-5"
       >
         <div className="z-10 flex flex-1 justify-start">
-          <Logo />
-          <MobileNavigationLinks currentPath={currentPath} />
+          <LogoButton className="hidden md:flex" />
+          <MobileNavigationLinks
+            currentPath={currentPath}
+            className="md:hidden"
+          />
         </div>
-        <DesktopNavigationLinks currentPath={currentPath} />
+        <DesktopNavigationLinks
+          currentPath={currentPath}
+          className="hidden md:flex"
+        />
+
         <div className="flex flex-1 justify-end">
-          <ToggleTheme />
+          <SearchButton />
         </div>
       </nav>
+      {/* Reading progress bar */}
+      <motion.span
+        style={{ transform: `translateX(${completion - 100}%)` }}
+        className="absolute bottom-0 h-[2px] w-full bg-gradient-to-tl from-gray-200 to-gray-500"
+        animate={{ transform: `translateX(${completion - 100}%)` }}
+        transition={{ duration: 0.5 }}
+      />
     </header>
   );
 };

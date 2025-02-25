@@ -1,23 +1,33 @@
+import MenuEmoji from "@/components/ui/menu/menu-emoji";
+import MenuTitle from "@/components/ui/menu/menu-title";
 import menuConfig from "@/config/menu";
-import { MenuType } from "@/types";
+import { cn } from "@/lib/utils";
+import { MenuItemType } from "@/types";
 import { Link } from "next-view-transitions";
 
-const NavigationLinks = () => {
+interface Props {
+  className?: string;
+}
+
+const NavigationLinks = ({ className }: Props) => {
   return (
     <nav
-      aria-label="Footer"
-      className="mx-auto -mb-6 hidden columns-3 gap-x-10 text-center sm:flex sm:justify-center"
+      aria-label="Bottom navigation"
+      className={cn(
+        "mx-auto flex w-full items-center justify-center gap-12",
+        className,
+      )}
     >
-      {menuConfig.map((item: MenuType) => (
-        <div key={item.title} className="pb-6">
-          <Link
-            href={item.slug}
-            className="text-md dark:hover:text-brand-400 font-semibold text-gray-600 hover:text-blue-600 dark:text-zinc-400"
-            prefetch={true}
-          >
-            {item.title}
-          </Link>
-        </div>
+      {menuConfig.map((menu: MenuItemType) => (
+        <Link
+          key={menu.title}
+          href={menu.slug}
+          className="group inline-flex items-center gap-2"
+          prefetch={true}
+        >
+          <MenuEmoji currentPath={false} emoji={menu.emoji} />
+          <MenuTitle currentPath={false} title={menu.title} />
+        </Link>
       ))}
     </nav>
   );

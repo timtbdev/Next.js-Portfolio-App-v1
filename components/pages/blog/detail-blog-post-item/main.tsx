@@ -1,4 +1,4 @@
-import { mdxComponents } from "@/components/mdx/mdx-components";
+import { mdxComponents } from "@/components/pages/mdx/mdx-components";
 import { PostType } from "@/types";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { FC } from "react";

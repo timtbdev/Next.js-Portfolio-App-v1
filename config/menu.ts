@@ -1,44 +1,30 @@
-import {
-  AboutIcon,
-  BlogIcon,
-  ContactIcon,
-  HomeIcon,
-  ProjectIcon,
-} from "@/icons/layout/menu";
-import { MenuType } from "@/types"; // Menu Configuration
-import categories from "./categories";
+import { MenuItemType } from "@/types";
 
-const menuConfig: MenuType[] = [
+const menuConfig: MenuItemType[] = [
   {
-    id: 1,
+    emoji: "⚡",
     title: "Home",
     slug: "/",
-    icon: HomeIcon,
   },
   {
-    id: 2,
+    emoji: "👨🏻",
     title: "About",
     slug: "/about",
-    icon: AboutIcon,
   },
   {
-    id: 3,
+    emoji: "🚀",
     title: "Projects",
     slug: "/projects",
-    icon: ProjectIcon,
   },
   {
-    id: 3,
+    emoji: "📝",
     title: "Blog",
     slug: "/blog",
-    icon: BlogIcon,
-    subMenu: categories,
   },
   {
-    id: 4,
+    emoji: "🤝",
     title: "Contact",
     slug: "/contact",
-    icon: ContactIcon,
   },
 ];
 

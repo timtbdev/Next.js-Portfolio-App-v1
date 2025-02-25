@@ -30,21 +30,10 @@ export type SocialType = {
   tooltip: string;
 };
 
-export type MenuType = {
-  id: number;
+export type MenuItemType = {
+  emoji: string;
   title: string;
   slug: string;
-  icon: React.FC<{ className?: string }>;
-  subMenu?: Array<SubMenuType>;
-};
-
-export type SubMenuType = {
-  id: number;
-  title: string;
-  slug: string;
-  icon: React.FC<{ className?: string }>;
-  description?: string;
-  keywords?: Array<string>;
 };
 
 export type PostType = {
