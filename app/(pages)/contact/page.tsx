@@ -84,9 +84,9 @@ export default async function ContactPage() {
                 <AvatarImage src={imageUrl} alt={imageAlt} />
                 <AvatarFallback>{initials}</AvatarFallback>
               </AvatarWrapper>
-              <h1 className="mt-4 text-2xl font-bold text-gray-800 dark:text-zinc-400">
+              <h2 className="mt-4 text-2xl font-bold text-gray-800 dark:text-zinc-400">
                 {title}
-              </h1>
+              </h2>
               <p className="mt-2 text-base text-gray-600 dark:text-zinc-400">
                 {description}
               </p>
