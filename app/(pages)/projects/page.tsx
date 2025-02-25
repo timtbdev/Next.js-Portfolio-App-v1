@@ -1,6 +1,7 @@
 import ProjectItem from "@/components/pages/project/main";
 import HandDrawnArrow from "@/components/ui/hand-drawn-arrow";
 import MainTitle from "@/components/ui/main-title";
+import Section from "@/components/ui/section";
 import PAGES from "@/config/seo";
 import { getAllProjectsFilteredByOrder } from "@/lib/mdx";
 import { getBaseUrlWithSlug } from "@/lib/utils";
@@ -65,10 +66,11 @@ export default async function ProjectPage() {
     featured: false,
   });
   return (
-    <div className="flex flex-col gap-4 md:gap-6">
+    <Section id="projects" className="mx-auto max-w-5xl">
       <MainTitle
         title={seo?.name || "Default Title"}
         description={seo?.description}
+        className="mx-auto mb-4 max-w-3xl"
       />
       {projects.map((project, index) => (
         <Fragment key={index}>
@@ -78,6 +80,6 @@ export default async function ProjectPage() {
           )}
         </Fragment>
       ))}
-    </div>
+    </Section>
   );
 }
