@@ -1,7 +1,5 @@
 "use client";
 
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -12,7 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import React, { FC, useCallback, useEffect, useState } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 
 interface Props {
   screenshots: string[];
@@ -60,17 +58,16 @@ const Screenshots: FC<Props> = ({ screenshots = [], className }) => {
   const currentSlide = api?.selectedScrollSnap() || 0;
 
   const renderImage = (image: string, index: number, ratio: number) => (
-    <AspectRatio key={index} ratio={ratio}>
-      <Image
-        src={image}
-        alt={`Screenshot ${index + 1}`}
-        title={`Screenshot ${index + 1}`}
-        className="object-cover"
-        fill={true}
-        priority={true}
-        loading="eager"
-      />
-    </AspectRatio>
+    <Image
+      src={image}
+      alt={`Screenshot ${index + 1}`}
+      title={`Screenshot ${index + 1}`}
+      className="rounded-xl"
+      width={700}
+      height={700}
+      priority={true}
+      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, (max-width: 1536px) 20vw"
+    />
   );
 
   return (
@@ -87,7 +84,7 @@ const Screenshots: FC<Props> = ({ screenshots = [], className }) => {
         <CarouselNext className="absolute right-4 top-1/2 hidden size-10 sm:flex" />
       </Carousel>
       {numberOfSlides > 1 && (
-        <div className="absolute bottom-1 mx-auto w-full items-center text-center sm:bottom-5">
+        <div className="absolute bottom-4 mx-auto flex w-full flex-row items-center justify-center text-center sm:bottom-5">
           {Array.from({ length: numberOfSlides }, (_, i) => (
             <div
               key={i}
