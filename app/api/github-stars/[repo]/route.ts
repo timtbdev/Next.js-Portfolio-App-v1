@@ -6,7 +6,7 @@ interface GitHubRepoResponse {
 }
 
 // One day in seconds: 24 hours * 60 minutes * 60 seconds
-const ONE_DAY = 24 * 60 * 60;
+const TWO_HOURS = 2 * 60 * 60;
 
 const fetchGitHubStars = cache(async (repo: string): Promise<number> => {
   const url = `https://api.github.com/repos/timtbdev/${repo}`;
@@ -16,7 +16,10 @@ const fetchGitHubStars = cache(async (repo: string): Promise<number> => {
     Accept: "application/vnd.github.v3+json",
   };
 
-  const response = await fetch(url, { headers, next: { revalidate: ONE_DAY } });
+  const response = await fetch(url, {
+    headers,
+    next: { revalidate: TWO_HOURS },
+  });
 
   if (!response.ok) {
     const errorText = await response.text();

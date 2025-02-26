@@ -1,17 +1,12 @@
 import SocialAccountButton from "@/components/pages/contact/social-account-button";
-import {
-  AvatarFallback,
-  AvatarImage,
-  Avatar as AvatarWrapper,
-} from "@/components/ui/avatar";
 import Card from "@/components/ui/card";
 import MainTitle from "@/components/ui/main-title";
 import Section from "@/components/ui/section";
 import PAGES from "@/config/seo";
 import { socialConfigs } from "@/config/social";
-import { getBaseUrlWithSlug } from "@/lib/utils";
+import { getBaseUrlWithSlug, shimmer, toBase64 } from "@/lib/utils";
 import { Metadata } from "next";
-import { Fragment } from "react";
+import Image from "next/image";
 
 const PAGE = "contact";
 
@@ -82,10 +77,14 @@ export default async function ContactPage() {
         <div className="mx-auto py-6 sm:py-8">
           <div>
             <div className="text-center">
-              <AvatarWrapper className="mx-auto size-24 rounded-full shadow-md ring-1 ring-gray-300">
-                <AvatarImage src={imageUrl} alt={imageAlt} />
-                <AvatarFallback>{initials}</AvatarFallback>
-              </AvatarWrapper>
+              <Image
+                src={imageUrl}
+                alt={imageAlt}
+                className="mx-auto size-24 rounded-full shadow-md ring-1 ring-gray-300"
+                placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(96, 96))}`}
+                width={96}
+                height={96}
+              />
             </div>
           </div>
           <ul

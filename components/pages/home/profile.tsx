@@ -1,9 +1,5 @@
-import {
-  AvatarFallback,
-  AvatarImage,
-  Avatar as AvatarWrapper,
-} from "@/components/ui/avatar";
-import { cn } from "@/lib/utils";
+import { cn, shimmer, toBase64 } from "@/lib/utils";
+import Image from "next/image";
 import { FC } from "react";
 
 interface Props {
@@ -13,14 +9,18 @@ interface Props {
 const Profile: FC<Props> = ({ className }) => {
   return (
     <div className={cn("mx-auto max-w-2xl text-center", className)}>
-      <AvatarWrapper className="mx-auto mb-4 h-32 w-32 rounded-full shadow-md ring-1 ring-gray-300">
-        <AvatarImage
+      <div className="mx-auto mb-4 flex h-32 w-32 items-center justify-center rounded-full bg-gray-200">
+        <Image
           src="/images/profile.jpg"
           alt="Tim's Avatar"
           title="Tim's Avatar"
+          className="size-32 rounded-full"
+          placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(128, 128))}`}
+          width={128}
+          height={128}
         />
-        <AvatarFallback>TB</AvatarFallback>
-      </AvatarWrapper>
+      </div>
+
       <h1 className="mb-4 inline-flex flex-col items-center gap-1 text-center leading-none tracking-tight">
         <span className="text-5xl font-bold text-black">
           <span className="relative whitespace-nowrap text-5xl font-bold text-black">
