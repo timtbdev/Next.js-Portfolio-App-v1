@@ -58,16 +58,20 @@ const Screenshots: FC<Props> = ({ screenshots = [], className }) => {
   const currentSlide = api?.selectedScrollSnap() || 0;
 
   const renderImage = (image: string, index: number, ratio: number) => (
-    <Image
-      src={image}
-      alt={`Screenshot ${index + 1}`}
-      title={`Screenshot ${index + 1}`}
-      className="rounded-xl"
-      width={700}
-      height={700}
-      loading="lazy"
-      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, (max-width: 1536px) 20vw"
-    />
+    <div
+      className="relative flex h-[calc(100vw/ratio)] w-full items-center justify-center"
+      style={{ aspectRatio: ratio }}
+    >
+      <Image
+        src={image}
+        alt={`Screenshot ${index + 1}`}
+        title={`Screenshot ${index + 1}`}
+        className="size-fit rounded-xl"
+        width={700}
+        height={700}
+        loading="lazy"
+      />
+    </div>
   );
 
   return (
@@ -91,7 +95,7 @@ const Screenshots: FC<Props> = ({ screenshots = [], className }) => {
               className={`mx-1 mt-5 h-1.5 w-1.5 rounded-full p-0 ${
                 i === currentSlide
                   ? "scale-125 transform bg-gray-800"
-                  : "bg-white"
+                  : "bg-gray-300"
               }`}
               aria-label={`Go to screenshot ${i + 1}`}
               onClick={() => api?.scrollTo(i)}
