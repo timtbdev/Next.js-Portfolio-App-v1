@@ -67,8 +67,8 @@ const Screenshots: FC<Props> = ({ screenshots = [], className }) => {
         alt={`Screenshot ${index + 1}`}
         title={`Screenshot ${index + 1}`}
         className="size-fit rounded-xl"
-        width={700}
-        height={700}
+        width={500}
+        height={500}
         loading="lazy"
       />
     </div>
