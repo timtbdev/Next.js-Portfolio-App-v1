@@ -67,6 +67,8 @@ const Screenshots: FC<Props> = ({ screenshots = [], className }) => {
         title={`Screenshot ${index + 1}`}
         className="object-cover"
         fill={true}
+        priority={true}
+        loading="eager"
       />
     </AspectRatio>
   );
