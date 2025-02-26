@@ -19,7 +19,7 @@ const MainTitle: FC<Props> = ({ title, description, className = "" }) => {
         {title}
       </h1>
       {description && (
-        <p className="mb-2 text-lg text-gray-600">{description}</p>
+        <h2 className="mb-2 text-lg text-gray-600">{description}</h2>
       )}
     </div>
   );

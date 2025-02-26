@@ -87,7 +87,7 @@ const Screenshots: FC<Props> = ({ screenshots = [], className }) => {
       {numberOfSlides > 1 && (
         <div className="absolute bottom-1 mx-auto w-full items-center text-center sm:bottom-5">
           {Array.from({ length: numberOfSlides }, (_, i) => (
-            <Button
+            <div
               key={i}
               className={`mx-1 mt-5 h-1.5 w-1.5 rounded-full p-0 ${
                 i === currentSlide
