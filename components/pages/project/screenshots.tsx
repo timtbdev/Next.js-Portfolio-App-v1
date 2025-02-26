@@ -91,8 +91,8 @@ const Screenshots: FC<Props> = ({ screenshots = [], className }) => {
               key={i}
               className={`mx-1 mt-5 h-1.5 w-1.5 rounded-full p-0 ${
                 i === currentSlide
-                  ? "scale-125 transform bg-gray-800 dark:bg-white"
-                  : "bg-white dark:bg-zinc-900"
+                  ? "scale-125 transform bg-gray-800"
+                  : "bg-white"
               }`}
               aria-label={`Go to screenshot ${i + 1}`}
               onClick={() => api?.scrollTo(i)}

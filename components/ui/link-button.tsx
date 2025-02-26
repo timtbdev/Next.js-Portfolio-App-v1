@@ -10,12 +10,14 @@ interface Props {
 
 const LinkButton: FC<Props> = ({ title, url, className }) => {
   const isInternalLink = url.startsWith("/");
+  const defaultClass =
+    "group relative flex h-10 items-center justify-center whitespace-nowrap rounded-md border border-gray-300/40 bg-gray-50 px-4 py-6 text-center text-sm font-semibold text-gray-600 transition-all duration-100 ease-in-out hover:border-gray-400 hover:bg-gray-100 hover:text-black active:bg-gray-200 disabled:shadow-none sm:max-w-fit sm:py-2";
 
   const ButtonContent = () => (
     <>
       {title}
       <svg
-        className="-mr-1 ml-2 stroke-gray-600 stroke-[1.5px] group-hover:stroke-black dark:stroke-white dark:group-hover:stroke-zinc-400"
+        className="-mr-1 ml-2 stroke-gray-600 stroke-[1.5px] group-hover:stroke-black"
         fill="none"
         stroke="currentColor"
         width="11"
@@ -36,27 +38,18 @@ const LinkButton: FC<Props> = ({ title, url, className }) => {
   );
 
   return isInternalLink ? (
-    <Link
-      href={url}
-      className={cn(
-        className,
-        "group relative flex h-10 items-center justify-center whitespace-nowrap rounded-md border border-gray-300/40 bg-gray-50 px-4 py-6 text-center text-sm font-semibold text-gray-600 transition-all duration-100 ease-in-out hover:border-gray-400 hover:bg-gray-100 hover:text-black active:bg-gray-200 disabled:shadow-none dark:border-zinc-600 dark:bg-zinc-900/40 dark:text-white dark:hover:border-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-white dark:active:bg-zinc-500 sm:max-w-fit sm:py-2",
-      )}
-    >
+    <Link href={url} className={cn(className, defaultClass)}>
       <ButtonContent />
     </Link>
   ) : (
-    <a
-      className={cn(
-        className,
-        "group relative flex h-10 items-center justify-center whitespace-nowrap rounded-md border border-gray-300/40 bg-gray-50 px-4 py-6 text-center text-sm font-semibold text-gray-600 transition-all duration-100 ease-in-out hover:border-gray-400 hover:bg-gray-100 hover:text-black active:bg-gray-200 disabled:shadow-none dark:border-zinc-600 dark:bg-zinc-900/40 dark:text-white dark:hover:border-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-white dark:active:bg-zinc-500 sm:max-w-fit sm:py-2",
-      )}
+    <Link
+      className={cn(className, defaultClass)}
       href={url}
       target="_blank"
       rel="noopener noreferrer"
     >
       <ButtonContent />
-    </a>
+    </Link>
   );
 };
 

@@ -12,7 +12,7 @@ const ScrollToTopButton = () => {
           width: "40px",
           borderRadius: "50%",
         }}
-        className="!bottom-5 !right-5 rounded-full bg-gray-50 p-2.5 !shadow-sm !ring-1 !ring-gray-300 dark:bg-zinc-800 dark:!ring-zinc-700"
+        className="!bottom-5 !right-5 rounded-full bg-gray-50 p-2.5 !shadow-sm !ring-1 !ring-gray-300"
         smooth
         component={
           <svg
@@ -22,7 +22,7 @@ const ScrollToTopButton = () => {
             strokeWidth="2"
             stroke="currentColor"
             aria-hidden="true"
-            className="h-5 w-5 rotate-90 text-gray-600 dark:text-zinc-400"
+            className="h-5 w-5 rotate-90 text-gray-600"
           >
             <path
               strokeLinecap="round"

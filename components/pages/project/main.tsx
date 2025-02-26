@@ -20,11 +20,11 @@ const ProjectItem: FC<Props> = ({ project }) => (
     <div className="mx-auto px-8 pb-3 pt-8 text-center sm:px-10 sm:pb-0 sm:pt-10">
       <Category
         category={project.data.category}
-        className="text-md mb-4 font-semibold text-gray-600 dark:text-zinc-400"
+        className="text-md mb-4 font-semibold text-gray-600"
       />
       <Title
         title={project.data.title}
-        className="text-3xl text-black dark:text-zinc-300 sm:text-4xl"
+        className="text-3xl text-black sm:text-4xl"
       />
       <div className="mx-auto mb-2 mt-4 flex max-w-xs flex-col items-center justify-center gap-x-2 gap-y-2 text-center sm:flex sm:flex-row">
         {project.data.webUrl && (
@@ -49,7 +49,7 @@ const ProjectItem: FC<Props> = ({ project }) => (
       <MDXRemote source={project.content} components={mdxComponents} />
       <Description
         description={project.data.description}
-        className="mb-4 max-w-2xl text-gray-600 dark:text-zinc-400"
+        className="mb-4 max-w-2xl text-gray-600"
       />
       {project.data.githubUrl && project.data.slug && (
         <div className="mx-auto flex justify-center">

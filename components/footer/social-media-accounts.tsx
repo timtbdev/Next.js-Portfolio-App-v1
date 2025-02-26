@@ -8,19 +8,21 @@ import { socialConfigs } from "@/config/social";
 import { FC } from "react";
 
 const getIconClass = (name: string): string => {
+  const defaultClass =
+    "h-5 w-5 text-zinc-500 transition-colors duration-100 ease-in-out";
   switch (name) {
     case "Twitter":
-      return "h-5 w-5 text-zinc-500 transition-colors duration-100 ease-in-out hover:text-sky-500 dark:text-zinc-400 dark:hover:text-sky-500";
+      return `${defaultClass} hover:text-blue-500`;
     case "GitHub":
-      return "h-5 w-5 text-zinc-500 transition-colors duration-100 ease-in-out hover:text-black dark:text-zinc-400 dark:hover:text-white";
+      return `${defaultClass} hover:text-black`;
     case "Facebook":
-      return "h-5 w-5 text-zinc-500 transition-colors duration-100 ease-in-out hover:text-blue-600 dark:text-zinc-400 dark:hover:text-blue-600";
+      return `${defaultClass} hover:text-blue-600`;
     case "LinkedIn":
-      return "h-5 w-5 text-zinc-500 transition-colors duration-100 ease-in-out hover:text-blue-500 dark:text-zinc-400 dark:hover:text-blue-500";
+      return `${defaultClass} hover:text-blue-500`;
     case "Resume":
-      return "h-5 w-5 text-zinc-500 transition-colors duration-100 ease-in-out hover:text-green-600 dark:text-zinc-400 dark:hover:text-green-600";
+      return `${defaultClass} hover:text-green-600`;
     default:
-      return "h-5 w-5 text-zinc-500 transition-colors duration-100 ease-in-out hover:text-blue-600 dark:text-zinc-400 dark:hover:text-brand-500";
+      return `${defaultClass} hover:text-blue-600`;
   }
 };
 
@@ -40,7 +42,7 @@ const SocialMediaAccounts: FC = () => {
                 <account.icon className={getIconClass(account.name)} />
               </a>
             </TooltipTrigger>
-            <TooltipContent className="rounded-lg border border-gray-200 bg-gray-100 font-sans text-gray-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-400">
+            <TooltipContent className="rounded-lg border border-gray-200 bg-gray-100 font-sans text-gray-600">
               {account.tooltip}
             </TooltipContent>
           </Tooltip>

@@ -6,7 +6,6 @@ import { format, parseISO } from "date-fns";
 import { FC } from "react";
 import Author from "./author";
 import InfoItem from "./info-item";
-import Separator from "./separator";
 
 interface Props {
   authorImage: string;
@@ -35,17 +34,17 @@ const InfoBarDetailMobile: FC<Props> = ({
       <Author
         authorImage={authorImage}
         authorName={authorName}
-        className="border-b border-r border-gray-300 pb-2 dark:border-zinc-700"
+        className="border-b border-r border-gray-300 pb-2"
       />
       <InfoItem
         icon={<FolderIcon size={20} className="h-5 w-5" aria-hidden="true" />}
         text={category}
-        className="border-b border-gray-300 px-4 pb-2 dark:border-zinc-700"
+        className="border-b border-gray-300 px-4 pb-2"
       />
       <InfoItem
         icon={<CalendarIcon size={20} className="h-5 w-5" aria-hidden="true" />}
         text={format(parseISO(date), "MMM dd, yyyy")}
-        className="border-r border-gray-300 py-2 dark:border-zinc-700"
+        className="border-r border-gray-300 py-2"
       />
       <InfoItem
         icon={<ClockIcon size={20} className="h-5 w-5" aria-hidden="true" />}

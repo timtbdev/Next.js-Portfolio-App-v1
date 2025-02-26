@@ -81,7 +81,7 @@ export default async function AboutPage() {
         </div>
         <div className="relative mx-auto flex max-w-3xl flex-col text-pretty px-8 pb-6 pt-4 sm:px-14">
           <div className="flex items-center justify-start">
-            <h2 className="text-3xl font-semibold tracking-tight text-gray-800 dark:text-white/90">
+            <h2 className="text-3xl font-semibold tracking-tight text-gray-800">
               Why Hire Tim?
             </h2>
           </div>

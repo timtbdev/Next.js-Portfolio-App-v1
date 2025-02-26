@@ -44,7 +44,7 @@ export default async function HomePage() {
           <div key={index} className="relative mx-auto max-w-5xl">
             <ProjectItem project={project} />
             {projects.length !== index + 1 && (
-              <HandDrawnArrow className="mx-auto my-6 size-20 text-center text-gray-300 dark:text-zinc-600" />
+              <HandDrawnArrow className="mx-auto my-6 size-20 text-center text-gray-300" />
             )}
           </div>
         ))}

@@ -82,7 +82,7 @@ export default async function ContactPage() {
         <div className="mx-auto py-6 sm:py-8">
           <div>
             <div className="text-center">
-              <AvatarWrapper className="mx-auto size-24 rounded-full shadow-md ring-1 ring-gray-300 dark:ring-zinc-700">
+              <AvatarWrapper className="mx-auto size-24 rounded-full shadow-md ring-1 ring-gray-300">
                 <AvatarImage src={imageUrl} alt={imageAlt} />
                 <AvatarFallback>{initials}</AvatarFallback>
               </AvatarWrapper>

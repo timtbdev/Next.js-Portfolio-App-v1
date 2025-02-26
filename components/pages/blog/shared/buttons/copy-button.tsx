@@ -29,12 +29,12 @@ const CopyButton: FC<Props> = ({ url }) => {
       type="button"
       title="Copy url to clipboard"
       onClick={copy}
-      className="rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200 dark:border-zinc-700 dark:bg-zinc-800 dark:active:bg-zinc-500"
+      className="rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200"
     >
       {copied ? (
-        <FaCheck className="h-8 w-8 text-green-500 dark:text-green-400" />
+        <FaCheck className="h-8 w-8 text-green-500" />
       ) : (
-        <FaCopy className="h-8 w-8 text-slate-600 dark:text-slate-400" />
+        <FaCopy className="h-8 w-8 text-slate-600" />
       )}
     </button>
   );

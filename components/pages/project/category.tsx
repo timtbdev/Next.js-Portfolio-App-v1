@@ -24,7 +24,7 @@ const Category: FC<Props> = ({ category, className }) => {
   return (
     <div
       className={cn(
-        "relative mx-auto inline-flex items-center justify-center gap-x-1 rounded-full border border-black/20 px-4 py-2 tracking-tight dark:border-zinc-700",
+        "relative mx-auto inline-flex items-center justify-center gap-x-1 rounded-full border border-black/20 px-4 py-2 tracking-tight",
         className,
       )}
     >
