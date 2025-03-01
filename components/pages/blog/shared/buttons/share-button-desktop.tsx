@@ -32,7 +32,7 @@ const ShareButtonDesktop: FC<Props> = ({ slug, title = "", className }) => {
   const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
   const mailtoLink = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(title + "\n\n" + url)}`;
   const defaultClass =
-    "rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200";
+    "rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-xs transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200";
   return (
     <div className={className}>
       <Dialog>

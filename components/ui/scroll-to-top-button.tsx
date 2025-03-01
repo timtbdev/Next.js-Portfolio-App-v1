@@ -12,7 +12,7 @@ const ScrollToTopButton = () => {
           width: "40px",
           borderRadius: "50%",
         }}
-        className="!bottom-5 !right-5 rounded-full bg-gray-50 p-2.5 !shadow-sm !ring-1 !ring-gray-300"
+        className="bottom-5! right-5! rounded-full bg-gray-50 p-2.5 shadow-xs! ring-1! ring-gray-300!"
         smooth
         component={
           <svg

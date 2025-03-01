@@ -12,7 +12,7 @@ const NotFoundPage = () => {
       <p className="mt-4 text-lg text-gray-600">{description}</p>
       <Link
         href="/"
-        className="group relative mt-6 inline-flex items-center justify-center gap-x-1 rounded-md bg-gradient-to-br from-blue-500 to-blue-600 px-3 py-2 font-semibold text-white shadow-md transition hover:scale-[0.98] active:scale-[0.95]"
+        className="group relative mt-6 inline-flex items-center justify-center gap-x-1 rounded-md bg-linear-to-br from-blue-500 to-blue-600 px-3 py-2 font-semibold text-white shadow-md transition hover:scale-[0.98] active:scale-[0.95]"
       >
         {buttonTitle}
       </Link>

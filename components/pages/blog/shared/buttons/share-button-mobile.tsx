@@ -22,7 +22,7 @@ const ShareButtonMobile: FC<Props> = ({ slug, title = "", className }) => {
   const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
   const mailtoLink = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(title + "\n\n" + url)}`;
   const defaultClassName =
-    "rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200";
+    "rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-xs transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200";
 
   return (
     <div className={className}>
@@ -36,7 +36,7 @@ const ShareButtonMobile: FC<Props> = ({ slug, title = "", className }) => {
         <Drawer.Portal>
           <Drawer.Content className="fixed bottom-0 left-0 right-0 z-50 mt-24 flex flex-col rounded-t-[10px] bg-gray-50">
             <div className="flex-1 rounded-t-[10px] p-4">
-              <div className="mx-auto mb-8 h-1.5 w-12 flex-shrink-0 rounded-full bg-zinc-300" />
+              <div className="mx-auto mb-8 h-1.5 w-12 shrink-0 rounded-full bg-zinc-300" />
               <div className="mx-auto max-w-md">
                 <Drawer.Title className="mx-auto mb-4 text-center font-sans text-lg font-semibold text-gray-600">
                   Share this page

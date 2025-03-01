@@ -44,7 +44,7 @@ const PostImage: FC<Props> = ({
       <ShareButtonMobile slug={slug} title={title} className="sm:hidden" />
     </div>
   ) : (
-    <div className="sm:aspect-square relative aspect-[16/9] sm:aspect-[2/1] sm:w-64 sm:shrink-0">
+    <div className="sm:aspect-square relative aspect-16/9 sm:aspect-2/1 sm:w-64 sm:shrink-0">
       <Image
         src={imageUrl}
         alt={imageAlt}

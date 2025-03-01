@@ -4,9 +4,9 @@
   "rsc": true,
   "tsx": true,
   "tailwind": {
-    "config": "tailwind.config.ts",
+    "config": "",
     "css": "styles/tailwind.css",
-    "baseColor": "zinc",
+    "baseColor": "gray",
     "cssVariables": true,
     "prefix": ""
   },

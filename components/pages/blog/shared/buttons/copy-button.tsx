@@ -29,7 +29,7 @@ const CopyButton: FC<Props> = ({ url }) => {
       type="button"
       title="Copy url to clipboard"
       onClick={copy}
-      className="rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-sm transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200"
+      className="rounded-lg border border-gray-300 bg-gray-50 p-5 shadow-xs transition-all hover:-translate-y-1 hover:bg-transparent hover:shadow-md active:bg-gray-200"
     >
       {copied ? (
         <FaCheck className="h-8 w-8 text-green-500" />

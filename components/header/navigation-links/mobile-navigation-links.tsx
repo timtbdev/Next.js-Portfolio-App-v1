@@ -28,7 +28,7 @@ const MobileNavigationLinks: FC<Props> = ({ currentPath, className }) => {
       {({ open, close }) => (
         <>
           <PopoverButton
-            className="transiton group relative inset-px z-10 inline-flex rounded-md bg-transparent p-2 focus:outline-none"
+            className="transiton group relative inset-px z-10 inline-flex rounded-md bg-transparent p-2 focus:outline-hidden"
             aria-label="Toggle site navigation"
           >
             <div className="group flex size-6 items-center justify-center">
@@ -66,7 +66,7 @@ const MobileNavigationLinks: FC<Props> = ({ currentPath, className }) => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="fixed inset-0 transition duration-100 ease-out data-[closed]:opacity-0"
+                  className="fixed inset-0 transition duration-100 ease-out data-closed:opacity-0"
                 />
                 <PopoverPanel
                   static
@@ -78,7 +78,7 @@ const MobileNavigationLinks: FC<Props> = ({ currentPath, className }) => {
                     y: -32,
                     transition: { duration: 0.2 },
                   }}
-                  className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl border-b border-gray-300 bg-white px-6 pb-10 pt-20 shadow-sm"
+                  className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl border-b border-gray-300 bg-white px-6 pb-10 pt-20 shadow-xs"
                 >
                   <ul className="space-y-4">
                     {menuConfig.map((menuItem) => (
@@ -88,8 +88,8 @@ const MobileNavigationLinks: FC<Props> = ({ currentPath, className }) => {
                           href={menuItem.slug}
                           className={`${
                             currentPath === menuItem.slug
-                              ? "border border-gray-300 bg-gray-100 shadow-sm"
-                              : "border border-dashed border-gray-300 hover:bg-gray-100 hover:shadow-sm"
+                              ? "border border-gray-300 bg-gray-100 shadow-xs"
+                              : "border border-dashed border-gray-300 hover:bg-gray-100 hover:shadow-xs"
                           } group inline-flex w-full gap-2 rounded-full px-6 py-4`}
                           onClick={close}
                         >

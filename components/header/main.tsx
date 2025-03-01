@@ -13,7 +13,7 @@ const Header = () => {
   const currentPath = `/${path.split("/")[1]}`;
   const completion = useReadingProgress();
   return (
-    <header className="sticky top-0 z-10 border-b-[1.2px] border-gray-300 bg-white shadow-sm">
+    <header className="sticky top-0 z-10 border-b-[1.2px] border-gray-300 bg-white shadow-xs">
       <nav
         aria-label="Navigation"
         className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2.5 md:px-6 md:py-5"
@@ -37,7 +37,7 @@ const Header = () => {
       {/* Reading progress bar */}
       <motion.span
         style={{ transform: `translateX(${completion - 100}%)` }}
-        className="absolute bottom-0 h-[2px] w-full bg-gradient-to-tl from-gray-200 to-gray-500"
+        className="absolute bottom-0 h-[2px] w-full bg-linear-to-tl from-gray-200 to-gray-500"
         animate={{ transform: `translateX(${completion - 100}%)` }}
         transition={{ duration: 0.5 }}
       />
