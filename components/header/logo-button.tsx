@@ -15,7 +15,8 @@ const LogoButton: FC<Props> = ({ className }) => {
     >
       <Image
         src="/images/logo.png"
-        alt="Mongolian Food Logo"
+        title="Tim's avatar"
+        alt="Tim's avatar"
         width={176}
         height={176}
         className="ring-brand-600 size-10 transform rounded-full bg-zinc-800 ring-1 transition-all duration-300 hover:scale-105"

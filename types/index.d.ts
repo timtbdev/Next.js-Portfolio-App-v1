@@ -52,3 +52,9 @@ export type ProjectType = {
     [key: string]: any;
   };
 };
+
+type SearchResult = {
+  id: string;
+  metadata: any;
+  content: string;
+};

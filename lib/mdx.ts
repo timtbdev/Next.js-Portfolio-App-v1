@@ -1,13 +1,21 @@
-import { readdirSync, readFileSync } from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getBaseUrlWithSlug } from "./utils";
 
+let readdirSync: typeof import("fs").readdirSync;
+let readFileSync: typeof import("fs").readFileSync;
+
+if (typeof window === "undefined") {
+  // Only import 'fs' in a Node.js environment
+  const fs = require("fs");
+  readdirSync = fs.readdirSync;
+  readFileSync = fs.readFileSync;
+}
+
 // ---------- Paths ----------
 const POST_PATH = path.join(process.cwd(), "content/posts");
-const PAGE_PATH = path.join(process.cwd(), "content/pages");
 const PROJECT_PATH = path.join(process.cwd(), "content/projects");
 
 // ---------- Utility Functions ----------
@@ -36,26 +44,38 @@ function getMarkdownData(filePath: string) {
   }
 }
 
+let cachedFileNames: { [key: string]: string[] } = {};
+
 function getAllFileNames(basePath: string): string[] {
+  if (cachedFileNames[basePath]) {
+    return cachedFileNames[basePath];
+  }
   try {
-    return readdirSync(basePath).filter((file) => /\.mdx?$/.test(file));
+    const fileNames = readdirSync(basePath).filter((file) =>
+      /\.mdx?$/.test(file),
+    );
+    cachedFileNames[basePath] = fileNames;
+    return fileNames;
   } catch (error) {
     console.error(`Error reading directory at ${basePath}:`, error);
     return [];
   }
 }
 
-// ---------- Project ----------
-// Project: Get a single project by a file name
-export function getSingleProjectByFileName(fileName: string) {
-  const filePath = getFilePath(PROJECT_PATH, fileName);
+function getSingleItemByFileName(basePath: string, fileName: string) {
+  const filePath = getFilePath(basePath, fileName);
   const markdownData = getMarkdownData(filePath);
   if (!markdownData) {
     return notFound();
   }
   const { content, data } = markdownData;
+  return { fileName, content, data };
+}
 
-  return { content, data };
+// ---------- Project ----------
+// Project: Get a single project by a file name
+export function getSingleProjectByFileName(fileName: string) {
+  return getSingleItemByFileName(PROJECT_PATH, fileName);
 }
 
 // Project: Get all projects filtered by order
@@ -103,15 +123,7 @@ export function getAllPostsOrderedByDate() {
 
 // Blog Post: Get a single post by slug
 export function getSinglePostByFileName(slug: string) {
-  const fileName = slug;
-  const filePath = getFilePath(POST_PATH, slug);
-  const markdownData = getMarkdownData(filePath);
-  if (!markdownData) {
-    return notFound();
-  }
-  const { content, data } = markdownData;
-
-  return { fileName, content, data };
+  return getSingleItemByFileName(POST_PATH, slug);
 }
 
 // Blog Post: Generate Metadata for a blog post

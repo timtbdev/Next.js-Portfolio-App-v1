@@ -678,6 +678,18 @@
     lodash.merge "^4.6.2"
     postcss-selector-parser "6.0.10"
 
+"@tanstack/query-core@5.66.11":
+  version "5.66.11"
+  resolved "https://registry.npmjs.org/@tanstack/query-core/-/query-core-5.66.11.tgz"
+  integrity sha512-ZEYxgHUcohj3sHkbRaw0gYwFxjY5O6M3IXOYXEun7E1rqNhsP8fOtqjJTKPZpVHcdIdrmX4lzZctT4+pts0OgA==
+
+"@tanstack/react-query@^5.66.11":
+  version "5.66.11"
+  resolved "https://registry.npmjs.org/@tanstack/react-query/-/react-query-5.66.11.tgz"
+  integrity sha512-uPDiQbZScWkAeihmZ9gAm3wOBA1TmLB1KCB1fJ1hIiEKq3dTT+ja/aYM7wGUD+XiEsY4sDSE7p8VIz/21L2Dow==
+  dependencies:
+    "@tanstack/query-core" "5.66.11"
+
 "@tanstack/react-virtual@^3.8.1":
   version "3.11.0"
   resolved "https://registry.npmjs.org/@tanstack/react-virtual/-/react-virtual-3.11.0.tgz"
@@ -3097,6 +3109,11 @@ minimist@^1.2.0, minimist@^1.2.6:
   resolved "https://registry.npmjs.org/minimist/-/minimist-1.2.8.tgz"
   integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
 
+mitt@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.npmjs.org/mitt/-/mitt-3.0.1.tgz"
+  integrity sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==
+
 motion-dom@^12.4.5:
   version "12.4.5"
   resolved "https://registry.npmjs.org/motion-dom/-/motion-dom-12.4.5.tgz"
@@ -3163,6 +3180,13 @@ next@15.1.7:
     "@next/swc-win32-arm64-msvc" "15.1.7"
     "@next/swc-win32-x64-msvc" "15.1.7"
     sharp "^0.33.5"
+
+nuqs@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.npmjs.org/nuqs/-/nuqs-2.4.0.tgz"
+  integrity sha512-+yOdX0q/wdYlseSYtWC8StDDt2QFcYX/zV5/E67J1cOJo3PR0mggxMx4acZGC0Hu66xFHENKQkqI2zSpH742xQ==
+  dependencies:
+    mitt "^3.0.1"
 
 object-assign@^4.1.1:
   version "4.1.1"
