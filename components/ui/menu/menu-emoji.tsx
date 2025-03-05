@@ -11,10 +11,10 @@ const MenuEmoji: FC<Props> = ({ currentPath, emoji, className = "" }) => {
   return (
     <span
       className={cn(
-        "text-lg duration-150 ease-in-out",
+        "text-lg duration-100 ease-in-out",
         {
-          "group-hover:scale-120": !currentPath,
-          "scale-120 rotate-3": currentPath,
+          "group-hover:scale-125 group-hover:rotate-3": !currentPath,
+          "scale-125 rotate-3": currentPath,
         },
         className,
       )}

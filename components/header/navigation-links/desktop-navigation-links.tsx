@@ -3,14 +3,7 @@ import MenuTitle from "@/components/ui/menu/menu-title";
 import menuConfig from "@/config/menu";
 import { cn } from "@/lib/utils";
 import { MenuItemType } from "@/types";
-import {
-  CloseButton,
-  Popover,
-  PopoverButton,
-  PopoverGroup,
-  PopoverPanel,
-} from "@headlessui/react";
-import { ChevronDownIcon } from "lucide-react";
+import { PopoverGroup } from "@headlessui/react";
 import { Link } from "next-view-transitions";
 import { FC } from "react";
 
@@ -26,15 +19,7 @@ const DesktopNavigationLinks: FC<Props> = ({ currentPath, className }) => {
         <Link
           key={menuItem.title}
           href={menuItem.slug}
-          className={cn(
-            "text-md group inline-flex items-center gap-2 rounded-full px-6 py-2 font-semibold",
-            {
-              "border border-transparent text-gray-600 hover:border-dashed hover:border-gray-300 hover:shadow-xs":
-                currentPath !== menuItem.slug,
-              "border border-gray-300 bg-gray-100 px-4 shadow-xs":
-                currentPath === menuItem.slug,
-            },
-          )}
+          className="text-md group inline-flex items-center gap-2 rounded-full px-6 py-2 font-semibold"
           aria-current={currentPath === menuItem.slug ? "page" : undefined}
           prefetch={true}
         >
