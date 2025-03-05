@@ -4,16 +4,12 @@ import menuConfig from "@/config/menu";
 import { cn } from "@/lib/utils";
 import {
   CloseButton,
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
   Popover,
   PopoverBackdrop,
   PopoverButton,
   PopoverPanel,
 } from "@headlessui/react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDownIcon } from "lucide-react";
 import { Link } from "next-view-transitions";
 import { FC } from "react";
 
@@ -78,7 +74,7 @@ const MobileNavigationLinks: FC<Props> = ({ currentPath, className }) => {
                     y: -32,
                     transition: { duration: 0.2 },
                   }}
-                  className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl border-b border-gray-300 bg-white px-6 pb-10 pt-20 shadow-xs"
+                  className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl border-b border-gray-300 bg-white px-6 pt-20 pb-10 shadow-xs"
                 >
                   <ul className="space-y-4">
                     {menuConfig.map((menuItem) => (
@@ -86,11 +82,15 @@ const MobileNavigationLinks: FC<Props> = ({ currentPath, className }) => {
                         <CloseButton
                           as={Link}
                           href={menuItem.slug}
-                          className={`${
-                            currentPath === menuItem.slug
-                              ? "border border-gray-300 bg-gray-100 shadow-xs"
-                              : "border border-dashed border-gray-300 hover:bg-gray-100 hover:shadow-xs"
-                          } group inline-flex w-full gap-2 rounded-full px-6 py-4`}
+                          className={cn(
+                            "group inline-flex w-full gap-2 rounded-full border border-gray-300 px-6 py-4",
+                            {
+                              "bg-gray-100 shadow-xs":
+                                currentPath === menuItem.slug,
+                              "hover:bg-gray-100 hover:shadow-xs":
+                                currentPath !== menuItem.slug,
+                            },
+                          )}
                           onClick={close}
                         >
                           <MenuEmoji
