@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import LogoButton from "./logo-button";
 import DesktopNavigationLinks from "./navigation-links/desktop-navigation-links";
 import MobileNavigationLinks from "./navigation-links/mobile-navigation-links";
-import SearchButton from "./search-button";
+import SearchButton from "./search/search-button";
 
 const Header = () => {
   const path = usePathname();
