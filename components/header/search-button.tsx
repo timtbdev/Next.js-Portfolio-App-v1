@@ -117,7 +117,7 @@ const SearchButton = () => {
           <SearchIcon className="size-[26px] text-gray-600 group-hover:text-black" />
         </button>
       </DialogTrigger>
-      <DialogContent className="fixed top-60 bottom-0 left-[50%] flex -translate-x-1/2 flex-col overflow-hidden border border-gray-300 bg-white p-6 shadow-2xl backdrop-blur-xl sm:top-60 sm:h-fit sm:max-h-[calc(36rem+3.5rem)] sm:max-w-2xl">
+      <DialogContent className="fixed top-0 bottom-0 left-[50%] flex -translate-x-1/2 flex-col overflow-hidden border border-gray-300 bg-white p-6 shadow-2xl backdrop-blur-xl sm:top-24 sm:h-fit sm:max-h-[calc(36rem+3.5rem)] sm:max-w-2xl">
         <DialogTitle className="sr-only">Search blog posts</DialogTitle>
 
         {/* mobile back button */}
@@ -135,7 +135,7 @@ const SearchButton = () => {
             value={searchTerm ?? ""}
             onChange={(e) => setSearchTerm(e.target.value)}
             onKeyDown={handleKeyDown}
-            className="h-14 border-gray-300 bg-gray-100 pl-11 text-gray-600 placeholder:text-gray-600 focus-visible:border-blue-500 focus-visible:ring-1 focus-visible:ring-blue-500"
+            className="h-14 border-gray-300 bg-gray-100 pl-11 text-gray-600 placeholder:text-gray-600 focus-visible:ring-1 focus-visible:ring-gray-600"
             placeholder="Search docs..."
           />
           <Search
