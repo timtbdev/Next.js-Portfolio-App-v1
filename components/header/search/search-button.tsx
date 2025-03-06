@@ -8,13 +8,13 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { useDebounce } from "@/hooks/useDebounce";
-import { getContextAroundMatch } from "@/lib/search";
-import { cn, levenshtein } from "@/lib/utils";
+import { highlightMatches, renderMarkdownContent } from "@/lib/search";
+import { cn } from "@/lib/utils";
 import { PostType } from "@/types";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Search, X } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { JSX, useEffect, useRef, useState, type KeyboardEvent } from "react";
+import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { IoSearch as SearchIcon } from "react-icons/io5";
 
 const SearchButton = () => {
@@ -192,14 +192,13 @@ const SearchButton = () => {
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-gray-600">
                     {result.content &&
-                      renderMarkdownContent(
-                        getContextAroundMatch(result.content, searchTerm),
-                      ).map((element, index) =>
-                        typeof element === "string" ? (
-                          highlightMatches(element, searchTerm)
-                        ) : (
-                          <span key={index}>{element}</span>
-                        ),
+                      renderMarkdownContent({ content: result.content }).map(
+                        (element, index) =>
+                          typeof element === "string" ? (
+                            highlightMatches(element, searchTerm)
+                          ) : (
+                            <span key={index}>{element}</span>
+                          ),
                       )}
                   </p>
                 </li>
