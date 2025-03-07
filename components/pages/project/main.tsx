@@ -32,7 +32,7 @@ const ProjectItem: FC<Props> = ({ project, className }) => (
           <LinkButton
             title="Live Demo"
             Icon={EarthIcon}
-            url={project.data.webUrl || ""}
+            url={project.data.webUrl}
           />
         )}
         {project.data.webUrl && project.data.youtubeUrl && (
@@ -42,7 +42,7 @@ const ProjectItem: FC<Props> = ({ project, className }) => (
           <LinkButton
             title="Watch on Youtube"
             Icon={YoutubeIcon}
-            url={project.data.youtubeUrl || ""}
+            url={project.data.youtubeUrl}
           />
         )}
       </div>
@@ -62,13 +62,23 @@ const ProjectItem: FC<Props> = ({ project, className }) => (
         </div>
       )}
     </div>
+    {/* Desktop view */}
     <Image
-      className="mx-auto mt-6 max-w-full"
-      src={project.data.image}
+      className="mx-auto mt-6 hidden max-w-full sm:block"
+      src={`/images/projects/${project.data.image}`}
       alt={`Screenshot of ${project.data.title}`}
-      width={1024} // specify width
-      height={300} // specify height
-      quality={100} // specify quality
+      width={1024}
+      height={300}
+      quality={100}
+    />
+    {/* Mobile view */}
+    <Image
+      className="mx-auto mt-6 block max-w-full sm:hidden"
+      src={`/images/projects/mobile/${project.data.image}`}
+      alt={`Screenshot of ${project.data.title}`}
+      width={512}
+      height={384}
+      quality={100}
     />
   </Card>
 );
