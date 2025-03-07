@@ -1,6 +1,5 @@
 import Profile from "@/components/pages/home/profile";
 import ProjectItem from "@/components/pages/project/main";
-import HandDrawnArrow from "@/components/ui/hand-drawn-arrow";
 import Section from "@/components/ui/section";
 import PAGES from "@/config/seo";
 import { getAllProjectsFilteredByOrder } from "@/lib/mdx";
@@ -41,11 +40,8 @@ export default async function HomePage() {
       <Profile className="mb-8" />
       <section id="selected-projects" className="relative">
         {projects.map((project, index) => (
-          <div key={index} className="relative mx-auto max-w-5xl">
+          <div key={index} className="relative mx-auto mb-8 max-w-5xl">
             <ProjectItem project={project} />
-            {projects.length !== index + 1 && (
-              <HandDrawnArrow className="mx-auto my-6 size-20 text-center text-gray-300" />
-            )}
           </div>
         ))}
       </section>

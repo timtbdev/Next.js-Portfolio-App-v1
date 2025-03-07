@@ -43,7 +43,7 @@ const PAGES: PageType[] = [
     name: "about",
     title: truncateTitle("About | Frontend Developer for Hire | Tim"),
     description: truncateDescription(
-      "Looking for a top Frontend Developer in San Francisco? Hire Tim, a skilled Frontend Developer, to build fast, reliable, and high-performing web applications.",
+      "Looking for a top Frontend Developer in San Francisco? Hire Tim.",
     ),
     openGraphImageUrl: OPENGRAPH_IMAGE,
     twitterImageUrl: TWITTER_IMAGE,
@@ -53,9 +53,7 @@ const PAGES: PageType[] = [
   {
     name: "blog",
     title: truncateTitle("Blog | Next.js, Tailwind CSS, and Supabase | Tim"),
-    description: truncateDescription(
-      "Explore Tim's latest blog posts on Next.js, Tailwind CSS, and Supabase!",
-    ),
+    description: truncateDescription("Explore Tim's latest blog posts"),
     openGraphImageUrl: OPENGRAPH_IMAGE,
     twitterImageUrl: TWITTER_IMAGE,
     keywords: KEYWORDS,
@@ -64,9 +62,7 @@ const PAGES: PageType[] = [
   {
     name: "projects",
     title: truncateTitle("Projects | Showcasing Tim's Work | Tim"),
-    description: truncateDescription(
-      "Explore Tim's projects that demonstrate his skills in web development, including Next.js, Tailwind CSS, and Supabase!",
-    ),
+    description: truncateDescription("Next.js, Tailwind CSS, and Supabase!"),
     openGraphImageUrl: OPENGRAPH_IMAGE,
     twitterImageUrl: TWITTER_IMAGE,
     keywords: KEYWORDS,
@@ -76,7 +72,7 @@ const PAGES: PageType[] = [
     name: "contact",
     title: truncateTitle("Contact | Get in Touch with Tim"),
     description: truncateDescription(
-      "Thinking about hiring Tim? Drop him a message, and he’ll follow up with his resume.",
+      "Thinking about hiring Tim? Drop him a message.",
     ),
     openGraphImageUrl: OPENGRAPH_IMAGE,
     twitterImageUrl: TWITTER_IMAGE,

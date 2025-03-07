@@ -1,5 +1,4 @@
 import ProjectItem from "@/components/pages/project/main";
-import HandDrawnArrow from "@/components/ui/hand-drawn-arrow";
 import MainTitle from "@/components/ui/main-title";
 import Section from "@/components/ui/section";
 import PAGES from "@/config/seo";
@@ -73,12 +72,7 @@ export default async function ProjectPage() {
         className="mx-auto mb-4 max-w-3xl"
       />
       {projects.map((project, index) => (
-        <Fragment key={index}>
-          <ProjectItem project={project} />
-          {index !== projects.length - 1 && (
-            <HandDrawnArrow className="mx-auto size-20 text-center text-gray-300" />
-          )}
-        </Fragment>
+        <ProjectItem key={index} project={project} className="mb-8" />
       ))}
     </Section>
   );

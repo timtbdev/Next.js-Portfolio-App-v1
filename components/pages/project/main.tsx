@@ -13,10 +13,11 @@ import Title from "./title";
 
 interface Props {
   project: ProjectType;
+  className?: string;
 }
 
-const ProjectItem: FC<Props> = ({ project }) => (
-  <Card>
+const ProjectItem: FC<Props> = ({ project, className }) => (
+  <Card className={className}>
     <div className="mx-auto px-8 pt-8 pb-3 text-center sm:px-10 sm:pt-10 sm:pb-0">
       <Category
         category={project.data.category}
