@@ -12,7 +12,7 @@ import { highlightMatches, renderMarkdownContent } from "@/lib/search";
 import { cn } from "@/lib/utils";
 import { PostType } from "@/types";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { Search, X } from "lucide-react";
+import { ArrowLeftIcon, Search, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { IoSearch as SearchIcon } from "react-icons/io5";
@@ -122,10 +122,10 @@ const SearchButton = () => {
 
         {/* mobile back button */}
         <button
-          className="self-start p-2 text-sm/6 text-gray-600 hover:text-black sm:hidden"
+          className="inline-flex items-center self-start p-2 text-sm/6 text-gray-600 hover:text-black sm:hidden"
           onClick={() => setIsOpen(false)}
         >
-          &larr; Cancel
+          <ArrowLeftIcon className="mr-1 size-4" /> Cancel
         </button>
 
         <div className="relative flex items-center">
