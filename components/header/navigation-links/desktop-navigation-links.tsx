@@ -19,7 +19,12 @@ const DesktopNavigationLinks: FC<Props> = ({ currentPath, className }) => {
         <Link
           key={menuItem.title}
           href={menuItem.slug}
-          className="text-md group inline-flex items-center gap-2 rounded-full px-6 py-2 font-semibold"
+          className={cn(
+            "text-md group inline-flex items-center gap-2 rounded-full bg-transparent px-6 py-2 font-semibold",
+            {
+              "bg-gray-100/80": currentPath === menuItem.slug,
+            },
+          )}
           aria-current={currentPath === menuItem.slug ? "page" : undefined}
           prefetch={true}
         >

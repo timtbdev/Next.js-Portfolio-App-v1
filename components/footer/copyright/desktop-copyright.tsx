@@ -4,7 +4,7 @@ import { FaGithub, FaSquareRss } from "react-icons/fa6";
 
 const DesktopCopyright = () => {
   const defaultClass =
-    "text-md group inline-flex items-center gap-1.5 text-gray-600 hover:text-black";
+    "text-md group inline-flex items-center gap-1.5 text-gray-600 hover:text-black hover:underline hover:underline-offset-4";
   return (
     <div className="mx-auto mt-10 hidden max-w-4xl items-center justify-between lg:flex">
       <div className="text-md flex flex-1 justify-start">
@@ -19,7 +19,15 @@ const DesktopCopyright = () => {
         </Link>
       </div>
       <span className="text-md text-center leading-5 text-gray-600">
-        © {new Date().getFullYear()} All rights reserved. | Built with Next.js
+        © {new Date().getFullYear()} All rights reserved. |{" "}
+        <Link
+          href="https://nextjs.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={defaultClass}
+        >
+          Built with Next.js
+        </Link>
       </span>
       <div className="flex flex-1 justify-end">
         <Link
