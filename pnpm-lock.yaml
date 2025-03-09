@@ -71,9 +71,6 @@ dependencies:
   next-view-transitions:
     specifier: ^0.3.4
     version: 0.3.4(next@15.1.7)(react-dom@19.0.0)(react@19.0.0)
-  nuqs:
-    specifier: ^2.4.0
-    version: 2.4.1(next@15.1.7)(react@19.0.0)
   react:
     specifier: ^19
     version: 19.0.0
@@ -4037,10 +4034,6 @@ packages:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
     dev: true
 
-  /mitt@3.0.1:
-    resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
-    dev: false
-
   /motion-dom@12.4.5:
     resolution: {integrity: sha512-Q2xmhuyYug1CGTo0jdsL05EQ4RhIYXlggFS/yPhQQRNzbrhjKQ1tbjThx5Plv68aX31LsUQRq4uIkuDxdO5vRQ==}
     dependencies:
@@ -4137,29 +4130,6 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
-    dev: false
-
-  /nuqs@2.4.1(next@15.1.7)(react@19.0.0):
-    resolution: {integrity: sha512-u6sngTspqDe3jWHtcmqHQg3dl35niizCZAsm5gy7PBlgG2rwl71Dp2QUv5hwBaWKI9qz0wqILZY86TsRxq66SQ==}
-    peerDependencies:
-      '@remix-run/react': '>=2'
-      next: '>=14.2.0'
-      react: '>=18.2.0 || ^19.0.0-0'
-      react-router: ^6 || ^7
-      react-router-dom: ^6 || ^7
-    peerDependenciesMeta:
-      '@remix-run/react':
-        optional: true
-      next:
-        optional: true
-      react-router:
-        optional: true
-      react-router-dom:
-        optional: true
-    dependencies:
-      mitt: 3.0.1
-      next: 15.1.7(react-dom@19.0.0)(react@19.0.0)
-      react: 19.0.0
     dev: false
 
   /object-assign@4.1.1:
