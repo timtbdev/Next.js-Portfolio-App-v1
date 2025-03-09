@@ -2,7 +2,6 @@ import Content from "@/components/body/content";
 import Heading from "@/components/body/heading";
 import Profile from "@/components/pages/home/profile";
 import ProjectItem from "@/components/pages/project/main";
-import Section from "@/components/ui/section";
 import PAGES from "@/config/seo";
 import { getAllProjectsFilteredByOrder } from "@/lib/mdx";
 import { getBaseUrl } from "@/lib/utils";
