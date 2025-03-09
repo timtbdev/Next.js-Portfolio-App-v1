@@ -1,12 +1,14 @@
+import Content from "@/components/body/content";
+import Heading from "@/components/body/heading";
 import SocialAccountButton from "@/components/pages/contact/social-account-button";
 import Card from "@/components/ui/card";
 import MainTitle from "@/components/ui/main-title";
-import Section from "@/components/ui/section";
 import PAGES from "@/config/seo";
 import { socialConfigs } from "@/config/social";
 import { getBaseUrlWithSlug, shimmer, toBase64 } from "@/lib/utils";
 import { Metadata } from "next";
 import Image from "next/image";
+import { Fragment } from "react";
 
 const PAGE = "contact";
 
@@ -67,38 +69,44 @@ export default async function ContactPage() {
   const imageAlt = "Avatar";
   const initials = "TB";
   return (
-    <Section id="contact" className="mx-auto max-w-5xl">
-      <MainTitle
-        title={seo?.name || "Default Title"}
-        description={seo?.description}
-        className="mx-auto mb-4 max-w-3xl"
-      />
-      <Card>
-        <div className="mx-auto py-6 sm:py-8">
-          <div>
-            <div className="text-center">
-              <Image
-                src={imageUrl}
-                alt={imageAlt}
-                className="mx-auto size-24 rounded-full shadow-md ring-1 ring-gray-300"
-                placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(96, 96))}`}
-                width={96}
-                height={96}
-              />
+    <Fragment>
+      <Heading>
+        <MainTitle
+          title={seo?.name || "Default Title"}
+          description={seo?.description}
+          className="mx-auto mt-6 mb-12 max-w-3xl"
+        />
+      </Heading>
+      <Content>
+        <div className="relative mx-auto -mt-12 max-w-3xl px-4 sm:px-6 lg:px-8">
+          <Card>
+            <div className="mx-auto py-6 sm:py-8">
+              <div>
+                <div className="text-center">
+                  <Image
+                    src={imageUrl}
+                    alt={imageAlt}
+                    className="mx-auto size-24 rounded-full shadow-md ring-1 ring-gray-300"
+                    placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(96, 96))}`}
+                    width={96}
+                    height={96}
+                  />
+                </div>
+              </div>
+              <ul
+                role="list"
+                className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2"
+              >
+                {socialConfigs.map((item, index) => (
+                  <li key={index}>
+                    <SocialAccountButton social={item} />
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-          <ul
-            role="list"
-            className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2"
-          >
-            {socialConfigs.map((item, index) => (
-              <li key={index}>
-                <SocialAccountButton social={item} />
-              </li>
-            ))}
-          </ul>
+          </Card>
         </div>
-      </Card>
-    </Section>
+      </Content>
+    </Fragment>
   );
 }

@@ -1,3 +1,4 @@
+import NextJsIcon from "@/icons/pages/projects/nextjs-icon";
 import { getBaseUrlWithSlug } from "@/lib/utils";
 import Link from "next/link";
 import { FaGithub, FaSquareRss } from "react-icons/fa6";
@@ -26,6 +27,7 @@ const DesktopCopyright = () => {
           rel="noopener noreferrer"
           className={defaultClass}
         >
+          <NextJsIcon className="size-4" />
           Built with Next.js
         </Link>
       </span>

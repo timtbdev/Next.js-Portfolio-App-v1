@@ -1,4 +1,5 @@
 import Card from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import { PostType } from "@/types";
 import { Link } from "next-view-transitions";
 import { FC } from "react";
@@ -13,9 +14,10 @@ import Description from "./description";
 
 interface Props {
   post: PostType;
+  className?: string;
 }
 
-const BlogPostItem: FC<Props> = ({ post }) => {
+const BlogPostItem: FC<Props> = ({ post, className }) => {
   const slug = post.fileName.replace(/\.mdx?$/, "");
   const {
     title,
@@ -30,7 +32,7 @@ const BlogPostItem: FC<Props> = ({ post }) => {
   const readTime = readingTime(post.content, { wordsPerMinute: 100 }).minutes;
   const url = `/blog/post/${slug}`;
   return (
-    <Card className="hover:bg-gray-100">
+    <Card className={cn("hover:bg-gray-100", className)}>
       <Link href={url}>
         <article className="flex flex-col gap-4 p-0 sm:flex-row sm:gap-8 sm:px-10 sm:py-6">
           <PostImage slug={slug} imageUrl={image} imageAlt={title} />

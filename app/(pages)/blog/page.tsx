@@ -1,11 +1,13 @@
+import Content from "@/components/body/content";
+import Heading from "@/components/body/heading";
 import BlogPostItem from "@/components/pages/blog/single-blog-post-item/main";
 import MainTitle from "@/components/ui/main-title";
-import Section from "@/components/ui/section";
 import PAGES from "@/config/seo";
 import { getAllPostsOrderedByDate } from "@/lib/mdx";
 import { getBaseUrlWithSlug } from "@/lib/utils";
 import { PostType } from "@/types";
 import { Metadata } from "next";
+import { Fragment } from "react";
 
 const PAGE = "blog";
 
@@ -69,13 +71,21 @@ export async function generateStaticParams() {
 export default async function BlogPage() {
   const posts: PostType[] = getAllPostsOrderedByDate();
   return (
-    <Section id="blog" className="mx-auto max-w-4xl space-y-8">
-      <MainTitle
-        title={seo?.name || "Default Title"}
-        description={seo?.description}
-        className="mx-auto mb-4 max-w-3xl"
-      />
-      {posts?.map((post, index) => <BlogPostItem key={index} post={post} />)}
-    </Section>
+    <Fragment>
+      <Heading>
+        <MainTitle
+          title={seo?.name || "Default Title"}
+          description={seo?.description}
+          className="mx-auto mt-6 mb-12 max-w-3xl"
+        />
+      </Heading>
+      <Content>
+        <div className="relative mx-auto -mt-12 mb-6 max-w-4xl px-4 sm:px-6 lg:px-8">
+          {posts?.map((post, index) => (
+            <BlogPostItem key={index} post={post} className="mb-6" />
+          ))}
+        </div>
+      </Content>
+    </Fragment>
   );
 }

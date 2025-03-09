@@ -24,17 +24,16 @@ const ProjectItem: FC<Props> = ({ project, className }) => (
     <div className="mx-auto px-8 pt-8 pb-3 text-center sm:px-10 sm:pt-10 sm:pb-0">
       <Category
         category={project.data.category}
-        className="text-md mb-4 font-semibold text-gray-600"
+        className="text-md mb-2 font-semibold text-gray-600"
       />
       <Title
         title={project.data.title}
         className="text-3xl text-black sm:text-4xl"
       />
-      <div className="mx-auto mt-4 mb-2 flex max-w-xs flex-col items-center justify-center gap-x-2 gap-y-2 text-center sm:flex sm:flex-row">
+      <div className="mx-auto mt-1 flex max-w-xs flex-col items-center justify-center gap-x-2 gap-y-2 text-center sm:flex sm:flex-row">
         {project.data.githubUrl && project.data.slug && (
           <div className="mx-auto flex justify-center">
             <GithubButton
-              title="Stars on Github"
               url={project.data.githubUrl}
               repo={project.data.slug}
             />

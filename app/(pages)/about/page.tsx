@@ -101,7 +101,7 @@ export default async function AboutPage() {
 
                 <ul
                   role="list"
-                  className="mt-8 max-w-xl space-y-8 text-gray-600"
+                  className="mt-8 max-w-xl space-y-6 text-gray-600"
                 >
                   <li className="flex items-center gap-x-3">
                     <span className="text-3xl">1️⃣</span>
