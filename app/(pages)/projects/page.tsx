@@ -1,6 +1,7 @@
+import Content from "@/components/body/content";
+import Heading from "@/components/body/heading";
 import ProjectItem from "@/components/pages/project/main";
 import MainTitle from "@/components/ui/main-title";
-import Section from "@/components/ui/section";
 import PAGES from "@/config/seo";
 import { getAllProjectsFilteredByOrder } from "@/lib/mdx";
 import { getBaseUrlWithSlug } from "@/lib/utils";
@@ -65,15 +66,21 @@ export default async function ProjectPage() {
     featured: false,
   });
   return (
-    <Section id="projects" className="mx-auto max-w-5xl">
-      <MainTitle
-        title={seo?.name || "Default Title"}
-        description={seo?.description}
-        className="mx-auto mb-4 max-w-3xl"
-      />
-      {projects.map((project, index) => (
-        <ProjectItem key={index} project={project} className="mb-8" />
-      ))}
-    </Section>
+    <Fragment>
+      <Heading>
+        <MainTitle
+          title={seo?.name || "Default Title"}
+          description={seo?.description}
+          className="mx-auto mt-6 mb-12 max-w-3xl"
+        />
+      </Heading>
+      <Content>
+        <div className="relative mx-auto -mt-12 max-w-3xl px-4 sm:px-6 lg:px-8">
+          {projects.map((project, index) => (
+            <ProjectItem key={index} project={project} className="mb-8" />
+          ))}
+        </div>
+      </Content>
+    </Fragment>
   );
 }
