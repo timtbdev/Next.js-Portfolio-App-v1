@@ -32,7 +32,6 @@
     "next": "15.1.7",
     "next-mdx-remote": "^5.0.0",
     "next-view-transitions": "^0.3.4",
-    "nuqs": "^2.4.0",
     "react": "^19",
     "react-confetti": "^6.3.0",
     "react-dom": "^19",

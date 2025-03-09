@@ -3109,11 +3109,6 @@ minimist@^1.2.0, minimist@^1.2.6:
   resolved "https://registry.npmjs.org/minimist/-/minimist-1.2.8.tgz"
   integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
 
-mitt@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.npmjs.org/mitt/-/mitt-3.0.1.tgz"
-  integrity sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==
-
 motion-dom@^12.4.5:
   version "12.4.5"
   resolved "https://registry.npmjs.org/motion-dom/-/motion-dom-12.4.5.tgz"
@@ -3180,13 +3175,6 @@ next@15.1.7:
     "@next/swc-win32-arm64-msvc" "15.1.7"
     "@next/swc-win32-x64-msvc" "15.1.7"
     sharp "^0.33.5"
-
-nuqs@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.npmjs.org/nuqs/-/nuqs-2.4.0.tgz"
-  integrity sha512-+yOdX0q/wdYlseSYtWC8StDDt2QFcYX/zV5/E67J1cOJo3PR0mggxMx4acZGC0Hu66xFHENKQkqI2zSpH742xQ==
-  dependencies:
-    mitt "^3.0.1"
 
 object-assign@^4.1.1:
   version "4.1.1"

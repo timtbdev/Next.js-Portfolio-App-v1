@@ -1,3 +1,5 @@
+import Content from "@/components/body/content";
+import Heading from "@/components/body/heading";
 import Profile from "@/components/pages/home/profile";
 import ProjectItem from "@/components/pages/project/main";
 import Section from "@/components/ui/section";
@@ -6,6 +8,7 @@ import { getAllProjectsFilteredByOrder } from "@/lib/mdx";
 import { getBaseUrl } from "@/lib/utils";
 import { ProjectType } from "@/types";
 import { Metadata } from "next";
+import { Fragment } from "react";
 
 const PAGE = "home";
 
@@ -36,15 +39,19 @@ export default async function HomePage() {
     featured: true,
   });
   return (
-    <Section id="home">
-      <Profile className="mb-8" />
-      <section id="selected-projects" className="relative">
-        {projects.map((project, index) => (
-          <div key={index} className="relative mx-auto mb-8 max-w-5xl">
-            <ProjectItem project={project} />
-          </div>
-        ))}
-      </section>
-    </Section>
+    <Fragment>
+      <Heading>
+        <Profile className="z-10 mt-8 mb-14" />
+      </Heading>
+      <Content>
+        <div className="relative mx-auto -mt-12 max-w-3xl px-4 sm:px-6 lg:px-8">
+          {projects.map((project, index) => (
+            <div key={index} className="mb-8">
+              <ProjectItem project={project} />
+            </div>
+          ))}
+        </div>
+      </Content>
+    </Fragment>
   );
 }

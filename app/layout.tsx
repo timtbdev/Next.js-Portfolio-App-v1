@@ -1,13 +1,11 @@
 import Footer from "@/components/footer/main";
 import Header from "@/components/header/main";
-import Celebration from "@/components/main/celebration";
-import Container from "@/components/main/container";
-import Main from "@/components/main/main";
 import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import TailwindIndicator from "@/components/ui/tailwind-indicator";
 import PAGES from "@/config/seo";
 import { cn, getBaseUrl, getBaseUrlWithSlug } from "@/lib/utils";
 import "@/styles/tailwind.css";
+import Celebration from "@/components/body/celebration";
 import TanStackQueryProvider from "@/components/providers/tanstack-query-provider";
 import { PageType } from "@/types";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -15,7 +13,6 @@ import { Analytics } from "@vercel/analytics/next";
 import { Metadata, Viewport } from "next";
 import { ViewTransitions } from "next-view-transitions";
 import { Inter as FontSans } from "next/font/google";
-import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Toaster } from "react-hot-toast";
 
 const PAGE = "home";
@@ -203,19 +200,13 @@ export default function RootLayout({
           suppressHydrationWarning={true}
         >
           <TanStackQueryProvider>
-            <Main>
-              <NuqsAdapter>
-                <Header />
-                <Celebration />
-                <Container>
-                  {children}
-                  <Analytics />
-                  <Toaster position="top-center" />
-                </Container>
-                <Footer />
-                <ScrollToTopButton />
-              </NuqsAdapter>
-            </Main>
+            <Header />
+            <Celebration />
+            {children}
+            <Analytics />
+            <Toaster position="top-center" />
+            <Footer />
+            <ScrollToTopButton />
             <TailwindIndicator />
           </TanStackQueryProvider>
         </body>
