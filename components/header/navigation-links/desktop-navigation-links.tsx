@@ -12,7 +12,6 @@ import {
 import menuConfig from "@/config/menu";
 import { cn } from "@/lib/utils";
 import { MenuItemType } from "@/types";
-import { PopoverGroup } from "@headlessui/react";
 import { Link } from "next-view-transitions";
 import { FC } from "react";
 

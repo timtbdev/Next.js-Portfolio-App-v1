@@ -6,6 +6,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/_dialog";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useDebounce } from "@/hooks/useDebounce";
 import { highlightMatches, renderMarkdownContent } from "@/lib/search";
@@ -110,12 +111,14 @@ const SearchButton = () => {
       }}
     >
       <DialogTrigger asChild>
-        <button
+        <Button
+          variant="outline"
+          size="icon"
           aria-label="Search"
-          className="group items-center rounded-full bg-transparent p-2 hover:bg-gray-50 sm:border sm:border-gray-300"
+          className="group items-center rounded-full border-transparent p-5 shadow-none md:border md:border-gray-300"
         >
-          <SearchIcon className="size-[26px] text-gray-600 group-hover:text-black" />
-        </button>
+          <SearchIcon className="size-[26px] text-gray-600" />
+        </Button>
       </DialogTrigger>
       <DialogContent className="fixed top-0 bottom-0 left-[50%] flex -translate-x-1/2 flex-col overflow-hidden border border-gray-300 bg-white p-6 shadow-2xl backdrop-blur-xl sm:top-24 sm:h-fit sm:max-h-[calc(36rem+3.5rem)] sm:max-w-2xl">
         <DialogTitle className="sr-only">Search blog posts</DialogTitle>
