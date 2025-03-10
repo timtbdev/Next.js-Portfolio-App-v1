@@ -2,13 +2,14 @@ import MenuEmoji from "@/components/ui/menu/menu-emoji";
 import MenuTitle from "@/components/ui/menu/menu-title";
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import menuConfig from "@/config/menu";
 import { cn } from "@/lib/utils";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { Menu, X } from "lucide-react";
 import { Link } from "next-view-transitions";
 import { FC, useState } from "react";
 
@@ -19,57 +20,27 @@ interface Props {
 
 const MobileNavigationLinks: FC<Props> = ({ currentPath, className }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const toggleSheet = () => {
+    setIsOpen((prev) => !prev);
+  };
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetTrigger>
-        <div
-          className="group relative inset-px z-10 flex rounded-md bg-transparent p-2 transition focus:outline-hidden sm:hidden"
-          aria-label="Toggle site navigation"
+      <SheetTrigger asChild>
+        <button
+          onClick={() => setIsOpen((prev) => !prev)}
+          className="flex rounded-md p-2 hover:bg-gray-100 sm:hidden"
         >
-          <div className="group flex size-6 items-center justify-center">
-            <span
-              aria-hidden="true"
-              className={cn(
-                "absolute block h-0.5 w-5 bg-current text-gray-600 transition-transform duration-500 ease-in-out group-hover:text-black",
-                { "rotate-45": isOpen },
-                { "-translate-y-1.5": !isOpen },
-              )}
-            ></span>
-            <span
-              aria-hidden="true"
-              className={cn(
-                "absolute block h-0.5 w-5 bg-current text-gray-600 transition-transform duration-500 ease-in-out group-hover:text-black",
-                { "opacity-0": isOpen },
-              )}
-            ></span>
-            <span
-              aria-hidden="true"
-              className={cn(
-                "absolute block h-0.5 w-5 bg-current text-gray-600 transition-transform duration-500 ease-in-out group-hover:text-black",
-                { "rotate-45": isOpen },
-                { "-translate-y-1.5": !isOpen },
-              )}
-            ></span>
-            <span
-              aria-hidden="true"
-              className={cn(
-                "absolute block h-0.5 w-5 bg-current text-gray-600 transition-transform duration-500 ease-in-out group-hover:text-black",
-                { "opacity-0": isOpen },
-              )}
-            ></span>
-            <span
-              aria-hidden="true"
-              className={cn(
-                "absolute block h-0.5 w-5 bg-current text-gray-600 transition-transform duration-500 ease-in-out group-hover:text-black",
-                { "-rotate-45": isOpen },
-                { "translate-y-1.5": !isOpen },
-              )}
-            ></span>
-          </div>
-        </div>
+          {isOpen ? (
+            <X className="size-[26px]" />
+          ) : (
+            <Menu className="size-[26px]" />
+          )}
+        </button>
       </SheetTrigger>
-      <SheetContent side="left" className="z-5 mt-5">
-        <SheetTitle>Mobile menu</SheetTitle>
+      <SheetContent side="left" className="z-1 mt-10">
+        <VisuallyHidden>
+          <SheetTitle>Mobile Navigation</SheetTitle>
+        </VisuallyHidden>
         <div className="bg-white">
           <ul className="divide-y divide-gray-300">
             {menuConfig.map((menuItem) => (
@@ -81,7 +52,7 @@ const MobileNavigationLinks: FC<Props> = ({ currentPath, className }) => {
                     "hover:bg-gray-100 hover:shadow-xs":
                       currentPath !== menuItem.slug,
                   })}
-                  onClick={isOpen ? () => setIsOpen(false) : undefined}
+                  onClick={toggleSheet}
                 >
                   <MenuEmoji
                     currentPath={currentPath === menuItem.slug}
