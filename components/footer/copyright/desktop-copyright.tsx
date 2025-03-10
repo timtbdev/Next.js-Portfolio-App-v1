@@ -8,7 +8,7 @@ const DesktopCopyright = () => {
     "text-md group inline-flex items-center gap-1.5 text-gray-600 hover:text-black hover:underline hover:underline-offset-4";
   return (
     <div className="mx-auto mt-10 hidden max-w-4xl items-center justify-between lg:flex">
-      <div className="text-md flex flex-1 justify-start">
+      <div className="text-md flex flex-1 items-center justify-start">
         <Link
           href="https://github.com/timtbdev/Next.js-Portfolio-App-v2"
           target="_blank"
@@ -19,18 +19,17 @@ const DesktopCopyright = () => {
           Source code
         </Link>
       </div>
-      <span className="text-md text-center leading-5 text-gray-600">
-        © {new Date().getFullYear()} All rights reserved. |{" "}
+      <div className="text-md flex items-center justify-center text-center leading-5 text-gray-600">
+        © {new Date().getFullYear()} All rights reserved. |&nbsp;
         <Link
           href="https://nextjs.org/"
           target="_blank"
           rel="noopener noreferrer"
           className={defaultClass}
         >
-          <NextJsIcon className="size-4" />
           Built with Next.js
         </Link>
-      </span>
+      </div>
       <div className="flex flex-1 justify-end">
         <Link
           href={getBaseUrlWithSlug("rss.xml")}
