@@ -28,7 +28,7 @@ const MobileNavigationLinks: FC<Props> = ({ currentPath, className }) => {
       <SheetTrigger asChild>
         <button
           onClick={() => setIsOpen((prev) => !prev)}
-          className="flex rounded-md p-2 hover:bg-gray-100 sm:hidden"
+          className="flex rounded-md p-2 hover:bg-gray-100 md:hidden"
         >
           {isOpen ? (
             <X className="size-[26px]" />

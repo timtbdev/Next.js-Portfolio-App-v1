@@ -13,7 +13,7 @@ const Header = () => {
   const currentPath = `/${path.split("/")[1]}`;
   const completion = useReadingProgress();
   return (
-    <header className="sticky inset-x-0 top-0 z-50 h-16 items-center border-b-[1.2px] border-gray-300 bg-white shadow-xs sm:h-20">
+    <header className="sticky inset-x-0 top-0 z-50 h-16 items-center border-b-[1.2px] border-gray-300 bg-white shadow-xs md:h-20">
       <nav
         aria-label="Navigation"
         className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2.5 md:px-6 md:py-5"
