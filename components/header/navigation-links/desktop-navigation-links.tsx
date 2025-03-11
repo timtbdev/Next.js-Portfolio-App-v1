@@ -2,11 +2,9 @@ import MenuEmoji from "@/components/ui/menu/menu-emoji";
 import MenuTitle from "@/components/ui/menu/menu-title";
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import menuConfig from "@/config/menu";
