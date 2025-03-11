@@ -1,7 +1,11 @@
+import Celebration from "@/components/body/celebration";
 import Content from "@/components/body/content";
 import Heading from "@/components/body/heading";
+import Footer from "@/components/footer/main";
+import Header from "@/components/header/main";
 import Profile from "@/components/pages/home/profile";
 import ProjectItem from "@/components/pages/project/main";
+import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import PAGES from "@/config/seo";
 import { getAllProjectsFilteredByOrder } from "@/lib/mdx";
 import { getBaseUrl } from "@/lib/utils";
@@ -39,6 +43,8 @@ export default async function HomePage() {
   });
   return (
     <Fragment>
+      <Header />
+      <Celebration />
       <Heading>
         <Profile className="z-10 mt-8 mb-14" />
       </Heading>
@@ -51,6 +57,8 @@ export default async function HomePage() {
           ))}
         </div>
       </Content>
+      <Footer />
+      <ScrollToTopButton />
     </Fragment>
   );
 }

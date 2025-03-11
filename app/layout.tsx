@@ -200,13 +200,10 @@ export default function RootLayout({
           suppressHydrationWarning={true}
         >
           <TanStackQueryProvider>
-            <Header />
-            <Celebration />
             {children}
             <Analytics />
             <Toaster position="top-center" />
-            <Footer />
-            <ScrollToTopButton />
+
             <TailwindIndicator />
           </TanStackQueryProvider>
         </body>

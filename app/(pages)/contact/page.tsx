@@ -1,5 +1,7 @@
 import Content from "@/components/body/content";
 import Heading from "@/components/body/heading";
+import Footer from "@/components/footer/main";
+import Header from "@/components/header/main";
 import SocialAccountButton from "@/components/pages/contact/social-account-button";
 import Card from "@/components/ui/card";
 import MainTitle from "@/components/ui/main-title";
@@ -70,6 +72,7 @@ export default async function ContactPage() {
   const initials = "TB";
   return (
     <Fragment>
+      <Header />
       <Heading>
         <MainTitle
           title={seo?.name || "Default Title"}
@@ -107,6 +110,7 @@ export default async function ContactPage() {
           </Card>
         </div>
       </Content>
+      <Footer />
     </Fragment>
   );
 }

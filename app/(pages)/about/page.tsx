@@ -1,5 +1,7 @@
 import Content from "@/components/body/content";
 import Heading from "@/components/body/heading";
+import Footer from "@/components/footer/main";
+import Header from "@/components/header/main";
 import Card from "@/components/ui/card";
 import MainTitle from "@/components/ui/main-title";
 import PAGES from "@/config/seo";
@@ -63,6 +65,7 @@ export const metadata: Metadata = {
 export default async function AboutPage() {
   return (
     <Fragment>
+      <Header />
       <Heading>
         <MainTitle
           title={seo?.name || "Default Title"}
@@ -216,6 +219,7 @@ export default async function AboutPage() {
           </Card>
         </div>
       </Content>
+      <Footer />
     </Fragment>
   );
 }

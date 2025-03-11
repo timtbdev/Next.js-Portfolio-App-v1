@@ -1,17 +1,20 @@
 "use client";
 
-import { useReadingProgress } from "@/hooks/userReadingProgress";
-import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { FC } from "react";
 import LogoButton from "./logo-button";
 import DesktopNavigationLinks from "./navigation-links/desktop-navigation-links";
 import MobileNavigationLinks from "./navigation-links/mobile-navigation-links";
+import ProgressBar from "./progress-bar";
 import SearchButton from "./search-button";
 
-const Header = () => {
+interface Props {
+  showProgressBar?: boolean;
+}
+
+const Header: FC<Props> = ({ showProgressBar = false }) => {
   const path = usePathname();
   const currentPath = `/${path.split("/")[1]}`;
-  const completion = useReadingProgress();
   return (
     <header className="sticky inset-x-0 top-0 z-50 h-16 items-center border-b-[1.2px] border-gray-300 bg-white shadow-xs md:h-20">
       <nav
@@ -34,13 +37,7 @@ const Header = () => {
           <SearchButton />
         </div>
       </nav>
-      {/* Reading progress bar */}
-      <motion.span
-        style={{ transform: `translateX(${completion - 100}%)` }}
-        className="absolute bottom-0 h-[2px] w-full bg-linear-to-tl from-gray-200 to-gray-500"
-        animate={{ transform: `translateX(${completion - 100}%)` }}
-        transition={{ duration: 0.5 }}
-      />
+      {showProgressBar && <ProgressBar />}
     </header>
   );
 };

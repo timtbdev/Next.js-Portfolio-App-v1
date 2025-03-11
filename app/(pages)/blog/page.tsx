@@ -1,7 +1,10 @@
 import Content from "@/components/body/content";
 import Heading from "@/components/body/heading";
+import Footer from "@/components/footer/main";
+import Header from "@/components/header/main";
 import BlogPostItem from "@/components/pages/blog/single-blog-post-item/main";
 import MainTitle from "@/components/ui/main-title";
+import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import PAGES from "@/config/seo";
 import { getAllPostsOrderedByDate } from "@/lib/mdx";
 import { getBaseUrlWithSlug } from "@/lib/utils";
@@ -72,6 +75,7 @@ export default async function BlogPage() {
   const posts: PostType[] = getAllPostsOrderedByDate();
   return (
     <Fragment>
+      <Header />
       <Heading>
         <MainTitle
           title={seo?.name || "Default Title"}
@@ -86,6 +90,8 @@ export default async function BlogPage() {
           ))}
         </div>
       </Content>
+      <Footer />
+      <ScrollToTopButton />
     </Fragment>
   );
 }
