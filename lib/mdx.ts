@@ -1,4 +1,5 @@
 import path from "path";
+import { ProjectType } from "@/types";
 import matter from "gray-matter";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -83,14 +84,14 @@ export function getAllProjectsFilteredByOrder({
   featured,
 }: {
   featured: boolean;
-}) {
+}): ProjectType[] {
   const projectFileNames = getAllFileNames(PROJECT_PATH);
 
   const projects = projectFileNames.map((file) => {
     const { content, data } = getSingleProjectByFileName(
       file.replace(/\.mdx?$/, ""),
     );
-    return { content, data };
+    return { content, data } as ProjectType;
   });
 
   if (!featured) {

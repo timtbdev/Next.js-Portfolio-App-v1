@@ -47,14 +47,24 @@ export type PostType = {
 
 export type ProjectType = {
   content: string;
-  data: {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    [key: string]: any;
-  };
+  data: ProjectDataType;
 };
 
 type SearchResult = {
   id: string;
   metadata: any;
   content: string;
+};
+
+export type ProjectDataType = {
+  title: string;
+  description: string;
+  category: string;
+  slug?: string;
+  githubUrl?: string;
+  webUrl?: string;
+  youtubeUrl?: string;
+  image: string;
+  order: number;
+  featured?: boolean;
 };
