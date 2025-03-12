@@ -76,7 +76,7 @@ export default async function BlogPage() {
   return (
     <Fragment>
       <Header />
-      <Heading>
+      <Heading type="default">
         <MainTitle
           title={seo?.name || "Default Title"}
           description={seo?.description}

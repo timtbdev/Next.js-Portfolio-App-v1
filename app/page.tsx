@@ -45,7 +45,7 @@ export default async function HomePage() {
     <Fragment>
       <Header />
       <Celebration />
-      <Heading>
+      <Heading type="home">
         <Profile className="z-10 mt-8 mb-14" />
       </Heading>
       <Content>

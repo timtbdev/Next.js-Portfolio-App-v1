@@ -36,7 +36,7 @@ export default async function BlogPost({ params }: Props) {
   return (
     <Fragment>
       <Header showProgressBar={true} />
-      <Heading>
+      <Heading type="blog">
         <BlogPostDetailHeading
           title={data.title}
           description={data.description}

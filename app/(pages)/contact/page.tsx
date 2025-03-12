@@ -73,7 +73,7 @@ export default async function ContactPage() {
   return (
     <Fragment>
       <Header />
-      <Heading>
+      <Heading type="default">
         <MainTitle
           title={seo?.name || "Default Title"}
           description={seo?.description}
