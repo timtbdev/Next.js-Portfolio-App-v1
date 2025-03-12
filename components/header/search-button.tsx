@@ -115,7 +115,7 @@ const SearchButton = () => {
           variant="outline"
           size="icon"
           aria-label="Search"
-          className="group items-center rounded-full border-transparent p-5 shadow-none md:border md:border-gray-300"
+          className="group size-10 cursor-pointer items-center rounded-full border-transparent p-5 shadow-none md:border md:border-gray-300"
         >
           <SearchIcon className="size-[26px] text-gray-600" />
         </Button>
@@ -123,13 +123,14 @@ const SearchButton = () => {
       <DialogContent className="fixed top-0 bottom-0 left-[50%] flex -translate-x-1/2 flex-col overflow-hidden border border-gray-300 bg-white p-6 shadow-2xl backdrop-blur-xl sm:top-24 sm:h-fit sm:max-h-[calc(36rem+3.5rem)] sm:max-w-2xl">
         <DialogTitle className="sr-only">Search blog posts</DialogTitle>
 
-        {/* mobile back button */}
-        <button
-          className="inline-flex items-center self-start p-2 text-sm/6 text-gray-600 hover:text-black sm:hidden"
+        {/* Back button on mobile */}
+        <Button
+          variant="outline"
+          className="inline-flex w-fit items-center gap-x-2 bg-white text-sm text-gray-600 hover:border-gray-300 hover:bg-white/50 hover:text-black sm:hidden"
           onClick={() => setIsOpen(false)}
         >
-          <ArrowLeftIcon className="mr-1 size-4" /> Cancel
-        </button>
+          <ArrowLeftIcon className="size-4" /> Cancel
+        </Button>
 
         <div className="relative flex items-center">
           <Input

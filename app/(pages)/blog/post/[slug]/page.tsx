@@ -1,6 +1,9 @@
+import Content from "@/components/body/content";
+import Heading from "@/components/body/heading";
 import Footer from "@/components/footer/main";
 import Header from "@/components/header/main";
-import BlogPostDetail from "@/components/pages/blog/detail-blog-post-item/main";
+import BlogPostDetailHeading from "@/components/pages/blog/detail-blog-post/heading/blog-post-heading";
+import DetailBlogPost from "@/components/pages/blog/detail-blog-post/main";
 import Card from "@/components/ui/card";
 import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import {
@@ -9,6 +12,7 @@ import {
 } from "@/lib/mdx";
 import { Metadata } from "next";
 import { Fragment } from "react";
+import readingTime from "reading-time";
 
 interface Props {
   params: Promise<{
@@ -32,11 +36,26 @@ export default async function BlogPost({ params }: Props) {
   return (
     <Fragment>
       <Header showProgressBar={true} />
-      <div id="blog-post" className="mx-auto max-w-5xl">
-        <Card>
-          <BlogPostDetail post={{ fileName, data, content }} />
-        </Card>
-      </div>
+      <Heading>
+        <BlogPostDetailHeading
+          title={data.title}
+          description={data.description}
+          date={data.date}
+          authorImage={data.authorAvatar}
+          authorName={data.author}
+          category={data.category}
+          readTime={readingTime(content, { wordsPerMinute: 100 }).minutes}
+        />
+      </Heading>
+
+      <Content>
+        <div className="mx-auto -mt-18 w-full max-w-3xl">
+          <Card>
+            <DetailBlogPost post={{ fileName, data, content }} />
+          </Card>
+        </div>
+      </Content>
+
       <Footer />
       <ScrollToTopButton />
     </Fragment>

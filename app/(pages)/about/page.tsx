@@ -70,7 +70,7 @@ export default async function AboutPage() {
         <MainTitle
           title={seo?.name || "Default Title"}
           description={seo?.description}
-          className="mx-auto mt-6 mb-12 max-w-3xl"
+          className="mx-auto mt-6 mb-14 max-w-3xl px-4 sm:px-6 lg:px-8"
         />
       </Heading>
       <Content>
