@@ -104,17 +104,17 @@ export default async function AboutPage() {
 
                 <ul
                   role="list"
-                  className="mt-8 max-w-xl space-y-6 text-gray-600"
+                  className="mt-4 max-w-xl space-y-4 text-gray-600"
                 >
                   <li className="flex items-center gap-x-3">
-                    <span className="text-3xl">1️⃣</span>
+                    <span className="text-2xl">1️⃣</span>
                     <span>
                       <strong className="font-semibold text-black">He</strong>{" "}
                       is based in the 🌉 San Francisco Bay Area.
                     </span>
                   </li>
                   <li className="flex gap-x-3">
-                    <span className="text-3xl">2️⃣</span>
+                    <span className="text-2xl">2️⃣</span>
                     <span>
                       <strong className="font-semibold text-black">He</strong>{" "}
                       has a Computer Science degree from the University of
@@ -122,7 +122,7 @@ export default async function AboutPage() {
                     </span>
                   </li>
                   <li className="flex gap-x-3">
-                    <span className="text-3xl">3️⃣</span>
+                    <span className="text-2xl">3️⃣</span>
                     <span>
                       <strong className="font-semibold text-gray-900">
                         He
@@ -155,7 +155,7 @@ export default async function AboutPage() {
                     </span>
                   </li>
                   <li className="flex gap-x-3">
-                    <span className="text-3xl">4️⃣</span>
+                    <span className="text-2xl">4️⃣</span>
                     <span>
                       <strong className="font-semibold text-gray-900">
                         He
@@ -174,7 +174,7 @@ export default async function AboutPage() {
                         target="_blank"
                         className="font-semibold text-black underline hover:text-blue-600"
                       >
-                        🌟360+ GitHub stars
+                        🌟370+ GitHub stars
                       </a>{" "}
                       and is used by over{" "}
                       <a
@@ -188,7 +188,7 @@ export default async function AboutPage() {
                     </span>
                   </li>
                   <li className="flex gap-x-3">
-                    <span className="text-3xl">5️⃣</span>
+                    <span className="text-2xl">5️⃣</span>
                     <span>
                       <strong className="font-semibold text-black">He</strong>{" "}
                       speaks{" "}
@@ -207,7 +207,7 @@ export default async function AboutPage() {
                     </span>
                   </li>
                   <li className="flex gap-x-3">
-                    <span className="text-3xl">6️⃣</span>
+                    <span className="text-2xl">6️⃣</span>
                     <span>
                       <strong className="font-semibold text-black">He</strong>{" "}
                       learns fast, and has a good eye for design.
