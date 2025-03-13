@@ -80,13 +80,13 @@ export default async function BlogPage() {
         <MainTitle
           title={seo?.name || "Default Title"}
           description={seo?.description}
-          className="mx-auto mt-6 mb-14 max-w-3xl px-4 sm:px-6 lg:px-8"
+          className="mx-auto mt-6 mb-4 max-w-3xl px-4 sm:px-6 lg:px-8"
         />
       </Heading>
       <Content>
-        <div className="relative mx-auto -mt-12 mb-6 max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto grid w-full max-w-screen-lg grid-cols-1 gap-4 px-3 py-10 md:grid-cols-3 lg:px-4 xl:px-0">
           {posts?.map((post, index) => (
-            <SingleBlogPost key={index} post={post} className="mb-6" />
+            <SingleBlogPost key={index} post={post} />
           ))}
         </div>
       </Content>

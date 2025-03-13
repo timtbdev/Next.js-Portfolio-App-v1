@@ -96,10 +96,7 @@ export default async function AboutPage() {
               </div>
               <article id="about-me" className="mt-2">
                 <p className="text-lg text-gray-600">
-                  <strong className="font-semibold text-black">
-                    Tim is a Frontend Developer
-                  </strong>{" "}
-                  – Here’s Why He’s the Perfect Addition to Your Team!
+                  Here’s Why He’s the Perfect Addition to Your Team!
                 </p>
 
                 <ul
@@ -107,22 +104,19 @@ export default async function AboutPage() {
                   className="mt-4 max-w-xl space-y-4 text-gray-600"
                 >
                   <li className="flex items-center gap-x-3">
-                    <span className="text-2xl">1️⃣</span>
                     <span>
-                      <strong className="font-semibold text-black">He</strong>{" "}
-                      is based in the 🌉 San Francisco Bay Area.
+                      <strong className="font-semibold text-black">1.</strong>{" "}
+                      He is based in the 🌉 San Francisco Bay Area.
                     </span>
                   </li>
                   <li className="flex gap-x-3">
-                    <span className="text-2xl">2️⃣</span>
                     <span>
-                      <strong className="font-semibold text-black">He</strong>{" "}
-                      has a Computer Science degree from the University of
+                      <strong className="font-semibold text-black">2.</strong>{" "}
+                      He has a Computer Science degree from the University of
                       Applied Sciences Mittweida in 🇩🇪Germany
                     </span>
                   </li>
                   <li className="flex gap-x-3">
-                    <span className="text-2xl">3️⃣</span>
                     <span>
                       <strong className="font-semibold text-gray-900">
                         He
@@ -155,7 +149,6 @@ export default async function AboutPage() {
                     </span>
                   </li>
                   <li className="flex gap-x-3">
-                    <span className="text-2xl">4️⃣</span>
                     <span>
                       <strong className="font-semibold text-gray-900">
                         He
@@ -188,7 +181,6 @@ export default async function AboutPage() {
                     </span>
                   </li>
                   <li className="flex gap-x-3">
-                    <span className="text-2xl">5️⃣</span>
                     <span>
                       <strong className="font-semibold text-black">He</strong>{" "}
                       speaks{" "}
@@ -207,7 +199,6 @@ export default async function AboutPage() {
                     </span>
                   </li>
                   <li className="flex gap-x-3">
-                    <span className="text-2xl">6️⃣</span>
                     <span>
                       <strong className="font-semibold text-black">He</strong>{" "}
                       learns fast, and has a good eye for design.

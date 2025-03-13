@@ -1,13 +1,9 @@
-import Card from "@/components/ui/card";
-import { cn, shimmer, toBase64 } from "@/lib/utils";
 import { PostType } from "@/types";
-import { Separator } from "@radix-ui/react-separator";
+import { format, parseISO } from "date-fns";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { FC } from "react";
 import readingTime from "reading-time";
-import InfoBarBottom from "./info-bar/info-bar-bottom";
-import InfoBarTop from "./info-bar/info-bar-top";
 
 interface Props {
   post: PostType;
@@ -29,47 +25,47 @@ const SingleBlogPost: FC<Props> = ({ post, className }) => {
   const readTime = readingTime(post.content, { wordsPerMinute: 100 }).minutes;
   const url = `/blog/post/${slug}`;
   return (
-    <Card className={cn("hover:bg-gray-100", className)}>
+    <div className="relative flex flex-col rounded-lg border border-neutral-200 transition-all hover:shadow-lg">
+      <Image
+        alt={title}
+        width={2400}
+        height={1260}
+        decoding="async"
+        className="blur-0 aspect-[1200/630] rounded-t-xl object-cover"
+        src={image}
+        style={{ color: "transparent" }}
+      />
       <Link href={url}>
-        <article className="flex flex-col gap-4 p-0 sm:flex-row sm:gap-8 sm:px-10 sm:py-6">
-          <div className="relative aspect-16/9 sm:aspect-square sm:w-64 sm:shrink-0">
+        <span className="absolute inset-0 z-10"></span>
+        <span className="sr-only">{title}</span>
+      </Link>
+      <div className="flex flex-1 flex-col justify-between rounded-b-lg bg-white p-6">
+        <div>
+          <h2 className="font-display line-clamp-2 text-lg font-bold text-black">
+            {title}
+          </h2>
+          <p className="mt-2 line-clamp-2 text-sm text-gray-600">
+            {description}
+          </p>
+        </div>
+        <div className="mt-4 flex items-center space-x-2">
+          <div className="flex items-center -space-x-2">
             <Image
-              src={image}
-              alt={title}
-              height={256}
-              width={256}
-              priority
-              placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(256, 256))}`}
-              className={cn(
-                "absolute inset-0 h-full w-full bg-gray-50 object-cover sm:rounded-2xl",
-                className,
-              )}
+              alt={author}
+              loading="lazy"
+              width={32}
+              height={32}
+              decoding="async"
+              className="rounded-full"
+              src={authorAvatar}
             />
           </div>
-
-          <div className="relative max-w-xl px-8 pb-6 sm:p-0">
-            <h3 className="line-clamp-2 text-2xl leading-6 font-bold tracking-tight text-pretty text-black sm:text-xl sm:font-semibold">
-              {title}
-            </h3>
-            <Separator orientation="horizontal" className="my-2" />
-            <div className="flex items-center gap-x-3">
-              <InfoBarTop date={date} readTime={readTime} />
-            </div>
-            <p className="text-md mt-3 line-clamp-6 leading-7 text-balance">
-              {description}
-            </p>
-            <Separator orientation="horizontal" className="my-2" />
-            <div className="flex items-center gap-x-3">
-              <InfoBarBottom
-                authorName={author}
-                authorImage={authorAvatar}
-                category={category}
-              />
-            </div>
-          </div>
-        </article>
-      </Link>
-    </Card>
+          <time dateTime={date} className="text-sm text-gray-600">
+            {format(parseISO(date), "MMM dd, yyyy")}
+          </time>
+        </div>
+      </div>
+    </div>
   );
 };
 
