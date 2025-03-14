@@ -25,6 +25,7 @@ export async function getPostsBySearchQuery(query: string) {
         fileName: fileName.replace(/\.mdx$/, ""),
         data: data,
         content: getContextAroundMatch(content, query),
+        mdx: mdxContent,
       });
     }
   });

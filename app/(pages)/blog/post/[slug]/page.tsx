@@ -4,13 +4,13 @@ import Footer from "@/components/footer/main";
 import Header from "@/components/header/main";
 import BlogPostDetailHeading from "@/components/pages/blog/detail-blog-post/heading/blog-post-heading";
 import DetailBlogPost from "@/components/pages/blog/detail-blog-post/main";
-import Card from "@/components/ui/card";
 import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import {
   generateMetaDataForBlogPost,
   getSinglePostByFileName,
 } from "@/lib/mdx";
 import { Metadata } from "next";
+import { serialize } from "next-mdx-remote/serialize";
 import { Fragment } from "react";
 import readingTime from "reading-time";
 
@@ -33,6 +33,8 @@ export default async function BlogPost({ params }: Props) {
   const { slug } = await params;
   // slug is the file name of the blog post
   const { fileName, data, content } = getSinglePostByFileName(slug);
+  const mdx = await serialize(content);
+
   return (
     <Fragment>
       <Header showProgressBar={true} />
@@ -49,10 +51,8 @@ export default async function BlogPost({ params }: Props) {
       </Heading>
 
       <Content>
-        <div className="mx-auto -mt-18 w-full max-w-3xl">
-          <Card>
-            <DetailBlogPost post={{ fileName, data, content }} />
-          </Card>
+        <div className="mx-auto -mt-18 w-full max-w-5xl">
+          <DetailBlogPost post={{ fileName, data, content, mdx }} />
         </div>
       </Content>
 

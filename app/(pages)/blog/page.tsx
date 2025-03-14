@@ -10,6 +10,7 @@ import { getAllPostsOrderedByDate } from "@/lib/mdx";
 import { getBaseUrlWithSlug } from "@/lib/utils";
 import { PostType } from "@/types";
 import { Metadata } from "next";
+import { serialize } from "next-mdx-remote/serialize";
 import { Fragment } from "react";
 
 const PAGE = "blog";
@@ -65,14 +66,21 @@ export const metadata: Metadata = {
 };
 
 export async function generateStaticParams() {
-  const posts: PostType[] = getAllPostsOrderedByDate();
-  return posts.map((post) => ({
+  const rawPosts = getAllPostsOrderedByDate();
+  return rawPosts.map((post) => ({
     params: { slug: post.fileName },
   }));
 }
 
 export default async function BlogPage() {
-  const posts: PostType[] = getAllPostsOrderedByDate();
+  const rawPosts = getAllPostsOrderedByDate();
+  const posts: PostType[] = await Promise.all(
+    rawPosts.map(async (post) => ({
+      ...post,
+      mdx: await serialize(post.content),
+    })),
+  );
+
   return (
     <Fragment>
       <Header />
