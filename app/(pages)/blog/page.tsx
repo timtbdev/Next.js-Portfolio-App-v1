@@ -6,11 +6,9 @@ import SingleBlogPost from "@/components/pages/blog/single-blog-post/main";
 import MainTitle from "@/components/ui/main-title";
 import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import PAGES from "@/config/seo";
-import { getAllPostsOrderedByDate } from "@/lib/mdx";
 import { getBaseUrlWithSlug } from "@/lib/utils";
-import { PostType } from "@/types";
+import { allPosts } from "content-collections";
 import { Metadata } from "next";
-import { serialize } from "next-mdx-remote/serialize";
 import { Fragment } from "react";
 
 const PAGE = "blog";
@@ -66,19 +64,14 @@ export const metadata: Metadata = {
 };
 
 export async function generateStaticParams() {
-  const rawPosts = getAllPostsOrderedByDate();
-  return rawPosts.map((post) => ({
-    params: { slug: post.fileName },
+  return allPosts.map((post) => ({
+    params: { slug: post._meta.path },
   }));
 }
 
 export default async function BlogPage() {
-  const rawPosts = getAllPostsOrderedByDate();
-  const posts: PostType[] = await Promise.all(
-    rawPosts.map(async (post) => ({
-      ...post,
-      mdx: await serialize(post.content),
-    })),
+  const posts = allPosts.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 
   return (

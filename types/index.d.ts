@@ -46,9 +46,26 @@ export type PostType = {
   };
 };
 
+// This is return type of content-collections
 export type ProjectType = {
+  order: number;
+  title: string;
+  category: string;
+  created_at: string;
+  image: string;
+  featured: boolean;
+  webUrl: string | null;
+  youtubeUrl: string | null;
+  githubUrl: string | null;
+  mdx: string;
   content: string;
-  data: ProjectDataType;
+  _meta: {
+    filePath: string;
+    fileName: string;
+    directory: string;
+    path: string;
+    extension: string;
+  };
 };
 
 type SearchResult = {
@@ -57,15 +74,7 @@ type SearchResult = {
   content: string;
 };
 
-export type ProjectDataType = {
-  title: string;
-  description: string;
-  category: string;
-  slug?: string;
-  githubUrl?: string;
-  webUrl?: string;
-  youtubeUrl?: string;
-  image: string;
-  order: number;
-  featured?: boolean;
+export type Heading = {
+  level: number;
+  text: string;
 };

@@ -67,3 +67,25 @@ export const levenshtein = (a: string, b: string): number => {
 
   return matrix[b.length]![a.length]!;
 };
+
+export function remToPx(remValue: number) {
+  let rootFontSize =
+    typeof window === "undefined"
+      ? 16
+      : parseFloat(window.getComputedStyle(document.documentElement).fontSize);
+
+  return remValue * rootFontSize;
+}
+
+// Slugify
+export function slugify(text: string) {
+  return text
+    .toString()
+    .toLowerCase()
+    .normalize(`NFD`)
+    .trim()
+    .replace(/\./g, ``)
+    .replace(/\s+/g, `-`)
+    .replace(/[^\w-]+/g, ``)
+    .replace(/--+/g, `-`);
+}

@@ -10,11 +10,12 @@ interface Props {
 const MenuTitle: FC<Props> = ({ currentPath, title, className = "" }) => {
   return (
     <span
-      className={cn("text-lg font-semibold", {
-        "text-gray-600 group-hover:text-black": !currentPath,
-        "text-black": currentPath,
-        className,
-      })}
+      className={cn(
+        "bg-transparent text-lg font-semibold hover:bg-transparent",
+        {
+          className,
+        },
+      )}
     >
       {title}
     </span>

@@ -6,9 +6,9 @@ import ProjectItem from "@/components/pages/project/main";
 import MainTitle from "@/components/ui/main-title";
 import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import PAGES from "@/config/seo";
-import { getAllProjectsFilteredByOrder } from "@/lib/mdx";
 import { getBaseUrlWithSlug } from "@/lib/utils";
 import { ProjectType } from "@/types";
+import { allProjects } from "content-collections";
 import { Metadata } from "next";
 import React, { Fragment } from "react";
 
@@ -65,9 +65,8 @@ export const metadata: Metadata = {
 };
 
 export default async function ProjectPage() {
-  const projects: ProjectType[] = await getAllProjectsFilteredByOrder({
-    featured: false,
-  });
+  const projects: ProjectType[] = allProjects.sort((a, b) => a.order - b.order);
+
   return (
     <Fragment>
       <Header />

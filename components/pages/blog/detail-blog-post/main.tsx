@@ -1,22 +1,34 @@
+import { allPosts } from "@/.content-collections/generated";
 import { mdxComponents } from "@/components/pages/mdx/mdx-components";
-import { getAllPostsOrderedByDate } from "@/lib/mdx";
-import { PostType } from "@/types";
-import { AlignLeftIcon } from "lucide-react";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { slugify } from "@/lib/utils";
+import { Heading } from "@/types";
+import { MDXContent } from "@content-collections/mdx/react";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { FC } from "react";
-import readingTime from "reading-time";
+import { ActiveSectionObserver } from "./sidebar/active-section-observer";
+import { TableOfContents } from "./sidebar/table-of-contents";
 
 interface Props {
-  post: PostType;
+  post: any;
 }
 
 const DetailBlogPost: FC<Props> = ({ post }) => {
-  const { fileName } = post;
-  const { title, image, tags, author, authorAvatar, category } = post.data;
-  const readTime = readingTime(post.content, { wordsPerMinute: 100 }).minutes;
-  const posts = getAllPostsOrderedByDate();
+  const { title, category, image, mdx, author, authorAvatar } = post;
+  // Get 2 related posts from the same category
+  const relatedPosts = allPosts
+    .filter((p) => p.category === category && p._meta.path !== post._meta.path)
+    .slice(0, 2);
+  const headings = post!.headings as Heading[];
+
+  const sections = headings.map((heading, i) => {
+    return {
+      id: i,
+      title: heading.text,
+      offsetRem: undefined,
+    };
+  });
+
   return (
     <div className="relative">
       <div className="absolute top-52 h-[calc(100%-13rem)] w-full border-t border-neutral-200 bg-gradient-to-b from-neutral-50"></div>
@@ -33,39 +45,178 @@ const DetailBlogPost: FC<Props> = ({ post }) => {
               className="blur-0 aspect-[1200/630] overflow-hidden object-cover sm:rounded-t-xl"
               src={image}
             />
-            <div className="prose max-w-none px-6 pt-4 pb-8 sm:px-8 sm:pt-6 sm:pb-12">
-              <MDXRemote source={post.content} components={mdxComponents} />
-            </div>
+            <ActiveSectionObserver headings={headings}>
+              <div className="prose max-w-2xl overflow-hidden px-6 pt-4 pb-8 sm:px-8 sm:pt-6 sm:pb-12">
+                <MDXContent
+                  components={{
+                    Image: ({ src, alt, width, height }) => (
+                      <div className="relative h-full w-full">
+                        <Image
+                          src={src}
+                          alt={alt || ""}
+                          width={width ?? 800}
+                          height={height ?? 400}
+                          className="h-full w-full object-cover"
+                          quality={95}
+                        />
+                      </div>
+                    ),
+                    Frame: ({ children }) => (
+                      <div className="my-8 inline-block h-full w-full rounded-xl bg-zinc-500/10 p-2 ring-1 ring-zinc-700 ring-inset lg:rounded-2xl lg:p-3">
+                        <div className="h-full w-full overflow-hidden rounded-lg">
+                          {children}
+                        </div>
+                      </div>
+                    ),
+                    p: ({ children }) => (
+                      <p className="text-muted-foreground text-base/7">
+                        {children}
+                      </p>
+                    ),
+                    strong: ({ children, ...props }) => {
+                      return (
+                        <b
+                          className="text-muted-light font-semibold"
+                          {...props}
+                        >
+                          {children}
+                        </b>
+                      );
+                    },
+                    hr: () => (
+                      <div className="py-6">
+                        <hr className="h-0.5 border-none bg-[#2e2e32]" />
+                      </div>
+                    ),
+                    code: (props) => {
+                      return (
+                        <code className="text-brand-400 rounded bg-[#2e2e32] px-1.5 py-0.5 font-mono">
+                          {props.children}
+                        </code>
+                      );
+                    },
+                    a: ({ children, ...props }) => {
+                      return (
+                        <Link
+                          className="text-muted-light inline font-medium underline underline-offset-4"
+                          href={props.href ?? "#"}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          {...props}
+                        >
+                          {children}
+                        </Link>
+                      );
+                    },
+                    ul: ({ children }) => (
+                      <ul className="text-muted-foreground list-inside list-disc space-y-2">
+                        {children}
+                      </ul>
+                    ),
+                    ol: ({ children }) => (
+                      <ol className="text-muted-foreground ml-5 list-decimal space-y-8">
+                        {children}
+                      </ol>
+                    ),
+                    li: ({ children }) => (
+                      <li className="space-y-6 pl-1 text-base/7">{children}</li>
+                    ),
+                    h1: ({ children }) => {
+                      const element = sections.find(
+                        (entry) => entry.title === children?.toString(),
+                      );
+
+                      if (!element) {
+                        return null;
+                      }
+
+                      const slug = slugify(element.title.toLowerCase());
+
+                      return (
+                        <h1
+                          id={slug}
+                          className="text-muted-light relative scroll-mt-44 text-4xl font-medium tracking-tight lg:scroll-mt-32"
+                        >
+                          {children}
+                        </h1>
+                      );
+                    },
+                    h2: ({ children }) => {
+                      const element = sections.find(
+                        (entry) => entry.title === children?.toString(),
+                      );
+
+                      if (!element) {
+                        return null;
+                      }
+
+                      const slug = slugify(element.title.toLowerCase());
+
+                      return (
+                        <h2
+                          id={slug}
+                          className="text-muted-light relative scroll-mt-44 text-3xl font-medium tracking-tight lg:scroll-mt-32"
+                        >
+                          {children}
+                        </h2>
+                      );
+                    },
+                    h3: ({ children }) => {
+                      const element = sections.find(
+                        (entry) => entry.title === children?.toString(),
+                      );
+
+                      if (!element) {
+                        return null;
+                      }
+
+                      const slug = slugify(element.title.toLowerCase());
+
+                      return (
+                        <h3
+                          id={slug}
+                          className="text-muted-light relative scroll-mt-44 text-xl font-medium tracking-tight lg:scroll-mt-32"
+                        >
+                          {children}
+                        </h3>
+                      );
+                    },
+                  }}
+                  code={post.mdx}
+                  className="space-y-6"
+                />
+              </div>
+            </ActiveSectionObserver>
           </div>
           <div className="border-t border-neutral-200 bg-gradient-to-b from-white/50 to-transparent p-10 backdrop-blur-lg">
             <div className="flex flex-col gap-y-4">
               <p className="font-display py-2 text-xl font-medium">Read more</p>
               <ul className="flex flex-col gap-y-6">
-                {posts.map((post) => (
-                  <li key={post.fileName}>
+                {relatedPosts.map((relatedPost) => (
+                  <li key={relatedPost._meta.path}>
                     <Link
                       className="group flex flex-col items-center gap-4 sm:flex-row"
-                      href={`/blog/post/${post.fileName}`}
+                      href={`/blog/post/${relatedPost._meta.path}`}
                     >
                       <Image
-                        alt={post.data.title}
+                        alt={relatedPost.title}
                         loading="lazy"
                         width={200}
                         height={100}
                         decoding="async"
                         data-nimg="1"
                         className="blur-0 aspect-video w-full rounded-lg border border-neutral-200 sm:w-[200px]"
-                        src={post.data.image}
+                        src={relatedPost.image}
                       />
                       <div className="flex flex-col space-y-2">
                         <p className="font-display line-clamp-1 font-medium text-neutral-700 underline-offset-4 group-hover:underline">
-                          {post.data.title}
+                          {relatedPost.title}
                         </p>
                         <p className="line-clamp-2 text-sm text-neutral-500 underline-offset-2 group-hover:underline">
-                          {post.data.description}
+                          {relatedPost.description}
                         </p>
                         <p className="text-xs text-neutral-400 underline-offset-2 group-hover:underline">
-                          {post.data.date}
+                          {relatedPost.date}
                         </p>
                       </div>
                     </Link>
@@ -98,45 +249,7 @@ const DetailBlogPost: FC<Props> = ({ post }) => {
           </div>
           <div className="sticky top-16 col-span-1 self-start pt-4 pb-8">
             <div className="max-h-[58vh] overflow-y-auto pr-4 pb-8">
-              <div>
-                <p className="-ml-0.5 flex items-center gap-1.5 text-sm text-gray-500">
-                  <AlignLeftIcon className="size-4" />
-                  On this page
-                </p>
-                <div className="mt-4 grid gap-4 border-l-2 border-gray-200">
-                  <a
-                    data-active="true"
-                    href="#introduction"
-                    className="relative -ml-0.5"
-                    style={{ paddingLeft: "16px" }}
-                  >
-                    <p className="text-sm text-black transition-colors">
-                      Introduction
-                    </p>
-                    <div className="absolute top-0 left-0 h-full w-0.5 bg-black"></div>
-                  </a>
-                  <a
-                    data-active="false"
-                    href="#installation"
-                    className="relative -ml-0.5"
-                    style={{ paddingLeft: "16px" }}
-                  >
-                    <p className="text-sm text-gray-500 transition-colors">
-                      Installation
-                    </p>
-                  </a>
-                  <a
-                    data-active="false"
-                    href="#configuration"
-                    className="relative -ml-0.5"
-                    style={{ paddingLeft: "16px" }}
-                  >
-                    <p className="text-sm text-gray-500 transition-colors">
-                      Configuration
-                    </p>
-                  </a>
-                </div>
-              </div>
+              <TableOfContents />
             </div>
             <Link
               className="group relative block rounded-xl border border-neutral-200 bg-white p-4"

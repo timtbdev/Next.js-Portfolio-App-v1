@@ -1,7 +1,6 @@
+import { allPosts } from "@/.content-collections/generated";
 import { PostType } from "@/types";
-import { serialize } from "next-mdx-remote/serialize";
 import { JSX } from "react";
-import { getAllPostFileNames, getSinglePostByFileName } from "./mdx";
 import { levenshtein } from "./utils";
 
 /**
@@ -10,29 +9,37 @@ import { levenshtein } from "./utils";
  * @returns An array of search results.
  */
 export async function getPostsBySearchQuery(query: string) {
-  const fileNames = getAllPostFileNames();
+  if (!query.trim()) return [];
+
   const results: PostType[] = [];
 
-  const posts = fileNames.map(async (fileName) => {
-    const { content, data } = getSinglePostByFileName(fileName);
+  for (const post of allPosts) {
+    // Search in title, description, and content
+    const searchableContent =
+      `${post.title} ${post.description} ${post.content}`.toLowerCase();
+    const searchQuery = query.toLowerCase();
 
-    if (!content) return;
-
-    const mdxContent = await serialize(content);
-
-    if (mdxContent.compiledSource.toLowerCase().includes(query.toLowerCase())) {
+    if (searchableContent.includes(searchQuery)) {
       results.push({
-        fileName: fileName.replace(/\.mdx$/, ""),
-        data: data,
-        content: getContextAroundMatch(content, query),
-        mdx: mdxContent,
+        fileName: post._meta.path,
+        data: {
+          title: post.title,
+          description: post.description,
+          image: post.image,
+          author: post.author,
+          authorAvatar: post.authorAvatar,
+          date: post.date,
+          category: post.category,
+          tags: post.tags,
+          seo: post.seo,
+        },
+        content: getContextAroundMatch(post.content, query),
+        mdx: post.mdx,
       });
     }
-  });
+  }
 
-  await Promise.all(posts);
-
-  return results; // Return the filtered results based on the query.
+  return results;
 }
 
 /**

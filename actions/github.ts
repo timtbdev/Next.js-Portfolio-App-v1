@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
+"use server";
+
 import { cache } from "react";
 
 interface GitHubRepoResponse {
@@ -31,29 +32,17 @@ const fetchGitHubStars = cache(async (repo: string): Promise<number> => {
   return data.stargazers_count;
 });
 
-export async function GET(
-  req: NextRequest,
-  { params }: { params: Promise<{ repo: string }> },
-) {
-  const { repo } = await params;
-
+export async function getGitHubStars(repo: string) {
   if (!repo) {
-    return NextResponse.json(
-      { error: "Repository is required" },
-      { status: 400 },
-    );
+    throw new Error("Repository is required");
   }
 
   try {
     const stars = await fetchGitHubStars(repo);
-    return NextResponse.json({ stars });
+    return { stars };
   } catch (error) {
     const errorMessage =
       error instanceof Error ? error.message : "Unknown error";
-    return NextResponse.json({ error: errorMessage }, { status: 500 });
+    throw new Error(errorMessage);
   }
 }
-
-export const config = {
-  runtime: "experimental-edge",
-};

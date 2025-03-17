@@ -1,9 +1,11 @@
-import { getAllPostsOrderedByDate } from "@/lib/mdx";
+import { allPosts } from "@/.content-collections/generated";
 import { getBaseUrl, getBaseUrlWithSlug } from "@/lib/utils";
 import { Feed } from "feed";
 
 export async function GET() {
-  const posts = getAllPostsOrderedByDate();
+  const posts = allPosts.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  );
 
   const feed = new Feed({
     title: "Tim's Blog's RSS Feed",
@@ -18,13 +20,14 @@ export async function GET() {
   });
 
   posts.forEach((post) => {
+    const slug = post._meta.path.replace(/\.mdx?$/, "");
     feed.addItem({
-      title: post.data.title,
-      id: getBaseUrlWithSlug(`blog/post/${post.fileName}`),
-      link: getBaseUrlWithSlug(`blog/post/${post.fileName}`),
-      description: post.data.description,
-      content: post.data.description,
-      date: new Date(post.data.date),
+      title: post.title,
+      id: getBaseUrlWithSlug(`blog/post/${slug}`),
+      link: getBaseUrlWithSlug(`blog/post/${slug}`),
+      description: post.description,
+      content: post.description,
+      date: new Date(post.date),
     });
   });
 

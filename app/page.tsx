@@ -7,9 +7,9 @@ import Profile from "@/components/pages/home/profile";
 import ProjectItem from "@/components/pages/project/main";
 import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import PAGES from "@/config/seo";
-import { getAllProjectsFilteredByOrder } from "@/lib/mdx";
 import { getBaseUrl } from "@/lib/utils";
 import { ProjectType } from "@/types";
+import { allProjects } from "content-collections";
 import { Metadata } from "next";
 import { Fragment } from "react";
 
@@ -38,9 +38,10 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  const projects: ProjectType[] = await getAllProjectsFilteredByOrder({
-    featured: true,
-  });
+  const projects: ProjectType[] = allProjects
+    .filter((project) => project.featured === true)
+    .sort((a, b) => a.order - b.order);
+
   return (
     <Fragment>
       <Header />

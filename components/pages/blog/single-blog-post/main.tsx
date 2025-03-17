@@ -1,4 +1,3 @@
-import { PostType } from "@/types";
 import { format, parseISO } from "date-fns";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
@@ -6,22 +5,13 @@ import { FC } from "react";
 import readingTime from "reading-time";
 
 interface Props {
-  post: PostType;
+  post: any;
   className?: string;
 }
 
 const SingleBlogPost: FC<Props> = ({ post, className }) => {
-  const slug = post.fileName.replace(/\.mdx?$/, "");
-  const {
-    title,
-    description,
-    image,
-    author,
-    authorAvatar,
-    date,
-    category,
-    tags,
-  } = post.data;
+  const slug = post._meta.path.replace(/\.mdx?$/, "");
+  const { title, description, image, author, authorAvatar, date } = post;
   const readTime = readingTime(post.content, { wordsPerMinute: 100 }).minutes;
   const url = `/blog/post/${slug}`;
   return (

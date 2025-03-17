@@ -10,7 +10,6 @@ import {
 import menuConfig from "@/config/menu";
 import { cn } from "@/lib/utils";
 import { MenuItemType } from "@/types";
-import { Link } from "next-view-transitions";
 import { FC, memo } from "react";
 
 interface Props {
@@ -33,31 +32,25 @@ const DesktopNavigationLinks: FC<Props> = memo(({ currentPath, className }) => {
 
           return (
             <NavigationMenuItem key={menuItem.slug} role="none">
-              <Link
+              <NavigationMenuLink
                 href={menuItem.slug}
-                legacyBehavior
-                passHref
                 aria-current={isActive ? "page" : undefined}
-                prefetch={true}
+                className={cn(
+                  navigationMenuTriggerStyle(),
+                  "flex items-center gap-6",
+                  isActive && "bg-gray-100",
+                )}
+                role="menuitem"
               >
-                <NavigationMenuLink
-                  className={cn(
-                    navigationMenuTriggerStyle(),
-                    "flex items-center gap-6",
-                    isActive && "bg-gray-100",
-                  )}
-                  role="menuitem"
-                >
-                  <div className="flex items-center gap-2">
-                    <MenuEmoji
-                      currentPath={isActive}
-                      emoji={menuItem.emoji}
-                      className="hidden lg:flex"
-                    />
-                    <MenuTitle currentPath={isActive} title={menuItem.title} />
-                  </div>
-                </NavigationMenuLink>
-              </Link>
+                <div className="flex items-center gap-2">
+                  <MenuEmoji
+                    currentPath={isActive}
+                    emoji={menuItem.emoji}
+                    className="hidden lg:flex"
+                  />
+                  <MenuTitle currentPath={isActive} title={menuItem.title} />
+                </div>
+              </NavigationMenuLink>
             </NavigationMenuItem>
           );
         })}

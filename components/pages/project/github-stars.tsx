@@ -1,10 +1,12 @@
 "use client";
 
+import { getGitHubStars } from "@/actions/github";
 import AndroidIcon from "@/icons/pages/projects/android-icon";
 import NextJsIcon from "@/icons/pages/projects/nextjs-icon";
 import { Separator } from "@radix-ui/react-separator";
+import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { FaGithub } from "react-icons/fa";
 
 interface Props {
@@ -15,17 +17,14 @@ interface Props {
 }
 
 const GithubStars: FC<Props> = ({ repo, url, className, category }) => {
-  const [stars, setStars] = useState<number | null>(null);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!repo) return;
-
-    fetch(`/api/github-stars/${repo}`)
-      .then((res) => res.json())
-      .then((data) => setStars(data.stars))
-      .catch((err) => setError(err.message));
-  }, [repo]);
+  const { data: stars, error } = useQuery({
+    queryKey: ["github-stars", repo],
+    queryFn: async () => {
+      const data = await getGitHubStars(repo);
+      return data.stars;
+    },
+    enabled: !!repo,
+  });
 
   return (
     <div className="group flex flex-col items-center justify-end p-4">
