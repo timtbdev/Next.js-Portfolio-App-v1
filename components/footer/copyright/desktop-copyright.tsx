@@ -5,7 +5,7 @@ import { FaSitemap, FaSquareRss } from "react-icons/fa6";
 
 const DesktopCopyright = () => {
   const defaultClass =
-    "text-md group inline-flex items-center gap-1.5 text-gray-600 hover:text-black hover:underline hover:underline-offset-4";
+    "text-md group inline-flex items-center gap-1.5 text-gray-600 font-medium hover:text-black hover:underline hover:underline-offset-4";
   return (
     <Fragment>
       <div className="mx-auto mt-10 hidden max-w-4xl items-center justify-between lg:flex">
@@ -36,7 +36,7 @@ const DesktopCopyright = () => {
         </div>
       </div>
       <div className="mx-auto mt-4 max-w-xl items-center justify-center">
-        <p className="text-center text-sm leading-5 text-gray-400">
+        <p className="text-center text-sm leading-5 text-gray-600">
           Loosely designed in{" "}
           <Link
             href="https://www.figma.com/"
@@ -93,7 +93,7 @@ const DesktopCopyright = () => {
           </Link>{" "}
           typeface.
         </p>
-        <p className="text-center text-sm leading-5 text-gray-400">
+        <p className="text-center text-sm leading-5 text-gray-600">
           Code is available on{" "}
           <Link
             href="https://github.com/timtbdev/Next.js-Portfolio-App-v2"

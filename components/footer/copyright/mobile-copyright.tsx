@@ -5,7 +5,7 @@ import { FaSitemap, FaSquareRss } from "react-icons/fa6";
 
 const MobileCopyright = () => {
   const defaultClass =
-    "text-md inline-flex items-center gap-1.5 text-gray-600 hover:text-black hover:underline hover:underline-offset-4";
+    "text-md inline-flex items-center gap-1.5 text-gray-600 font-medium hover:text-black hover:underline hover:underline-offset-4";
   return (
     <div className="lg:hidden">
       <div className="mx-auto mt-10 flex max-w-4xl justify-center gap-x-2">
@@ -34,7 +34,7 @@ const MobileCopyright = () => {
       </div>
 
       <div className="mx-auto mt-4 max-w-xl items-center justify-center">
-        <p className="text-center text-sm leading-5 text-gray-400">
+        <p className="text-center text-sm leading-5 text-gray-600">
           Loosely designed in{" "}
           <Link
             href="https://www.figma.com/"
