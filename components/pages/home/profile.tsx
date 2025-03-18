@@ -1,42 +1,48 @@
-import { cn, shimmer, toBase64 } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { FC } from "react";
 
-interface Props {
+interface ProfileProps {
   className?: string;
 }
 
-const Profile: FC<Props> = ({ className }) => {
+const Profile: FC<ProfileProps> = ({ className }) => {
   return (
-    <div className={cn("mx-auto max-w-2xl text-center", className)}>
-      <div className="mx-auto mb-4 flex h-32 w-32 items-center justify-center rounded-full bg-gray-200">
-        <Image
-          src="/images/profile.jpg"
-          alt="Tim's Avatar"
-          title="Tim's Avatar"
-          className="size-32 rounded-full"
-          placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(128, 128))}`}
-          width={128}
-          height={128}
-        />
-      </div>
+    <div
+      className={cn(
+        "mx-auto max-w-2xl items-center justify-center text-center",
+        className,
+      )}
+    >
+      <Image
+        src="/images/profile.jpg"
+        alt="Tim's profile picture"
+        width={128}
+        height={128}
+        className="mx-auto mb-4 size-32 rounded-full"
+        priority
+        quality={90}
+        sizes="(max-width: 768px) 128px, 128px"
+        placeholder="blur"
+        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC08MTY3LjIyOUFTRjo/Tj4yMkhiS0hHSUZJPVBVQkZGRkZGRkb/2wBDAR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+      />
 
-      <h1 className="mb-4 inline-flex flex-col items-center gap-1 text-center leading-none tracking-tight">
-        <span className="text-5xl font-bold text-black">
-          <span className="relative whitespace-nowrap text-5xl font-bold text-black">
-            <span className="absolute -left-[2.5%] -top-[2.5%] z-0 h-[105%] w-[105%] -rotate-1 bg-gray-200" />
-            <span className="relative text-5xl text-black">✨Hire</span>
-          </span>{" "}
-          Tim
-        </span>
+      <h1 className="mb-4 text-center text-5xl leading-none font-bold tracking-tight">
+        <span className="relative inline-block">
+          <span className="absolute -top-[2.5%] -left-[2.5%] z-0 h-[105%] w-[105%] -rotate-1 bg-gray-200" />
+          <span className="relative z-10">✨Hire</span>
+        </span>{" "}
+        Tim
       </h1>
 
-      <p className="text-lg font-semibold text-gray-600">
-        The Best Frontend Developer
-      </p>
-      <p className="text-lg font-semibold text-gray-600">
-        in the 🇺🇸 San-Francisco Bay Area.
-      </p>
+      <div className="space-y-1">
+        <p className="text-lg font-semibold text-gray-600">
+          The Best Frontend Developer
+        </p>
+        <p className="text-lg font-semibold text-gray-600">
+          in the 🇺🇸 San-Francisco Bay Area
+        </p>
+      </div>
     </div>
   );
 };
