@@ -24,10 +24,8 @@ if (!seo) {
 
 // Metadata Configuration
 export const metadata: Metadata = {
-  title: seo?.title || "Looking for the Best Frontend Developer? | Hire Tim",
-  description:
-    seo?.description ||
-    "Hire Tim – A Skilled Frontend Developer for Fast, Reliable, and High-Performing Web Applications!",
+  title: seo?.title,
+  description: seo?.description,
   alternates: {
     canonical: getBaseUrl(),
   },

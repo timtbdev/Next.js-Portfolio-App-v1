@@ -9,7 +9,6 @@ import {
 } from "react-icons/fa";
 import { ProjectType } from "types";
 import Category from "./category";
-import Description from "./description";
 import GithubButton from "./github-stars";
 import LinkButton from "./link-button";
 import Title from "./title";
@@ -73,7 +72,8 @@ const ProjectItem: FC<Props> = ({ project, className }) => {
           className="text-3xl text-black sm:text-4xl"
         />
 
-        <div className="prose prose-sm dark:prose-invert mx-auto">
+        {/* Description */}
+        <div className="prose prose-sm dark:prose-invert mx-auto mt-4">
           <MDXContent code={project.mdx} components={mdxComponents} />
         </div>
 
