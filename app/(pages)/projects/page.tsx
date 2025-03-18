@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description: seo?.description,
     images: [
       {
-        url: seo?.openGraphImageUrl || "Default Open Graph Image URL",
+        url: seo?.openGraphImageUrl,
         width: 1200,
         height: 630,
         alt: seo?.title,
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     site: seo?.author?.twitterAddress,
     images: [
       {
-        url: seo?.twitterImageUrl || "Default Twitter Image URL",
+        url: seo?.twitterImageUrl,
         width: 1200,
         height: 675,
         alt: seo?.title,

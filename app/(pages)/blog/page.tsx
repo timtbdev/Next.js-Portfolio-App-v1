@@ -2,14 +2,16 @@ import Content from "@/components/body/content";
 import Heading from "@/components/body/heading";
 import Footer from "@/components/footer/main";
 import Header from "@/components/header/main";
+import SingleBlogPostLoading from "@/components/pages/blog/single-blog-post/loading";
 import SingleBlogPost from "@/components/pages/blog/single-blog-post/main";
 import MainTitle from "@/components/ui/main-title";
 import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
+import { Skeleton } from "@/components/ui/skeleton";
 import PAGES from "@/config/seo";
 import { getBaseUrlWithSlug } from "@/lib/utils";
 import { allPosts } from "content-collections";
 import { Metadata } from "next";
-import { Fragment } from "react";
+import { Fragment, Suspense } from "react";
 
 const PAGE = "blog";
 
@@ -87,7 +89,9 @@ export default async function BlogPage() {
       <Content>
         <div className="mx-auto grid w-full max-w-screen-lg grid-cols-1 gap-4 px-3 py-10 md:grid-cols-3 lg:px-4 xl:px-0">
           {posts?.map((post, index) => (
-            <SingleBlogPost key={index} post={post} />
+            <Suspense key={index} fallback={<SingleBlogPostLoading />}>
+              <SingleBlogPost key={index} post={post} />
+            </Suspense>
           ))}
         </div>
       </Content>

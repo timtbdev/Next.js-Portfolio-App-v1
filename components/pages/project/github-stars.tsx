@@ -1,12 +1,13 @@
 "use client";
 
 import { getGitHubStars } from "@/actions/github";
+import { Skeleton } from "@/components/ui/skeleton";
 import AndroidIcon from "@/icons/pages/projects/android-icon";
 import NextJsIcon from "@/icons/pages/projects/nextjs-icon";
 import { Separator } from "@radix-ui/react-separator";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import { FaGithub } from "react-icons/fa";
 
 interface Props {
@@ -156,23 +157,28 @@ const GithubStars: FC<Props> = ({ repo, url, className, category }) => {
           </defs>
         </svg>
       </Link>
-      <div className="flex items-center gap-x-2">
-        <span className="inline-flex items-center gap-x-1 text-sm font-medium text-gray-600">
-          <FaGithub className="size-4" />
-          {stars} {stars === 1 ? "Star" : "Stars"}
-        </span>
-        <Separator orientation="vertical" className="h-4 w-[1px] bg-gray-600" />
-        {category === "Next.js" && (
+      <Suspense fallback={<Skeleton className="h-4 w-20" />}>
+        <div className="flex items-center gap-x-2">
           <span className="inline-flex items-center gap-x-1 text-sm font-medium text-gray-600">
-            <NextJsIcon className="size-4" /> {category}
+            <FaGithub className="size-4" />
+            {stars} {stars === 1 ? "Star" : "Stars"}
           </span>
-        )}
-        {category === "Android" && (
-          <span className="inline-flex items-center gap-x-1 text-sm font-medium text-gray-600">
-            <AndroidIcon className="size-4" /> {category}
-          </span>
-        )}
-      </div>
+          <Separator
+            orientation="vertical"
+            className="h-4 w-[1px] bg-gray-600"
+          />
+          {category === "Next.js" && (
+            <span className="inline-flex items-center gap-x-1 text-sm font-medium text-gray-600">
+              <NextJsIcon className="size-4" /> {category}
+            </span>
+          )}
+          {category === "Android" && (
+            <span className="inline-flex items-center gap-x-1 text-sm font-medium text-gray-600">
+              <AndroidIcon className="size-4" /> {category}
+            </span>
+          )}
+        </div>
+      </Suspense>
     </div>
   );
 };
