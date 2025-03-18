@@ -28,13 +28,23 @@ const GithubStars: FC<Props> = ({ repo, url, className, category }) => {
   });
 
   return (
-    <div className="group flex flex-col items-center justify-end p-4">
-      <Link href={url} target="_blank" rel="noopener noreferrer">
+    <div
+      className="group flex flex-col items-center justify-end p-4"
+      role="region"
+      aria-label="GitHub repository information"
+    >
+      <Link
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`View ${repo} on GitHub`}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 278 115"
           className="h-28 [mask-image:linear-gradient(black_60%,transparent)]"
+          aria-hidden="true"
         >
           <path
             fill="#F3F4F6"
@@ -158,23 +168,37 @@ const GithubStars: FC<Props> = ({ repo, url, className, category }) => {
         </svg>
       </Link>
       <Suspense fallback={<Skeleton className="h-4 w-20" />}>
-        <div className="flex items-center gap-x-2">
-          <span className="inline-flex items-center gap-x-1 text-sm font-medium text-gray-600">
-            <FaGithub className="size-4" />
+        <div
+          className="flex items-center gap-x-2"
+          role="status"
+          aria-live="polite"
+        >
+          <span
+            className="inline-flex items-center gap-x-1 text-sm font-medium text-gray-600"
+            aria-label={`${stars} ${stars === 1 ? "Star" : "Stars"} on GitHub`}
+          >
+            <FaGithub className="size-4" aria-hidden="true" />
             {stars} {stars === 1 ? "Star" : "Stars"}
           </span>
           <Separator
             orientation="vertical"
             className="h-4 w-[1px] bg-gray-600"
+            aria-hidden="true"
           />
           {category === "Next.js" && (
-            <span className="inline-flex items-center gap-x-1 text-sm font-medium text-gray-600">
-              <NextJsIcon className="size-4" /> {category}
+            <span
+              className="inline-flex items-center gap-x-1 text-sm font-medium text-gray-600"
+              aria-label="Next.js project"
+            >
+              <NextJsIcon className="size-4" aria-hidden="true" /> {category}
             </span>
           )}
           {category === "Android" && (
-            <span className="inline-flex items-center gap-x-1 text-sm font-medium text-gray-600">
-              <AndroidIcon className="size-4" /> {category}
+            <span
+              className="inline-flex items-center gap-x-1 text-sm font-medium text-gray-600"
+              aria-label="Android project"
+            >
+              <AndroidIcon className="size-4" aria-hidden="true" /> {category}
             </span>
           )}
         </div>

@@ -8,9 +8,9 @@ interface Props {
 
 const Title: FC<Props> = ({ title, className }) => {
   return (
-    <h3 className={cn("text-pretty font-bold tracking-tight", className)}>
+    <h2 className={cn("font-bold tracking-tight text-pretty", className)}>
       {title}
-    </h3>
+    </h2>
   );
 };
 
