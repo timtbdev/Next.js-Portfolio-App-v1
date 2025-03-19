@@ -24,7 +24,6 @@ My **Portfolio App** is a **fast** and **modern** website built with **Next.js 1
 - ✅ **Perfectly composed desktop & mobile navigation** 🧭
 - ✅ **Easy-to-understand folder structure** 📂
 - ✅ **Clean and concise code with best practices** 🏆
-- ✅ **Fully customizable** 🎨
 - ✅ **Optimized for smooth performance** ⚡
 
 🌎 **Live Demo:** [timtb.dev](https://timtb.dev)
