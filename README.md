@@ -103,6 +103,9 @@ Key configuration files:
 Create a `.env.local` file with the following variables:
 
 ```env
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+NEXT_PUBLIC_WEB_URL=your_production_domain_name
+GITHUB_TOKEN=your_github_token
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_key
 RESEND_API_KEY=your_resend_api_key
