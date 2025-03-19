@@ -1,6 +1,6 @@
 # Next.js Portfolio Template
 
-[up](https://github.com/user-attachments/assets/31d57d35-24a1-4bdd-af22-cf0a691eefc0)
+![up](https://github.com/user-attachments/assets/e02e1d03-cdb0-42ce-8299-660e2b4c700b)
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)](https://nextjs.org/)
