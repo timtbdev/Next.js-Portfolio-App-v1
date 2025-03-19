@@ -1,5 +1,7 @@
 ## 🚀 Next.js & Tailwind CSS Portfolio Template
 
+![Next js-Portfolio-App-Mockup](https://github.com/user-attachments/assets/9ca5088f-0f68-4e18-b4fa-c563cc8f8636)
+
 A modern, fully responsive portfolio template built with **Next.js 15** and **Tailwind CSS**. It includes **light/dark mode**, **MDX support**, and **SEO optimization** for high performance.
 
 ### 🔹 Features
