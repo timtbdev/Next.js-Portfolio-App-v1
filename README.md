@@ -11,13 +11,27 @@
 
 # Next.js Portfolio App
 
-Next.js Portfolio App is a fast and modern website built with **Next.js 15, Tailwind CSS v4, Supabase, and ShadCN UI**. It features **type-safe advanced SEO optimization**, a **clean, responsive design**, and **powerful content management**.
+# 🚀 My Portfolio App
+
+My **Portfolio App** is a **fast** and **modern** website built with **Next.js 15**, **Tailwind CSS v4**, **Supabase**, and **ShadCN UI**. It features **type-safe** advanced **SEO optimization** 🔍, a **clean & responsive design** 📱💻, and **easy content management** ✍️.
+
+## ✨ Key Features
+
+- ✅ **MDX blog support** 📖
+- ✅ **Live search** 🔎
+- ✅ **Interactive comments with authentication** 💬🔐
+- ✅ **Dynamic table of contents** 📑 _(updates as you scroll!)_
+- ✅ **Perfectly composed desktop & mobile navigation** 🧭
+- ✅ **Easy-to-understand folder structure** 📂
+- ✅ **Clean and concise code with best practices** 🏆
+- ✅ **Fully customizable** 🎨
+- ✅ **Optimized for smooth performance** ⚡
 
 ![up](https://github.com/user-attachments/assets/e02e1d03-cdb0-42ce-8299-660e2b4c700b)
 
 🌎 **Live Demo:** [timtb.dev](https://timtb.dev)
 
-## ✨ Features
+## ✨ All Features
 
 - **🔍 Advanced SEO Optimization**
 
