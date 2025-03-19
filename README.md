@@ -1,4 +1,4 @@
-# 🚀 Next.js Portfolio App
+# 🤩 Next.js Portfolio App
 
 <div align="center">
 
