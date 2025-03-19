@@ -89,36 +89,6 @@ pnpm dev
 
 Visit `http://localhost:3000` to see your portfolio in action!
 
-## 📁 Project Structure
-
-```
-portfolio-template/
-├── app/                    # Next.js app directory
-│   ├── (auth)/            # Authentication routes
-│   │   ├── login/         # Login page
-│   │   └── register/      # Registration page
-│   ├── (blog)/            # Blog related routes
-│   │   ├── [slug]/        # Individual blog posts
-│   │   └── page.tsx       # Blog listing
-│   ├── (marketing)/       # Marketing pages
-│   │   ├── about/         # About page
-│   │   └── contact/       # Contact page
-│   └── api/               # API routes
-├── components/            # React components
-│   ├── ui/               # UI components
-│   ├── blog/             # Blog components
-│   └── shared/           # Shared components
-├── content/              # MDX content
-│   ├── blog/             # Blog posts
-│   └── pages/            # Static pages
-├── lib/                  # Utility functions
-│   ├── utils/            # Helper functions
-│   ├── hooks/            # Custom hooks
-│   └── config/           # Configuration
-├── public/              # Static assets
-└── styles/             # Global styles
-```
-
 ## 🔧 Configuration
 
 Key configuration files:
