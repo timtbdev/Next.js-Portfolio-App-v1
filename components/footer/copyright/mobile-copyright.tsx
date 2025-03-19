@@ -51,9 +51,9 @@ const MobileCopyright = () => {
             rel="noopener noreferrer"
             className={defaultClass}
           >
-            Cursor
+            Cursor.
           </Link>{" "}
-          . Built with{" "}
+          Built with{" "}
           <Link
             href="https://nextjs.org/"
             target="_blank"
