@@ -11,17 +11,15 @@
 [![Resend](https://img.shields.io/badge/Resend-000000?style=flat-square&logo=mail&logoColor=white)](https://resend.com)
 [![Zustand](https://img.shields.io/badge/Zustand-443E38?style=flat-square&logo=react&logoColor=white)](https://zustand-demo.pmnd.rs/)
 [![Drizzle](https://img.shields.io/badge/Drizzle-C5F74F?style=flat-square&logo=database&logoColor=black)](https://orm.drizzle.team)
-
-[![CI/CD](https://github.com/timtbdev/portfolio-app/actions/workflows/ci.yml/badge.svg)](https://github.com/timtbdev/portfolio-app/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Last Commit](https://img.shields.io/github/last-commit/timtbdev/portfolio-app)](https://github.com/timtbdev/portfolio-app/commits/main)
 [![Code Style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 </div>
 
 ![Portfolio Preview](https://github.com/user-attachments/assets/e02e1d03-cdb0-42ce-8299-660e2b4c700b)
 
-A **blazing-fast**, **SEO-optimized**, and **fully responsive** portfolio website built with modern web technologies. Features type-safe development, advanced SEO optimization 🔍, elegant UI/UX design 📱💻, and seamless content management ✍️.
+A **blazing-fast**, **SEO-optimized**, and **fully responsive** portfolio website built with modern web technologies.
 
 ## 🌟 Highlights
 
@@ -131,7 +129,6 @@ Visit `http://localhost:3000` to see your portfolio in action!
 
 - 🔍 **ESLint** (Code quality)
 - ✨ **Prettier** (Code formatting)
-- 🔗 **Husky** (Git hooks for better workflows)
 
 ## 📁 Project Structure
 
@@ -258,22 +255,5 @@ RESEND_API_KEY=your_resend_api_key
    - Enable image optimization
    - Implement proper caching
    - Use production builds
-
-## 📈 Analytics
-
-Track your portfolio's performance with built-in analytics:
-
-- 📊 Page views and user engagement
-- ⚡ Performance metrics
-- 🌍 Geographic distribution
-- 📱 Device analytics
-
-## 🔐 Security
-
-- ✅ CSRF protection
-- ✅ XSS prevention
-- ✅ Rate limiting
-- ✅ Input sanitization
-- ✅ Secure authentication
 
 ---
