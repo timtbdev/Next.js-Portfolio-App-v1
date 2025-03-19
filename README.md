@@ -41,7 +41,7 @@ Next.js Portfolio App is a fast and modern website built with **Next.js 15, Tail
 
 ## 📊 Performance
 
-<img width="995" alt="Lighthouse Performance Scores" src="https://github.com/user-attachments/assets/ab2ecb87-677f-4463-ba3b-905bafb0ab38" />
+<img width="975" alt="performance" src="https://github.com/user-attachments/assets/f49a7b8d-4170-4d25-bd7b-5924097cbef9" />
 
 ## 🚀 Getting Started
 
