@@ -98,30 +98,6 @@ Key configuration files:
 - `tsconfig.json` - TypeScript configuration
 - `contentlayer.config.ts` - Content management configuration
 
-## 🛠️ Development Workflow
-
-1. **Local Development**
-
-   ```bash
-   pnpm dev     # Start development server
-   pnpm build   # Build for production
-   pnpm start   # Start production server
-   ```
-
-2. **Code Quality**
-
-   ```bash
-   pnpm lint    # Run ESLint
-   pnpm format  # Run Prettier
-   pnpm test    # Run tests
-   ```
-
-3. **Database Operations**
-   ```bash
-   pnpm db:push    # Push schema changes
-   pnpm db:studio  # Open Drizzle Studio
-   ```
-
 ## 🔧 Environment Variables
 
 Create a `.env.local` file with the following variables:
@@ -131,16 +107,6 @@ NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_key
 RESEND_API_KEY=your_resend_api_key
 ```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## 📝 License
 
