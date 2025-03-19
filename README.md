@@ -1,62 +1,143 @@
-## 🚀 Next.js Portfolio App
+# Next.js Portfolio Template
 
-![Next js-Portfolio-App-Moc![up](https://github.com/user-attachments/assets/31d57d35-24a1-4bdd-af22-cf0a691eefc0)
+[up](https://github.com/user-attachments/assets/31d57d35-24a1-4bdd-af22-cf0a691eefc0)
 
-A modern, fully responsive portfolio template built with **Next.js 15** and **Tailwind CSS**. It includes **light/dark mode**, **MDX support**, and **SEO optimization** for high performance.
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-### 🔹 Features
-
-- 🚀 **Blazing fast & responsive**
-- ✨ **Minimalist, clean design**
-- 🔍 **SEO optimized (Automated)**
-- 📃 **MDX support for blog & content**
-- 🛠️ **Next.js 15 & Tailwind CSS**
-- 😎 **100% Open Source**
+A modern, fully responsive portfolio template built with **Next.js 15** and **Tailwind CSS**. Perfect for developers and creatives looking to showcase their work with a fast, SEO-optimized, and feature-rich website.
 
 🌎 **Live Demo:** [timtb.dev](https://timtb.dev)
 
-## 🌞 Light Mode
+## ✨ Features
 
-<img width="1433" alt="Screenshot 2025-02-11 at 5 11 33 AM" src="https://github.com/user-attachments/assets/e7b691fd-8c88-4696-9174-7dda96409f2a" />
+- **Advanced SEO Optimization**
 
-## 🌙 Dark Mode
+  - Type-safe meta tags
+  - Open Graph protocol support
+  - Structured data implementation
+  - Automatic sitemap generation
+  - Robots.txt configuration
+  - Optimized internal linking
 
-<img width="1432" alt="Screenshot 2025-02-11 at 5 14 07 AM" src="https://github.com/user-attachments/assets/c148770d-cfb8-43b7-b4bd-addf2d9a2a69" />
+- **Modern Design & Performance**
 
-## 📊 💻 Desktop Performance
+  - Mobile-first responsive design
+  - Light/dark mode support
+  - Blazing fast performance
+  - Optimized image loading
+  - Smooth animations with Framer Motion
 
-<img width="995" alt="Screenshot 2025-02-11 at 5 26 25 AM" src="https://github.com/user-attachments/assets/ab2ecb87-677f-4463-ba3b-905bafb0ab38" />
+- **Content Management**
+  - MDX support for blog posts
+  - Content collections
+  - Live search functionality with result highlighting
+  - Table of contents with live sidebar navigation
+  - Interactive comments system with authentication
 
-## 📊 📱 Mobile Performance
+## 📊 Performance
 
-<img width="983" alt="Screenshot 2025-02-11 at 5 26 15 AM" src="https://github.com/user-attachments/assets/fb927413-73fd-4125-a4e7-6612382c92b1" />
+<img width="995" alt="Lighthouse Performance Scores" src="https://github.com/user-attachments/assets/ab2ecb87-677f-4463-ba3b-905bafb0ab38" />
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.0 or later
+- npm or yarn or pnpm
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/portfolio-template.git
+cd portfolio-template
+```
+
+2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Start the development server
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
+
+Visit `http://localhost:3000` to see your portfolio in action!
 
 ## 🛠️ Tech Stack
 
-- **Frontend Framework**: Next.js 15
-- **UI Library**: Shadcn UI & Headless UI
-- **Content**: Next-MDX-Remote
-- **Icons**: Lucide React & React Icons
-- **Type Safety**: TypeScript
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Code Quality**: ESLint & Prettier
+- **Framework**
 
-## Project Details
+  - Next.js 15 (App Router)
+  - React 18
+  - TypeScript 5
 
-### Key Files and Directories
+- **Styling & UI**
 
-- **`app`**: Contains the main application components.
-- **`components`**: Contains reusable UI components.
-- **`utils`**: Contains utility functions.
-- **`config`**: Contains data for SEO and Menu.
-- **`content`**: Contains data for Pages & Blog Posts.
+  - Tailwind CSS 4
+  - Shadcn UI
+  - Framer Motion
+  - Lucide React & React Icons
 
-### Configuration Files
+- **Content Management**
 
-- **`tailwind.config.ts`**: Tailwind CSS configuration.
-- **`tsconfig.json`**: TypeScript configuration.
-- **`next.config.mjs`**: Next.js configuration.
+  - MDX
+  - Content Collections
+
+- **Development Tools**
+  - ESLint
+  - Prettier
+  - Husky (Git hooks)
+
+## 📁 Project Structure
+
+```
+portfolio-template/
+├── app/                # Main application components
+│   ├── (auth)/        # Authentication routes
+│   ├── (blog)/        # Blog related routes
+│   ├── (marketing)/   # Landing pages
+│   └── api/           # API routes
+├── components/        # Reusable UI components
+├── content/          # MDX content & blog posts
+├── lib/             # Utility functions
+├── public/          # Static assets
+└── styles/          # Global styles
+```
+
+## 🔧 Configuration
+
+Key configuration files:
+
+- `next.config.mjs` - Next.js configuration
+- `tailwind.config.ts` - Tailwind CSS configuration
+- `tsconfig.json` - TypeScript configuration
+- `contentlayer.config.ts` - Content management configuration
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## 📝 License
 
