@@ -87,33 +87,34 @@ Visit `http://localhost:3000` to see your portfolio in action!
 
 ## 🛠️ Tech Stack
 
-- **Framework**
+### 🚀 Framework
 
-  - Next.js 15 (App Router)
-  - React 18
-  - Supabase
-  - TanStack Query v5
-  - Resend
-  - Zustand
-  - Drizzle ORM
-  - TypeScript 5
+- ⚡ **Next.js 15** (App Router)
+- ⚛️ **React 18**
+- 🛢️ **Supabase** (Auth, Database, Storage)
+- 🔄 **TanStack Query v5**
+- 📩 **Resend**
+- 🗂️ **Zustand**
+- 🏗️ **Drizzle ORM**
+- 🏷️ **TypeScript 5**
 
-- **Styling & UI**
+### 🎨 Styling & UI
 
-  - Tailwind CSS 4
-  - Shadcn UI
-  - Framer Motion
-  - Lucide React & React Icons
+- 🎨 **Tailwind CSS v4**
+- 🏗️ **ShadCN UI**
+- 🎭 **Framer Motion** (Smooth animations)
+- 🔍 **Lucide React & React Icons**
 
-- **Content Management**
+### 📝 Content Management
 
-  - MDX
-  - Content Collections
+- 📜 **MDX** (Markdown with React)
+- 📚 **Content Collections**
 
-- **Development Tools**
-  - ESLint
-  - Prettier
-  - Husky (Git hooks)
+### 🛠️ Development Tools
+
+- 🔍 **ESLint** (Code quality)
+- ✨ **Prettier** (Code formatting)
+- 🔗 **Husky** (Git hooks for better workflows)
 
 ## 📁 Project Structure
 
