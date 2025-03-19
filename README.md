@@ -20,7 +20,7 @@
 
 A **blazing-fast**, **SEO-optimized**, and **fully responsive** portfolio website built with modern web technologies.
 
-## 🌟 Highlights
+## 🌟 Tech Stacks
 
 - 🚀 Built with **Next.js 15** and **TypeScript 5**
 - 💨 Styled using **Tailwind CSS v4** and **ShadCN UI**
@@ -31,47 +31,21 @@ A **blazing-fast**, **SEO-optimized**, and **fully responsive** portfolio websit
 
 🌎 **Live Demo:** [timtb.dev](https://timtb.dev)
 
-## ✨ Responsive Design
-
-https://github.com/user-attachments/assets/85390f7d-6dac-49ae-814a-883baf6360cf
-
-## 🔍 Live Search
-
-https://github.com/user-attachments/assets/85390f7d-6dac-49ae-814a-883baf6360cf
-
-## 📝 Blog
-
-https://github.com/user-attachments/assets/9301904f-d87d-4de6-b955-4214ffeaaa45
-
-## ✨ Features
-
-- **🔍 Advanced SEO Optimization**
-
-  - 🏷️ Type-safe meta tags
-  - 🌐 Open Graph protocol support
-  - 📊 Structured data implementation
-  - 🗺️ Automatic sitemap generation
-  - 🤖 Robots.txt configuration
-  - 🔗 Optimized internal linking
-
-- **🎨 Modern Design & Performance**
-
-  - 📱 Mobile-first responsive design
-  - 🌓 Light/dark mode support
-  - ⚡ Blazing fast performance
-  - 🖼️ Optimized image loading
-  - ✨ Smooth animations with Framer Motion
-
-- **📝 Content Management**
-  - 📄 MDX support for blog posts
-  - 📚 Content collections
-  - 🔍 Live search functionality with result highlighting
-  - 📑 Table of contents with live sidebar navigation
-  - 💬 Interactive comments system with authentication
-
-## 📊 Performance
+## 🚀 Advanced SEO & Performance Optimization 🔍⚡
 
 <img width="975" alt="performance" src="https://github.com/user-attachments/assets/f49a7b8d-4170-4d25-bd7b-5924097cbef9" />
+
+## ✨ Mobile-First Responsive Design 📱💻
+
+https://github.com/user-attachments/assets/85390f7d-6dac-49ae-814a-883baf6360cf
+
+## ⚡ Blazing-Fast Live Search 🔎
+
+https://github.com/user-attachments/assets/85390f7d-6dac-49ae-814a-883baf6360cf
+
+## 📝 MDX-Powered Blog with Dynamic Scroll Navigation 📑
+
+https://github.com/user-attachments/assets/9301904f-d87d-4de6-b955-4214ffeaaa45
 
 ## 🚀 Getting Started
 
@@ -110,36 +84,6 @@ pnpm dev
 ```
 
 Visit `http://localhost:3000` to see your portfolio in action!
-
-## 🛠️ Tech Stack
-
-### 🚀 Framework
-
-- ⚡ **Next.js 15** (App Router)
-- ⚛️ **React 18**
-- 🛢️ **Supabase** (Auth, Database, Storage)
-- 🔄 **TanStack Query v5**
-- 📩 **Resend**
-- 🗂️ **Zustand**
-- 🏗️ **Drizzle ORM**
-- 🏷️ **TypeScript 5**
-
-### 🎨 Styling & UI
-
-- 🎨 **Tailwind CSS v4**
-- 🏗️ **ShadCN UI**
-- 🎭 **Framer Motion** (Smooth animations)
-- 🔍 **Lucide React & React Icons**
-
-### 📝 Content Management
-
-- 📜 **MDX** (Markdown with React)
-- 📚 **Content Collections**
-
-### 🛠️ Development Tools
-
-- 🔍 **ESLint** (Code quality)
-- ✨ **Prettier** (Code formatting)
 
 ## 📁 Project Structure
 
@@ -180,29 +124,6 @@ Key configuration files:
 - `tsconfig.json` - TypeScript configuration
 - `contentlayer.config.ts` - Content management configuration
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Contact
-
-For questions or feedback, reach out through:
-
-- Email: timtb.dev@gmail.com
-- X: [@timtbdev](https://x.com/timtbdev)
-
----
-
 ## 🛠️ Development Workflow
 
 1. **Local Development**
@@ -227,15 +148,6 @@ For questions or feedback, reach out through:
    pnpm db:studio  # Open Drizzle Studio
    ```
 
-## 🌐 Browser Support
-
-| Browser | Minimum Version |
-| ------- | --------------- |
-| Chrome  | 90+             |
-| Firefox | 85+             |
-| Safari  | 14+             |
-| Edge    | 90+             |
-
 ## 🔧 Environment Variables
 
 Create a `.env.local` file with the following variables:
@@ -246,25 +158,25 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_key
 RESEND_API_KEY=your_resend_api_key
 ```
 
-## ❗ Troubleshooting
+## 🤝 Contributing
 
-### Common Issues
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
-1. **Build Errors**
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-   - Clear `.next` folder: `rm -rf .next`
-   - Delete `node_modules`: `rm -rf node_modules`
-   - Fresh install: `pnpm install`
+## 📝 License
 
-2. **Database Connection**
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-   - Verify Supabase credentials
-   - Check database schema
-   - Ensure proper permissions
+## 📞 Contact
 
-3. **Performance Issues**
-   - Enable image optimization
-   - Implement proper caching
-   - Use production builds
+For questions or feedback, reach out through:
+
+- Email: timtb.dev@gmail.com
+- X: [@timtbdev](https://x.com/timtbdev)
 
 ---
