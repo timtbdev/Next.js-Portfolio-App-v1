@@ -1,3 +1,7 @@
+# 🚀 Next.js Portfolio App
+
+<div align="center">
+
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
@@ -7,28 +11,30 @@
 [![Resend](https://img.shields.io/badge/Resend-000000?style=flat-square&logo=mail&logoColor=white)](https://resend.com)
 [![Zustand](https://img.shields.io/badge/Zustand-443E38?style=flat-square&logo=react&logoColor=white)](https://zustand-demo.pmnd.rs/)
 [![Drizzle](https://img.shields.io/badge/Drizzle-C5F74F?style=flat-square&logo=database&logoColor=black)](https://orm.drizzle.team)
+
+[![CI/CD](https://github.com/timtbdev/portfolio-app/actions/workflows/ci.yml/badge.svg)](https://github.com/timtbdev/portfolio-app/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Last Commit](https://img.shields.io/github/last-commit/timtbdev/portfolio-app)](https://github.com/timtbdev/portfolio-app/commits/main)
+[![Code Style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
 
-# 🚀 Next.js-Portfolio-App
+</div>
 
-![up](https://github.com/user-attachments/assets/e02e1d03-cdb0-42ce-8299-660e2b4c700b)
+![Portfolio Preview](https://github.com/user-attachments/assets/e02e1d03-cdb0-42ce-8299-660e2b4c700b)
 
-My **Portfolio App** is a **fast** and **modern** website built with **Next.js 15**, **Tailwind CSS v4**, **Supabase**, and **ShadCN UI**. It features **type-safe** advanced **SEO optimization** 🔍, a **clean & responsive design** 📱💻, and **easy content management** ✍️.
+A **blazing-fast**, **SEO-optimized**, and **fully responsive** portfolio website built with modern web technologies. Features type-safe development, advanced SEO optimization 🔍, elegant UI/UX design 📱💻, and seamless content management ✍️.
 
-## ✨ Key Features
+## 🌟 Highlights
 
-- ✅ **MDX blog support** 📖
-- ✅ **Live search** 🔎
-- ✅ **Interactive comments with authentication** 💬🔐
-- ✅ **Dynamic table of contents** 📑 _(updates as you scroll!)_
-- ✅ **Perfectly composed desktop & mobile navigation** 🧭
-- ✅ **Easy-to-understand folder structure** 📂
-- ✅ **Clean and concise code with best practices** 🏆
-- ✅ **Optimized for smooth performance** ⚡
+- 🚀 Built with **Next.js 15** and **TypeScript 5**
+- 💨 Styled using **Tailwind CSS v4** and **ShadCN UI**
+- 🔐 Authentication and database with **Supabase**
+- 📊 State management with **Zustand** and **TanStack Query v5**
+- 📧 Email functionality via **Resend**
+- 🗃️ Type-safe ORM with **Drizzle**
 
 🌎 **Live Demo:** [timtb.dev](https://timtb.dev)
 
-## ✨ All Features
+## ✨ Features
 
 - **🔍 Advanced SEO Optimization**
 
@@ -131,16 +137,30 @@ Visit `http://localhost:3000` to see your portfolio in action!
 
 ```
 portfolio-template/
-├── app/                # Main application components
-│   ├── (auth)/        # Authentication routes
-│   ├── (blog)/        # Blog related routes
-│   ├── (marketing)/   # Landing pages
-│   └── api/           # API routes
-├── components/        # Reusable UI components
-├── content/          # MDX content & blog posts
-├── lib/             # Utility functions
-├── public/          # Static assets
-└── styles/          # Global styles
+├── app/                    # Next.js app directory
+│   ├── (auth)/            # Authentication routes
+│   │   ├── login/         # Login page
+│   │   └── register/      # Registration page
+│   ├── (blog)/            # Blog related routes
+│   │   ├── [slug]/        # Individual blog posts
+│   │   └── page.tsx       # Blog listing
+│   ├── (marketing)/       # Marketing pages
+│   │   ├── about/         # About page
+│   │   └── contact/       # Contact page
+│   └── api/               # API routes
+├── components/            # React components
+│   ├── ui/               # UI components
+│   ├── blog/             # Blog components
+│   └── shared/           # Shared components
+├── content/              # MDX content
+│   ├── blog/             # Blog posts
+│   └── pages/            # Static pages
+├── lib/                  # Utility functions
+│   ├── utils/            # Helper functions
+│   ├── hooks/            # Custom hooks
+│   └── config/           # Configuration
+├── public/              # Static assets
+└── styles/             # Global styles
 ```
 
 ## 🔧 Configuration
@@ -172,5 +192,88 @@ For questions or feedback, reach out through:
 
 - Email: timtb.dev@gmail.com
 - X: [@timtbdev](https://x.com/timtbdev)
+
+---
+
+## 🛠️ Development Workflow
+
+1. **Local Development**
+
+   ```bash
+   pnpm dev     # Start development server
+   pnpm build   # Build for production
+   pnpm start   # Start production server
+   ```
+
+2. **Code Quality**
+
+   ```bash
+   pnpm lint    # Run ESLint
+   pnpm format  # Run Prettier
+   pnpm test    # Run tests
+   ```
+
+3. **Database Operations**
+   ```bash
+   pnpm db:push    # Push schema changes
+   pnpm db:studio  # Open Drizzle Studio
+   ```
+
+## 🌐 Browser Support
+
+| Browser | Minimum Version |
+| ------- | --------------- |
+| Chrome  | 90+             |
+| Firefox | 85+             |
+| Safari  | 14+             |
+| Edge    | 90+             |
+
+## 🔧 Environment Variables
+
+Create a `.env.local` file with the following variables:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_key
+RESEND_API_KEY=your_resend_api_key
+```
+
+## ❗ Troubleshooting
+
+### Common Issues
+
+1. **Build Errors**
+
+   - Clear `.next` folder: `rm -rf .next`
+   - Delete `node_modules`: `rm -rf node_modules`
+   - Fresh install: `pnpm install`
+
+2. **Database Connection**
+
+   - Verify Supabase credentials
+   - Check database schema
+   - Ensure proper permissions
+
+3. **Performance Issues**
+   - Enable image optimization
+   - Implement proper caching
+   - Use production builds
+
+## 📈 Analytics
+
+Track your portfolio's performance with built-in analytics:
+
+- 📊 Page views and user engagement
+- ⚡ Performance metrics
+- 🌍 Geographic distribution
+- 📱 Device analytics
+
+## 🔐 Security
+
+- ✅ CSRF protection
+- ✅ XSS prevention
+- ✅ Rate limiting
+- ✅ Input sanitization
+- ✅ Secure authentication
 
 ---
