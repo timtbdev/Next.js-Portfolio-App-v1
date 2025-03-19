@@ -31,6 +31,18 @@ A **blazing-fast**, **SEO-optimized**, and **fully responsive** portfolio websit
 
 🌎 **Live Demo:** [timtb.dev](https://timtb.dev)
 
+## ✨ Responsive Design
+
+https://github.com/user-attachments/assets/85390f7d-6dac-49ae-814a-883baf6360cf
+
+## ✨ Live Search
+
+https://github.com/user-attachments/assets/85390f7d-6dac-49ae-814a-883baf6360cf
+
+## ✨ Blog
+
+https://github.com/user-attachments/assets/85390f7d-6dac-49ae-814a-883baf6360cf
+
 ## ✨ Features
 
 - **🔍 Advanced SEO Optimization**
