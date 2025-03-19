@@ -35,13 +35,13 @@ A **blazing-fast**, **SEO-optimized**, and **fully responsive** portfolio websit
 
 https://github.com/user-attachments/assets/85390f7d-6dac-49ae-814a-883baf6360cf
 
-## ✨ Live Search
+## 🔍 Live Search
 
 https://github.com/user-attachments/assets/85390f7d-6dac-49ae-814a-883baf6360cf
 
-## ✨ Blog
+## 📝 Blog
 
-https://github.com/user-attachments/assets/85390f7d-6dac-49ae-814a-883baf6360cf
+https://github.com/user-attachments/assets/9301904f-d87d-4de6-b955-4214ffeaaa45
 
 ## ✨ Features
 
