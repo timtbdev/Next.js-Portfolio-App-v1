@@ -3,6 +3,10 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)](https://supabase.com/)
 [![Shadcn UI](https://img.shields.io/badge/Shadcn_UI-000000?style=flat-square&logo=shadcnui&logoColor=white)](https://ui.shadcn.com/)
+[![TanStack Query](https://img.shields.io/badge/TanStack_Query-FF4154?style=flat-square&logo=reactquery&logoColor=white)](https://tanstack.com/query)
+[![Resend](https://img.shields.io/badge/Resend-000000?style=flat-square&logo=mail&logoColor=white)](https://resend.com)
+[![Zustand](https://img.shields.io/badge/Zustand-443E38?style=flat-square&logo=react&logoColor=white)](https://zustand-demo.pmnd.rs/)
+[![Drizzle](https://img.shields.io/badge/Drizzle-C5F74F?style=flat-square&logo=database&logoColor=black)](https://orm.drizzle.team)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Next.js Portfolio App
@@ -87,6 +91,11 @@ Visit `http://localhost:3000` to see your portfolio in action!
 
   - Next.js 15 (App Router)
   - React 18
+  - Supabase
+  - TanStack Query v5
+  - Resend
+  - Zustand
+  - Drizzle ORM
   - TypeScript 5
 
 - **Styling & UI**
