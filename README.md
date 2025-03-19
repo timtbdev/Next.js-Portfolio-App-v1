@@ -1,13 +1,15 @@
-# Next.js Portfolio Template
-
-![up](https://github.com/user-attachments/assets/e02e1d03-cdb0-42ce-8299-660e2b4c700b)
+# Next.js Portfolio App
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A modern, fully responsive portfolio template built with **Next.js 15** and **Tailwind CSS**. Perfect for developers and creatives looking to showcase their work with a fast, SEO-optimized, and feature-rich website.
+Next.js Portfolio App is a fast and modern website built with **Next.js 15, Tailwind CSS v4, Supabase, and ShadCN UI**. It features **type-safe advanced SEO optimization**, a **clean, responsive design**, and **powerful content management**.
+
+![up](https://github.com/user-attachments/assets/e02e1d03-cdb0-42ce-8299-660e2b4c700b)
+
+.
 
 🌎 **Live Demo:** [timtb.dev](https://timtb.dev)
 
