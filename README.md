@@ -9,9 +9,9 @@
 [![Drizzle](https://img.shields.io/badge/Drizzle-C5F74F?style=flat-square&logo=database&logoColor=black)](https://orm.drizzle.team)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# Next.js Portfolio App
+# 🚀 Next.js Portfolio App
 
-# 🚀 My Portfolio App
+![up](https://github.com/user-attachments/assets/e02e1d03-cdb0-42ce-8299-660e2b4c700b)
 
 My **Portfolio App** is a **fast** and **modern** website built with **Next.js 15**, **Tailwind CSS v4**, **Supabase**, and **ShadCN UI**. It features **type-safe** advanced **SEO optimization** 🔍, a **clean & responsive design** 📱💻, and **easy content management** ✍️.
 
@@ -26,8 +26,6 @@ My **Portfolio App** is a **fast** and **modern** website built with **Next.js 1
 - ✅ **Clean and concise code with best practices** 🏆
 - ✅ **Fully customizable** 🎨
 - ✅ **Optimized for smooth performance** ⚡
-
-![up](https://github.com/user-attachments/assets/e02e1d03-cdb0-42ce-8299-660e2b4c700b)
 
 🌎 **Live Demo:** [timtb.dev](https://timtb.dev)
 
