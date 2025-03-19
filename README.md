@@ -15,29 +15,29 @@ Next.js Portfolio App is a fast and modern website built with **Next.js 15, Tail
 
 ## ✨ Features
 
-- **Advanced SEO Optimization**
+- **🔍 Advanced SEO Optimization**
 
-  - Type-safe meta tags
-  - Open Graph protocol support
-  - Structured data implementation
-  - Automatic sitemap generation
-  - Robots.txt configuration
-  - Optimized internal linking
+  - 🏷️ Type-safe meta tags
+  - 🌐 Open Graph protocol support
+  - 📊 Structured data implementation
+  - 🗺️ Automatic sitemap generation
+  - 🤖 Robots.txt configuration
+  - 🔗 Optimized internal linking
 
-- **Modern Design & Performance**
+- **🎨 Modern Design & Performance**
 
-  - Mobile-first responsive design
-  - Light/dark mode support
-  - Blazing fast performance
-  - Optimized image loading
-  - Smooth animations with Framer Motion
+  - 📱 Mobile-first responsive design
+  - 🌓 Light/dark mode support
+  - ⚡ Blazing fast performance
+  - 🖼️ Optimized image loading
+  - ✨ Smooth animations with Framer Motion
 
-- **Content Management**
-  - MDX support for blog posts
-  - Content collections
-  - Live search functionality with result highlighting
-  - Table of contents with live sidebar navigation
-  - Interactive comments system with authentication
+- **📝 Content Management**
+  - 📄 MDX support for blog posts
+  - 📚 Content collections
+  - 🔍 Live search functionality with result highlighting
+  - 📑 Table of contents with live sidebar navigation
+  - 💬 Interactive comments system with authentication
 
 ## 📊 Performance
 
