@@ -32,23 +32,23 @@ A **blazing-fast**, **SEO-optimized**, and **fully responsive** portfolio websit
 
 🌎 **Live Demo:** [timtb.dev](https://timtb.dev)
 
-## 🔍 Advanced SEO Optimization 🚀
+## 🔍 Search Engine Optimization
 
 <img width="1141" alt="SEO Optimization" src="https://github.com/user-attachments/assets/fdae95c5-b0ee-4b74-b5ba-25340f005878" />
 
-## ⚡ Advanced Performance Optimization 📊
+## 📊 Performance
 
 <img width="975" alt="Performance Optimization" src="https://github.com/user-attachments/assets/f49a7b8d-4170-4d25-bd7b-5924097cbef9" />
 
-## ✨ Mobile-First Responsive Design 📱💻
+## 📱💻 Responsive Design
 
 https://github.com/user-attachments/assets/85390f7d-6dac-49ae-814a-883baf6360cf
 
-## ⚡ Blazing-Fast Live Search 🔎
+## 🔎 Live Search
 
 https://github.com/user-attachments/assets/c1fe73c7-4568-417d-ac19-80ae9c0012c2
 
-## 📝 MDX-Powered Blog with Dynamic Scroll Navigation 📑
+## 📝 Blog with MDX Support
 
 https://github.com/user-attachments/assets/9301904f-d87d-4de6-b955-4214ffeaaa45
 
