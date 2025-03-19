@@ -16,7 +16,7 @@
 
 </div>
 
-![Next js-Portfolio-App-Preview](https://github.com/user-attachments/assets/8180cac0-adc0-4107-b01b-6837bf5ee316)
+![Portfolio-App-Product-Hunt](https://github.com/user-attachments/assets/88c60d3b-4ff9-4605-b938-78df11fb27f5)
 
 A **blazing-fast**, **SEO-optimized**, and **fully responsive** portfolio website built with modern web technologies.
 
