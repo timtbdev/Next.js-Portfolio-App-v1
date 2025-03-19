@@ -45,7 +45,7 @@ https://github.com/user-attachments/assets/85390f7d-6dac-49ae-814a-883baf6360cf
 
 ## ⚡ Blazing-Fast Live Search 🔎
 
-https://github.com/user-attachments/assets/85390f7d-6dac-49ae-814a-883baf6360cf
+https://github.com/user-attachments/assets/c1fe73c7-4568-417d-ac19-80ae9c0012c2
 
 ## 📝 MDX-Powered Blog with Dynamic Scroll Navigation 📑
 
