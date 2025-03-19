@@ -30,7 +30,7 @@ const Profile: FC<ProfileProps> = ({ className }) => {
       <h1 className="mb-4 text-center text-5xl leading-none font-bold tracking-tight">
         <span className="relative inline-block">
           <span className="absolute -top-[2.5%] -left-[2.5%] z-0 h-[105%] w-[105%] -rotate-1 bg-gray-200" />
-          <span className="relative z-10">✨Hire</span>
+          <span className="relative">✨Hire</span>
         </span>{" "}
         Tim
       </h1>
